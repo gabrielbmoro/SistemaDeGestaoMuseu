@@ -1,7 +1,13 @@
+<%-- 
+    Document   : index
+    Created on : 23/04/2015, 09:10:17
+    Author     : Gabriel B Moro
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"  
-xmlns:h="http://java.sun.com/jsf/html"   
-xmlns:f="http://java.sun.com/jsf/core">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 
@@ -490,3 +496,4 @@ xmlns:f="http://java.sun.com/jsf/core">
 </body>
 
 </html>
+
