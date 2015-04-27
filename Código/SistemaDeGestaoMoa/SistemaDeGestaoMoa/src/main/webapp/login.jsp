@@ -45,36 +45,42 @@
     <div id="wrapper">-->
 
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <div class="navbar-header">
+                <div class="navbar-header" >
 <!--                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>-->
-                    <a class="navbar-brand" href="index.html">SisMOA - Sistema de Gestão do Museu Oswaldo Aranha</a>
+<a class="navbar-brand " style="margin: auto 40%" href="index.html">SisMOA - Sistema de Gestão do Museu Oswaldo Aranha</a>
                 </div>
             </nav>
 <br /><br /><br />
             <div class="container-fluid">
-              <div class="row">
-                  <div class="col-lg-6 col-md-8">
+                
+                <br /><br /><br /><br/>
+                <div class="row">  
+                    
+                    <div class="col-sm-6 col-md-4 col-md-offset-4" style="margin: auto 37%">
                       <h1>Acesso de Usuário</h1>
-                  </div>
+                      </div>
               </div>
                 <div class="row">
-                    <div class="col-lg-6 col-md-8">
+                    <br /><br />
+                   <div class="col-sm-6 col-md-4 col-md-offset-5">
                             <div class="panel-primary">
+                                
                                  <form class="navbar-search pull-left">
                                      <label for="cpfe"> Cpf: </label><br />
-                                     <input id="cpfe" type="text" name="cpf" /> <br />
-                                     <label for="pswrd">Senha: </label><br />
-                                     <input id="pswrd" type="password" name="password"/> <br /><br />
+                                     <input id="cpfe" type="text" name="cpf" class="form-control col-lg-6" /> <br />
+                                     <label for="pswrd" >Senha: </label><br />
+                                     <input id="pswrd" type="password" name="password" class="form-control col-lg-6"/> <br /><br /><br />
                                      <input type="text" href="principal.jsp" class="btn btn-primary btn-large" value="Acessar" />
                                     </form>
                             </div>
                         </div>
                     </div>
+                   
                         </div>
 
 
