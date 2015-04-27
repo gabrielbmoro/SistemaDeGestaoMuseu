@@ -5,6 +5,7 @@
  */
 package br.com.unipampa.dao;
 
+import br.com.unipampa.dao.hibernate.HibernateUtil;
 import br.com.unipampa.model.ItemTombo;
 import java.util.List;
 import org.hibernate.Session;
@@ -19,7 +20,7 @@ public class DAOItemTombo implements DAO {
     @Override
     public boolean salvar(Object objeto) {
        try{
-        Session sessao = HibernateUtil.getSession();
+        Session sessao = HibernateUtil.openSession();
         Transaction transacao = sessao.beginTransaction();
         transacao.begin();
         if (objeto instanceof ItemTombo) {

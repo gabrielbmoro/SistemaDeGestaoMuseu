@@ -30,8 +30,7 @@ public class ItemTombo {
     public boolean cadastrarItem(ItemTombo item) {
         try {
             DAOItemTombo daoItemTombo = new DAOItemTombo();
-            daoItemTombo.salvar(item);
-            return true;
+            return daoItemTombo.salvar(item);
         } catch (Exception erro) {
             return false;
         }
