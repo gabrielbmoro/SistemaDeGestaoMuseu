@@ -52,7 +52,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>-->
-<a class="navbar-brand " style="margin: auto 40%" href="index.html">SisMOA - Sistema de Gestão do Museu Oswaldo Aranha</a>
+<a class="navbar-brand" style="margin: auto 40%" href="index.html"> <p> <h4>SisMOA - Sistema de Gestão do Museu Oswaldo Aranha</h4><p/> </a>
                 </div>
             </nav>
 <br /><br /><br />
@@ -71,7 +71,7 @@
                             <div class="panel-primary">
                                 
                                  <form class="navbar-search pull-left">
-                                     <label for="cpfe"> Cpf: </label><br />
+                                     <label for="cpfe"> CPF: </label><br />
                                      <input id="cpfe" type="text" name="cpf" class="form-control col-lg-6" /> <br />
                                      <label for="pswrd" >Senha: </label><br />
                                      <input id="pswrd" type="password" name="password" class="form-control col-lg-6"/> <br /><br /><br />
