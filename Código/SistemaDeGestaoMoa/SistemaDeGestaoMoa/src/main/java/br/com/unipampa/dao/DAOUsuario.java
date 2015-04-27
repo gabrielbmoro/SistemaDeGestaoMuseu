@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author Gabriel B Moro
  */
-public class DAOUsuario extends DAO{
+public class DAOUsuario implements DAO{
 
     @Override
     public boolean salvar(Object objeto) {

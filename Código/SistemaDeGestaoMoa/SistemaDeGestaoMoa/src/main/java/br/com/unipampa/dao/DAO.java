@@ -11,10 +11,8 @@ import java.util.List;
  *
  * @author Gabriel B Moro
  */
-public abstract class DAO {
-    
-    public HibernateUtil hibernateUtil;
-    
+public interface DAO {
+        
     public abstract boolean salvar(Object objeto);
     public abstract boolean alterar(Object objeto, Long ID);
     public abstract List<Object> recuperarRegistros(Object parametro);

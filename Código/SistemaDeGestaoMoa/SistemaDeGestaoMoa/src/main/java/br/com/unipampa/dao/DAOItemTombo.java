@@ -5,17 +5,33 @@
  */
 package br.com.unipampa.dao;
 
+import br.com.unipampa.model.ItemTombo;
 import java.util.List;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 /**
  *
  * @author Gabriel B Moro
  */
-public class DAOItemTombo extends DAO{
+public class DAOItemTombo implements DAO {
 
     @Override
     public boolean salvar(Object objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       try{
+        Session sessao = HibernateUtil.getSession();
+        Transaction transacao = sessao.beginTransaction();
+        transacao.begin();
+        if (objeto instanceof ItemTombo) {
+            ItemTombo itemTombo = (ItemTombo) objeto;
+            sessao.saveOrUpdate(itemTombo);
+            transacao.commit();
+        }
+        return true;
+       }catch(Exception erro){
+           erro.printStackTrace();
+           return false;
+       }
     }
 
     @Override
@@ -37,5 +53,5 @@ public class DAOItemTombo extends DAO{
     public boolean deletar(Object objeto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

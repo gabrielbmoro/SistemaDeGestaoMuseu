@@ -5,31 +5,29 @@
  */
 package br.com.unipampa.model;
 
-import java.util.Date;
-
 /**
  *
  * @author Gabriel B Moro
  */
 public class ItemConsignado extends ItemTombo{
     
-    private Date dataDoEmprestimo;
-    private Date dataDeDevolucao;
+    private String dataDoEmprestimo;
+    private String dataDeDevolucao;
     private ResponsavelDaFamilia responsavelDaFamilia;
 
-    public Date getDataDoEmprestimo() {
+    public String getDataDoEmprestimo() {
         return dataDoEmprestimo;
     }
 
-    public void setDataDoEmprestimo(Date dataDoEmprestimo) {
+    public void setDataDoEmprestimo(String dataDoEmprestimo) {
         this.dataDoEmprestimo = dataDoEmprestimo;
     }
 
-    public Date getDataDeDevolucao() {
+    public String getDataDeDevolucao() {
         return dataDeDevolucao;
     }
 
-    public void setDataDeDevolucao(Date dataDeDevolucao) {
+    public void setDataDeDevolucao(String dataDeDevolucao) {
         this.dataDeDevolucao = dataDeDevolucao;
     }
 

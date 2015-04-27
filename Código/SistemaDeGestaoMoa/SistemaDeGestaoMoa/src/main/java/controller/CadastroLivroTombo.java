@@ -5,8 +5,9 @@
  */
 package controller;
 
+import br.com.unipampa.model.ItemTombo;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,19 +33,39 @@ public class CadastroLivroTombo extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet CadastroLivroTombo</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet CadastroLivroTombo at " + request.getParameter("codigoAuxiliar")+ "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-            
-            
+        int outroCodigo = Integer.parseInt(request.getParameter("codigoAuxiliar"));
+        String materiaPrima = request.getParameter("materiaPrima");
+        String dataDeUtilizacaoInicial = request.getParameter("dataDeUtilizacaoInicial");
+        String dataDeUtilizacaoFinal = request.getParameter("dataDeUtilizacaoFinal");
+        String tipoDeObjeto = request.getParameter("tipoDeObjeto");
+        String funcaoEspecifica = request.getParameter("funcaoEspecifica");
+        String cultura = request.getParameter("cultura");
+        String estilo = request.getParameter("estilo");
+        String procedencia = request.getParameter("procedencia");
+        String tecnicaManufatura = request.getParameter("tecnicaManufatura");
+        String regiao = request.getParameter("regiao");
+        String sitio = request.getParameter("sitio");
+        String pais = request.getParameter("pais");
+        
+        ItemTombo itemTombo = new ItemTombo();
+        itemTombo.setOutroCodigo(outroCodigo);
+        itemTombo.setMateriaPrima(materiaPrima);
+        itemTombo.setDataUtilizacaoInicial(dataDeUtilizacaoInicial);
+        itemTombo.setDataUtilizacaoFinal(dataDeUtilizacaoFinal);
+        itemTombo.setTipoObjeto(tipoDeObjeto);
+        itemTombo.setFuncaoEspecifica(funcaoEspecifica);
+        itemTombo.setCultura(cultura);
+        itemTombo.setProcedencia(procedencia);
+        itemTombo.setEstilo(estilo);
+        itemTombo.setTecnicaManufatura(tecnicaManufatura);
+        itemTombo.setRegiao(regiao);
+        itemTombo.setSitio(sitio);
+        itemTombo.setPais(pais);
+        
+        if (itemTombo.cadastrarItem(itemTombo)) {
+            response.getWriter().print("Cadastrado com sucesso!");
+        } else {
+            response.getWriter().print("Não cadastrado com sucesso!");
         }
     }
 
