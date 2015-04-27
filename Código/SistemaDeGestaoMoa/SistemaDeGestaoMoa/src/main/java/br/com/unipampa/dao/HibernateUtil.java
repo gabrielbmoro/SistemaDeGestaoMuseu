@@ -1,4 +1,4 @@
-package br.com.unipampa.dao.hibernate;
+package br.com.unipampa.dao;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -22,7 +22,7 @@ public class HibernateUtil {
 
     static {
         Configuration configuration = new Configuration();
-        configuration.configure();
+        configuration.configure("/hibernate.cfg.xml");
         serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
         sessionFactory = configuration.buildSessionFactory(serviceRegistry);
     }

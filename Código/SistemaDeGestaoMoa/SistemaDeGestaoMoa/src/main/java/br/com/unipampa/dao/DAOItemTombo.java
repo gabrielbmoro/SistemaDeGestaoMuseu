@@ -5,7 +5,6 @@
  */
 package br.com.unipampa.dao;
 
-import br.com.unipampa.dao.hibernate.HibernateUtil;
 import br.com.unipampa.model.ItemTombo;
 import java.util.List;
 import org.hibernate.Session;
