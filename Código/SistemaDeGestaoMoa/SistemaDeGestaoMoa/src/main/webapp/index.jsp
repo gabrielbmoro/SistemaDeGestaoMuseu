@@ -70,7 +70,7 @@
                                      <input id="cpfe" type="text" name="cpf" /> <br />
                                      <label for="pswrd">Senha: </label><br />
                                      <input id="pswrd" type="password" name="password"/> <br /><br />
-                                     <input type="submit" class="btn btn-primary btn-large" value="Acessar" />
+                                     <input type="text" href="principal.jsp" class="btn btn-primary btn-large" value="Acessar" />
                                     </form>
                             </div>
                         </div>
