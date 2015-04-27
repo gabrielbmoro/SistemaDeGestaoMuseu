@@ -19,7 +19,7 @@ public class DAOItemTombo implements DAO {
     @Override
     public boolean salvar(Object objeto) {
        try{
-        Session sessao = HibernateUtil.getSession();
+        Session sessao = HibernateUtil.openSession();
         Transaction transacao = sessao.beginTransaction();
         transacao.begin();
         if (objeto instanceof ItemTombo) {

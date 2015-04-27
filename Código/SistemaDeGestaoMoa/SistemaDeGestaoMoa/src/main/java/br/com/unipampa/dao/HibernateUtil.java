@@ -5,8 +5,11 @@ package br.com.unipampa.dao;
  * and open the template in the editor.
  */
 
-import org.hibernate.*;
-import org.hibernate.cfg.*;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
 
 /**
  *
@@ -14,17 +17,18 @@ import org.hibernate.cfg.*;
  */
 public class HibernateUtil {
 
-    private static SessionFactory sessionFactory;
+  private static final SessionFactory sessionFactory;
+    private static ServiceRegistry serviceRegistry;
 
-    public static SessionFactory getSessionFactory() throws MappingException {
-        if (sessionFactory == null) {
-            sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
-        }
-        return sessionFactory;
+    static {
+        Configuration configuration = new Configuration();
+        configuration.configure("/hibernate.cfg.xml");
+        serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+        sessionFactory = configuration.buildSessionFactory(serviceRegistry);
     }
 
-    public static Session getSession() {
-        return getSessionFactory().openSession();
+    public static Session openSession() {
+        return sessionFactory.openSession();
     }
 
 }
