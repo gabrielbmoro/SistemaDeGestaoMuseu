@@ -14,7 +14,7 @@ import org.hibernate.Transaction;
  *
  * @author Gabriel B Moro
  */
-public class DAOItemTombo implements DAO {
+public class DAOItemTombo extends DAO {
 
     @Override
     public boolean salvar(Object objeto) {
@@ -34,22 +34,18 @@ public class DAOItemTombo implements DAO {
        }
     }
 
-    @Override
     public boolean alterar(Object objeto, Long ID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
     public List<Object> recuperarRegistros(Object parametro) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
     public Object recuperarPorID(Long ID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
     public boolean deletar(Object objeto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
