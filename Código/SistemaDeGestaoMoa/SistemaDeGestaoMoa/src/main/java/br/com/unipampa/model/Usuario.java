@@ -1,18 +1,27 @@
 package br.com.unipampa.model;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class Usuario {
+@Table (name = "Pessoa")
+public class Usuario implements Serializable {
 
     @Id
     private int cpf;
+    @Column
     private String login;
+    @Column
     private String senha;
+    @Column
     private String nome;
+    @Column
     private Date dataNAsc;
+    @Column
     private String endereco;
 
     public boolean realizarLogin() {

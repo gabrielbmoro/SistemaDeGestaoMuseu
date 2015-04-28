@@ -15,15 +15,15 @@ import javax.persistence.Entity;
 @Entity
 public class Funcionario extends Usuario{
     
-   public ArrayList<Item> recuperarAcervo(){
+   public ArrayList<ItemTombo> recuperarAcervo(){
        return null;
    }
    
-   public boolean cadastrarItem(Item item){
+   public boolean cadastrarItem(ItemTombo item){
        return false;
    }
    
-   public boolean alterarItem(Long id, Item item){
+   public boolean alterarItem(Long id, ItemTombo item){
        return false;
    }
    
