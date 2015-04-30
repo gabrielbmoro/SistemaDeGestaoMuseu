@@ -20,11 +20,11 @@ public class DAOItemTombo extends DAO {
     public boolean salvar(Object objeto) {
        try{
         Session sessao = HibernateUtil.openSession();
-        Transaction transacao = sessao.beginTransaction();
-        transacao.begin();
+        
         if (objeto instanceof ItemTombo) {
             ItemTombo itemTombo = (ItemTombo) objeto;
             sessao.saveOrUpdate(itemTombo);
+            Transaction transacao = sessao.beginTransaction();
             transacao.commit();
         }
         return true;
