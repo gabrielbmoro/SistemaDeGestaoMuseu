@@ -2,6 +2,7 @@ package br.com.unipampa.model;
 
 import br.com.unipampa.dao.DAOItemTombo;
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -35,7 +36,9 @@ public class ItemTombo {
             return false;
         }
     }
-
+    
+    public void registrarEnvioDeTrabalho(ItemTombo itemTombo){
+    }
     public boolean alterarItem() {
         return false;
     }
@@ -48,6 +51,19 @@ public class ItemTombo {
         return null;
     }
 
+    public ArrayList<ItemTombo> buscarTodos() {
+       ArrayList<ItemTombo> listaDeRetorno = new ArrayList<>();
+       
+        DAOItemTombo daoItemTombo = new DAOItemTombo();
+       List<Object> dados = daoItemTombo.recuperarRegistros();
+       for(Object objetoTemp: dados){
+           if(objetoTemp instanceof ItemTombo){
+               listaDeRetorno.add((ItemTombo) objetoTemp);
+           }
+       }
+        return listaDeRetorno;
+    }
+    
     public Long getID() {
         return ID;
     }

@@ -3,11 +3,15 @@ G:\RepositorioDeTrabalho\SistemaDeGestaoMOA\Código\SistemaDeGestaoMoa\SistemaDeG
 G:\RepositorioDeTrabalho\SistemaDeGestaoMOA\Código\SistemaDeGestaoMoa\SistemaDeGestaoMoa\src\main\java\br\com\unipampa\dao\DAOUsuario.java
 G:\RepositorioDeTrabalho\SistemaDeGestaoMOA\Código\SistemaDeGestaoMoa\SistemaDeGestaoMoa\src\main\java\br\com\unipampa\dao\HibernateUtil.java
 G:\RepositorioDeTrabalho\SistemaDeGestaoMOA\Código\SistemaDeGestaoMoa\SistemaDeGestaoMoa\src\main\java\br\com\unipampa\model\ItemConsignado.java
+G:\RepositorioDeTrabalho\SistemaDeGestaoMOA\Código\SistemaDeGestaoMoa\SistemaDeGestaoMoa\src\main\java\br\com\unipampa\controller\TrataUploadDeImagem.java
 G:\RepositorioDeTrabalho\SistemaDeGestaoMOA\Código\SistemaDeGestaoMoa\SistemaDeGestaoMoa\src\main\java\br\com\unipampa\model\LivroDaBiblioteca.java
 G:\RepositorioDeTrabalho\SistemaDeGestaoMOA\Código\SistemaDeGestaoMoa\SistemaDeGestaoMoa\src\main\java\br\com\unipampa\model\Usuario.java
+G:\RepositorioDeTrabalho\SistemaDeGestaoMOA\Código\SistemaDeGestaoMoa\SistemaDeGestaoMoa\src\main\java\br\com\unipampa\controller\DefinicaoDeSessionArquivo.java
 G:\RepositorioDeTrabalho\SistemaDeGestaoMOA\Código\SistemaDeGestaoMoa\SistemaDeGestaoMoa\src\main\java\br\com\unipampa\dao\DAOItemTombo.java
+G:\RepositorioDeTrabalho\SistemaDeGestaoMOA\Código\SistemaDeGestaoMoa\SistemaDeGestaoMoa\src\main\java\br\com\unipampa\servico\UploadDeArquivo.java
+G:\RepositorioDeTrabalho\SistemaDeGestaoMOA\Código\SistemaDeGestaoMoa\SistemaDeGestaoMoa\src\main\java\br\com\unipampa\controller\RestauraItens.java
 G:\RepositorioDeTrabalho\SistemaDeGestaoMOA\Código\SistemaDeGestaoMoa\SistemaDeGestaoMoa\src\main\java\br\com\unipampa\model\Funcionario.java
+G:\RepositorioDeTrabalho\SistemaDeGestaoMOA\Código\SistemaDeGestaoMoa\SistemaDeGestaoMoa\src\main\java\br\com\unipampa\controller\CadastroLivroTombo.java
 G:\RepositorioDeTrabalho\SistemaDeGestaoMOA\Código\SistemaDeGestaoMoa\SistemaDeGestaoMoa\src\main\java\br\com\unipampa\model\Diretor.java
 G:\RepositorioDeTrabalho\SistemaDeGestaoMOA\Código\SistemaDeGestaoMoa\SistemaDeGestaoMoa\src\main\java\br\com\unipampa\model\ItemTombo.java
 G:\RepositorioDeTrabalho\SistemaDeGestaoMOA\Código\SistemaDeGestaoMoa\SistemaDeGestaoMoa\src\main\java\br\com\unipampa\dao\DAO.java
-G:\RepositorioDeTrabalho\SistemaDeGestaoMOA\Código\SistemaDeGestaoMoa\SistemaDeGestaoMoa\src\main\java\controller\CadastroLivroTombo.java
