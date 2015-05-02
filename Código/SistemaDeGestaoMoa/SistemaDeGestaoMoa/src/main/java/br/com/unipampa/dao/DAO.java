@@ -60,7 +60,8 @@ public abstract class DAO {
         try {
             tx = session.getTransaction();
             tx.begin();
-            session.merge(obj);
+           // session.merge(obj);
+            session.saveOrUpdate(obj);
             salvou = true;
             tx.commit();
         } catch (HibernateException e) {
