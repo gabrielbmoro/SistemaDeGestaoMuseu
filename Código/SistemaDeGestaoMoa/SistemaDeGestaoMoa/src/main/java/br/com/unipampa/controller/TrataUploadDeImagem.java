@@ -28,7 +28,7 @@ public class TrataUploadDeImagem extends HttpServlet {
     private boolean isMultipart;
     private String filePath;
     private int maxFileSize = 5 * 1024;
-    private int maxMemSize = 4 * 1024;
+    private int maxMemSize = 2 * 1024;
     private File file;
     
     /**

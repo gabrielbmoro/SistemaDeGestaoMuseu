@@ -40,13 +40,6 @@ public class DAOItemTombo extends DAO {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public List<Object> recuperarRegistros(Object parametro) {
-        Query query = null;
-        query = HibernateUtil.openSession().createQuery("from ItemTombo");
-        List<Object> itensDoMuseu = query.list();
-        return itensDoMuseu;
-    }
-
     public Object recuperarPorID(Long ID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -57,6 +50,14 @@ public class DAOItemTombo extends DAO {
 
     @Override
     public List<Object> recuperarRegistros() {
+        Query query = null;
+        query = HibernateUtil.openSession().createQuery("from ItemTombo");
+        List<Object> itensDoMuseu = query.list();
+        return itensDoMuseu;
+    }
+
+    @Override
+    public List<Object> recuperarRegistros(Object parametro) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
