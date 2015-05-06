@@ -31,4 +31,12 @@ public class DAOUsuario extends DAO {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+<<<<<<< HEAD
+=======
+    @Override
+    public List<Object> recuperarRegistros() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+>>>>>>> feature/livroTombo_cadastro
 }

@@ -14,6 +14,7 @@ import org.hibernate.criterion.Restrictions;
  *
  * @author Neto
  */
+<<<<<<< HEAD
 public abstract class DAO {
 
     private Transaction tx = null;
@@ -176,4 +177,14 @@ public abstract class DAO {
 //    public abstract List<Object> recuperarRegistros(Object parametro);
 //    public abstract Object recuperarPorID(Long ID);
 //    public abstract boolean deletar(Object objeto);
+=======
+public interface DAO {
+        
+    public abstract boolean salvar(Object objeto);
+    public abstract boolean alterar(Object objeto, Long ID);
+    public abstract List<Object> recuperarRegistros(Object parametro);
+    public abstract List<Object> recuperarRegistros();
+    public abstract Object recuperarPorID(Long ID);
+    public abstract boolean deletar(Object objeto);
+>>>>>>> feature/livroTombo_cadastro
 }
