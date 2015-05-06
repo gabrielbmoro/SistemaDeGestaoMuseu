@@ -5,6 +5,7 @@
  */
 package br.com.unipampa.controller;
 
+import br.com.unipampa.model.ItemTombo;
 import br.com.unipampa.servico.UploadDeArquivo;
 import java.io.File;
 import java.io.IOException;
@@ -30,7 +31,7 @@ public class TrataUploadDeImagem extends HttpServlet {
     private int maxFileSize = 5 * 1024;
     private int maxMemSize = 2 * 1024;
     private File file;
-    
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -43,40 +44,54 @@ public class TrataUploadDeImagem extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       
+
         Object idDoObjeto = request.getSession().getAttribute("idDaFoto");
-        if(idDoObjeto!=null){
+        if (idDoObjeto != null) {
             String idDeObjeto = String.valueOf(idDoObjeto);
 //            request.getSession().setAttribute("idDaFoto",null);
-      isMultipart = ServletFileUpload.isMultipartContent(request);
+            isMultipart = ServletFileUpload.isMultipartContent(request);
 //        response.setContentType("text/html");
-        if (isMultipart) {
-            ServletFileUpload upload = new ServletFileUpload();
-            try {
-                FileItemIterator iterador = upload.getItemIterator(request);
-                while (iterador.hasNext()) {
-                    FileItemStream item = iterador.next();
-                    String path = getServletContext().getRealPath("/");
-                    if (item.getName().contains(".jpeg") == true || item.getName().contains(".jpg")) {
-                        if (UploadDeArquivo.processarArquivo(path, item, idDeObjeto+".jpg")) {
-//                            request.getSession().setAttribute("envioArquivo", true);
-//                            itemTombo.registrarEnvioDeTrabalho(itemTombo);
-                        } else {
-//                            request.getSession().setAttribute("envioArquivo", false);
-                        }
-                    } else {
-//                        request.getSession().setAttribute("envioArquivo", false);
-                    }
-                }
-            } catch (FileUploadException erroDeArquivo) {
+            if (isMultipart) {
+                ServletFileUpload upload = new ServletFileUpload();
+                try {
+                    FileItemIterator iterador = upload.getItemIterator(request);
+                    while (iterador.hasNext()) {
+                        FileItemStream item = iterador.next();
+                        String path = getServletContext().getRealPath("/");
+                        if (item.getName().contains(".jpeg") == true || item.getName().contains(".jpg")) {
+                            if (UploadDeArquivo.processarArquivo(path, item, idDeObjeto + ".jpg")) {
+                                ItemTombo itemTombo = new ItemTombo();
+                                try {
+                                    Long ID = Long.parseLong(idDeObjeto);
+                                    if (ID != null) {
+                                        boolean resp = itemTombo.alterarItem(ID, true);
+                                        if (resp) {
+                                            response.getWriter().print("Sucesso!");
+                                        } else {
+                                            response.getWriter().print("Não foi possível realizar!");
+                                        }
+                                    }
+                                } catch (Exception erro) {
 
-            }
-        } else {
+                                }
+                            } else {
+//                            request.getSession().setAttribute("envioArquivo", false);
+                            }
+                        } else {
+//                        request.getSession().setAttribute("envioArquivo", false);
+                        }
+                    }
+                } catch (FileUploadException erroDeArquivo) {
+
+                }
+            } else {
 //            request.getSession().setAttribute("envioArquivo", false);
+            }
         }
     }
-    }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+
     /**
      * Handles the HTTP <code>GET</code> method.
      *

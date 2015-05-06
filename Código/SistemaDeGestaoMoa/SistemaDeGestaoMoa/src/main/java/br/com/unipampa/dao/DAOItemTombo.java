@@ -5,7 +5,6 @@
  */
 package br.com.unipampa.dao;
 
-import br.com.unipampa.model.Funcionario;
 import br.com.unipampa.model.ItemTombo;
 import java.util.List;
 import org.hibernate.Query;
@@ -41,7 +40,8 @@ public class DAOItemTombo extends DAO {
     }
 
     public Object recuperarPorID(Long ID) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Query query = HibernateUtil.openSession().createQuery("from ItemTombo where ID= :id");
+        return query.setParameter("id", ID).uniqueResult();
     }
 
     public boolean deletar(Object objeto) {
