@@ -73,7 +73,7 @@ public class CadastroLivroTombo extends HttpServlet {
         itemTombo.setRegiao(regiao);
         itemTombo.setSitio(sitio);
         itemTombo.setPais(pais);
-        
+        itemTombo.setImagemEnviada(false);
         if (itemTombo.cadastrarItem(itemTombo)) {
             response.getWriter().print("Cadastrado com sucesso!");
         } else {

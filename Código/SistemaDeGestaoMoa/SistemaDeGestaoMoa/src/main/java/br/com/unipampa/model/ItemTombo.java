@@ -27,6 +27,7 @@ public class ItemTombo {
     private String regiao;
     private String sitio;
     private String pais;
+    private boolean imagemEnviada;
 
     public boolean cadastrarItem(ItemTombo item) {
         try {
@@ -36,9 +37,10 @@ public class ItemTombo {
             return false;
         }
     }
-    
-    public void registrarEnvioDeTrabalho(ItemTombo itemTombo){
+
+    public void registrarEnvioDeTrabalho(ItemTombo itemTombo) {
     }
+
     public boolean alterarItem() {
         return false;
     }
@@ -52,18 +54,18 @@ public class ItemTombo {
     }
 
     public ArrayList<ItemTombo> buscarTodos() {
-       ArrayList<ItemTombo> listaDeRetorno = new ArrayList<>();
-       
+        ArrayList<ItemTombo> listaDeRetorno = new ArrayList<>();
+
         DAOItemTombo daoItemTombo = new DAOItemTombo();
-       List<Object> dados = daoItemTombo.recuperarRegistros();
-       for(Object objetoTemp: dados){
-           if(objetoTemp instanceof ItemTombo){
-               listaDeRetorno.add((ItemTombo) objetoTemp);
-           }
-       }
+        List<Object> dados = daoItemTombo.recuperarRegistros();
+        for (Object objetoTemp : dados) {
+            if (objetoTemp instanceof ItemTombo) {
+                listaDeRetorno.add((ItemTombo) objetoTemp);
+            }
+        }
         return listaDeRetorno;
     }
-    
+
     public Long getID() {
         return ID;
     }
@@ -182,6 +184,14 @@ public class ItemTombo {
 
     public void setPais(String pais) {
         this.pais = pais;
+    }
+
+    public boolean isImagemEnviada() {
+        return imagemEnviada;
+    }
+
+    public void setImagemEnviada(boolean imagemEnviada) {
+        this.imagemEnviada = imagemEnviada;
     }
 
 }
