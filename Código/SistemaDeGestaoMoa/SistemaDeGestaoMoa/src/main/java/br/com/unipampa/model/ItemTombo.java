@@ -52,6 +52,34 @@ public class ItemTombo {
     public ArrayList<ItemTombo> buscarItem(Long id) {
         return null;
     }
+    
+    public ItemTombo buscarItem(ItemTombo itemTomboSemId){
+        ArrayList<ItemTombo> itensTombo = this.buscarTodos();
+        if(itensTombo!=null && !itensTombo.isEmpty()){
+            for(ItemTombo itemTomboTemp : itensTombo){
+                if(itemTomboTemp.getOutroCodigo()==itemTomboSemId.getOutroCodigo()
+                        && itemTomboTemp.getMateriaPrima().equalsIgnoreCase(itemTomboSemId.getMateriaPrima())
+                        && itemTomboTemp.getDataUtilizacaoInicial().equalsIgnoreCase(itemTomboSemId.getDataUtilizacaoInicial())
+                        && itemTomboTemp.getDataUtilizacaoFinal().equalsIgnoreCase(itemTomboSemId.getDataUtilizacaoFinal())
+                        && itemTomboTemp.getTipoObjeto().equalsIgnoreCase(itemTomboSemId.getTipoObjeto())
+                        && itemTomboTemp.getFuncaoEspecifica().equalsIgnoreCase(itemTomboSemId.getFuncaoEspecifica())
+                        && itemTomboTemp.getCultura().equalsIgnoreCase(itemTomboSemId.getCultura())
+                        && itemTomboTemp.getEstilo().equalsIgnoreCase(itemTomboSemId.getEstilo())
+                        && itemTomboTemp.getGrupoLinguistico().equalsIgnoreCase(itemTomboSemId.getGrupoLinguistico())
+                        && itemTomboTemp.getTecnicaManufatura().equalsIgnoreCase(itemTomboSemId.getTecnicaManufatura())
+                        && itemTomboTemp.getProcedencia().equalsIgnoreCase(itemTomboSemId.getProcedencia())
+                        && itemTomboTemp.getSitio().equalsIgnoreCase(itemTomboSemId.getSitio())
+                        && itemTomboTemp.getRegiao().equalsIgnoreCase(itemTomboSemId.getRegiao())
+                        && itemTomboTemp.getPais().equalsIgnoreCase(itemTomboSemId.getPais())
+                   ){
+                    return itemTomboSemId;
+                }
+            }
+        }else{
+      return null;
+        }
+        return null;
+    }
 
     public ArrayList<ItemTombo> buscarTodos() {
         ArrayList<ItemTombo> listaDeRetorno = new ArrayList<>();

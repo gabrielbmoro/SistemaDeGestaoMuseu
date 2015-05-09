@@ -44,6 +44,8 @@ public class CadastroLivroTombo extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+ItemTombo itemTemp=null;
+
         if(request.getParameter("codigoAuxiliar")!=null){
         int outroCodigo = Integer.parseInt(request.getParameter("codigoAuxiliar"));
         String materiaPrima = request.getParameter("materiaPrima");
@@ -54,6 +56,7 @@ public class CadastroLivroTombo extends HttpServlet {
         String cultura = request.getParameter("cultura");
         String estilo = request.getParameter("estilo");
         String procedencia = request.getParameter("procedencia");
+        String grupoLinguistico = request.getParameter("grupoLinguistico");
         String tecnicaManufatura = request.getParameter("tecnicaManufatura");
         String regiao = request.getParameter("regiao");
         String sitio = request.getParameter("sitio");
@@ -73,35 +76,14 @@ public class CadastroLivroTombo extends HttpServlet {
         itemTombo.setRegiao(regiao);
         itemTombo.setSitio(sitio);
         itemTombo.setPais(pais);
+        itemTombo.setGrupoLinguistico(grupoLinguistico);
         itemTombo.setImagemEnviada(false);
         if (itemTombo.cadastrarItem(itemTombo)) {
-            response.getWriter().print("Cadastrado com sucesso!");
-        } else {
-            response.getWriter().print("Não cadastrado com sucesso!");
+            itemTemp = itemTombo.buscarItem(itemTombo);
         }
-         isMultipart = ServletFileUpload.isMultipartContent(request);
-//        response.setContentType("text/html");
-        if (isMultipart) {
-            ServletFileUpload upload = new ServletFileUpload();
-            try {
-                FileItemIterator iterador = upload.getItemIterator(request);
-                while (iterador.hasNext()) {
-                    FileItemStream item = iterador.next();
-                    String path = getServletContext().getRealPath("/");
-                    if (item.getName().contains(".jpeg") == true || item.getName().contains(".jpg")) {
-                        if (UploadDeArquivo.processarArquivo(path, item, itemTombo.getOutroCodigo()+".jpg")) {
-        
-                        }
-                    }
-                }
-                
-          } catch (FileUploadException erroDeArquivo) {
-
-            }
-                         
-                 
-       
-        }}
+     }
+        request.getSession().setAttribute("itemRecemCadastrado", itemTemp);
+        response.sendRedirect("./cadastroDeItemLivroTombo2etapa.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
