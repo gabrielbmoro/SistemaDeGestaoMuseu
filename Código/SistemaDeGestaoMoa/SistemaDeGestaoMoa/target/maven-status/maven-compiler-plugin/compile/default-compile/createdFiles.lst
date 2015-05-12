@@ -1,3 +1,4 @@
+br/com/unipampa/dao/DAOItemConsignado.class
 br/com/unipampa/model/ResponsavelDaFamilia.class
 br/com/unipampa/controller/CadastroLivroTombo.class
 br/com/unipampa/dao/HibernateUtil.class

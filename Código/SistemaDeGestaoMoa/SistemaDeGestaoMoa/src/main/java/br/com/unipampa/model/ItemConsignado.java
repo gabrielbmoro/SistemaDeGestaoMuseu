@@ -5,15 +5,40 @@
  */
 package br.com.unipampa.model;
 
+import br.com.unipampa.dao.DAOItemConsignado;
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author Gabriel B Moro
  */
-public class ItemConsignado extends ItemTombo{
-    
+@Entity
+public class ItemConsignado extends ItemTombo {
+
+    @Id
+    @GeneratedValue
+    private Long ID;
     private String dataDoEmprestimo;
     private String dataDeDevolucao;
     private String responsavelDaFamilia;
+
+    @Override
+    public boolean cadastrarItem(ItemTombo item) {
+        if (item instanceof ItemConsignado) {
+            try {
+                DAOItemConsignado dAOItemConsignado = new DAOItemConsignado();
+                return dAOItemConsignado.salvar(item);
+            } catch (Exception erro) {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 
     public String getDataDoEmprestimo() {
         return dataDoEmprestimo;
@@ -38,6 +63,5 @@ public class ItemConsignado extends ItemTombo{
     public void setResponsavelDaFamilia(String responsavelDaFamilia) {
         this.responsavelDaFamilia = responsavelDaFamilia;
     }
-    
-    
+
 }

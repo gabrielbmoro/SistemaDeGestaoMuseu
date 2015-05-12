@@ -5,29 +5,33 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 @Entity
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public class ItemTombo {
 
     @Id
     @GeneratedValue
     private Long ID;
-    private int outroCodigo;
-    private String materiaPrima;
-    private String dataUtilizacaoInicial;
-    private String dataUtilizacaoFinal;
-    private String tipoObjeto;
-    private String funcaoEspecifica;
-    private String cultura;
-    private String estilo;
-    private String grupoLinguistico;
-    private String tecnicaManufatura;
-    private String procedencia;
-    private String regiao;
-    private String sitio;
-    private String pais;
-    private boolean imagemEnviada;
+    protected int outroCodigo;
+    protected String materiaPrima;
+    protected String dataUtilizacaoInicial;
+    protected String dataUtilizacaoFinal;
+    protected String tipoObjeto;
+    protected String funcaoEspecifica;
+    protected String cultura;
+    protected String estilo;
+    protected String grupoLinguistico;
+    protected String tecnicaManufatura;
+    protected String procedencia;
+    protected String regiao;
+    protected String sitio;
+    protected String pais;
+    protected boolean imagemEnviada;
 
     public boolean cadastrarItem(ItemTombo item) {
         try {

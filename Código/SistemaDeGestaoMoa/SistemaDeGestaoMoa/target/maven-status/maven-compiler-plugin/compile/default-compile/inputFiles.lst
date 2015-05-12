@@ -7,6 +7,7 @@
 /home/gabrielbmoro/Documentos/RepositorioDeTrabalho/SistemaDeGestaoMOA/Código/SistemaDeGestaoMoa/SistemaDeGestaoMoa/src/main/java/br/com/unipampa/model/Relatorio.java
 /home/gabrielbmoro/Documentos/RepositorioDeTrabalho/SistemaDeGestaoMOA/Código/SistemaDeGestaoMoa/SistemaDeGestaoMoa/src/main/java/br/com/unipampa/servico/UploadDeArquivo.java
 /home/gabrielbmoro/Documentos/RepositorioDeTrabalho/SistemaDeGestaoMOA/Código/SistemaDeGestaoMoa/SistemaDeGestaoMoa/src/main/java/br/com/unipampa/controller/RestauraItens.java
+/home/gabrielbmoro/Documentos/RepositorioDeTrabalho/SistemaDeGestaoMOA/Código/SistemaDeGestaoMoa/SistemaDeGestaoMoa/src/main/java/br/com/unipampa/dao/DAOItemConsignado.java
 /home/gabrielbmoro/Documentos/RepositorioDeTrabalho/SistemaDeGestaoMOA/Código/SistemaDeGestaoMoa/SistemaDeGestaoMoa/src/main/java/br/com/unipampa/model/Funcionario.java
 /home/gabrielbmoro/Documentos/RepositorioDeTrabalho/SistemaDeGestaoMOA/Código/SistemaDeGestaoMoa/SistemaDeGestaoMoa/src/main/java/br/com/unipampa/controller/DefinicaoDeSessionArquivo.java
 /home/gabrielbmoro/Documentos/RepositorioDeTrabalho/SistemaDeGestaoMOA/Código/SistemaDeGestaoMoa/SistemaDeGestaoMoa/src/main/java/br/com/unipampa/dao/DAO.java
