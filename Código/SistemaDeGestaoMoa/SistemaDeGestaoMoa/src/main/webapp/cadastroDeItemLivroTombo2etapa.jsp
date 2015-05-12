@@ -199,7 +199,6 @@
                             <!--<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>-->
                             <!-- Button to trigger modal -->
 
-
                         </div>  
 
                     </div>
