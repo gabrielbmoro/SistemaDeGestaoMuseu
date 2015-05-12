@@ -13,7 +13,7 @@ public class ItemConsignado extends ItemTombo{
     
     private String dataDoEmprestimo;
     private String dataDeDevolucao;
-    private ResponsavelDaFamilia responsavelDaFamilia;
+    private String responsavelDaFamilia;
 
     public String getDataDoEmprestimo() {
         return dataDoEmprestimo;
@@ -31,11 +31,11 @@ public class ItemConsignado extends ItemTombo{
         this.dataDeDevolucao = dataDeDevolucao;
     }
 
-    public ResponsavelDaFamilia getResponsavelDaFamilia() {
+    public String getResponsavelDaFamilia() {
         return responsavelDaFamilia;
     }
 
-    public void setResponsavelDaFamilia(ResponsavelDaFamilia responsavelDaFamilia) {
+    public void setResponsavelDaFamilia(String responsavelDaFamilia) {
         this.responsavelDaFamilia = responsavelDaFamilia;
     }
     
