@@ -30,7 +30,7 @@ public class TrataUploadDeImagem extends HttpServlet {
     private int maxFileSize = 5 * 1024;
     private int maxMemSize = 4 * 1024;
     private File file;
-    
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -43,40 +43,41 @@ public class TrataUploadDeImagem extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       
+
         Object idDoObjeto = request.getSession().getAttribute("idDaFoto");
-        if(idDoObjeto!=null){
+        if (idDoObjeto != null) {
             String idDeObjeto = String.valueOf(idDoObjeto);
 //            request.getSession().setAttribute("idDaFoto",null);
-      isMultipart = ServletFileUpload.isMultipartContent(request);
+            isMultipart = ServletFileUpload.isMultipartContent(request);
 //        response.setContentType("text/html");
-        if (isMultipart) {
-            ServletFileUpload upload = new ServletFileUpload();
-            try {
-                FileItemIterator iterador = upload.getItemIterator(request);
-                while (iterador.hasNext()) {
-                    FileItemStream item = iterador.next();
-                    String path = getServletContext().getRealPath("/");
-                    if (item.getName().contains(".jpeg") == true || item.getName().contains(".jpg")) {
-                        if (UploadDeArquivo.processarArquivo(path, item, idDeObjeto+".jpg")) {
-//                            request.getSession().setAttribute("envioArquivo", true);
-//                            itemTombo.registrarEnvioDeTrabalho(itemTombo);
+            if (isMultipart) {
+                ServletFileUpload upload = new ServletFileUpload();
+                try {
+                    FileItemIterator iterador = upload.getItemIterator(request);
+                    while (iterador.hasNext()) {
+                        FileItemStream item = iterador.next();
+                        String path = getServletContext().getRealPath("/");
+                        if (item.getName().contains(".jpeg") == true || item.getName().contains(".jpg")) {
+                            if (UploadDeArquivo.processarArquivo(path, item, idDeObjeto + ".jpg")) {
+                                request.getSession().setAttribute("envioDeArquivo", true);
+                            } else {
+                                request.getSession().setAttribute("envioDeArquivo", false);
+                            }
                         } else {
-//                            request.getSession().setAttribute("envioArquivo", false);
+                            request.getSession().setAttribute("envioDeArquivo", false);
                         }
-                    } else {
-//                        request.getSession().setAttribute("envioArquivo", false);
                     }
+                    response.sendRedirect("./resultadoUploadDeImagem.jsp");
+                } catch (FileUploadException erroDeArquivo) {
+
                 }
-            } catch (FileUploadException erroDeArquivo) {
 
             }
-        } else {
-//            request.getSession().setAttribute("envioArquivo", false);
         }
     }
-    }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+
     /**
      * Handles the HTTP <code>GET</code> method.
      *
