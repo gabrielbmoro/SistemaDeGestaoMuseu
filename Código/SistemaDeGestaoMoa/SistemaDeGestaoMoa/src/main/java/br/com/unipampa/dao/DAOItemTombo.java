@@ -27,6 +27,7 @@ public class DAOItemTombo extends DAO {
                 sessao.saveOrUpdate(itemTombo);
                 Transaction transacao = sessao.beginTransaction();
                 transacao.commit();
+                sessao.close();
             }
             return true;
         } catch (Exception erro) {

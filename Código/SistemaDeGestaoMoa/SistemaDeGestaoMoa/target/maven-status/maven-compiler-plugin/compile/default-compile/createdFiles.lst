@@ -5,8 +5,8 @@ br/com/unipampa/dao/HibernateUtil.class
 br/com/unipampa/controller/DefinicaoDeSessionArquivo.class
 br/com/unipampa/model/ItemTombo.class
 br/com/unipampa/servico/UploadDeArquivo.class
-br/com/unipampa/dao/DAOItemTombo.class
 br/com/unipampa/model/Funcionario.class
+br/com/unipampa/dao/DAOItemTombo.class
 br/com/unipampa/controller/TrataUploadDeImagem.class
 br/com/unipampa/model/Diretor.class
 br/com/unipampa/model/Usuario.class

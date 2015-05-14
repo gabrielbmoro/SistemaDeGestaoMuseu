@@ -27,6 +27,7 @@ public class DAOItemConsignado extends DAO{
                 sessao.saveOrUpdate(itemConsignado);
                 Transaction transacao = sessao.beginTransaction();
                 transacao.commit();
+                sessao.clear();
             }
             return true;
         } catch (Exception erro) {

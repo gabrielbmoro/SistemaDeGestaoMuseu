@@ -2,56 +2,35 @@
 package br.com.unipampa.dao;
 
 import br.com.unipampa.model.Usuario;
-import java.util.List;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import java.util.ArrayList;
+
 
 /**
  *
  * @author Neto
  */
-public class DAOUsuario extends DAO {
+public class DAOUsuario extends DAO2 {
     
-    @Override
-    public boolean salvar(Object objeto) {
-  try {
-      if(objeto instanceof Usuario){
-            Session sessao = HibernateUtil.openSession();
-                sessao.saveOrUpdate((Usuario) objeto);
-                Transaction transacao = sessao.beginTransaction();
-                transacao.commit();
-            return true;
-        } 
-  }catch (Exception erro) {
-            erro.printStackTrace();
-            return false;
-        }
-  return false;
+    //<editor-fold defaultstate="collapsed" desc="Salvar">
+    public boolean salvar(Usuario usuario) {
+        return super.salvar(usuario);
+    }
+//</editor-fold>
+
+    //<editor-fold defaultstate="collapsed" desc="Buscar">
+    public ArrayList<Usuario> buscar() {
+        return (ArrayList<Usuario>) buscarObjetos(Usuario.class);
     }
 
-    @Override
-    public boolean alterar(Object objeto, Long ID) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Usuario buscar(int codigo) {
+        return (Usuario) buscarObjeto(codigo, Usuario.class);
     }
+//</editor-fold>
 
-    @Override
-    public List<Object> recuperarRegistros(Object parametro) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //<editor-fold defaultstate="collapsed" desc="Deletar">
+    public boolean deletar(int codigo) {
+        return excluir(codigo, Usuario.class);
     }
-
-    @Override
-    public List<Object> recuperarRegistros() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Object recuperarPorID(Long ID) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean deletar(Object objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//</editor-fold>
 
 }

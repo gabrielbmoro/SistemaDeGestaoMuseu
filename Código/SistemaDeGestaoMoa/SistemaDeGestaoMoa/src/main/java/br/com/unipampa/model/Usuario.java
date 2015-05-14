@@ -1,7 +1,6 @@
 package br.com.unipampa.model;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,15 +12,15 @@ public class Usuario implements Serializable {
 
     @Id
     private int cpf;
-    @Column
+    
     private String login;
-    @Column
+    
     private String senha;
-    @Column
+    
     private String nome;
-    @Column
-    private Date dataNAsc;
-    @Column
+    
+    private String dataNAsc;
+    
     private String endereco;
 
     public boolean realizarLogin() {
@@ -52,11 +51,11 @@ public class Usuario implements Serializable {
         this.nome = nome;
     }
 
-    public Date getDataNAsc() {
+    public String getDataNAsc() {
         return dataNAsc;
     }
 
-    public void setDataNAsc(Date dataNAsc) {
+    public void setDataNAsc(String dataNAsc) {
         this.dataNAsc = dataNAsc;
     }
 
