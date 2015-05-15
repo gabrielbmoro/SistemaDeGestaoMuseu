@@ -1,22 +1,24 @@
 package br.com.unipampa.model;
 
 import br.com.unipampa.dao.DAOItemTombo;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
 @Entity
-@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
-public class ItemTombo {
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@Table(name="ItemDeAcervo") 
+public class ItemTombo implements Serializable {
 
     @Id
     @GeneratedValue
-    private Long ID;
+    protected Long ID;
     protected int outroCodigo;
     protected String materiaPrima;
     protected String dataUtilizacaoInicial;
@@ -225,5 +227,5 @@ public class ItemTombo {
     public void setImagemEnviada(boolean imagemEnviada) {
         this.imagemEnviada = imagemEnviada;
     }
-
+    
 }
