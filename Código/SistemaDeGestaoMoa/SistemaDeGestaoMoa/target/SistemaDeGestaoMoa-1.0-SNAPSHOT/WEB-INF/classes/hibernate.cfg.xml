@@ -10,5 +10,6 @@
         <mapping class="br.com.unipampa.model.ItemTombo"/>
         <mapping class="br.com.unipampa.model.Usuario"/>
         <mapping class="br.com.unipampa.model.ItemConsignado"/>
+        <mapping class="br.com.unipampa.model.LivroDaBiblioteca"/>
     </session-factory>
 </hibernate-configuration>
