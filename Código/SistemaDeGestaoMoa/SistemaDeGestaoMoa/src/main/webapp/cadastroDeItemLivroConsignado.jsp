@@ -23,6 +23,8 @@ and open the template in the editor.
         <meta name="description" content="">
         <meta name="author" content="">
         <script type="text/javascript" src="javascript.js"></script>
+     
+   
 
         <title>SisMoa</title>
 
@@ -37,6 +39,8 @@ and open the template in the editor.
 
         <!-- Custom Fonts -->
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+         
+       
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -84,7 +88,7 @@ and open the template in the editor.
                     <div class="row">
                         <div class="col-lg-12">
                             <h1 class="page-header">
-                                Sistema de Gestão - Museu Oswaldo Aranha
+                                Formulário de Cadastro Livro Consignado 
                             </h1>
 
                         </div>
@@ -99,7 +103,7 @@ and open the template in the editor.
                                 <div class="form-group">
                                     <div class="col-lg-10">
                                         <div >
-                                            <h3> Formulário de Cadastro</h3>
+                                          
                                             <label>Codigo Auxiliar:</label> <br />
                                             
                                             <input class="form-control" type="text" name="codigoAuxiliar" required="required" pattern="[0-9]+$"/><br />
@@ -119,7 +123,7 @@ and open the template in the editor.
 
 
                                             <label>Data de Utilização Inicial: </label><br />
-                                            <input class="form-control"  name="dataDeUtilizacaoInicial" type="date" required="required" maxlength="10"  pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="2012-01-01" max="2017-02-18" /><br />
+                                            <input id="dataDeUtilizacaoInicial" class="form-control"  name="dataDeUtilizacaoInicial" type="date" required="required" maxlength="10"  pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="2012-01-01" max="2017-02-18" /><br />
                                             <label>Data de Utilização Final: </label> <br />
                                             <input class="form-control" type="date" name="dataDeUtilizacaoFinal" type="date" required="required" maxlength="10"  pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="2012-01-01" max="2017-02-18" /><br />
                                             <label>Tipo de Objeto: </label><br />

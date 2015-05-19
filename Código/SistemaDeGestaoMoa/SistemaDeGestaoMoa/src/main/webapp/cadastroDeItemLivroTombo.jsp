@@ -31,6 +31,7 @@
 
         <!-- Custom Fonts -->
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -75,7 +76,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1 class="page-header">
-                                Sistema de Gestão - Museu Oswaldo Aranha
+                               Formulário de Cadastro De Livro Tombo 
                             </h1>
 
                         </div>
@@ -91,7 +92,7 @@
                                 <div class="form-group">
                                     <div class="col-lg-10">
                                         <div >
-                                            <h3> Formulário de Cadastro</h3>
+                                            
                                             <label>Codigo Auxiliar:</label> <br />
                                             <input class="form-control" type="text" name="codigoAuxiliar"/><br />
 
@@ -100,9 +101,9 @@
 
 
                                             <label>Data de Utilização Inicial: </label><br />
-                                            <input class="form-control" type="text" name="dataDeUtilizacaoInicial" /><br />
+                                            <input id="dataDeUtilizacaoInicial" class="form-control"  name="dataDeUtilizacaoInicial" type="date" required="required" maxlength="10"  pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="2012-01-01" max="2017-02-18" /><br />
                                             <label>Data de Utilização Final: </label> <br />
-                                            <input class="form-control" type="text" name="dataDeUtilizacaoFinal" /><br />
+                                            <input class="form-control" type="date" name="dataDeUtilizacaoFinal" type="date" required="required" maxlength="10"  pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="2012-01-01" max="2017-02-18" /><br />
                                             <label>Tipo de Objeto: </label><br />
                                             <input class="form-control" type="text" name="tipoDeObjeto" /><br />
                                             <label>Função Específica: </label><br />
