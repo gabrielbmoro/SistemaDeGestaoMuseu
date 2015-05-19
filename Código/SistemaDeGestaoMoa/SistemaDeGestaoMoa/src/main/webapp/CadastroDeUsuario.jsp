@@ -1,7 +1,6 @@
-<<<<<<< HEAD:Código/SistemaDeGestaoMoa/SistemaDeGestaoMoa/src/main/webapp/CadastroDeUsuario.jsp
 <%-- 
     Document   : CadastroDeUsuario
-    Created on : 19/05/2015, 16:31:26
+    Created on : 19/05/2015, 18:23:05
     Author     : neto
 --%>
 
@@ -40,7 +39,6 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-=======
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -52,11 +50,11 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
->>>>>>> origin/develop:Código/SistemaDeGestaoMoa/SistemaDeGestaoMoa/src/main/webapp/CadastroUsuario.html
+
     </head>
 
     <body>
-<<<<<<< HEAD:Código/SistemaDeGestaoMoa/SistemaDeGestaoMoa/src/main/webapp/CadastroDeUsuario.jsp
+
         <div id="wrapper">
 
             <!-- Navigation -->
@@ -189,21 +187,9 @@ and open the template in the editor.
         <!-- Placed at the end of the document so the pages load faster -->
         <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
         <script src="assets/js/jquery.js"></script>
-=======
-        <form method="POST" action="./CadastroDeUsuario" >
-            Nome: <input type="text" name="nome"><br /><br />
-            CPF: <input type="text" name="cpf"><br /><br />
-            Endereço: <input type="text" name="endereco"><br /><br />
-            Login: <input type="text" name="login"><br /><br />
-            Senha: <input type="text" name="senha"><br /><br />
-            <input type="submit" name="Salvar"> <br /><br />
-            
-        </form>
->>>>>>> origin/develop:Código/SistemaDeGestaoMoa/SistemaDeGestaoMoa/src/main/webapp/CadastroUsuario.html
+
+        
     </body>
 
 
 </html>
-
-
-
