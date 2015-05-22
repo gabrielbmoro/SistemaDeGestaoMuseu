@@ -94,4 +94,29 @@ public class GeradorDeHTML {
         print.println("</ul>");
         print.println("</div>");
     }
+    
+    public static void gerarMenuUsuario(JspWriter print) throws IOException {
+        print.println("<div class=\"collapse navbar-collapse navbar-ex1-collapse\">");
+        print.println("<ul class=\"nav navbar-nav side-nav\">");
+        print.println("<li>");
+        print.println("<h4> <font color=\"white\">Usuários </font></h4> ");
+        print.println("</li>");
+        print.println("<li>");
+        print.println("<a href=\"javascript:;\" data-toggle=\"collapse\" data-target=\"#demo3\"><i class=\"fa fa-fw fa-arrows-v\"></i> Gerenciar <i class=\"fa fa-fw fa-caret-down\"></i></a>");
+        print.println("<ul id=\"demo3\" class=\"collapse\">");
+        print.println("<li>");
+        print.println("<a href=\"CadastroDeUsuario.jsp\"> Novo Usuário </a>");
+        print.println("<li>");
+        print.println("<a href=\"paginaInicial.jsp\"> Visualizar Usuários </a>");
+        print.println("</ul>");
+        print.println("</li>");
+        print.println("<li>");
+        print.println("</li>");
+        print.println("</ul>");
+        print.println("</li>");
+        print.println("</ul>");
+        print.println("</div>");
+    }
+    
+    
 }
