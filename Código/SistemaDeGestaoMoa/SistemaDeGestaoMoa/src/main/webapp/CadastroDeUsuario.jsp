@@ -75,7 +75,7 @@ and open the template in the editor.
                 %>
                 <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                 <%
-                    GeradorDeHTML.gerarMenuPadrao(out);
+                    GeradorDeHTML.gerarMenuUsuario(out);
                 %>
 
                 <!-- /.navbar-collapse -->
