@@ -5,6 +5,7 @@
  */
 package br.com.unipampa.controller;
 
+import br.com.unipampa.model.ItemConsignado;
 import br.com.unipampa.model.ItemTombo;
 import java.util.List;
 
@@ -14,9 +15,18 @@ import java.util.List;
  */
 public class RestauraItens {
     private ItemTombo itemTombo;
+    private ItemConsignado itemConsig;
     
     public List<ItemTombo> restauraItensDoAcervo(){
         this.itemTombo = new ItemTombo();
       return this.itemTombo.buscarTodos();
     }
+    
+     public List<ItemConsignado> restauraItemConsignado() {
+         itemConsig = new ItemConsignado();
+        List<ItemConsignado> listaItemCon = itemConsig.buscarTodu();
+        return listaItemCon;
+    }
+
+    
 }

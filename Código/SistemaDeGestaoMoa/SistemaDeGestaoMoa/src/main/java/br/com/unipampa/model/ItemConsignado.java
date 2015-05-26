@@ -7,8 +7,9 @@ package br.com.unipampa.model;
 
 import br.com.unipampa.dao.DAOItemConsignado;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 /**
  *
@@ -57,4 +58,28 @@ public class ItemConsignado extends ItemTombo implements Serializable {
     public void setResponsavelDaFamilia(String responsavelDaFamilia) {
         this.responsavelDaFamilia = responsavelDaFamilia;
     }
+
+   
+ public List<ItemConsignado> buscarTodu(){
+         
+     List<ItemConsignado> listaDeRetorno = new ArrayList<>();
+
+        DAOItemConsignado daoItemConsignado = new DAOItemConsignado();
+        List<Object> dados = daoItemConsignado.recuperarRegistros();
+        for (Object objetoTemp : dados) {
+            if (objetoTemp instanceof ItemConsignado) {
+                listaDeRetorno.add((ItemConsignado) objetoTemp);
+            }
+        }
+        return listaDeRetorno;
+    }
+
+
+
+
+
+
+
+
+
 }

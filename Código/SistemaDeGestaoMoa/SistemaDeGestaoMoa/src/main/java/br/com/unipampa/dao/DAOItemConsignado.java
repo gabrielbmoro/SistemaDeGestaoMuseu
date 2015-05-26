@@ -39,6 +39,7 @@ public class DAOItemConsignado extends DAO{
     public boolean alterar(Object objeto, Long ID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
     @Override
     public List<Object> recuperarRegistros() {
         Query query = null;
