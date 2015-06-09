@@ -88,6 +88,15 @@
                     </div>
                     <!-- /.row -->
 
+                    <script language="Javascript">
+                        function confirmacao(id) {
+                            var resposta = confirm("Deseja remover esse registro?");
+
+                            if (resposta == true) {
+                                alert("OLÀ!");
+                            }
+                        }
+                    </script>
 
                     <!-- /.row -->
                     <div class="row">
@@ -101,7 +110,7 @@
                                 if (listaDeItem != null) {
 
                                     out.println("<tr>");
-                                    out.println("<td> <b>"+ "Cultura" + "</b> </td>");
+                                    out.println("<td> <b>" + "Cultura" + "</b> </td>");
                                     out.println("<td><b>" + "Estilo" + "</b></td>");
                                     out.println("<td> <b>" + "País" + "</b> </td>");
                                     out.println("<td> <b>" + "Função específica" + "</b> </td>");
@@ -114,25 +123,24 @@
                                     for (ItemTombo itemTemp : listaDeItem) {
 
                                         out.println("<tr>");
-                                        out.println("<td>" + itemTemp.getCultura()+ "</td>");
+                                        out.println("<td>" + itemTemp.getCultura() + "</td>");
                                         out.println("<td>" + itemTemp.getEstilo() + "</td>");
                                         out.println("<td>" + itemTemp.getFuncaoEspecifica() + "</td>");
                                         out.println("<td>" + itemTemp.getGrupoLinguistico() + "</td>");
                                         out.println("<td>" + itemTemp.getProcedencia() + "</td>");
                                         out.println("<td>" + itemTemp.getRegiao() + "</td>");
                                         out.println("<td>" + itemTemp.getPais() + "</td>");
-                                        out.println("<td>"+
-                                                "<div class=\"btn-group\">"+
-                                                " <h:form>"+
-                                               " <button class=\"alert-danger\" >"+"<span class=\"fa fa-close\"></span>" + "</button>"
-                                               + "<button class=\"alert-info\" style=\"margin-left:30px;float:top\" ><span class=\"fa fa-pencil\"></span></button>"+
-                                               " </h:form>"+
-                                                "<div>"+
-                                                "</td>");
-                                     
+                                        out.println("<td>"
+                                                + "<div class=\"btn-group\">"
+                                                + " <h:form>"
+                                                + " <button class=\"alert-danger\" onclick=\"confirmacao('1')\" >" + "<span class=\"fa fa-close\"></span>" + "</button>"
+                                                + "<button class=\"alert-info\" style=\"margin-left:30px;float:top\" ><span class=\"fa fa-pencil\"></span></button>"
+                                                + " </h:form>"
+                                                + "<div>"
+                                                + "</td>");
+
                                         out.println("</tr>");
 
-                                     
                                     }
                                 }
                                 out.println("</table>");
@@ -141,9 +149,9 @@
                         </div>  
 
                     </div>
-     
-                         
-                            
+
+
+
                     <!-- /.row -->
 
                     <!-- /.row -->
@@ -157,14 +165,18 @@
             <!-- /#page-wrapper -->
 
         </div>
-    </body>
 
-    <script type="text/javascript" charset="utf8" src="DataTables-1.10.6/media/js/jquery.js"></script>
-    <script type="text/javascript" charset="utf8" src="DataTables-1.10.6/media/js/jquery.dataTables.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#livro').DataTable();
-        });
+
+
     </script>
+</body>
+
+<script type="text/javascript" charset="utf8" src="DataTables-1.10.6/media/js/jquery.js"></script>
+<script type="text/javascript" charset="utf8" src="DataTables-1.10.6/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+                        $(document).ready(function () {
+                            $('#livro').DataTable();
+                        });
+</script>
 
 </html>
