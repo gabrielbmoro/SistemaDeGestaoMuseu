@@ -23,8 +23,8 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
  *
  * @author Gabriel B Moro
  */
-@WebServlet(name = "CadastroLivroTombo", urlPatterns = {"/CadastroLivroTombo"})
-public class CadastroLivroTombo extends HttpServlet {
+@WebServlet(name = "AlterarLivroTombo", urlPatterns = {"/AlterarLivroTombo"})
+public class AlterarLivroTombo extends HttpServlet {
 
      private boolean isMultipart;
     private String filePath;
@@ -63,6 +63,8 @@ ItemTombo itemTemp=null;
         String pais = request.getParameter("pais");
 
          ItemTombo itemTombo = new ItemTombo();
+         
+         
         itemTombo.setOutroCodigo(outroCodigo);
         itemTombo.setMateriaPrima(materiaPrima);
         itemTombo.setDataUtilizacaoInicial(dataDeUtilizacaoInicial);
@@ -78,9 +80,9 @@ ItemTombo itemTemp=null;
         itemTombo.setPais(pais);
         itemTombo.setGrupoLinguistico(grupoLinguistico);
         itemTombo.setImagemEnviada(false);
-        if (itemTombo.cadastrarItem(itemTombo)) {
+        if (itemTombo.alterarItem(itemTombo)) {
             itemTemp = itemTombo.buscarItem(itemTombo);
-        }
+        } 
      }
         request.getSession().setAttribute("itemRecemCadastrado", itemTemp);
         response.sendRedirect("./cadastroDeItemLivroTombo2etapa.jsp");

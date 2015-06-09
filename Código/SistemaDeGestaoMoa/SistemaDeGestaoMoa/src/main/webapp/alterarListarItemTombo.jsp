@@ -101,6 +101,7 @@
                                 if (listaDeItem != null) {
 
                                     out.println("<tr>");
+                                    out.println("<td> <b>"+ "ID" + "</b> </td>");
                                     out.println("<td> <b>"+ "Cultura" + "</b> </td>");
                                     out.println("<td><b>" + "Estilo" + "</b></td>");
                                     out.println("<td> <b>" + "País" + "</b> </td>");
@@ -114,6 +115,7 @@
                                     for (ItemTombo itemTemp : listaDeItem) {
 
                                         out.println("<tr>");
+                                        out.println("<td>" + itemTemp.getID()+ "</td>");
                                         out.println("<td>" + itemTemp.getCultura()+ "</td>");
                                         out.println("<td>" + itemTemp.getEstilo() + "</td>");
                                         out.println("<td>" + itemTemp.getFuncaoEspecifica() + "</td>");
@@ -122,12 +124,9 @@
                                         out.println("<td>" + itemTemp.getRegiao() + "</td>");
                                         out.println("<td>" + itemTemp.getPais() + "</td>");
                                         out.println("<td>"+
-                                                "<div class=\"btn-group\">"+
-                                                " <h:form>"+
-                                               " <button class=\"alert-danger\" >"+"<span class=\"fa fa-close\"></span>" + "</button>"
-                                               + "<button class=\"alert-info\" style=\"margin-left:30px;float:top\" ><span class=\"fa fa-pencil\"></span></button>"+
-                                               " </h:form>"+
-                                                "<div>"+
+                                                "<a href=\"\"> <button class=\"alert-danger\" ><span class=\"fa fa-close\"></span></button> </a>"  
+                                               + "<a href=\"alterarItemLivroTombo.jsp\"> <button class=\"alert-info\" ><span class=\"fa fa-pencil\"></span></button> </a>"+
+                                               
                                                 "</td>");
                                      
                                         out.println("</tr>");
@@ -136,13 +135,17 @@
                                     }
                                 }
                                 out.println("</table>");
+                                
+                                
                             %>
 
                         </div>  
 
                     </div>
      
-                         
+                    <script language="javascript">
+ 
+ 
                             
                     <!-- /.row -->
 

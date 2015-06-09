@@ -47,8 +47,14 @@ public class ItemTombo implements Serializable {
     public void registrarEnvioDeTrabalho(ItemTombo itemTombo) {
     }
 
-    public boolean alterarItem() {
-        return false;
+    public boolean alterarItem(ItemTombo item) {
+        try {
+            DAOItemTombo daoItemTombo = new DAOItemTombo();
+            return daoItemTombo.alterar(item);
+        } catch (Exception erro) {
+            return false;
+        }
+         
     }
 
     public boolean excluirItem() {

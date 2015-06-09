@@ -80,7 +80,7 @@ ItemTombo itemTemp=null;
         itemTombo.setImagemEnviada(false);
         if (itemTombo.cadastrarItem(itemTombo)) {
             itemTemp = itemTombo.buscarItem(itemTombo);
-        }
+        } 
      }
         request.getSession().setAttribute("itemRecemCadastrado", itemTemp);
         response.sendRedirect("./cadastroDeItemLivroTombo2etapa.jsp");

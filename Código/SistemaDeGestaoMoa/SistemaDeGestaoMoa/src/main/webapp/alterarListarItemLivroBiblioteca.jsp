@@ -4,13 +4,13 @@
     Author     : neto
 --%>
 
-<%@page import="br.com.unipampa.model.ItemTombo"%>
+<%@page import="br.com.unipampa.model.LivroDaBiblioteca"%>
 <%@page import="br.com.unipampa.view.GeradorDeHTML"%>
 <%@page import="br.com.unipampa.controller.RestauraItens"%>
 <%@page import="java.util.List"%>
-<%@page import="br.com.unipampa.model.ItemConsignado"%>
+<%@page import="br.com.unipampa.model.LivroDaBiblioteca"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="br.com.unipampa.dao.DAOItemTombo"%>
+<%@page import="br.com.unipampa.dao.DAOLivroDaBiblioteca"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,7 +81,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1 class="page-header">
-                                Listar Item Tombo
+                                Listar Livros da Biblioteca
                             </h1>
 
                         </div>
@@ -96,46 +96,50 @@
                             <%
                                 RestauraItens restauradorDeItens = new RestauraItens();
 
-                                List<ItemTombo> listaDeItem = restauradorDeItens.restauraItensDoAcervo();
+                                List<LivroDaBiblioteca> listaDeItem = restauradorDeItens.restauraLivroDABiblioteca();
                                 out.println("<table border= \"1\"  id= \"livro\" class=\"table table-striped table-advance table-hover display\" >");
                                 if (listaDeItem != null) {
 
                                     out.println("<tr>");
-                                    out.println("<td> <b>"+ "Cultura" + "</b> </td>");
-                                    out.println("<td><b>" + "Estilo" + "</b></td>");
-                                    out.println("<td> <b>" + "País" + "</b> </td>");
-                                    out.println("<td> <b>" + "Função específica" + "</b> </td>");
-                                    out.println("<td> <b>" + "Grupo Linguístico" + "</b> </td>");
-                                    out.println("<td> <b>" + "Procedência" + "</b> </td>");
+                                    out.println("<td> <b>"+ "ID" + "</b> </td>");
+                                    out.println("<td> <b>"+ "Codigo de Registro" + "</b> </td>");
+                                    out.println("<td><b>" + "Nome do Livro" + "</b></td>");
+                                    out.println("<td> <b>" + "Nome do Autor" + "</b> </td>");
+                                    out.println("<td> <b>" + "Ano de Lancamento" + "</b> </td>");
+                                    out.println("<td> <b>" + "Grafica" + "</b> </td>");
                                     out.println("<td> <b>" + "Região" + "</b> </td>");
-                                    out.println("<td> <b>" + "Ações " + "</b> </td>");
+                                    out.println("<td> <b>" + "Pais" + "</b> </td>");
+                                    out.println("<td> <b>" + "Opcao " + "</b> </td>");
+                                    
                                     out.println("</tr>");
 
-                                    for (ItemTombo itemTemp : listaDeItem) {
+                                    for (LivroDaBiblioteca itemTemp : listaDeItem) {
 
                                         out.println("<tr>");
-                                        out.println("<td>" + itemTemp.getCultura()+ "</td>");
-                                        out.println("<td>" + itemTemp.getEstilo() + "</td>");
-                                        out.println("<td>" + itemTemp.getFuncaoEspecifica() + "</td>");
-                                        out.println("<td>" + itemTemp.getGrupoLinguistico() + "</td>");
-                                        out.println("<td>" + itemTemp.getProcedencia() + "</td>");
+                                        out.println("<td>" + itemTemp.getID()+ "</td>");
+                                        out.println("<td>" + itemTemp.getOutroCodigo()+ "</td>");
+                                        out.println("<td>" + itemTemp.getNomeLivro() + "</td>");
+                                        out.println("<td>" + itemTemp.getNomeAutor() + "</td>");
+                                        out.println("<td>" + itemTemp.getAnoLacamento() + "</td>");
+                                        out.println("<td>" + itemTemp.getGrafica() + "</td>");
                                         out.println("<td>" + itemTemp.getRegiao() + "</td>");
                                         out.println("<td>" + itemTemp.getPais() + "</td>");
                                         out.println("<td>"+
                                                 "<div class=\"btn-group\">"+
                                                 " <h:form>"+
-                                               " <button class=\"alert-danger\" >"+"<span class=\"fa fa-close\"></span>" + "</button>"
-                                               + "<button class=\"alert-info\" style=\"margin-left:30px;float:top\" ><span class=\"fa fa-pencil\"></span></button>"+
-                                               " </h:form>"+
+                                               " <button class=\"alert-danger\" >"+"<span class=\"fa fa-close\"></span>" 
+                                                +" <button class=\"alert-info\" style=\"margin-right:40px;float:top\" >"+"<span class=\"fa fa-pencil\"></span>" +"</button>"
+                                               +" </h:form>"+
                                                 "<div>"+
                                                 "</td>");
-                                     
-                                        out.println("</tr>");
+                                     out.println("</tr>");
+                                        
 
                                      
                                     }
                                 }
                                 out.println("</table>");
+                                
                             %>
 
                         </div>  

@@ -68,6 +68,9 @@ public class GeradorDeHTML {
         print.println("<a href=\"cadastroDeItemLivroTombo.jsp\"> Novo Item </a>");
         print.println("</li>");
         print.println("<li>");
+        print.println("<a href=\"alterarListarItemTombo.jsp\"> Listar Itens </a>");
+        print.println("</li>");
+        print.println("<li>");
         print.println("<a href=\"registrarImagemParaItemDeAcervo.jsp\"> Registrar Imagem para Item de Acervo </a>");
         print.println("/li>");
         print.println("</ul>");
@@ -79,6 +82,9 @@ public class GeradorDeHTML {
         print.println("<a href=\"cadastroDeItemLivroConsignado.jsp\"> Novo Item </a>");
         print.println("</li>");
         print.println("<li>");
+        print.println("<a href=\"alterarListarLivroConsignado.jsp\"> Listar Itens Consignados </a>");
+        print.println("</li>");
+        print.println("<li>");
         print.println("<a href=\"registrarImagemParaItemDeAcervo.jsp\">Registrar Imagem para Item de Acervo</a>");
         print.println(" </li>");
         print.println(" </ul>");
@@ -88,6 +94,9 @@ public class GeradorDeHTML {
         print.println("<ul id=\"demo2\" class=\"collapse\">");
         print.println("<li>");
         print.println(" <a href=\"cadastroDeLivroDaBiblioteca.jsp\">Novo Item</a>");
+        print.println("</li>");
+        print.println("<li>");
+        print.println(" <a href=\"alterarListarItemLivroBiblioteca.jsp\">Listar Livros</a>");
         print.println("</li>");
         print.println("</ul>");
         print.println("</li>");
