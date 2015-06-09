@@ -7,6 +7,7 @@ package br.com.unipampa.dao;
 
 import br.com.unipampa.model.ItemTombo;
 import java.awt.ItemSelectable;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -20,22 +21,22 @@ import static org.junit.Assert.*;
  * @author Neto
  */
 public class DAOItemTomboTest {
-    
+
     public DAOItemTomboTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -45,28 +46,32 @@ public class DAOItemTomboTest {
      */
     @org.junit.Test
     public void testSalvar() {
-       ItemTombo item = new ItemTombo();
-       item.setCultura("Nenhuma");
-       item.setDataUtilizacaoFinal("9999");
-       item.setDataUtilizacaoInicial("9999");
-       item.setEstilo("dajosijs");
-       item.setFuncaoEspecifica("dasjoijdsa");
-       item.setGrupoLinguistico("dasjoaisod");
-       item.setImagemEnviada(true);
-       item.setMateriaPrima("daskijougdyfsaug");
-       item.setOutroCodigo(123879);
-       item.setPais("dsakoijasdj");
-       item.setProcedencia("oidjsao");
-       item.setRegiao("jdiaus");
-       item.setSitio("kdsaipsa");
-       item.setTecnicaManufatura("daskoijads");
-       item.setTipoObjeto("kdsasdaok");
-       DAOItemTombo dao = new DAOItemTombo();
-       dao.salvar(item);
-       assertEquals("Nenhuma", dao.recuperarRegistros().get(dao.recuperarRegistros().size()-1));
-       
+        ItemTombo item = new ItemTombo();
+        item.setCultura("afro");
+        item.setDataUtilizacaoFinal("10/1/14");
+        item.setDataUtilizacaoInicial("10/12/12");
+        item.setEstilo("nada");
+        item.setFuncaoEspecifica("nada");
+        item.setGrupoLinguistico("nada");
+        item.setImagemEnviada(true);
+        item.setMateriaPrima("nada");
+        item.setOutroCodigo(123879);
+        item.setPais("nada");
+        item.setProcedencia("nada");
+        item.setRegiao("nada");
+        item.setSitio("nada");
+        item.setTecnicaManufatura("nada");
+        item.setTipoObjeto("nada");
+        DAOItemTombo dao = new DAOItemTombo();
+        dao.salvar(item);
+        ItemTombo expResult = item;
+        ArrayList<Object> itemTombo = (ArrayList<Object>) dao.recuperarRegistros();
+        int codigo = itemTombo.size() - 1;
+        ItemTombo result = new ItemTombo();
+        result = (ItemTombo) itemTombo.get(codigo);
+        assertEquals(expResult.getCultura(), result.getCultura());
     }
-
+        
 //    /**
 //     * Test of alterar method, of class DAOItemTombo.
 //     */
@@ -111,21 +116,21 @@ public class DAOItemTomboTest {
 //        fail("The test case is a prototype.");
 //    }
 //
-//    /**
-//     * Test of deletar method, of class DAOItemTombo.
-//     */
-//    @org.junit.Test
-//    public void testDeletar() {
-//        System.out.println("deletar");
-//        Object objeto = null;
-//        DAOItemTombo instance = new DAOItemTombo();
-//        boolean expResult = false;
-//        boolean result = instance.deletar(objeto);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-//
+    /**
+     * Test of deletar method, of class DAOItemTombo.
+     */
+    @org.junit.Test
+    public void testDeletar() {
+        System.out.println("deletar");
+        DAOItemTombo instance = new DAOItemTombo();
+        ArrayList<Object> itemTombo = (ArrayList<Object>) instance.recuperarRegistros();
+        int codigo = itemTombo.size() - 1;
+        boolean result = instance.deletar(itemTombo.get(codigo));
+        System.out.println("wowow" + itemTombo.get(codigo) );        
+        assertTrue(result);
+       
+    }
+
 //    /**
 //     * Test of recuperarRegistros method, of class DAOItemTombo.
 //     */
