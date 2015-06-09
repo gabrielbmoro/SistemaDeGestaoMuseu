@@ -36,7 +36,7 @@ public class DAOItemConsignado extends DAO{
         }
     }
 
-    public boolean alterar(Object objeto, Long ID) {
+    public boolean alterar(Object objeto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

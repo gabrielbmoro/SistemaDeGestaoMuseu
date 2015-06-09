@@ -36,8 +36,22 @@ public class DAOItemTombo extends DAO {
         }
     }
 
-    public boolean alterar(Object objeto, Long ID) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean alterar(Object objeto) {
+       try {
+            Session sessao = HibernateUtil.openSession();
+
+            if (objeto instanceof ItemTombo) {
+                ItemTombo itemTombo = (ItemTombo) objeto;
+                sessao.update(itemTombo);
+                Transaction transacao = sessao.beginTransaction();
+                transacao.commit();
+                sessao.close();
+            }
+            return true;
+        } catch (Exception erro) {
+            erro.printStackTrace();
+            return false;
+        }
     }
     @Override
     public List<Object> recuperarRegistros() {
