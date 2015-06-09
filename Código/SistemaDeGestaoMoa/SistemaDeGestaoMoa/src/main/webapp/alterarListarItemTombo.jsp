@@ -88,15 +88,28 @@
                     </div>
                     <!-- /.row -->
 
+
                     <script language="Javascript">
-                        function confirmacao(id) {
+
+                        function confirmacao() {
                             var resposta = confirm("Deseja remover esse registro?");
 
                             if (resposta == true) {
-                                alert("OLÀ!");
+
+                            }
+
+                        }
+                    </script>
+
+                    <script>
+                        function excluir(id)
+                        {
+                            if (window.confirm("Confirma a ação?")) {
+                                location.href="/SistemaDeGestaoMoa/ExclusaoItemTombo"
                             }
                         }
                     </script>
+
 
                     <!-- /.row -->
                     <div class="row">
@@ -131,9 +144,9 @@
                                         out.println("<td>" + itemTemp.getRegiao() + "</td>");
                                         out.println("<td>" + itemTemp.getPais() + "</td>");
                                         out.println("<td>"
-                                                + "<div class=\"btn-group\">"
+                                                + "<div class=\"btn-group\" >"
                                                 + " <h:form>"
-                                                + " <button class=\"alert-danger\" onclick=\"confirmacao('1')\" >" + "<span class=\"fa fa-close\"></span>" + "</button>"
+                                                + " <button class=\"alert-danger\" onclick=\"excluir()\"  >" + "<span class=\"fa fa-close\"></span>" + "</button>"
                                                 + "<button class=\"alert-info\" style=\"margin-left:30px;float:top\" ><span class=\"fa fa-pencil\"></span></button>"
                                                 + " </h:form>"
                                                 + "<div>"
@@ -168,15 +181,14 @@
 
 
 
-    </script>
-</body>
+    </body>
 
-<script type="text/javascript" charset="utf8" src="DataTables-1.10.6/media/js/jquery.js"></script>
-<script type="text/javascript" charset="utf8" src="DataTables-1.10.6/media/js/jquery.dataTables.js"></script>
-<script type="text/javascript">
+    <script type="text/javascript" charset="utf8" src="DataTables-1.10.6/media/js/jquery.js"></script>
+    <script type="text/javascript" charset="utf8" src="DataTables-1.10.6/media/js/jquery.dataTables.js"></script>
+    <script type="text/javascript">
                         $(document).ready(function () {
                             $('#livro').DataTable();
                         });
-</script>
+    </script>
 
 </html>

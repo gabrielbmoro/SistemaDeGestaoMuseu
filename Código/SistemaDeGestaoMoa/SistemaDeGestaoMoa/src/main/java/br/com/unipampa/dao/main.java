@@ -13,14 +13,7 @@ import br.com.unipampa.model.Usuario;
  */
 public class main {
     public static void main(String[] args) {
-        Usuario usuario = new Usuario();
-        usuario.setCpf(6172316);
-        usuario.setDataNAsc(null);
-        usuario.setEndereco("kdjosaihadsoj");
-        usuario.setLogin("126289");
-        usuario.setNome("NEtoo");
-        usuario.setSenha("jidhsausjd");
-        DAOUsuario dao = new DAOUsuario();
-        dao.salvar(usuario);
+       DAOItemTombo dao = new DAOItemTombo();
+       dao.deletar(dao.recuperarRegistros().get(0));
     }
 }

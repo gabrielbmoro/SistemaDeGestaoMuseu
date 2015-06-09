@@ -57,8 +57,13 @@ public class ItemTombo implements Serializable {
          
     }
 
-    public boolean excluirItem() {
-        return false;
+    public boolean excluirItem(ItemTombo item) {
+         try {
+            DAOItemTombo daoItemTombo = new DAOItemTombo();
+            return daoItemTombo.deletar(item);
+        } catch (Exception erro) {
+            return false;
+        }
     }
 
     public ArrayList<ItemTombo> buscarItem(Long id) {
