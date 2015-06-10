@@ -5,8 +5,7 @@
  */
 package br.com.unipampa.dao;
 
-import br.com.unipampa.model.ItemTombo;
-import java.awt.ItemSelectable;
+import br.com.unipampa.model.LivroDaBiblioteca;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
@@ -18,68 +17,52 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Neto
+ * @author Wolle
  */
-public class DAOItemTomboTest {
-
-    public DAOItemTomboTest() {
+public class DAOLivroDaBibliotecaTest {
+    
+    public DAOLivroDaBibliotecaTest() {
     }
-
+    
     @BeforeClass
     public static void setUpClass() {
     }
-
+    
     @AfterClass
     public static void tearDownClass() {
     }
-
+    
     @Before
     public void setUp() {
     }
-
+    
     @After
     public void tearDown() {
     }
 
     /**
-     * Test of salvar method, of class DAOItemTombo.
+     * Test of salvar method, of class DAOLivroDaBiblioteca.
      */
-    @org.junit.Test
-    public void testSalvar() {
-        ItemTombo item = new ItemTombo();
-        item.setCultura("afro");
-        item.setDataUtilizacaoFinal("10/1/1");
-        item.setDataUtilizacaoInicial("10/12/12");
-        item.setEstilo("nada");
-        item.setFuncaoEspecifica("nada");
-        item.setGrupoLinguistico("nada");
-        item.setImagemEnviada(true);
-        item.setMateriaPrima("nada");
-        item.setOutroCodigo(123879);
-        item.setPais("nada");
-        item.setProcedencia("nada");
-        item.setRegiao("nada");
-        item.setSitio("nada");
-        item.setTecnicaManufatura("nada");
-        item.setTipoObjeto("nada");
-        DAOItemTombo dao = new DAOItemTombo();
-        dao.salvar(item);
-        ItemTombo expResult = item;
-        ArrayList<Object> itemTombo = (ArrayList<Object>) dao.recuperarRegistros();
-        int codigo = itemTombo.size() - 1;
-        ItemTombo result = new ItemTombo();
-        result = (ItemTombo) itemTombo.get(codigo);
-        assertEquals(expResult.getCultura(), result.getCultura());
-    }
-        
+//    @Test
+//    public void testSalvar() {
+//        System.out.println("salvar");
+//        Object objeto = null;
+//        DAOLivroDaBiblioteca instance = new DAOLivroDaBiblioteca();
+//        boolean expResult = false;
+//        boolean result = instance.salvar(objeto);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+//
 //    /**
-//     * Test of alterar method, of class DAOItemTombo.
+//     * Test of alterar method, of class DAOLivroDaBiblioteca.
 //     */
-//    @org.junit.Test
+//    @Test
 //    public void testAlterar() {
 //        System.out.println("alterar");
 //        Object objeto = null;
-//        DAOItemTombo instance = new DAOItemTombo();
+//        DAOLivroDaBiblioteca instance = new DAOLivroDaBiblioteca();
 //        boolean expResult = false;
 //        boolean result = instance.alterar(objeto);
 //        assertEquals(expResult, result);
@@ -88,12 +71,12 @@ public class DAOItemTomboTest {
 //    }
 //
 //    /**
-//     * Test of recuperarRegistros method, of class DAOItemTombo.
+//     * Test of recuperarRegistros method, of class DAOLivroDaBiblioteca.
 //     */
-//    @org.junit.Test
+//    @Test
 //    public void testRecuperarRegistros_0args() {
 //        System.out.println("recuperarRegistros");
-//        DAOItemTombo instance = new DAOItemTombo();
+//        DAOLivroDaBiblioteca instance = new DAOLivroDaBiblioteca();
 //        List<Object> expResult = null;
 //        List<Object> result = instance.recuperarRegistros();
 //        assertEquals(expResult, result);
@@ -102,47 +85,55 @@ public class DAOItemTomboTest {
 //    }
 //
 //    /**
-//     * Test of recuperarPorID method, of class DAOItemTombo.
+//     * Test of recuperarPorID method, of class DAOLivroDaBiblioteca.
 //     */
-//    @org.junit.Test
+//    @Test
 //    public void testRecuperarPorID() {
 //        System.out.println("recuperarPorID");
 //        Long ID = null;
-//        DAOItemTombo instance = new DAOItemTombo();
+//        DAOLivroDaBiblioteca instance = new DAOLivroDaBiblioteca();
 //        Object expResult = null;
 //        Object result = instance.recuperarPorID(ID);
 //        assertEquals(expResult, result);
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 //    }
-//
+
     /**
-     * Test of deletar method, of class DAOItemTombo.
+     * Test of deletar method, of class DAOLivroDaBiblioteca.
      */
-    @org.junit.Test
+    @Test
     public void testDeletar() {
         System.out.println("deletar");
-        DAOItemTombo instance = new DAOItemTombo();
-        ArrayList<Object> itemTombo = (ArrayList<Object>) instance.recuperarRegistros();
-        int codigo = itemTombo.size() - 1;
-        boolean result = instance.deletar(itemTombo.get(codigo));       
+        LivroDaBiblioteca livro= new LivroDaBiblioteca();
+        livro.setAnoLacamento("1212");
+        livro.setNomeAutor("Kelm Wolleson");
+        livro.setNomeLivro("como comer vc");
+        livro.setPais("Alemanha");
+        livro.setRegiao("Sul");
+        livro.setGrafica("KF");
+        livro.setOutroCodigo(12);
+        DAOLivroDaBiblioteca instance = new DAOLivroDaBiblioteca();
+        instance.salvar(livro);
+         ArrayList<Object> livros = (ArrayList<Object>) instance.recuperarRegistros();
+        int codigo = livros.size() - 1;
+        boolean result = instance.deletar(livros.get(codigo));
         assertTrue(result);
-       
     }
 
-//    /**
-//     * Test of recuperarRegistros method, of class DAOItemTombo.
-//     */
-//    @org.junit.Test
+    /**
+     * Test of recuperarRegistros method, of class DAOLivroDaBiblioteca.
+     */
+//    @Test
 //    public void testRecuperarRegistros_Object() {
 //        System.out.println("recuperarRegistros");
 //        Object parametro = null;
-//        DAOItemTombo instance = new DAOItemTombo();
+//        DAOLivroDaBiblioteca instance = new DAOLivroDaBiblioteca();
 //        List<Object> expResult = null;
 //        List<Object> result = instance.recuperarRegistros(parametro);
 //        assertEquals(expResult, result);
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 //    }
-//    
+    
 }
