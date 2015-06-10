@@ -43,17 +43,28 @@ public class DAOItemConsignadoTest {
     /**
      * Test of salvar method, of class DAOItemConsignado.
      */
-//    @Test
-//    public void testSalvar() {
-//        System.out.println("salvar");
-//        Object objeto = null;
-//        DAOItemConsignado instance = new DAOItemConsignado();
-//        boolean expResult = false;
-//        boolean result = instance.salvar(objeto);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
+    @Test
+    public void testSalvar() {
+        ItemConsignado item = new ItemConsignado();
+        item.setCultura("afro");
+        item.setDataUtilizacaoFinal("10/1/14");
+        item.setDataUtilizacaoInicial("10/12/12");
+        item.setEstilo("nada");
+        item.setFuncaoEspecifica("nada");
+        item.setGrupoLinguistico("nada");
+        item.setImagemEnviada(true);
+        item.setMateriaPrima("nada");
+        item.setOutroCodigo(123879);
+        item.setPais("nada");
+        item.setProcedencia("nada");
+        item.setRegiao("nada");
+        item.setSitio("nada");
+        item.setTecnicaManufatura("nada");
+        item.setTipoObjeto("nada");
+        DAOItemConsignado dao = new DAOItemConsignado();
+        assertTrue(dao.salvar(item));
+        dao.deletar(item);
+    }
 
     /**
      * Test of alterar method, of class DAOItemConsignado.

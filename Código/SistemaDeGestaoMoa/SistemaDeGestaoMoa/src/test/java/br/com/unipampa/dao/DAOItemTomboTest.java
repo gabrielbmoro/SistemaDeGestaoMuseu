@@ -121,7 +121,6 @@ public class DAOItemTomboTest {
      */
     @org.junit.Test
     public void testDeletar() {
-        System.out.println("deletar");
         DAOItemTombo instance = new DAOItemTombo();
         ArrayList<Object> itemTombo = (ArrayList<Object>) instance.recuperarRegistros();
         int codigo = itemTombo.size() - 1;

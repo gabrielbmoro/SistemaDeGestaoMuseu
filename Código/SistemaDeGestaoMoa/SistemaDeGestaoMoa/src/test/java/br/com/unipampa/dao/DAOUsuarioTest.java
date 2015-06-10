@@ -42,17 +42,19 @@ public class DAOUsuarioTest {
     /**
      * Test of salvar method, of class DAOUsuario.
      */
-//    @Test
-//    public void testSalvar() {
-//        System.out.println("salvar");
-//        Usuario usuario = null;
-//        DAOUsuario instance = new DAOUsuario();
-//        boolean expResult = false;
-//        boolean result = instance.salvar(usuario);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
+    @Test
+    public void testSalvar() {
+       Usuario usuario= new Usuario();
+       usuario.setCpf(99999999);
+       usuario.setDataNAsc("1212");
+       usuario.setEndereco("dada");
+       usuario.setLogin("sasas");
+       usuario.setNome("Neto");
+       usuario.setSenha("180");
+       DAOUsuario dao = new DAOUsuario();
+       assertTrue(dao.salvar(usuario));
+       dao.deletar(99999999);
+    }
 
     /**
      * Test of buscar method, of class DAOUsuario.
@@ -88,7 +90,6 @@ public class DAOUsuarioTest {
      */
     @Test
     public void testDeletar() {
-        System.out.println("deletar");
        Usuario usuario= new Usuario();
        usuario.setCpf(12121212);
        usuario.setDataNAsc("1212");

@@ -53,8 +53,21 @@ public class DAOItemConsignado extends DAO{
     }
 
     public boolean deletar(Object objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+      try {
+            Session sessao = HibernateUtil.openSession();
+
+            if (objeto instanceof ItemConsignado) {
+                ItemConsignado itemcons = (ItemConsignado) objeto;
+                sessao.delete(itemcons);
+                Transaction transacao = sessao.beginTransaction();
+                transacao.commit();
+                sessao.close();
+            }
+            return true;
+        } catch (Exception erro) {
+            erro.printStackTrace();
+            return false;
+        }}
 
     @Override
     public List<Object> recuperarRegistros(Object parametro) {

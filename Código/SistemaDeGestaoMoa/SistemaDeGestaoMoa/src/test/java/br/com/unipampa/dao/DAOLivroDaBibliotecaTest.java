@@ -43,17 +43,20 @@ public class DAOLivroDaBibliotecaTest {
     /**
      * Test of salvar method, of class DAOLivroDaBiblioteca.
      */
-//    @Test
-//    public void testSalvar() {
-//        System.out.println("salvar");
-//        Object objeto = null;
-//        DAOLivroDaBiblioteca instance = new DAOLivroDaBiblioteca();
-//        boolean expResult = false;
-//        boolean result = instance.salvar(objeto);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
+    @Test
+    public void testSalvar() {
+        LivroDaBiblioteca livro = new LivroDaBiblioteca();
+        livro.setAnoLacamento("2015");
+        livro.setNomeAutor("Neto");
+        livro.setNomeLivro("Sei La");
+        livro.setPais("Hu3");
+        livro.setRegiao("Sul");
+        livro.setGrafica("N");
+        livro.setOutroCodigo(180);
+        DAOLivroDaBiblioteca dao = new DAOLivroDaBiblioteca();
+        assertTrue(dao.salvar(livro));
+        dao.deletar(livro);
+    }
 //
 //    /**
 //     * Test of alterar method, of class DAOLivroDaBiblioteca.
@@ -101,25 +104,25 @@ public class DAOLivroDaBibliotecaTest {
 
     /**
      * Test of deletar method, of class DAOLivroDaBiblioteca.
-     */
-    @Test
-    public void testDeletar() {
-        System.out.println("deletar");
-        LivroDaBiblioteca livro= new LivroDaBiblioteca();
-        livro.setAnoLacamento("1212");
-        livro.setNomeAutor("Kelm Wolleson");
-        livro.setNomeLivro("como comer vc");
-        livro.setPais("Alemanha");
-        livro.setRegiao("Sul");
-        livro.setGrafica("KF");
-        livro.setOutroCodigo(12);
-        DAOLivroDaBiblioteca instance = new DAOLivroDaBiblioteca();
-        instance.salvar(livro);
-         ArrayList<Object> livros = (ArrayList<Object>) instance.recuperarRegistros();
-        int codigo = livros.size() - 1;
-        boolean result = instance.deletar(livros.get(codigo));
-        assertTrue(result);
-    }
+//     */
+//    @Test
+//    public void testDeletar() {
+//        System.out.println("deletar");
+//        LivroDaBiblioteca livro= new LivroDaBiblioteca();
+//        livro.setAnoLacamento("1212");
+//        livro.setNomeAutor("Kelm Wolleson");
+//        livro.setNomeLivro("como comer vc");
+//        livro.setPais("Alemanha");
+//        livro.setRegiao("Sul");
+//        livro.setGrafica("KF");
+//        livro.setOutroCodigo(12);
+//        DAOLivroDaBiblioteca instance = new DAOLivroDaBiblioteca();
+//        instance.salvar(livro);
+//         ArrayList<Object> livros = (ArrayList<Object>) instance.recuperarRegistros();
+//        int codigo = livros.size() - 1;
+//        boolean result = instance.deletar(livros.get(codigo));
+//        assertTrue(result);
+//    }
 
     /**
      * Test of recuperarRegistros method, of class DAOLivroDaBiblioteca.
