@@ -1,5 +1,5 @@
 <%-- 
-    Document   : cadastroDeItemLivroTombo
+    Document   : alterarDeItemLivroTombo
     Created on : 18/05/2015, 21:31:32
     Author     : gabrielbmoro
 --%>
@@ -87,14 +87,14 @@
                     <!-- /.row -->
                     <div class="row">
                         <div class="col-lg-6">
-                            <!--method="POST" action="./CadastroLivroTombo"-->
-                            <form id="cadastroDeItem" method="POST" action="./CadastroLivroTombo">
+                            <!--method="POST" action="./AlterarLivroTombo"-->
+                            <form id="cadastroDeItem" method="POST" action="./AlterarLivroTombo">
                                 <div class="form-group">
                                     <div class="col-lg-10">
                                         <div >
                                             
                                             <label>Codigo Auxiliar:</label> <br />
-                                            <input class="form-control" type="text" name="codigoAuxiliar"/><br />
+                                            <input class="form-control" type="text" name="codigoAuxiliar" input="codigoAuxiliar"/><br />
 
                                             <label>Materia Prima</label> <br />
                                             <input class="form-control" type="text" name="materiaPrima" /> <br />

@@ -11,6 +11,8 @@
 <%@page import="br.com.unipampa.model.ItemConsignado"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="br.com.unipampa.dao.DAOItemTombo"%>
+<%@page import="br.com.unipampa.controller.AlterarLivroTombo"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +40,7 @@
         <!-- Custom Fonts -->
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-        <script src="script/auxiliadorDeRegistroDeImagem.js" type="text/javascript"></script>
+        <script src="script/javaScriptAlterar.js" type="text/javascript"></script>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -105,10 +107,18 @@
                         function excluir(id)
                         {
                             if (window.confirm("Confirma a ação?")) {
-                                location.href="/SistemaDeGestaoMoa/ExclusaoItemTombo"
+                                location.href = "/SistemaDeGestaoMoa/ExclusaoItemTombo"
                             }
                         }
                     </script>
+                    <script>
+                        function Alterar()
+                        {
+                            auxiliadorAlterar(this);
+                        }
+                    </script>
+
+
 
 
                     <!-- /.row -->
@@ -123,6 +133,9 @@
                                 if (listaDeItem != null) {
 
                                     out.println("<tr>");
+
+                                    out.println("<td> <b>" + "ID" + "</b> </td>");
+
                                     out.println("<td> <b>" + "Cultura" + "</b> </td>");
                                     out.println("<td><b>" + "Estilo" + "</b></td>");
                                     out.println("<td> <b>" + "País" + "</b> </td>");
@@ -136,6 +149,9 @@
                                     for (ItemTombo itemTemp : listaDeItem) {
 
                                         out.println("<tr>");
+
+                                        out.println("<td><input type=\"radio\" name=\"ID\" value=\"" + String.valueOf(itemTemp.getID()) + "\" onclick=\"auxiliadorAlterar(this)\" />" + String.valueOf(itemTemp.getID()) + " </td>");
+
                                         out.println("<td>" + itemTemp.getCultura() + "</td>");
                                         out.println("<td>" + itemTemp.getEstilo() + "</td>");
                                         out.println("<td>" + itemTemp.getFuncaoEspecifica() + "</td>");
@@ -147,7 +163,7 @@
                                                 + "<div class=\"btn-group\" >"
                                                 + " <h:form>"
                                                 + " <button class=\"alert-danger\" onclick=\"excluir()\"  >" + "<span class=\"fa fa-close\"></span>" + "</button>"
-                                                + "<button class=\"alert-info\" style=\"margin-left:30px;float:top\" ><span class=\"fa fa-pencil\"></span></button>"
+                                                + "<button class=\"alert-info\"  onclick=\"Alterar()\"><span class=\"fa fa-pencil\"></span></button>"
                                                 + " </h:form>"
                                                 + "<div>"
                                                 + "</td>");
@@ -157,38 +173,41 @@
                                     }
                                 }
                                 out.println("</table>");
+
                             %>
+
+
+
+
+                            <form id="formularioAlterar" method="POST" action="./AlterarLivroTombo" enctype="multipart/form-data">
+                                <label>Outro Codigo: </label><br />
+                                <input type="text" name="ID" id="idAlterar" disabled /><br />
+
+                            </form>
+
 
                         </div>  
 
-                    </div>
 
 
 
-                    <!-- /.row -->
-
-                    <!-- /.row -->
-
-                    <!-- /.row -->
-
-                </div>
-                <!-- /.container-fluid -->
-
-            </div>
-            <!-- /#page-wrapper -->
-
-        </div>
+                        <script type="text/javascript" charset="utf8" src="DataTables-1.10.6/media/js/jquery.dataTables.js"></script>
+                        <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        $('#livro').DataTable();
+                                    });
+                        </script>
 
 
 
-    </body>
 
-    <script type="text/javascript" charset="utf8" src="DataTables-1.10.6/media/js/jquery.js"></script>
-    <script type="text/javascript" charset="utf8" src="DataTables-1.10.6/media/js/jquery.dataTables.js"></script>
-    <script type="text/javascript">
-                        $(document).ready(function () {
-                            $('#livro').DataTable();
-                        });
-    </script>
+                        <script type="text/javascript" charset="utf8" src="DataTables-1.10.6/media/js/jquery.dataTables.js"></script>
+                        <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        $('#livro').DataTable();
+                                    });
+                        </script>
+                        
+                        < /body>
 
-</html>
+                        </html>

@@ -9,6 +9,7 @@ import br.com.unipampa.model.ItemTombo;
 import br.com.unipampa.servico.UploadDeArquivo;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -44,6 +45,7 @@ public class AlterarLivroTombo extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
 ItemTombo itemTemp=null;
 
         if(request.getParameter("codigoAuxiliar")!=null){
@@ -114,7 +116,8 @@ ItemTombo itemTemp=null;
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       processRequest(request, response);
+          
     }
 
     /**

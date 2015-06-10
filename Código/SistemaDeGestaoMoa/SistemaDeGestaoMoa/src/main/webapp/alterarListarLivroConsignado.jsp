@@ -100,7 +100,7 @@
                                 if (listaDeItem != null) {
 
                                     out.println("<tr>");
-                                    out.println("<td> <b>"+ "Data Do Emprestimo" + "</b> </td>");
+                                    out.println("<td> <b>" + "Data Do Emprestimo" + "</b> </td>");
                                     out.println("<td><b>" + "Data De Devolucao" + "</b></td>");
                                     out.println("<td> <b>" + "Responsavel Da Familia " + "</b> </td>");
                                     out.println("<td> <b>" + "Ações " + "</b> </td>");
@@ -112,18 +112,17 @@
                                         out.println("<td>" + itemTemp.getDataDoEmprestimo() + "</td>");
                                         out.println("<td>" + itemTemp.getDataDeDevolucao() + "</td>");
                                         out.println("<td>" + itemTemp.getResponsavelDaFamilia() + "</td>");
-                                        out.println("<td>"+
-                                                "<div class=\"btn-group\">"+
-                                                " <h:form>"+
-                                               " <button class=\"alert-danger\" >"+"<span class=\"fa fa-close\"></span>" + "</button>"
-                                               + "<button class=\"alert-info\" style=\"margin-left:30px;float:top\" ><span class=\"fa fa-pencil\"></span></button>"+
-                                               " </h:form>"+
-                                                "<div>"+
-                                                "</td>");
-                                     
+                                        out.println("<td>"
+                                                + "<div class=\"btn-group\">"
+                                                + " <h:form>"
+                                                + " <button class=\"alert-danger\" >" + "<span class=\"fa fa-close\"></span>" + "</button>"
+                                                + "<button class=\"alert-info\" style=\"margin-left:15px;float:top\" ><span class=\"fa fa-pencil\"></span></button>"
+                                                + " </h:form>"
+                                                + "<div>"
+                                                + "</td>");
+
                                         out.println("</tr>");
 
-                                     
                                     }
                                 }
                                 out.println("</table>");
@@ -132,9 +131,9 @@
                         </div>  
 
                     </div>
-     
-                         
-                            
+
+
+
                     <!-- /.row -->
 
                     <!-- /.row -->
