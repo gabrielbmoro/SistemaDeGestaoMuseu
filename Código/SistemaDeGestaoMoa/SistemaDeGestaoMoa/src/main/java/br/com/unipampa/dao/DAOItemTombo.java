@@ -31,11 +31,11 @@ public class DAOItemTombo extends DAO {
             }
             return true;
         } catch (Exception erro) {
-            erro.printStackTrace();
             return false;
         }
     }
 
+    @Override
     public boolean alterar(Object objeto) {
        try {
             Session sessao = HibernateUtil.openSession();
@@ -49,7 +49,6 @@ public class DAOItemTombo extends DAO {
             }
             return true;
         } catch (Exception erro) {
-            erro.printStackTrace();
             return false;
         }
     }
@@ -61,10 +60,12 @@ public class DAOItemTombo extends DAO {
         return itensDoMuseu;
     }
 
+    @Override
     public Object recuperarPorID(Long ID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
     public boolean deletar(Object objeto) {
           try {
             Session sessao = HibernateUtil.openSession();

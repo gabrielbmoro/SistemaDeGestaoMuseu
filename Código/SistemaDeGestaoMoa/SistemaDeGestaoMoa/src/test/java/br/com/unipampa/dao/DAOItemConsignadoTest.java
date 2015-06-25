@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package br.com.unipampa.dao;
 
 import br.com.unipampa.model.ItemConsignado;
-import java.util.ArrayList;
-import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,7 +11,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Wolle
+ * @author Wolle // Neto
  */
 public class DAOItemConsignadoTest {
     
@@ -69,17 +63,32 @@ public class DAOItemConsignadoTest {
     /**
      * Test of alterar method, of class DAOItemConsignado.
      */
-//    @Test
-//    public void testAlterar() {
-//        System.out.println("alterar");
-//        Object objeto = null;
-//        DAOItemConsignado instance = new DAOItemConsignado();
-//        boolean expResult = false;
-//        boolean result = instance.alterar(objeto);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
+    @Test
+    public void testAlterar() {
+        ItemConsignado item = new ItemConsignado();
+        item.setCultura("Não sei");
+        item.setDataUtilizacaoFinal("10/1/14");
+        item.setDataUtilizacaoInicial("10/12/12");
+        item.setEstilo("1");
+        item.setFuncaoEspecifica("1");
+        item.setGrupoLinguistico("1");
+        item.setImagemEnviada(true);
+        item.setMateriaPrima("1");
+        item.setOutroCodigo(123879);
+        item.setPais("1");
+        item.setProcedencia("1");
+        item.setRegiao("1");
+        item.setSitio("1");
+        item.setTecnicaManufatura("1");
+        item.setTipoObjeto("1");
+        DAOItemConsignado dao = new DAOItemConsignado();
+        assertTrue(dao.salvar(item));
+        item.setCultura("ATUALIZOU!");
+        item.setFuncaoEspecifica("ATUALIZOU");
+        assertTrue(dao.alterar(item));
+        dao.deletar(item);
+        
+    }
 //
 //    /**
 //     * Test of recuperarRegistros method, of class DAOItemConsignado.

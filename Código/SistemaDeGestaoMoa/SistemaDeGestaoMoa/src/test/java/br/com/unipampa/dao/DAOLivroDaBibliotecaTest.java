@@ -20,22 +20,22 @@ import static org.junit.Assert.*;
  * @author Wolle
  */
 public class DAOLivroDaBibliotecaTest {
-    
+
     public DAOLivroDaBibliotecaTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -43,8 +43,26 @@ public class DAOLivroDaBibliotecaTest {
     /**
      * Test of salvar method, of class DAOLivroDaBiblioteca.
      */
+//    @Test
+//    public void testSalvar() {
+//        LivroDaBiblioteca livro = new LivroDaBiblioteca();
+//        livro.setAnoLacamento("2015");
+//        livro.setNomeAutor("Neto");
+//        livro.setNomeLivro("Sei La");
+//        livro.setPais("Hu3");
+//        livro.setRegiao("Sul");
+//        livro.setGrafica("N");
+//        livro.setOutroCodigo(180);
+//        DAOLivroDaBiblioteca dao = new DAOLivroDaBiblioteca();
+//        assertTrue(dao.salvar(livro));
+//        dao.deletar(livro);
+//    }
+
+    /**
+     * Test of alterar method, of class DAOLivroDaBiblioteca.
+     */
     @Test
-    public void testSalvar() {
+    public void testAlterar() {
         LivroDaBiblioteca livro = new LivroDaBiblioteca();
         livro.setAnoLacamento("2015");
         livro.setNomeAutor("Neto");
@@ -55,23 +73,11 @@ public class DAOLivroDaBibliotecaTest {
         livro.setOutroCodigo(180);
         DAOLivroDaBiblioteca dao = new DAOLivroDaBiblioteca();
         assertTrue(dao.salvar(livro));
+        livro.setNomeAutor("AUTOR ATUALIZADO");
+        livro.setPais("PAÍS ATUALIZADO");
+        assertTrue(dao.alterar(livro));
         dao.deletar(livro);
     }
-//
-//    /**
-//     * Test of alterar method, of class DAOLivroDaBiblioteca.
-//     */
-//    @Test
-//    public void testAlterar() {
-//        System.out.println("alterar");
-//        Object objeto = null;
-//        DAOLivroDaBiblioteca instance = new DAOLivroDaBiblioteca();
-//        boolean expResult = false;
-//        boolean result = instance.alterar(objeto);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
 //
 //    /**
 //     * Test of recuperarRegistros method, of class DAOLivroDaBiblioteca.
@@ -103,8 +109,8 @@ public class DAOLivroDaBibliotecaTest {
 //    }
 
     /**
-     * Test of deletar method, of class DAOLivroDaBiblioteca.
-//     */
+     * Test of deletar method, of class DAOLivroDaBiblioteca. //
+     */
 //    @Test
 //    public void testDeletar() {
 //        System.out.println("deletar");
@@ -123,7 +129,6 @@ public class DAOLivroDaBibliotecaTest {
 //        boolean result = instance.deletar(livros.get(codigo));
 //        assertTrue(result);
 //    }
-
     /**
      * Test of recuperarRegistros method, of class DAOLivroDaBiblioteca.
      */
@@ -138,5 +143,4 @@ public class DAOLivroDaBibliotecaTest {
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
 //    }
-    
 }

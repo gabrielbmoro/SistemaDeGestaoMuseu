@@ -36,8 +36,22 @@ public class DAOLivroDaBiblioteca extends DAO {
         }
     }
 
+    @Override
     public boolean alterar(Object objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+          try {
+            Session sessao = HibernateUtil.openSession();
+
+            if (objeto instanceof LivroDaBiblioteca) {
+                LivroDaBiblioteca livro = (LivroDaBiblioteca) objeto;
+                sessao.update(livro);
+                Transaction transacao = sessao.beginTransaction();
+                transacao.commit();
+                sessao.close();
+            }
+            return true;
+        } catch (Exception erro) {
+            return false;
+        }
     }
     @Override
     public List<Object> recuperarRegistros() {
@@ -47,10 +61,12 @@ public class DAOLivroDaBiblioteca extends DAO {
         return itensDoMuseu;
     }
 
+    @Override
     public Object recuperarPorID(Long ID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
     public boolean deletar(Object objeto) {
     try {
             Session sessao = HibernateUtil.openSession();
@@ -64,7 +80,6 @@ public class DAOLivroDaBiblioteca extends DAO {
             }
             return true;
         } catch (Exception erro) {
-            erro.printStackTrace();
             return false;
         }}
 

@@ -41,51 +41,65 @@ public class DAOItemTomboTest {
     public void tearDown() {
     }
 
+//    /**
+//     * Test of salvar method, of class DAOItemTombo.
+//     */
+//    @org.junit.Test
+//    public void testSalvar() {
+//        ItemTombo item = new ItemTombo();
+//        item.setCultura("afro");
+//        item.setDataUtilizacaoFinal("10/1/1");
+//        item.setDataUtilizacaoInicial("10/12/12");
+//        item.setEstilo("nada");
+//        item.setFuncaoEspecifica("nada");
+//        item.setGrupoLinguistico("nada");
+//        item.setImagemEnviada(true);
+//        item.setMateriaPrima("nada");
+//        item.setOutroCodigo(123879);
+//        item.setPais("nada");
+//        item.setProcedencia("nada");
+//        item.setRegiao("nada");
+//        item.setSitio("nada");
+//        item.setTecnicaManufatura("nada");
+//        item.setTipoObjeto("nada");
+//        DAOItemTombo dao = new DAOItemTombo();
+//        dao.salvar(item);
+//        ItemTombo expResult = item;
+//        ArrayList<Object> itemTombo = (ArrayList<Object>) dao.recuperarRegistros();
+//        int codigo = itemTombo.size() - 1;
+//        ItemTombo result = new ItemTombo();
+//        result = (ItemTombo) itemTombo.get(codigo);
+//        assertEquals(expResult.getCultura(), result.getCultura());
+//    }
+        
     /**
-     * Test of salvar method, of class DAOItemTombo.
+     * Test of alterar method, of class DAOItemTombo.
      */
     @org.junit.Test
-    public void testSalvar() {
+    public void testAlterar() {
         ItemTombo item = new ItemTombo();
-        item.setCultura("afro");
+        item.setCultura("De outro Mundo");
         item.setDataUtilizacaoFinal("10/1/1");
         item.setDataUtilizacaoInicial("10/12/12");
-        item.setEstilo("nada");
-        item.setFuncaoEspecifica("nada");
-        item.setGrupoLinguistico("nada");
+        item.setEstilo("Bem Loco");
+        item.setFuncaoEspecifica("Nao sei");
+        item.setGrupoLinguistico("Nao sei");
         item.setImagemEnviada(true);
-        item.setMateriaPrima("nada");
-        item.setOutroCodigo(123879);
-        item.setPais("nada");
-        item.setProcedencia("nada");
-        item.setRegiao("nada");
-        item.setSitio("nada");
+        item.setMateriaPrima("Qualquer uma");
+        item.setOutroCodigo(99998);
+        item.setPais("Brasil");
+        item.setProcedencia("Itália");
+        item.setRegiao("Europa");
+        item.setSitio("Não sei");
         item.setTecnicaManufatura("nada");
         item.setTipoObjeto("nada");
         DAOItemTombo dao = new DAOItemTombo();
-        dao.salvar(item);
-        ItemTombo expResult = item;
-        ArrayList<Object> itemTombo = (ArrayList<Object>) dao.recuperarRegistros();
-        int codigo = itemTombo.size() - 1;
-        ItemTombo result = new ItemTombo();
-        result = (ItemTombo) itemTombo.get(codigo);
-        assertEquals(expResult.getCultura(), result.getCultura());
+        assertTrue(dao.salvar(item));
+        item.setMateriaPrima("ATUALIZOU");
+        item.setSitio("ATUALIZOU!");
+        assertTrue(dao.alterar(item));
+        dao.deletar(item);
     }
-        
-//    /**
-//     * Test of alterar method, of class DAOItemTombo.
-//     */
-//    @org.junit.Test
-//    public void testAlterar() {
-//        System.out.println("alterar");
-//        Object objeto = null;
-//        DAOItemTombo instance = new DAOItemTombo();
-//        boolean expResult = false;
-//        boolean result = instance.alterar(objeto);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
 //
 //    /**
 //     * Test of recuperarRegistros method, of class DAOItemTombo.
@@ -116,18 +130,18 @@ public class DAOItemTomboTest {
 //        fail("The test case is a prototype.");
 //    }
 //
-    /**
-     * Test of deletar method, of class DAOItemTombo.
-     */
-    @org.junit.Test
-    public void testDeletar() {
-        DAOItemTombo instance = new DAOItemTombo();
-        ArrayList<Object> itemTombo = (ArrayList<Object>) instance.recuperarRegistros();
-        int codigo = itemTombo.size() - 1;
-        boolean result = instance.deletar(itemTombo.get(codigo));       
-        assertTrue(result);
-       
-    }
+//    /**
+//     * Test of deletar method, of class DAOItemTombo.
+//     */
+//    @org.junit.Test
+//    public void testDeletar() {
+//        DAOItemTombo instance = new DAOItemTombo();
+//        ArrayList<Object> itemTombo = (ArrayList<Object>) instance.recuperarRegistros();
+//        int codigo = itemTombo.size() - 1;
+//        boolean result = instance.deletar(itemTombo.get(codigo));       
+//        assertTrue(result);
+//       
+//    }
 
 //    /**
 //     * Test of recuperarRegistros method, of class DAOItemTombo.

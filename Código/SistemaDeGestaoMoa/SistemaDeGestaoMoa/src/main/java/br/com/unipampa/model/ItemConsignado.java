@@ -9,6 +9,7 @@ import br.com.unipampa.dao.DAOItemConsignado;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.Entity;
 
 /**
@@ -17,6 +18,33 @@ import javax.persistence.Entity;
  */
 @Entity
 public class ItemConsignado extends ItemTombo implements Serializable {
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 37 * hash + Objects.hashCode(this.dataDoEmprestimo);
+        hash = 37 * hash + Objects.hashCode(this.dataDeDevolucao);
+        hash = 37 * hash + Objects.hashCode(this.responsavelDaFamilia);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final ItemConsignado other = (ItemConsignado) obj;
+        if (!Objects.equals(this.dataDoEmprestimo, other.dataDoEmprestimo)) {
+            return false;
+        }
+        if (!Objects.equals(this.dataDeDevolucao, other.dataDeDevolucao)) {
+            return false;
+        }
+        return true;
+    }
 
     private String dataDoEmprestimo;
     private String dataDeDevolucao;
