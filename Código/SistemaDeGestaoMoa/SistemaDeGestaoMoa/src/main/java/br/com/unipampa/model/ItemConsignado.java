@@ -14,7 +14,7 @@ import javax.persistence.Entity;
 
 /**
  *
- * @author Gabriel B Moro
+ * @author Gabriel B Moro, matheusserpa
  */
 @Entity
 public class ItemConsignado extends ItemTombo implements Serializable {
@@ -88,9 +88,9 @@ public class ItemConsignado extends ItemTombo implements Serializable {
     }
 
    
- public List<ItemConsignado> buscarTodu(){
+ public ArrayList<ItemConsignado> buscarTodu(){
          
-     List<ItemConsignado> listaDeRetorno = new ArrayList<>();
+     ArrayList<ItemConsignado> listaDeRetorno = new ArrayList<>();
 
         DAOItemConsignado daoItemConsignado = new DAOItemConsignado();
         List<Object> dados = daoItemConsignado.recuperarRegistros();
@@ -102,7 +102,33 @@ public class ItemConsignado extends ItemTombo implements Serializable {
         return listaDeRetorno;
     }
 
-
+public ItemConsignado buscarItem(ItemConsignado itemConsignadoSemId) {
+        ArrayList<ItemConsignado> itensConsignado = this.buscarTodu();
+        if (itensConsignado != null && !itensConsignado.isEmpty()) {
+            for (ItemConsignado itemConsignadoTemp : itensConsignado) {
+                if (itemConsignadoTemp.getOutroCodigo() == itemConsignadoSemId.getOutroCodigo()
+                        && itemConsignadoTemp.getMateriaPrima().equalsIgnoreCase(itemConsignadoSemId.getMateriaPrima())
+                        && itemConsignadoTemp.getDataUtilizacaoInicial().equalsIgnoreCase(itemConsignadoSemId.getDataUtilizacaoInicial())
+                        && itemConsignadoTemp.getDataUtilizacaoFinal().equalsIgnoreCase(itemConsignadoSemId.getDataUtilizacaoFinal())
+                        && itemConsignadoTemp.getTipoObjeto().equalsIgnoreCase(itemConsignadoSemId.getTipoObjeto())
+                        && itemConsignadoTemp.getFuncaoEspecifica().equalsIgnoreCase(itemConsignadoSemId.getFuncaoEspecifica())
+                        && itemConsignadoTemp.getCultura().equalsIgnoreCase(itemConsignadoSemId.getCultura())
+                        && itemConsignadoTemp.getEstilo().equalsIgnoreCase(itemConsignadoSemId.getEstilo())
+                        && itemConsignadoTemp.getGrupoLinguistico().equalsIgnoreCase(itemConsignadoSemId.getGrupoLinguistico())
+                        && itemConsignadoTemp.getTecnicaManufatura().equalsIgnoreCase(itemConsignadoSemId.getTecnicaManufatura())
+                        && itemConsignadoTemp.getProcedencia().equalsIgnoreCase(itemConsignadoSemId.getProcedencia())
+                        && itemConsignadoTemp.getSitio().equalsIgnoreCase(itemConsignadoSemId.getSitio())
+                        && itemConsignadoTemp.getRegiao().equalsIgnoreCase(itemConsignadoSemId.getRegiao())
+                        && itemConsignadoTemp.getPais().equalsIgnoreCase(itemConsignadoSemId.getPais())
+                        && itemConsignadoTemp.getDataDeDevolucao().equalsIgnoreCase(itemConsignadoSemId.getDataDeDevolucao())
+                        && itemConsignadoTemp.getDataDoEmprestimo().equalsIgnoreCase(itemConsignadoSemId.getDataDoEmprestimo())
+                        && itemConsignadoTemp.getResponsavelDaFamilia().equalsIgnoreCase(itemConsignadoSemId.getResponsavelDaFamilia())){
+                    return itemConsignadoSemId;
+                }
+            }
+        }
+        return null;
+    }
 
 
 
