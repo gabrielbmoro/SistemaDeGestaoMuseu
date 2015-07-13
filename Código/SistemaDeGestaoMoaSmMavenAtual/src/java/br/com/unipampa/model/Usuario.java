@@ -1,5 +1,6 @@
 package br.com.unipampa.model;
 
+import br.com.unipampa.dao.DAOUsuario;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,6 +24,15 @@ public class Usuario implements Serializable {
     
     private String endereco;
 
+    public boolean cadastrar(Usuario usuario){
+        DAOUsuario daoUsuario = new DAOUsuario();
+        if(daoUsuario.salvar(usuario)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
     public boolean realizarLogin() {
         return false;
     }

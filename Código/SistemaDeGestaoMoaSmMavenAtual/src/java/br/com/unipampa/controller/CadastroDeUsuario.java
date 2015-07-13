@@ -7,6 +7,7 @@ package br.com.unipampa.controller;
 
 import br.com.unipampa.dao.DAOUsuario;
 import br.com.unipampa.model.Usuario;
+import br.com.unipampa.servico.CriptografiaMD5;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -46,16 +47,13 @@ public class CadastroDeUsuario extends HttpServlet {
         usuario.setEndereco(endereco);
         usuario.setLogin(login);
         usuario.setNome(nome);
-        usuario.setSenha(senha);
+        usuario.setSenha(CriptografiaMD5.codificar(senha));
 
-        //Adiciona no banco
-        DAOUsuario dao = new DAOUsuario();
-        if (dao.salvar(usuario)) {
+        if (usuario.cadastrar(usuario)) {
             response.getWriter().print("Usuário " + usuario.getNome() + " Cadastrado com sucesso!");
         } else {
             response.getWriter().print("ERRO");
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
