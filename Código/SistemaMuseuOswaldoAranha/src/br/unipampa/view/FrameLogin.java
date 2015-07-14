@@ -25,7 +25,7 @@ public class FrameLogin extends javax.swing.JFrame implements WindowListener{
         initComponents();
         lookAndfeel();
         addWindowListener(this);
-        ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 875, 356);
+        ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 365, 353);
     }
 
     /**
@@ -81,7 +81,7 @@ public class FrameLogin extends javax.swing.JFrame implements WindowListener{
                             .addComponent(jLabel3)
                             .addComponent(txtSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
                             .addComponent(txtCpf))))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,7 +98,7 @@ public class FrameLogin extends javax.swing.JFrame implements WindowListener{
                 .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();

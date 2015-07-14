@@ -24,7 +24,7 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame {
      */
     public FrameNovoLivroConsignado() {
         initComponents();
-        ConfiguracaoFrame.configFrameSemTamanho(this);
+        ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 1129, 573);
         jPanelUploadDeImagem.setVisible(false);
         jPanelDados.setVisible(true);
         revalidate();
@@ -354,7 +354,7 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(24, Short.MAX_VALUE)
                         .addComponent(jPanelDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -371,7 +371,7 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame {
                 .addComponent(jPanelDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelUploadDeImagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(btnVoltarLivroCOnsignado)
                 .addContainerGap())
         );
@@ -392,37 +392,41 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboPaisLivroConsignadoActionPerformed
 
     private void btnRegistrarDadosLivroConsignadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarDadosLivroConsignadoActionPerformed
-        try{
-        this.itemConsignado = new ItemConsignado();
-        this.itemConsignado.setOutroCodigo(Integer.parseInt(this.txtCodigoAuxiliarLivroConsignado.getText()));
-        this.itemConsignado.setMateriaPrima(this.txtMateriaPrimaLivroConsignado.getText());
-        this.itemConsignado.setDataDoEmprestimo(this.jDateEmprestimoLivroConsignado.getDateFormatString());
-        this.itemConsignado.setDataDeDevolucao(this.jDateChooserDevolucaoLivroConsignado.getDateFormatString());
-        this.itemConsignado.setDataUtilizacaoInicial(this.jDateDeUtilizacaoInicialLivroConsignado.getDateFormatString());
-        this.itemConsignado.setDataUtilizacaoFinal(this.jDateDeUtilizacaoFinalLivroConsignado.getDateFormatString());
-        this.itemConsignado.setResponsavelDaFamilia(this.txtResponsavelDaFamiliaLivroConsignado.getText());
-        this.itemConsignado.setEstilo(this.txtEstiloLivroConsignado.getText());
-        this.itemConsignado.setGrupoLinguistico(this.txtGrupoLingLivroConsignado.getText());
-        this.itemConsignado.setRegiao(this.txtRegiaoLivroConsignado.getText());
-        Object dadosPais = this.jComboPaisLivroConsignado.getSelectedIndex();
-        this.itemConsignado.setPais(dadosPais.toString());
-        this.itemConsignado.setProcedencia(this.txtProcedenciaLivroConsignado.getText());
-        this.itemConsignado.setFuncaoEspecifica(this.txtFuncaoEspecificaLivroConsignado.getText());
-        this.itemConsignado.setCultura(this.txtCulturaLivroConsignado.getText());
-        this.itemConsignado.setSitio(this.txtSitioLivroConsignado.getText());
-        this.itemConsignado.setTecnicaManufatura(this.txtTecmanufaturaLivroConsignado1.getText());
-        this.itemConsignado.setImagemEnviada(false);
-        }catch(NumberFormatException erroDeConversao){
+        try {
+            this.itemConsignado = new ItemConsignado();
+            this.itemConsignado.setOutroCodigo(Integer.parseInt(this.txtCodigoAuxiliarLivroConsignado.getText()));
+            this.itemConsignado.setMateriaPrima(this.txtMateriaPrimaLivroConsignado.getText());
+            this.itemConsignado.setDataDoEmprestimo(this.jDateEmprestimoLivroConsignado.getDateFormatString());
+            this.itemConsignado.setDataDeDevolucao(this.jDateChooserDevolucaoLivroConsignado.getDateFormatString());
+            this.itemConsignado.setDataUtilizacaoInicial(this.jDateDeUtilizacaoInicialLivroConsignado.getDateFormatString());
+            this.itemConsignado.setDataUtilizacaoFinal(this.jDateDeUtilizacaoFinalLivroConsignado.getDateFormatString());
+            this.itemConsignado.setResponsavelDaFamilia(this.txtResponsavelDaFamiliaLivroConsignado.getText());
+            this.itemConsignado.setEstilo(this.txtEstiloLivroConsignado.getText());
+            this.itemConsignado.setGrupoLinguistico(this.txtGrupoLingLivroConsignado.getText());
+            this.itemConsignado.setRegiao(this.txtRegiaoLivroConsignado.getText());
+            Object dadosPais = this.jComboPaisLivroConsignado.getSelectedIndex();
+            this.itemConsignado.setPais(dadosPais.toString());
+            this.itemConsignado.setProcedencia(this.txtProcedenciaLivroConsignado.getText());
+            this.itemConsignado.setFuncaoEspecifica(this.txtFuncaoEspecificaLivroConsignado.getText());
+            this.itemConsignado.setCultura(this.txtCulturaLivroConsignado.getText());
+            this.itemConsignado.setSitio(this.txtSitioLivroConsignado.getText());
+            this.itemConsignado.setTecnicaManufatura(this.txtTecmanufaturaLivroConsignado1.getText());
+            this.itemConsignado.setImagemEnviada(false);
+        } catch (NumberFormatException erroDeConversao) {
             GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao novamente!");
             return;
         }
-        if (this.itemConsignado.cadastrarItem(this.itemConsignado)) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Os dados foram cadastrados com sucesso!", "Alerta ao Usuario");
-            GeradorDeMensagem.exibirMensagemDeInformacao("Envie agora uma foto do item de acervo!", "Alerta ao Usuario");
-           jPanelDados.setVisible(false);
-           jPanelUploadDeImagem.setVisible(true);
-           revalidate();
-        } else {
+        try {
+            if (this.itemConsignado.cadastrarItem(this.itemConsignado)) {
+                GeradorDeMensagem.exibirMensagemDeInformacao("Os dados foram cadastrados com sucesso!", "Alerta ao Usuario");
+                GeradorDeMensagem.exibirMensagemDeInformacao("Envie agora uma foto do item de acervo!", "Alerta ao Usuario");
+                jPanelDados.setVisible(false);
+                jPanelUploadDeImagem.setVisible(true);
+                revalidate();
+            } else {
+                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu alguns problemas, por favor realize a operaçao mais tarde!");
+            }
+        } catch (Exception erro1) {
             GeradorDeMensagem.exibirMensagemDeErro("Ocorreu alguns problemas, por favor realize a operaçao mais tarde!");
         }
     }//GEN-LAST:event_btnRegistrarDadosLivroConsignadoActionPerformed
