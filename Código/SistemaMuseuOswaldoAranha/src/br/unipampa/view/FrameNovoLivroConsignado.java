@@ -388,10 +388,10 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
             }
 
             this.itemConsignado.setMateriaPrima(this.txtMateriaPrimaLivroConsignado.getText());
-            this.itemConsignado.setDataDoEmprestimo(this.jDateEmprestimoLivroConsignado.getDateFormatString());
-            this.itemConsignado.setDataDeDevolucao(this.jDateChooserDevolucaoLivroConsignado.getDateFormatString());
-            this.itemConsignado.setDataUtilizacaoInicial(this.jDateDeUtilizacaoInicialLivroConsignado.getDateFormatString());
-            this.itemConsignado.setDataUtilizacaoFinal(this.jDateDeUtilizacaoFinalLivroConsignado.getDateFormatString());
+            this.itemConsignado.setDataDoEmprestimo(this.jDateEmprestimoLivroConsignado.getDate());
+            this.itemConsignado.setDataDeDevolucao(this.jDateChooserDevolucaoLivroConsignado.getDate());
+            this.itemConsignado.setDataUtilizacaoInicial(this.jDateDeUtilizacaoInicialLivroConsignado.getDate());
+            this.itemConsignado.setDataUtilizacaoFinal(this.jDateDeUtilizacaoFinalLivroConsignado.getDate());
             this.itemConsignado.setResponsavelDaFamilia(this.txtResponsavelDaFamiliaLivroConsignado.getText());
             this.itemConsignado.setEstilo(this.txtEstiloLivroConsignado.getText());
             this.itemConsignado.setGrupoLinguistico(this.txtGrupoLingLivroConsignado.getText());

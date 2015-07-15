@@ -6,6 +6,7 @@
 package br.unipampa.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import org.hibernate.Query;
@@ -19,8 +20,8 @@ import org.hibernate.Transaction;
 @Entity
 public class ItemConsignado extends ItemTombo implements Serializable {
 
-    private String dataDoEmprestimo;
-    private String dataDeDevolucao;
+    private Date dataDoEmprestimo;
+    private Date dataDeDevolucao;
     private String responsavelDaFamilia;
 
     @Override
@@ -114,19 +115,19 @@ public class ItemConsignado extends ItemTombo implements Serializable {
          
      }
     
-    public String getDataDoEmprestimo() {
+    public Date getDataDoEmprestimo() {
         return dataDoEmprestimo;
     }
 
-    public void setDataDoEmprestimo(String dataDoEmprestimo) {
+    public void setDataDoEmprestimo(Date dataDoEmprestimo) {
         this.dataDoEmprestimo = dataDoEmprestimo;
     }
 
-    public String getDataDeDevolucao() {
+    public Date getDataDeDevolucao() {
         return dataDeDevolucao;
     }
 
-    public void setDataDeDevolucao(String dataDeDevolucao) {
+    public void setDataDeDevolucao(Date dataDeDevolucao) {
         this.dataDeDevolucao = dataDeDevolucao;
     }
 

@@ -1,6 +1,7 @@
 package br.unipampa.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,8 +20,8 @@ public class ItemTombo implements Serializable, OperacoesBasicas {
     protected Long ID;
     protected int outroCodigo;
     protected String materiaPrima;
-    protected String dataUtilizacaoInicial;
-    protected String dataUtilizacaoFinal;
+    protected Date dataUtilizacaoInicial;
+    protected Date dataUtilizacaoFinal;
     protected String tipoObjeto;
     protected String funcaoEspecifica;
     protected String cultura;
@@ -83,19 +84,19 @@ public class ItemTombo implements Serializable, OperacoesBasicas {
         this.materiaPrima = materiaPrima;
     }
 
-    public String getDataUtilizacaoInicial() {
+    public Date getDataUtilizacaoInicial() {
         return dataUtilizacaoInicial;
     }
 
-    public void setDataUtilizacaoInicial(String dataUtilizacaoInicial) {
+    public void setDataUtilizacaoInicial(Date dataUtilizacaoInicial) {
         this.dataUtilizacaoInicial = dataUtilizacaoInicial;
     }
 
-    public String getDataUtilizacaoFinal() {
+    public Date getDataUtilizacaoFinal() {
         return dataUtilizacaoFinal;
     }
 
-    public void setDataUtilizacaoFinal(String dataUtilizacaoFinal) {
+    public void setDataUtilizacaoFinal(Date dataUtilizacaoFinal) {
         this.dataUtilizacaoFinal = dataUtilizacaoFinal;
     }
 

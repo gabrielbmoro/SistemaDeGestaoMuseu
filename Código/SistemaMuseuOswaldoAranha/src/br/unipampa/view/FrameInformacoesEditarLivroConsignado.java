@@ -79,10 +79,10 @@ public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame im
 
     private void preencherCampos() {
         this.txtMateriaPrimaLivroConsignado.setText(itemConsignado.getMateriaPrima());
-//        this.jDateEmprestimoLivroConsignado.setDate(new Date(itemConsignado.getDataDeDevolucao()));
-//        this.jDateChooserDevolucaoLivroConsignado.setDate(new Date(itemConsignado.getDataDeDevolucao()));
-//        this.jDateDeUtilizacaoInicialLivroConsignado.setDate(new Date(itemConsignado.getDataUtilizacaoInicial()));
-//        this.jDateDeUtilizacaoFinalLivroConsignado.setDate(new Date(itemConsignado.getDataUtilizacaoFinal()));
+        this.jDateEmprestimoLivroConsignado.setDate(itemConsignado.getDataDeDevolucao());
+        this.jDateChooserDevolucaoLivroConsignado.setDate(itemConsignado.getDataDeDevolucao());
+        this.jDateDeUtilizacaoInicialLivroConsignado.setDate(itemConsignado.getDataUtilizacaoInicial());
+        this.jDateDeUtilizacaoFinalLivroConsignado.setDate(itemConsignado.getDataUtilizacaoFinal());
         this.txtResponsavelDaFamiliaLivroConsignado.setText(itemConsignado.getResponsavelDaFamilia());
         this.txtEstiloLivroConsignado.setText(itemConsignado.getEstilo());
         this.txtGrupoLingLivroConsignado.setText(itemConsignado.getGrupoLinguistico());
