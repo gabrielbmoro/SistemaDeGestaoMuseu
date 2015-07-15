@@ -42,6 +42,7 @@ public class ItemConsignado extends ItemTombo implements Serializable {
             return false;
         }
     }
+    @Override
  public boolean alterar(Object objetoNovo) {
           if (objetoNovo instanceof ItemConsignado) {
             ItemConsignado item = (ItemConsignado) objetoNovo;
@@ -66,7 +67,7 @@ public class ItemConsignado extends ItemTombo implements Serializable {
             Query query = null;
             query = HibernateUtil.openSession().createQuery("from ItemConsignado i where "
                     + "i.outroCodigo=" + item.getOutroCodigo() + " and i.materiaPrima=\'" + item.getMateriaPrima() + "\'"
-                    + " and i.dataDeDevolucao=\'" + item.getDataDeDevolucao() + "\' and i.responsavelDaFamilia=\'" + item.getResponsavelDaFamilia() + "\' and "
+                   +" and i.responsavelDaFamilia=\'" + item.getResponsavelDaFamilia() + "\' and "
                     + "i.tipoObjeto=\'" + item.getTipoObjeto() + "\'");
             List<Object> resultado = query.list();
             if (!resultado.isEmpty()) {
