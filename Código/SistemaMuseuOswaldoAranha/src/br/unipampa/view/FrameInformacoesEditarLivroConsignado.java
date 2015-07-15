@@ -14,8 +14,8 @@ import java.util.Date;
  *
  * @author gabrielbmoro
  */
-public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame implements WindowListener{
-
+public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame implements WindowListener {
+    
     private ItemConsignado itemConsignado;
 
     /**
@@ -24,7 +24,7 @@ public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame im
     public FrameInformacoesEditarLivroConsignado(ItemConsignado itemConsignado, boolean informacoes) {
         initComponents();
         this.itemConsignado = itemConsignado;
-
+        
         preencherCampos();
         if (informacoes) {
             desabilitarComponentes();
@@ -36,7 +36,7 @@ public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame im
         ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 1108, 405);
         addWindowListener(this);
     }
-
+    
     private void desabilitarComponentes() {
         this.txtMateriaPrimaLivroConsignado.setEnabled(false);
         this.jDateEmprestimoLivroConsignado.setEnabled(false);
@@ -54,9 +54,9 @@ public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame im
         this.txtSitioLivroConsignado.setEnabled(false);
         this.txtTecmanufaturaLivroConsignado1.setEnabled(false);
         this.txtTipoDeObjetoLivroConsignado.setEnabled(false);
-         this.txtCodigoAuxiliarLivroConsignado.setEnabled(false);
+        this.txtCodigoAuxiliarLivroConsignado.setEnabled(false);
     }
-
+    
     private void habilitarComponentes() {
         this.txtMateriaPrimaLivroConsignado.setEnabled(true);
         this.jDateEmprestimoLivroConsignado.setEnabled(true);
@@ -76,7 +76,7 @@ public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame im
         this.txtTipoDeObjetoLivroConsignado.setEnabled(true);
         this.txtCodigoAuxiliarLivroConsignado.setEnabled(true);
     }
-
+    
     private void preencherCampos() {
         this.txtMateriaPrimaLivroConsignado.setText(itemConsignado.getMateriaPrima());
         this.jDateEmprestimoLivroConsignado.setDate(itemConsignado.getDataDeDevolucao());
@@ -390,22 +390,24 @@ public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame im
     }//GEN-LAST:event_btnEditarLivroConsignadoActionPerformed
 
     private void btnAtualizarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarDadosActionPerformed
-        if (this.txtCodigoAuxiliarLivroConsignado.getText().isEmpty()
+        if ((this.txtCodigoAuxiliarLivroConsignado.getText().isEmpty()
                 || this.txtMateriaPrimaLivroConsignado.getText().isEmpty()
                 || this.jDateChooserDevolucaoLivroConsignado.getDateFormatString().isEmpty()
                 || this.txtResponsavelDaFamiliaLivroConsignado.getText().isEmpty()
-                || this.txtTipoDeObjetoLivroConsignado.getText().isEmpty()) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, preencha os campos marcados com '*', pois sao obrigatorios!", "Alerta de Usuario");
+                || this.txtTipoDeObjetoLivroConsignado.getText().isEmpty())
+                && (this.jDateDeUtilizacaoInicialLivroConsignado.getDate().after(this.jDateDeUtilizacaoFinalLivroConsignado.getDate())
+                && this.jDateEmprestimoLivroConsignado.getDate().after(this.jDateChooserDevolucaoLivroConsignado.getDate()))) {
+            GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, preencha os campos marcados com '*', pois sao obrigatorios. \n Tambem verifique a validade das datas!", "Alerta de Usuario");
             return;
         } else {
-
+            
             try {
                 this.itemConsignado.setOutroCodigo(Integer.parseInt(this.txtCodigoAuxiliarLivroConsignado.getText()));
             } catch (NumberFormatException erroDeConversao) {
                 GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao novamente!");
                 return;
             }
-
+            
             this.itemConsignado.setMateriaPrima(this.txtMateriaPrimaLivroConsignado.getText());
             this.itemConsignado.setDataDoEmprestimo(this.jDateEmprestimoLivroConsignado.getDate());
             this.itemConsignado.setDataDeDevolucao(this.jDateChooserDevolucaoLivroConsignado.getDate());
@@ -431,12 +433,12 @@ public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame im
                 } else {
                     GeradorDeMensagem.exibirMensagemDeErro("Ocorreu alguns problemas, por favor realize a operaçao mais tarde!");
                 }
-
+                
             } catch (Exception erro1) {
                 GeradorDeMensagem.exibirMensagemDeErro("Ocorreu alguns problemas, por favor realize a operaçao mais tarde!");
             }
-
-        }           
+            
+        }        
     }//GEN-LAST:event_btnAtualizarDadosActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -478,32 +480,31 @@ public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame im
     private javax.swing.JTextField txtTipoDeObjetoLivroConsignado;
     // End of variables declaration//GEN-END:variables
 
-    
     @Override
     public void windowOpened(WindowEvent e) {
     }
-
+    
     @Override
     public void windowClosing(WindowEvent e) {
         dispose();
     }
-
+    
     @Override
     public void windowClosed(WindowEvent e) {
     }
-
+    
     @Override
     public void windowIconified(WindowEvent e) {
     }
-
+    
     @Override
     public void windowDeiconified(WindowEvent e) {
     }
-
+    
     @Override
     public void windowActivated(WindowEvent e) {
     }
-
+    
     @Override
     public void windowDeactivated(WindowEvent e) {
     }

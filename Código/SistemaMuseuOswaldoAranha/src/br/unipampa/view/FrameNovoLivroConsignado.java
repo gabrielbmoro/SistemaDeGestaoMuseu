@@ -370,15 +370,15 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
     }//GEN-LAST:event_jComboPaisLivroConsignadoActionPerformed
 
     private void btnRegistrarDadosLivroConsignadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarDadosLivroConsignadoActionPerformed
-        if (this.txtCodigoAuxiliarLivroConsignado.getText().isEmpty()
+        if ((this.txtCodigoAuxiliarLivroConsignado.getText().isEmpty()
                 || this.txtMateriaPrimaLivroConsignado.getText().isEmpty()
                 || this.jDateChooserDevolucaoLivroConsignado.getDateFormatString().isEmpty()
                 || this.txtResponsavelDaFamiliaLivroConsignado.getText().isEmpty()
-                || this.txtTipoDeObjetoLivroConsignado.getText().isEmpty()) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, preencha os campos marcados com '*', pois sao obrigatorios!", "Alerta de Usuario");
+                || this.txtTipoDeObjetoLivroConsignado.getText().isEmpty()) && (this.jDateDeUtilizacaoInicialLivroConsignado.getDate().after(this.jDateDeUtilizacaoFinalLivroConsignado.getDate())
+                && this.jDateEmprestimoLivroConsignado.getDate().after(this.jDateChooserDevolucaoLivroConsignado.getDate()))) {
+            GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, preencha os campos marcados com '*', pois sao obrigatorios. \n Tambem verifique a validade das datas!", "Alerta de Usuario");
             return;
         } else {
-
             try {
                 this.itemConsignado = new ItemConsignado();
                 this.itemConsignado.setOutroCodigo(Integer.parseInt(this.txtCodigoAuxiliarLivroConsignado.getText()));
