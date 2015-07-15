@@ -132,6 +132,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Novo"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovoLivroConsignadoActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnListarLivroConsignado">
                   <Properties>
@@ -235,6 +238,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Editar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarLivroConsignadoActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnDeletarLivroConsignado">
                   <Properties>
@@ -246,8 +252,11 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnSobreLivroConsignado">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Sobre"/>
+                    <Property name="text" type="java.lang.String" value="Mais"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSobreLivroConsignadoActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

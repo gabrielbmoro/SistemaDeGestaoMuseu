@@ -6,6 +6,8 @@
 package br.unipampa.view;
 
 import br.unipampa.model.ItemConsignado;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -13,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author gabrielbmoro
  */
-public class FramePrincipal extends javax.swing.JFrame {
+public class FramePrincipal extends javax.swing.JFrame implements WindowListener{
 
     private DefaultTableModel modeloTabelaLivroCOnsignado;
 
@@ -25,6 +27,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         ConfiguracaoFrame.configFrameTamanhoPadrao(this);
 
         modeloTabelaLivroCOnsignado = (DefaultTableModel) jTableLivroConsignado.getModel();
+        addWindowListener(this);
     }
 
     /**
@@ -56,6 +59,11 @@ public class FramePrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnNovoLivroConsignado.setText("Novo");
+        btnNovoLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovoLivroConsignadoActionPerformed(evt);
+            }
+        });
 
         btnListarLivroConsignado.setText("Listar");
         btnListarLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +119,11 @@ public class FramePrincipal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTableLivroConsignado);
 
         btnEditarLivroConsignado.setText("Editar");
+        btnEditarLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarLivroConsignadoActionPerformed(evt);
+            }
+        });
 
         btnDeletarLivroConsignado.setText("Deletar");
         btnDeletarLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +132,12 @@ public class FramePrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnSobreLivroConsignado.setText("Sobre");
+        btnSobreLivroConsignado.setText("Mais");
+        btnSobreLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSobreLivroConsignadoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelInternoLivroConsignadoLayout = new javax.swing.GroupLayout(panelInternoLivroConsignado);
         panelInternoLivroConsignado.setLayout(panelInternoLivroConsignadoLayout);
@@ -253,10 +271,10 @@ public class FramePrincipal extends javax.swing.JFrame {
         }
     }
     private void btnDeletarLivroConsignadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarLivroConsignadoActionPerformed
-        int linhaSelecionada = jTableLivroConsignado.getSelectedRow();
-        Object idDeElemento = modeloTabelaLivroCOnsignado.getValueAt(linhaSelecionada, 0);
-        if (idDeElemento != null) {
-            try {
+        try {
+            int linhaSelecionada = jTableLivroConsignado.getSelectedRow();
+            Object idDeElemento = modeloTabelaLivroCOnsignado.getValueAt(linhaSelecionada, 0);
+            if (idDeElemento != null) {
                 Long idLong = Long.parseLong(idDeElemento.toString());
                 if (idLong != 0) {
                     ItemConsignado itemConsignado = new ItemConsignado();
@@ -273,11 +291,62 @@ public class FramePrincipal extends javax.swing.JFrame {
                         GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
                     }
                 }
-            } catch (Exception erro) {
-                return;
             }
+
+        } catch (Exception erro) {
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
         }
     }//GEN-LAST:event_btnDeletarLivroConsignadoActionPerformed
+
+    private void btnSobreLivroConsignadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreLivroConsignadoActionPerformed
+        try {
+            int linhaSelecionada = jTableLivroConsignado.getSelectedRow();
+            Object idDeElemento = modeloTabelaLivroCOnsignado.getValueAt(linhaSelecionada, 0);
+            if (idDeElemento != null) {
+
+                Long idLong = Long.parseLong(idDeElemento.toString());
+                if (idLong != 0) {
+                    ItemConsignado itemConsignado = new ItemConsignado();
+                    ItemConsignado itemConsignadoTemporario = (ItemConsignado) itemConsignado.recuperarPeloID(idLong);
+                    if (itemConsignadoTemporario != null) {
+                        new FrameInformacoesEditarLivroConsignado(itemConsignadoTemporario, true);
+                    }
+                }
+
+            } else {
+                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+            }
+        } catch (Exception erro) {
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+        }
+    }//GEN-LAST:event_btnSobreLivroConsignadoActionPerformed
+
+    private void btnEditarLivroConsignadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarLivroConsignadoActionPerformed
+        try {
+            int linhaSelecionada = jTableLivroConsignado.getSelectedRow();
+            Object idDeElemento = modeloTabelaLivroCOnsignado.getValueAt(linhaSelecionada, 0);
+            if (idDeElemento != null) {
+
+                Long idLong = Long.parseLong(idDeElemento.toString());
+                if (idLong != 0) {
+                    ItemConsignado itemConsignado = new ItemConsignado();
+                    ItemConsignado itemConsignadoTemporario = (ItemConsignado) itemConsignado.recuperarPeloID(idLong);
+                    if (itemConsignadoTemporario != null) {
+                        new FrameInformacoesEditarLivroConsignado(itemConsignadoTemporario, false);
+                    }
+                }
+
+            } else {
+                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+            }
+        } catch (Exception erro) {
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+        }
+    }//GEN-LAST:event_btnEditarLivroConsignadoActionPerformed
+
+    private void btnNovoLivroConsignadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoLivroConsignadoActionPerformed
+        new FrameNovoLivroConsignado();
+    }//GEN-LAST:event_btnNovoLivroConsignadoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -298,4 +367,35 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel panelLivroConsignado;
     private javax.swing.JPanel panelLivroTombo;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+ if(GeradorDeMensagem.exibirMensagemDeConfirmacao("Voce deseja realmente sair da aplicaçao?", "Alerta de Usuario")){
+           System.exit(0);
+       }
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+    }
 }

@@ -41,7 +41,7 @@ public class FrameLogin extends javax.swing.JFrame implements WindowListener{
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtSenha = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        btnAcessarSistema = new javax.swing.JButton();
         txtCpf = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -55,7 +55,12 @@ public class FrameLogin extends javax.swing.JFrame implements WindowListener{
 
         txtSenha.setToolTipText("Digite sua senha");
 
-        jButton1.setText("Acessar");
+        btnAcessarSistema.setText("Acessar");
+        btnAcessarSistema.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAcessarSistemaActionPerformed(evt);
+            }
+        });
 
         try {
             txtCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
@@ -76,7 +81,7 @@ public class FrameLogin extends javax.swing.JFrame implements WindowListener{
                     .addGroup(layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton1)
+                            .addComponent(btnAcessarSistema)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(txtSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
@@ -97,12 +102,17 @@ public class FrameLogin extends javax.swing.JFrame implements WindowListener{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(btnAcessarSistema)
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAcessarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcessarSistemaActionPerformed
+        new FramePrincipal();
+        dispose();
+    }//GEN-LAST:event_btnAcessarSistemaActionPerformed
 
 
      public void lookAndfeel() {
@@ -115,7 +125,7 @@ public class FrameLogin extends javax.swing.JFrame implements WindowListener{
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnAcessarSistema;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
