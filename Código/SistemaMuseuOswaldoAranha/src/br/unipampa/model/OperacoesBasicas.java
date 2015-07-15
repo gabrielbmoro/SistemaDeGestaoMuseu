@@ -17,6 +17,8 @@ public interface OperacoesBasicas {
 
     public boolean alterar(Long ID, Object objetoNovo);
 
+    public boolean alterar(Object objetoNovo);
+
     public List recuperarTodos();
 
     public Long recuperarID(Object objeto);

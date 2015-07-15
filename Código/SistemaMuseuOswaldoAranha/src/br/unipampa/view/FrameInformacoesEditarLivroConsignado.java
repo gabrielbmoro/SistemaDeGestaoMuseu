@@ -202,6 +202,11 @@ public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame im
         });
 
         btnAtualizarDados.setText("Atualizar Dados");
+        btnAtualizarDados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarDadosActionPerformed(evt);
+            }
+        });
 
         btnEditarLivroConsignado.setText("Editar");
         btnEditarLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
@@ -383,6 +388,56 @@ public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame im
         habilitarComponentes();
         btnAtualizarDados.setEnabled(true);
     }//GEN-LAST:event_btnEditarLivroConsignadoActionPerformed
+
+    private void btnAtualizarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarDadosActionPerformed
+        if (this.txtCodigoAuxiliarLivroConsignado.getText().isEmpty()
+                || this.txtMateriaPrimaLivroConsignado.getText().isEmpty()
+                || this.jDateChooserDevolucaoLivroConsignado.getDateFormatString().isEmpty()
+                || this.txtResponsavelDaFamiliaLivroConsignado.getText().isEmpty()
+                || this.txtTipoDeObjetoLivroConsignado.getText().isEmpty()) {
+            GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, preencha os campos marcados com '*', pois sao obrigatorios!", "Alerta de Usuario");
+            return;
+        } else {
+
+            try {
+                this.itemConsignado.setOutroCodigo(Integer.parseInt(this.txtCodigoAuxiliarLivroConsignado.getText()));
+            } catch (NumberFormatException erroDeConversao) {
+                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao novamente!");
+                return;
+            }
+
+            this.itemConsignado.setMateriaPrima(this.txtMateriaPrimaLivroConsignado.getText());
+            this.itemConsignado.setDataDoEmprestimo(this.jDateEmprestimoLivroConsignado.getDate());
+            this.itemConsignado.setDataDeDevolucao(this.jDateChooserDevolucaoLivroConsignado.getDate());
+            this.itemConsignado.setDataUtilizacaoInicial(this.jDateDeUtilizacaoInicialLivroConsignado.getDate());
+            this.itemConsignado.setDataUtilizacaoFinal(this.jDateDeUtilizacaoFinalLivroConsignado.getDate());
+            this.itemConsignado.setResponsavelDaFamilia(this.txtResponsavelDaFamiliaLivroConsignado.getText());
+            this.itemConsignado.setEstilo(this.txtEstiloLivroConsignado.getText());
+            this.itemConsignado.setGrupoLinguistico(this.txtGrupoLingLivroConsignado.getText());
+            this.itemConsignado.setRegiao(this.txtRegiaoLivroConsignado.getText());
+            Object dadosPais = this.jComboPaisLivroConsignado.getSelectedItem();
+            this.itemConsignado.setPais(dadosPais.toString());
+            this.itemConsignado.setProcedencia(this.txtProcedenciaLivroConsignado.getText());
+            this.itemConsignado.setFuncaoEspecifica(this.txtFuncaoEspecificaLivroConsignado.getText());
+            this.itemConsignado.setCultura(this.txtCulturaLivroConsignado.getText());
+            this.itemConsignado.setSitio(this.txtSitioLivroConsignado.getText());
+            this.itemConsignado.setTecnicaManufatura(this.txtTecmanufaturaLivroConsignado1.getText());
+            this.itemConsignado.setTipoObjeto(this.txtTipoDeObjetoLivroConsignado.getText());
+            this.itemConsignado.setImage(false);
+            try {
+                if (this.itemConsignado.alterar(this.itemConsignado)) {
+                    GeradorDeMensagem.exibirMensagemDeInformacao("Os dados foram cadastrados com sucesso!", "Alerta ao Usuario");
+                    dispose();
+                } else {
+                    GeradorDeMensagem.exibirMensagemDeErro("Ocorreu alguns problemas, por favor realize a operaçao mais tarde!");
+                }
+
+            } catch (Exception erro1) {
+                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu alguns problemas, por favor realize a operaçao mais tarde!");
+            }
+
+        }           
+    }//GEN-LAST:event_btnAtualizarDadosActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtualizarDados;

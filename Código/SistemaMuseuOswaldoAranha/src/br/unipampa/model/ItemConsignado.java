@@ -42,7 +42,7 @@ public class ItemConsignado extends ItemTombo implements Serializable {
             return false;
         }
     }
- public boolean alterar(Long ID, Object objetoNovo) {
+ public boolean alterar(Object objetoNovo) {
           if (objetoNovo instanceof ItemConsignado) {
             ItemConsignado item = (ItemConsignado) objetoNovo;
             try {

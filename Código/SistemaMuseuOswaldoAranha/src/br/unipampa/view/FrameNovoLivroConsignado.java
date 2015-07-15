@@ -396,7 +396,7 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
             this.itemConsignado.setEstilo(this.txtEstiloLivroConsignado.getText());
             this.itemConsignado.setGrupoLinguistico(this.txtGrupoLingLivroConsignado.getText());
             this.itemConsignado.setRegiao(this.txtRegiaoLivroConsignado.getText());
-            Object dadosPais = this.jComboPaisLivroConsignado.getSelectedIndex();
+            Object dadosPais = this.jComboPaisLivroConsignado.getSelectedItem();
             this.itemConsignado.setPais(dadosPais.toString());
             this.itemConsignado.setProcedencia(this.txtProcedenciaLivroConsignado.getText());
             this.itemConsignado.setFuncaoEspecifica(this.txtFuncaoEspecificaLivroConsignado.getText());
