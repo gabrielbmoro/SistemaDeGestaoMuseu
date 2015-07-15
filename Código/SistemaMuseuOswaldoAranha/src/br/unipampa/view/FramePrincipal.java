@@ -5,11 +5,17 @@
  */
 package br.unipampa.view;
 
+import br.unipampa.model.ItemConsignado;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author gabrielbmoro
  */
 public class FramePrincipal extends javax.swing.JFrame {
+
+    private DefaultTableModel modeloTabelaLivroCOnsignado;
 
     /**
      * Creates new form FramePrincipal
@@ -17,6 +23,8 @@ public class FramePrincipal extends javax.swing.JFrame {
     public FramePrincipal() {
         initComponents();
         ConfiguracaoFrame.configFrameTamanhoPadrao(this);
+
+        modeloTabelaLivroCOnsignado = (DefaultTableModel) jTableLivroConsignado.getModel();
     }
 
     /**
@@ -30,10 +38,15 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         jTabbedPaneAcervo = new javax.swing.JTabbedPane();
         panelLivroConsignado = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
+        panelButtonsLivroConsignado = new javax.swing.JPanel();
         btnNovoLivroConsignado = new javax.swing.JButton();
         btnListarLivroConsignado = new javax.swing.JButton();
         panelInternoLivroConsignado = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableLivroConsignado = new javax.swing.JTable();
+        btnEditarLivroConsignado = new javax.swing.JButton();
+        btnDeletarLivroConsignado = new javax.swing.JButton();
+        btnSobreLivroConsignado = new javax.swing.JButton();
         panelLivroTombo = new javax.swing.JPanel();
         panelLivroBiblioteca = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -45,36 +58,97 @@ public class FramePrincipal extends javax.swing.JFrame {
         btnNovoLivroConsignado.setText("Novo");
 
         btnListarLivroConsignado.setText("Listar");
+        btnListarLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarLivroConsignadoActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout panelButtonsLivroConsignadoLayout = new javax.swing.GroupLayout(panelButtonsLivroConsignado);
+        panelButtonsLivroConsignado.setLayout(panelButtonsLivroConsignadoLayout);
+        panelButtonsLivroConsignadoLayout.setHorizontalGroup(
+            panelButtonsLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelButtonsLivroConsignadoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelButtonsLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnNovoLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnListarLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        panelButtonsLivroConsignadoLayout.setVerticalGroup(
+            panelButtonsLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelButtonsLivroConsignadoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnNovoLivroConsignado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnListarLivroConsignado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(btnListarLivroConsignado)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnNovoLivroConsignado)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnListarLivroConsignado)
+                .addGap(23, 23, 23))
         );
+
+        jTableLivroConsignado.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Outro Codigo", "Tipo de Item", "Funçao", "Regiao"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Long.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTableLivroConsignado);
+
+        btnEditarLivroConsignado.setText("Editar");
+
+        btnDeletarLivroConsignado.setText("Deletar");
+        btnDeletarLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeletarLivroConsignadoActionPerformed(evt);
+            }
+        });
+
+        btnSobreLivroConsignado.setText("Sobre");
 
         javax.swing.GroupLayout panelInternoLivroConsignadoLayout = new javax.swing.GroupLayout(panelInternoLivroConsignado);
         panelInternoLivroConsignado.setLayout(panelInternoLivroConsignadoLayout);
         panelInternoLivroConsignadoLayout.setHorizontalGroup(
             panelInternoLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 636, Short.MAX_VALUE)
+            .addGroup(panelInternoLivroConsignadoLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelInternoLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnDeletarLivroConsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEditarLivroConsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSobreLivroConsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelInternoLivroConsignadoLayout.setVerticalGroup(
             panelInternoLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 518, Short.MAX_VALUE)
+            .addGroup(panelInternoLivroConsignadoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelInternoLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelInternoLivroConsignadoLayout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(btnSobreLivroConsignado)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEditarLivroConsignado)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDeletarLivroConsignado)))
+                .addContainerGap(466, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelLivroConsignadoLayout = new javax.swing.GroupLayout(panelLivroConsignado);
@@ -83,8 +157,8 @@ public class FramePrincipal extends javax.swing.JFrame {
             panelLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLivroConsignadoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(panelButtonsLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(panelInternoLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -95,8 +169,8 @@ public class FramePrincipal extends javax.swing.JFrame {
                 .addGroup(panelLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelInternoLivroConsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panelLivroConsignadoLayout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 442, Short.MAX_VALUE)))
+                        .addComponent(panelButtonsLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 683, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -106,11 +180,11 @@ public class FramePrincipal extends javax.swing.JFrame {
         panelLivroTombo.setLayout(panelLivroTomboLayout);
         panelLivroTomboLayout.setHorizontalGroup(
             panelLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 768, Short.MAX_VALUE)
+            .addGap(0, 771, Short.MAX_VALUE)
         );
         panelLivroTomboLayout.setVerticalGroup(
             panelLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 542, Short.MAX_VALUE)
+            .addGap(0, 806, Short.MAX_VALUE)
         );
 
         jTabbedPaneAcervo.addTab("Livro Tombo", panelLivroTombo);
@@ -119,11 +193,11 @@ public class FramePrincipal extends javax.swing.JFrame {
         panelLivroBiblioteca.setLayout(panelLivroBibliotecaLayout);
         panelLivroBibliotecaLayout.setHorizontalGroup(
             panelLivroBibliotecaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 768, Short.MAX_VALUE)
+            .addGap(0, 771, Short.MAX_VALUE)
         );
         panelLivroBibliotecaLayout.setVerticalGroup(
             panelLivroBibliotecaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 542, Short.MAX_VALUE)
+            .addGap(0, 806, Short.MAX_VALUE)
         );
 
         jTabbedPaneAcervo.addTab("Biblioteca", panelLivroBiblioteca);
@@ -156,49 +230,69 @@ public class FramePrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FramePrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FramePrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FramePrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FramePrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btnListarLivroConsignadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarLivroConsignadoActionPerformed
+        listarTabelaLivroConsignado();
+    }//GEN-LAST:event_btnListarLivroConsignadoActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FramePrincipal().setVisible(true);
+    private void listarTabelaLivroConsignado() {
+        /*Limpar Tabela*/
+        modeloTabelaLivroCOnsignado.setNumRows(0);
+        ItemConsignado itemConsignado = new ItemConsignado();
+        List listaDeREgistros = itemConsignado.recuperarTodos();
+        if (listaDeREgistros != null && !listaDeREgistros.isEmpty()) {
+            for (Object objetoTemp : listaDeREgistros) {
+                ItemConsignado itemConsignadoTemporario = (ItemConsignado) objetoTemp;
+                modeloTabelaLivroCOnsignado.addRow(new Object[]{
+                    itemConsignadoTemporario.getID(),
+                    itemConsignadoTemporario.getOutroCodigo(),
+                    itemConsignadoTemporario.getTipoObjeto(),
+                    itemConsignadoTemporario.getFuncaoEspecifica(),
+                    itemConsignadoTemporario.getRegiao()
+                });
             }
-        });
+        }
     }
+    private void btnDeletarLivroConsignadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarLivroConsignadoActionPerformed
+        int linhaSelecionada = jTableLivroConsignado.getSelectedRow();
+        Object idDeElemento = modeloTabelaLivroCOnsignado.getValueAt(linhaSelecionada, 0);
+        if (idDeElemento != null) {
+            try {
+                Long idLong = Long.parseLong(idDeElemento.toString());
+                if (idLong != 0) {
+                    ItemConsignado itemConsignado = new ItemConsignado();
+                    Object objetoASerExcluido = itemConsignado.recuperarPeloID(idLong);
+                    if (objetoASerExcluido != null) {
+                        boolean resultado = itemConsignado.deletar(objetoASerExcluido);
+                        if (resultado) {
+                            GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluido com sucesso!", "Alerta ao Usuario");
+                            listarTabelaLivroConsignado();
+                        } else {
+                            GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
+                        }
+                    } else {
+                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
+                    }
+                }
+            } catch (Exception erro) {
+                return;
+            }
+        }
+    }//GEN-LAST:event_btnDeletarLivroConsignadoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDeletarLivroConsignado;
+    private javax.swing.JButton btnEditarLivroConsignado;
     private javax.swing.JButton btnListarLivroConsignado;
     private javax.swing.JButton btnNovoLivroConsignado;
+    private javax.swing.JButton btnSobreLivroConsignado;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPaneAcervo;
+    private javax.swing.JTable jTableLivroConsignado;
+    private javax.swing.JPanel panelButtonsLivroConsignado;
     private javax.swing.JPanel panelInternoLivroConsignado;
     private javax.swing.JPanel panelLivroBiblioteca;
     private javax.swing.JPanel panelLivroConsignado;

@@ -1,6 +1,7 @@
 package br.unipampa.model;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,7 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Table(name = "ItemDeAcervo")
-public class ItemTombo implements Serializable {
+public class ItemTombo implements Serializable, OperacoesBasicas {
 
     @Id
     @GeneratedValue
@@ -32,7 +33,32 @@ public class ItemTombo implements Serializable {
     protected String pais;
     protected boolean imagemEnviada;
 
+    @Override
+    public boolean salvar(Object objeto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
+    @Override
+    public boolean alterar(Long ID, Object objetoNovo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List recuperarTodos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Long recuperarID(Object objeto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean deletar(Object valor) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
     public Long getID() {
         return ID;
     }
@@ -153,12 +179,17 @@ public class ItemTombo implements Serializable {
         this.pais = pais;
     }
 
-    public boolean isImagemEnviada() {
+    public boolean getImagemEnviada() {
         return imagemEnviada;
     }
 
-    public void setImagemEnviada(boolean imagemEnviada) {
+    public void setImage(boolean imagemEnviada) {
         this.imagemEnviada = imagemEnviada;
+    }
+
+    @Override
+    public Object recuperarPeloID(Long id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

@@ -1,5 +1,4 @@
 
-import br.unipampa.view.FrameLogin;
 import br.unipampa.view.FrameNovoLivroConsignado;
 import br.unipampa.view.FramePrincipal;
 
@@ -17,6 +16,6 @@ public class Main {
     
     public static void main(String[] args)
     {
-        new FrameNovoLivroConsignado();
+        new FramePrincipal();
     }
 }
