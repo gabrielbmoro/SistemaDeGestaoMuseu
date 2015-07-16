@@ -13,18 +13,20 @@ public class Main {
     
     public static void main(String[] args)
     {
-//        Funcionario func = new Funcionario();
-//        func.setCpf(378913);
-//        func.setDataNAsc(null);
-//        func.setEndereco("Peru");
-//        func.setLogin("netoiung ");
-//        func.setNome("Neto");
-//        func.setSenha("190");
-//        func.salvar(func);
+        Funcionario func = new Funcionario();
+        func.setCpf(378913);
+        func.setEndereco("Peru");
+        func.setLogin("netoiung ");
+        func.setNome("Neto");
+        func.setSenha("190");
+        func.setDataNAsc("dasdsa");
+        func.setIsADM(true);
+        System.out.println(func.salvar(func));
         
-        ItemConsignado item = new ItemConsignado();
-        item.setCultura("oi");
-        item.salvar(item);
+        
+//        ItemConsignado item = new ItemConsignado();
+//        item.setCultura("oi");
+//        item.salvar(item);
         
         
     }

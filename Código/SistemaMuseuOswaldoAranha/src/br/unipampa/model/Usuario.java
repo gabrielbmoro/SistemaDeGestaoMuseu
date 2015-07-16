@@ -5,7 +5,10 @@ import java.util.List;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 @Entity
@@ -13,6 +16,7 @@ import javax.persistence.Table;
 public class Usuario implements Serializable,OperacoesBasicas {
 
     @Id
+    @GeneratedValue
     private int cpf;
     private String login;
     private String senha;

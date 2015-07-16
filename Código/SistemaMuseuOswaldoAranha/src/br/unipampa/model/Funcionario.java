@@ -14,20 +14,29 @@ import org.hibernate.Transaction;
 @Entity
 public class Funcionario extends Usuario implements Serializable {
 
+    private boolean isADM;
+
+    public boolean isIsADM() {
+        return isADM;
+    }
+
+    public void setIsADM(boolean isADM) {
+        this.isADM = isADM;
+    }
+    
+    
     @Override
     public boolean salvar(Object objeto) {
         if (objeto instanceof Funcionario) {
             Funcionario func = (Funcionario) objeto;
-            try {
+            
                 Session sessao = HibernateUtil.openSession();
                 sessao.saveOrUpdate(func);
                 Transaction transacao = sessao.beginTransaction();
                 transacao.commit();
                 sessao.clear();
                 return true;
-            } catch (Exception erro) {
-                return false;
-            }
+           
         } else {
             return false;
         }
