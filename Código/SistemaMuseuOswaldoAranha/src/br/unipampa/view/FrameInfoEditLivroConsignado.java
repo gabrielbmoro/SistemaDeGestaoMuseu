@@ -224,7 +224,7 @@ public class FrameInfoEditLivroConsignado extends javax.swing.JFrame implements 
             }
         });
 
-        btnAlterarImagem.setText("Alterar Imagem");
+        btnAlterarImagem.setText("Adicionar/Atualizar Imagem");
         btnAlterarImagem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAlterarImagemActionPerformed(evt);

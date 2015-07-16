@@ -21,11 +21,11 @@ public class Main {
 //        func.setNome("Neto");
 //        func.setSenha("190");
 //        func.salvar(func);
-        
-        ItemConsignado item = new ItemConsignado();
-        item.setCultura("oi");
-        item.salvar(item);
-        
-        
+        /*Teste que alguem fez*/
+//        ItemConsignado item = new ItemConsignado();
+//        item.setCultura("oi");
+//        item.salvar(item);
+        /*Para executar a aplicaçao*/
+        new FrameLogin();
     }
 }

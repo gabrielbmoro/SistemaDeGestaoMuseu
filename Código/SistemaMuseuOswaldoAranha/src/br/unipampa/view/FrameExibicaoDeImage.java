@@ -5,7 +5,6 @@
  */
 package br.unipampa.view;
 
-import br.unipampa.model.ItemConsignado;
 import br.unipampa.service.UtilitariaDeUploadDeImagem;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -35,11 +34,18 @@ public class FrameExibicaoDeImage extends javax.swing.JFrame implements WindowLi
     public FrameExibicaoDeImage(Long idItemDeAcervo) {
         initComponents();
         
+        if(new File(UtilitariaDeUploadDeImagem.PATH+idItemDeAcervo.toString()+UtilitariaDeUploadDeImagem.EXTENSAO).exists()){
         bImage = Toolkit.getDefaultToolkit().createImage(UtilitariaDeUploadDeImagem.PATH+idItemDeAcervo.toString()+UtilitariaDeUploadDeImagem.EXTENSAO);
+        
         super.setContentPane(new PanelInterno());
         definirDimensaoDoFrame(idItemDeAcervo);
+        
         addWindowListener(this);
         setVisible(true);
+        }else{
+            GeradorDeMensagem.exibirMensagemDeInformacao("Nenhuma imagem encontrada!", "Alerta ao Usuario");
+            dispose();
+        }
     }
 
     @Override
