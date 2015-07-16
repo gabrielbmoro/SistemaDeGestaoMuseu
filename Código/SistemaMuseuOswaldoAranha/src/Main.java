@@ -1,13 +1,9 @@
 
+import br.unipampa.model.Funcionario;
+import br.unipampa.model.ItemConsignado;
 import br.unipampa.view.FrameLogin;
 import br.unipampa.view.FrameNovoLivroConsignado;
 import br.unipampa.view.FramePrincipal;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
@@ -17,6 +13,19 @@ public class Main {
     
     public static void main(String[] args)
     {
-        new FrameLogin();
+//        Funcionario func = new Funcionario();
+//        func.setCpf(378913);
+//        func.setDataNAsc(null);
+//        func.setEndereco("Peru");
+//        func.setLogin("netoiung ");
+//        func.setNome("Neto");
+//        func.setSenha("190");
+//        func.salvar(func);
+        
+        ItemConsignado item = new ItemConsignado();
+        item.setCultura("oi");
+        item.salvar(item);
+        
+        
     }
 }
