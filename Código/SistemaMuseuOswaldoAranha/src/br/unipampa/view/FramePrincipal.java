@@ -6,8 +6,11 @@
 package br.unipampa.view;
 
 import br.unipampa.model.ItemConsignado;
+import br.unipampa.service.GerarRelatorioEmPdf;
+import br.unipampa.service.TipoDeRelatorio;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -76,6 +79,11 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
         btnGerarRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/exportar.png"))); // NOI18N
         btnGerarRelatorio.setToolTipText("Gerar Relatorio de Itens Cadastrados");
+        btnGerarRelatorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGerarRelatorioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelButtonsLivroConsignadoLayout = new javax.swing.GroupLayout(panelButtonsLivroConsignado);
         panelButtonsLivroConsignado.setLayout(panelButtonsLivroConsignadoLayout);
@@ -361,6 +369,10 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     private void btnNovoLivroConsignadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoLivroConsignadoActionPerformed
         new FrameNovoLivroConsignado();
     }//GEN-LAST:event_btnNovoLivroConsignadoActionPerformed
+
+    private void btnGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarRelatorioActionPerformed
+     new FrameDeGeracaoDeRelatorios(TipoDeRelatorio.ITEM_CONSIGNADO);
+    }//GEN-LAST:event_btnGerarRelatorioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -5,25 +5,39 @@
  */
 package br.unipampa.view;
 
+import br.unipampa.model.ItemConsignado;
+import br.unipampa.service.GerarRelatorioEmPdf;
+import br.unipampa.service.TipoDeRelatorio;
+import java.awt.Desktop;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JFileChooser;
 
 /**
  *
  * @author gabrielbmoro
  */
-public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements WindowListener{
+public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements WindowListener {
 
-    private JFileChooser  jFileChooser;
-    
+    private JFileChooser jFileChooser;
+    private TipoDeRelatorio tipoDeRelatorio;
+
     /**
      * Creates new form FrameDeGeracaoDeRelatorios
      */
-    public FrameDeGeracaoDeRelatorios() {
+    public FrameDeGeracaoDeRelatorios(TipoDeRelatorio tipoDeRelatorio) {
         initComponents();
-        ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 495, 150);
+        this.tipoDeRelatorio = tipoDeRelatorio;
+        if (this.tipoDeRelatorio != null) {
+            ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 495, 212);
+        } else {
+            GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum tipo de relatorio informado, realize a operaçao novamente!", "Alerta de Usuario");
+            dispose();
+        }
     }
 
     /**
@@ -38,7 +52,9 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
         jLabel1 = new javax.swing.JLabel();
         txtCaminhoParaSalvar = new javax.swing.JTextField();
         txtBuscarDiretorio = new javax.swing.JButton();
-        btnRegistrarImagem = new javax.swing.JButton();
+        btnGerarRelatorio = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        txtNomeDoRelatorio = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Gerar Relatorios");
@@ -56,14 +72,16 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
             }
         });
 
-        btnRegistrarImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/exportar.png"))); // NOI18N
-        btnRegistrarImagem.setText("Gerar Relatorio");
-        btnRegistrarImagem.setToolTipText("Gerar Relatorio com Itens Cadastrados");
-        btnRegistrarImagem.addActionListener(new java.awt.event.ActionListener() {
+        btnGerarRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/exportar.png"))); // NOI18N
+        btnGerarRelatorio.setText("Gerar Relatorio");
+        btnGerarRelatorio.setToolTipText("Gerar Relatorio com Itens Cadastrados");
+        btnGerarRelatorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarImagemActionPerformed(evt);
+                btnGerarRelatorioActionPerformed(evt);
             }
         });
+
+        jLabel2.setText("Nome do Arquivo:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,31 +90,33 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtCaminhoParaSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtBuscarDiretorio, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)))
-                        .addGap(54, 54, 54))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnRegistrarImagem)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(btnGerarRelatorio)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel1)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(txtCaminhoParaSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtBuscarDiretorio, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel2)
+                        .addComponent(txtNomeDoRelatorio)))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNomeDoRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtBuscarDiretorio, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCaminhoParaSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtCaminhoParaSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnRegistrarImagem)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addComponent(btnGerarRelatorio)
+                .addContainerGap())
         );
 
         pack();
@@ -115,20 +135,41 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
         }
     }//GEN-LAST:event_txtBuscarDiretorioActionPerformed
 
-    private void btnRegistrarImagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarImagemActionPerformed
-       
-    }//GEN-LAST:event_btnRegistrarImagemActionPerformed
+    private void btnGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarRelatorioActionPerformed
+        String titulo = txtNomeDoRelatorio.getText();
+        
+        if(titulo.isEmpty()||titulo==null){
+            titulo = "RelatorioSisMOA";
+        }
+        
+        if (new File(txtCaminhoParaSalvar.getText()).exists()) {
+            ItemConsignado itemConsignado = new ItemConsignado();
+            List<Object> dados = itemConsignado.recuperarTodos();
+            if (dados.isEmpty() || dados == null) {
+                GeradorDeMensagem.exibirMensagemDeInformacao("O relatorio nao foi gerado, pois nenhum registro foi encontrado!", "Alerta ao Usuario");
+            } else {
+                GerarRelatorioEmPdf gerarRelatorioEmPdf = new GerarRelatorioEmPdf();
+                boolean resposta = gerarRelatorioEmPdf.gerarRelatorio(dados, txtCaminhoParaSalvar.getText(), titulo , this.tipoDeRelatorio);
+                if (resposta) {
+                    GeradorDeMensagem.exibirMensagemDeInformacao("O relatorio foi gerado com sucesso!", "Alerta ao Usuario");
+                } else {
+                    GeradorDeMensagem.exibirMensagemDeInformacao("O relatorio nao foi gerado, realize a operaçao mais tarde!", "Alerta ao Usuario");
+                }
+            }
+        } else {
+            GeradorDeMensagem.exibirMensagemDeInformacao("Caminho de diretorio invalido, escolha outro diretorio!", "Alerta ao Usuario");
+        }
 
-    public static void main(String[] args){
-        new FrameDeGeracaoDeRelatorios().setVisible(true);
-    }
-    
+    }//GEN-LAST:event_btnGerarRelatorioActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRegistrarImagem;
+    private javax.swing.JButton btnGerarRelatorio;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton txtBuscarDiretorio;
     private javax.swing.JTextField txtCaminhoParaSalvar;
+    private javax.swing.JTextField txtNomeDoRelatorio;
     // End of variables declaration//GEN-END:variables
 
     @Override
