@@ -144,7 +144,9 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
 
         jLabel15.setText("Regiao:");
 
+        btnRegistrarDadosLivroConsignado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/cadastrar.png"))); // NOI18N
         btnRegistrarDadosLivroConsignado.setText("Salvar");
+        btnRegistrarDadosLivroConsignado.setToolTipText("Registrar Dados");
         btnRegistrarDadosLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarDadosLivroConsignadoActionPerformed(evt);
@@ -223,7 +225,7 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
                                     .addGroup(jPanelDadosLayout.createSequentialGroup()
                                         .addGap(12, 12, 12)
                                         .addComponent(jComboPaisLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(188, 201, Short.MAX_VALUE))
+                        .addGap(188, 233, Short.MAX_VALUE))
                     .addGroup(jPanelDadosLayout.createSequentialGroup()
                         .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelDadosLayout.createSequentialGroup()
@@ -236,7 +238,7 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
                                 .addComponent(txtTipoDeObjetoLivroConsignado))
                             .addGroup(jPanelDadosLayout.createSequentialGroup()
                                 .addComponent(btnRegistrarDadosLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(0, 989, Short.MAX_VALUE)))
                         .addContainerGap())))
         );
         jPanelDadosLayout.setVerticalGroup(
@@ -307,7 +309,8 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
         txtCaminhoImagem.setText("caminhoDoArquivo");
         txtCaminhoImagem.setEnabled(false);
 
-        txtBuscarImagem.setText("Buscar");
+        txtBuscarImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/pesquisar.png"))); // NOI18N
+        txtBuscarImagem.setToolTipText("Buscar Arquivo");
         txtBuscarImagem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBuscarImagemActionPerformed(evt);
@@ -316,7 +319,9 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
 
         jLabel18.setText("Foto do Item:");
 
+        btnRegistrarImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/cadastrar.png"))); // NOI18N
         btnRegistrarImagem.setText("Registrar Imagem");
+        btnRegistrarImagem.setToolTipText("Registrar Imagem para o Item");
         btnRegistrarImagem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarImagemActionPerformed(evt);
@@ -334,9 +339,9 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
                     .addGroup(jPanelUploadDeImagemLayout.createSequentialGroup()
                         .addComponent(txtCaminhoImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtBuscarImagem))
+                        .addComponent(txtBuscarImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnRegistrarImagem))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         jPanelUploadDeImagemLayout.setVerticalGroup(
             jPanelUploadDeImagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -346,7 +351,7 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelUploadDeImagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCaminhoImagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtBuscarImagem))
+                    .addComponent(txtBuscarImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRegistrarImagem)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))

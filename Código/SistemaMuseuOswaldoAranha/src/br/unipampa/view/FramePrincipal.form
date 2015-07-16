@@ -51,7 +51,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPaneAcervo" pref="555" max="32767" attributes="0"/>
+              <Component id="jTabbedPaneAcervo" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -76,10 +76,10 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="panelButtonsLivroConsignado" min="-2" pref="81" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="panelButtonsLivroConsignado" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="panelInternoLivroConsignado" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="165" max="32767" attributes="0"/>
+                      <EmptySpace pref="205" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -106,23 +106,25 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnNovoLivroConsignado" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
-                              <Component id="btnListarLivroConsignado" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
-                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="btnListarLivroConsignado" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="btnNovoLivroConsignado" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
+                          <Component id="btnNovoLivroConsignado" min="-2" pref="44" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnNovoLivroConsignado" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="btnListarLivroConsignado" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                          <EmptySpace pref="24" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -130,7 +132,10 @@
               <SubComponents>
                 <Component class="javax.swing.JButton" name="btnNovoLivroConsignado">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Novo"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/unipampa/view/icons/add.png"/>
+                    </Property>
+                    <Property name="toolTipText" type="java.lang.String" value="Novo Item"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovoLivroConsignadoActionPerformed"/>
@@ -138,7 +143,10 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnListarLivroConsignado">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Listar"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/unipampa/view/icons/listar.png"/>
+                    </Property>
+                    <Property name="toolTipText" type="java.lang.String" value="LIstar Itens"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListarLivroConsignadoActionPerformed"/>
@@ -152,13 +160,13 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="535" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="btnDeletarLivroConsignado" max="32767" attributes="0"/>
-                              <Component id="btnEditarLivroConsignado" max="32767" attributes="0"/>
                               <Component id="btnSobreLivroConsignado" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnEditarLivroConsignado" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -173,7 +181,7 @@
                           <Component id="btnEditarLivroConsignado" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnDeletarLivroConsignado" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="376" max="32767" attributes="0"/>
+                          <EmptySpace pref="350" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jScrollPane1" max="32767" attributes="0"/>
@@ -234,7 +242,10 @@
                 </Container>
                 <Component class="javax.swing.JButton" name="btnEditarLivroConsignado">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Editar"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/unipampa/view/icons/editar.png"/>
+                    </Property>
+                    <Property name="toolTipText" type="java.lang.String" value="Editar Item"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarLivroConsignadoActionPerformed"/>
@@ -242,7 +253,10 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnDeletarLivroConsignado">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Deletar"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/unipampa/view/icons/lixeira.png"/>
+                    </Property>
+                    <Property name="toolTipText" type="java.lang.String" value="Remover Item"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeletarLivroConsignadoActionPerformed"/>
@@ -250,7 +264,10 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnSobreLivroConsignado">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Mais"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/unipampa/view/icons/escolhas.png"/>
+                    </Property>
+                    <Property name="toolTipText" type="java.lang.String" value="Sobre o elemento"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSobreLivroConsignadoActionPerformed"/>
@@ -277,7 +294,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="518" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="533" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -299,7 +316,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="518" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="533" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>

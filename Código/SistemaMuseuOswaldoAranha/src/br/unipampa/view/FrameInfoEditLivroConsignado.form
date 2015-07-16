@@ -122,7 +122,7 @@
                               <Component id="btnEditarLivroConsignado" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="btnAtualizarDados" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="636" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -210,7 +210,7 @@
                   <Component id="btnImagem" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnAlterarImagem" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="25" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnAtualizarDados" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnEditarLivroConsignado" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -537,6 +537,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnAtualizarDados">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/br/unipampa/view/icons/cadastrar.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Atualizar Dados"/>
       </Properties>
       <Events>
@@ -545,6 +548,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnEditarLivroConsignado">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/br/unipampa/view/icons/editar.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Editar"/>
       </Properties>
       <Events>
@@ -553,6 +559,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnImagem">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/br/unipampa/view/icons/calcular.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Ver Imagem"/>
       </Properties>
       <Events>
@@ -561,6 +570,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnAlterarImagem">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/br/unipampa/view/icons/add.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Adicionar/Atualizar Imagem"/>
       </Properties>
       <Events>

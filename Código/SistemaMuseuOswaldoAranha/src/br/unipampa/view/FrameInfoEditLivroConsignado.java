@@ -203,6 +203,7 @@ public class FrameInfoEditLivroConsignado extends javax.swing.JFrame implements 
             }
         });
 
+        btnAtualizarDados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/cadastrar.png"))); // NOI18N
         btnAtualizarDados.setText("Atualizar Dados");
         btnAtualizarDados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -210,6 +211,7 @@ public class FrameInfoEditLivroConsignado extends javax.swing.JFrame implements 
             }
         });
 
+        btnEditarLivroConsignado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/editar.png"))); // NOI18N
         btnEditarLivroConsignado.setText("Editar");
         btnEditarLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -217,6 +219,7 @@ public class FrameInfoEditLivroConsignado extends javax.swing.JFrame implements 
             }
         });
 
+        btnImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/calcular.png"))); // NOI18N
         btnImagem.setText("Ver Imagem");
         btnImagem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,6 +227,7 @@ public class FrameInfoEditLivroConsignado extends javax.swing.JFrame implements 
             }
         });
 
+        btnAlterarImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/add.png"))); // NOI18N
         btnAlterarImagem.setText("Adicionar/Atualizar Imagem");
         btnAlterarImagem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -318,7 +322,7 @@ public class FrameInfoEditLivroConsignado extends javax.swing.JFrame implements 
                                 .addComponent(btnEditarLivroConsignado)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnAtualizarDados)
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(0, 636, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnImagem)
@@ -387,7 +391,7 @@ public class FrameInfoEditLivroConsignado extends javax.swing.JFrame implements 
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnImagem)
                     .addComponent(btnAlterarImagem))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAtualizarDados)
                     .addComponent(btnEditarLivroConsignado))
