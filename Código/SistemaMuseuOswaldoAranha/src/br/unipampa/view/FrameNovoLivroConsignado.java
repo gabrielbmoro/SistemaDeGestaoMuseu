@@ -26,7 +26,7 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
      */
     public FrameNovoLivroConsignado() {
         initComponents();
-        ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 1100, 400);
+        ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 1100, 500);
         jPanelDados.setVisible(true);
         jPanelUploadDeImagem.setVisible(false);
         revalidate();
@@ -458,8 +458,8 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
                             dispose();
                         }
                     } else {
-                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
-                        dispose();
+                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao novamente!");
+                        
                     }
                 }
             }

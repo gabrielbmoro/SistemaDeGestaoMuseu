@@ -5,12 +5,12 @@
  */
 package br.unipampa.service;
 
+import br.unipampa.view.GeradorDeMensagem;
+import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.channels.FileChannel;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -18,8 +18,8 @@ import java.nio.channels.FileChannel;
  */
 public class UtilitariaDeUploadDeImagem {
 
-    private static String PATH = System.getProperty("user.home") + File.separator + "fotosDeAcervo" + File.separator;
-    private static String EXTENSAO = ".jpg";
+    public static String PATH = System.getProperty("user.home") + File.separator + "fotosDeAcervo" + File.separator;
+    public static String EXTENSAO = ".jpg";
 
     public static boolean verificarArquivo(File file) {
         if (file.exists() && file.getAbsolutePath().contains(".jpg")) {
@@ -29,39 +29,24 @@ public class UtilitariaDeUploadDeImagem {
         }
     }
 
-    public static void copyFile(File source, File destination) throws IOException {
-        if (destination.exists()) {
-            destination.delete();
-        }
-
-        FileChannel sourceChannel = null;
-        FileChannel destinationChannel = null;
-
-        try {
-            sourceChannel = new FileInputStream(source).getChannel();
-            destinationChannel = new FileOutputStream(destination).getChannel();
-            sourceChannel.transferTo(0, sourceChannel.size(),
-                    destinationChannel);
-        } finally {
-            if (sourceChannel != null && sourceChannel.isOpen()) {
-                sourceChannel.close();
-            }
-            if (destinationChannel != null && destinationChannel.isOpen()) {
-                destinationChannel.close();
-            }
-        }
-
-    }
-
     public static boolean enviarArquivo(File fileOrigem, Long ID) {
         try {
             File pasta = new File(PATH);
-            if(!pasta.exists()){
+            if (!pasta.exists()) {
                 pasta.mkdir();
             }
             File fileDestino = new File(PATH + ID.toString() + EXTENSAO);
-            copyFile(fileOrigem, fileDestino);
-            return true;
+
+            BufferedImage imagem = ImageIO.read(fileOrigem);
+            if (imagem.getWidth() <= 956 && imagem.getHeight() <= 600) {
+// fazer algo com a imagem...
+               
+                ImageIO.write(imagem, "jpg", fileDestino);
+                return true;
+            } else {
+                GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, a imagem deve ter menos de 957 de largura e menos de 601 de altura.", "Alerta ao Usuario");
+                return false;
+            }
         } catch (FileNotFoundException erro) {
             return false;
         } catch (IOException erro1) {

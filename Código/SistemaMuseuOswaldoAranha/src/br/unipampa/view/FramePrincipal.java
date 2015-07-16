@@ -24,8 +24,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
      */
     public FramePrincipal() {
         initComponents();
-        ConfiguracaoFrame.configFrameTamanhoPadrao(this);
-
+        ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 1000, 600);
         modeloTabelaLivroCOnsignado = (DefaultTableModel) jTableLivroConsignado.getModel();
         addWindowListener(this);
     }
@@ -156,17 +155,16 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         panelInternoLivroConsignadoLayout.setVerticalGroup(
             panelInternoLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInternoLivroConsignadoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelInternoLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelInternoLivroConsignadoLayout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(btnSobreLivroConsignado)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEditarLivroConsignado)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnDeletarLivroConsignado)))
-                .addContainerGap(466, Short.MAX_VALUE))
+                .addGap(19, 19, 19)
+                .addComponent(btnSobreLivroConsignado)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEditarLivroConsignado)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnDeletarLivroConsignado)
+                .addContainerGap(376, Short.MAX_VALUE))
+            .addGroup(panelInternoLivroConsignadoLayout.createSequentialGroup()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout panelLivroConsignadoLayout = new javax.swing.GroupLayout(panelLivroConsignado);
@@ -176,9 +174,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
             .addGroup(panelLivroConsignadoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(panelButtonsLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelInternoLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         panelLivroConsignadoLayout.setVerticalGroup(
             panelLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,7 +186,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                     .addComponent(panelInternoLivroConsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panelLivroConsignadoLayout.createSequentialGroup()
                         .addComponent(panelButtonsLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 683, Short.MAX_VALUE)))
+                        .addGap(0, 395, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -198,11 +196,11 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         panelLivroTombo.setLayout(panelLivroTomboLayout);
         panelLivroTomboLayout.setHorizontalGroup(
             panelLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 771, Short.MAX_VALUE)
+            .addGap(0, 923, Short.MAX_VALUE)
         );
         panelLivroTomboLayout.setVerticalGroup(
             panelLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 806, Short.MAX_VALUE)
+            .addGap(0, 518, Short.MAX_VALUE)
         );
 
         jTabbedPaneAcervo.addTab("Livro Tombo", panelLivroTombo);
@@ -211,11 +209,11 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         panelLivroBiblioteca.setLayout(panelLivroBibliotecaLayout);
         panelLivroBibliotecaLayout.setHorizontalGroup(
             panelLivroBibliotecaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 771, Short.MAX_VALUE)
+            .addGap(0, 923, Short.MAX_VALUE)
         );
         panelLivroBibliotecaLayout.setVerticalGroup(
             panelLivroBibliotecaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 806, Short.MAX_VALUE)
+            .addGap(0, 518, Short.MAX_VALUE)
         );
 
         jTabbedPaneAcervo.addTab("Biblioteca", panelLivroBiblioteca);
@@ -235,13 +233,13 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPaneAcervo)
-                .addContainerGap())
+                .addGap(4, 4, 4))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPaneAcervo)
+                .addComponent(jTabbedPaneAcervo, javax.swing.GroupLayout.DEFAULT_SIZE, 555, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -309,7 +307,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                     ItemConsignado itemConsignado = new ItemConsignado();
                     ItemConsignado itemConsignadoTemporario = (ItemConsignado) itemConsignado.recuperarPeloID(idLong);
                     if (itemConsignadoTemporario != null) {
-                        new FrameInformacoesEditarLivroConsignado(itemConsignadoTemporario, true);
+                        new FrameInfoEditLivroConsignado(itemConsignadoTemporario, true);
                     }
                 }
 
@@ -332,7 +330,8 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                     ItemConsignado itemConsignado = new ItemConsignado();
                     ItemConsignado itemConsignadoTemporario = (ItemConsignado) itemConsignado.recuperarPeloID(idLong);
                     if (itemConsignadoTemporario != null) {
-                        new FrameInformacoesEditarLivroConsignado(itemConsignadoTemporario, false);
+                         new FrameInfoEditLivroConsignado(itemConsignadoTemporario,
+                                false);
                     }
                 }
 

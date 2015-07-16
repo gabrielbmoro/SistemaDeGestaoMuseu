@@ -14,14 +14,14 @@ import java.util.Date;
  *
  * @author gabrielbmoro
  */
-public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame implements WindowListener {
+public class FrameInfoEditLivroConsignado extends javax.swing.JFrame implements WindowListener {
     
     private ItemConsignado itemConsignado;
 
     /**
      * Creates new form FrameInformacoesEditarLivroConsignado
      */
-    public FrameInformacoesEditarLivroConsignado(ItemConsignado itemConsignado, boolean informacoes) {
+    public FrameInfoEditLivroConsignado(ItemConsignado itemConsignado, boolean informacoes) {
         initComponents();
         this.itemConsignado = itemConsignado;
         
@@ -33,7 +33,7 @@ public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame im
         } else {
             btnEditarLivroConsignado.setEnabled(false);
         }
-        ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 1108, 405);
+        ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 1108, 500);
         addWindowListener(this);
     }
     
@@ -142,6 +142,8 @@ public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame im
         jComboPaisLivroConsignado = new javax.swing.JComboBox();
         btnAtualizarDados = new javax.swing.JButton();
         btnEditarLivroConsignado = new javax.swing.JButton();
+        btnImagem = new javax.swing.JButton();
+        btnAlterarImagem = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Informaçoes Item Livro Consignado");
@@ -212,6 +214,20 @@ public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame im
         btnEditarLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarLivroConsignadoActionPerformed(evt);
+            }
+        });
+
+        btnImagem.setText("Ver Imagem");
+        btnImagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImagemActionPerformed(evt);
+            }
+        });
+
+        btnAlterarImagem.setText("Alterar Imagem");
+        btnAlterarImagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarImagemActionPerformed(evt);
             }
         });
 
@@ -287,7 +303,7 @@ public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame im
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(12, 12, 12)
                                         .addComponent(jComboPaisLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(258, 258, 258))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -303,7 +319,12 @@ public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame im
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnAtualizarDados)
                                 .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnImagem)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAlterarImagem)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -362,11 +383,15 @@ public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame im
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(jComboPaisLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnImagem)
+                    .addComponent(btnAlterarImagem))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAtualizarDados)
                     .addComponent(btnEditarLivroConsignado))
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -441,9 +466,23 @@ public class FrameInformacoesEditarLivroConsignado extends javax.swing.JFrame im
         }        
     }//GEN-LAST:event_btnAtualizarDadosActionPerformed
 
+    private void btnImagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImagemActionPerformed
+        if(itemConsignado.getID()!=null){
+            new FrameExibicaoDeImage(itemConsignado.getID());
+        }
+    }//GEN-LAST:event_btnImagemActionPerformed
+
+    private void btnAlterarImagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarImagemActionPerformed
+        if(itemConsignado.getID()!=null){
+        new FrameAlterarImagem(itemConsignado.getID());
+        }
+    }//GEN-LAST:event_btnAlterarImagemActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAlterarImagem;
     private javax.swing.JButton btnAtualizarDados;
     private javax.swing.JButton btnEditarLivroConsignado;
+    private javax.swing.JButton btnImagem;
     private javax.swing.JComboBox jComboPaisLivroConsignado;
     private com.toedter.calendar.JDateChooser jDateChooserDevolucaoLivroConsignado;
     private com.toedter.calendar.JDateChooser jDateDeUtilizacaoFinalLivroConsignado;
