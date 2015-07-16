@@ -43,6 +43,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         panelButtonsLivroConsignado = new javax.swing.JPanel();
         btnNovoLivroConsignado = new javax.swing.JButton();
         btnListarLivroConsignado = new javax.swing.JButton();
+        btnGerarRelatorio = new javax.swing.JButton();
         panelInternoLivroConsignado = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableLivroConsignado = new javax.swing.JTable();
@@ -73,17 +74,23 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
             }
         });
 
+        btnGerarRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/exportar.png"))); // NOI18N
+        btnGerarRelatorio.setToolTipText("Gerar Relatorio de Itens Cadastrados");
+
         javax.swing.GroupLayout panelButtonsLivroConsignadoLayout = new javax.swing.GroupLayout(panelButtonsLivroConsignado);
         panelButtonsLivroConsignado.setLayout(panelButtonsLivroConsignadoLayout);
         panelButtonsLivroConsignadoLayout.setHorizontalGroup(
             panelButtonsLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelButtonsLivroConsignadoLayout.createSequentialGroup()
+            .addGroup(panelButtonsLivroConsignadoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelButtonsLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnListarLivroConsignado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(panelButtonsLivroConsignadoLayout.createSequentialGroup()
+                .addGroup(panelButtonsLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnListarLivroConsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelButtonsLivroConsignadoLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnNovoLivroConsignado)))
+                        .addComponent(btnNovoLivroConsignado))
+                    .addGroup(panelButtonsLivroConsignadoLayout.createSequentialGroup()
+                        .addComponent(btnGerarRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panelButtonsLivroConsignadoLayout.setVerticalGroup(
@@ -92,7 +99,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                 .addComponent(btnNovoLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnListarLivroConsignado)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnGerarRelatorio)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTableLivroConsignado.setModel(new javax.swing.table.DefaultTableModel(
@@ -180,9 +189,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
             .addGroup(panelLivroConsignadoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(panelButtonsLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(10, 10, 10)
                 .addComponent(panelInternoLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(205, Short.MAX_VALUE))
+                .addContainerGap(197, Short.MAX_VALUE))
         );
         panelLivroConsignadoLayout.setVerticalGroup(
             panelLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,7 +201,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                     .addComponent(panelInternoLivroConsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panelLivroConsignadoLayout.createSequentialGroup()
                         .addComponent(panelButtonsLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 395, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -357,6 +366,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDeletarLivroConsignado;
     private javax.swing.JButton btnEditarLivroConsignado;
+    private javax.swing.JButton btnGerarRelatorio;
     private javax.swing.JButton btnListarLivroConsignado;
     private javax.swing.JButton btnNovoLivroConsignado;
     private javax.swing.JButton btnSobreLivroConsignado;
