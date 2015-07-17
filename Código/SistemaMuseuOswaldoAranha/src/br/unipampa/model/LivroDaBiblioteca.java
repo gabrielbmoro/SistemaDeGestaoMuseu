@@ -6,16 +6,19 @@
 package br.unipampa.model;
 
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import org.hibernate.Query;
 
 /**
  *
  * @author Gabriel B Moro
  */
 @Entity
-public class LivroDaBiblioteca {
+public class LivroDaBiblioteca implements OperacoesBasicas{
+    
     @Id
     @GeneratedValue
     private Long ID;
@@ -26,9 +29,49 @@ public class LivroDaBiblioteca {
     private Date anoLacamento;
     private String regiao;
     private String pais;
-    
 
-    public Long getID() {
+    @Override
+    public boolean salvar(Object objeto) {
+        return false;
+    }
+
+    @Override
+    public boolean alterar(Long ID, Object objetoNovo) {
+        return false;
+    }
+
+    @Override
+    public boolean alterar(Object objetoNovo) {
+        return false;
+    }
+
+    @Override
+    public List recuperarTodos() {
+        Query query = null;
+            query = HibernateUtil.openSession().createQuery("from LivroDaBiblioteca");
+            List<Object> resultado = query.list();
+            if (!resultado.isEmpty()) {
+                return resultado;
+            } else {
+                return null;
+            }
+    }
+
+    @Override
+    public Long recuperarID(Object objeto) {
+        return null;
+    }
+
+    @Override
+    public Object recuperarPeloID(Long id) {
+        return null;
+    }
+
+    @Override
+    public boolean deletar(Object objeto) {
+        return false;
+    }
+     public Long getID() {
         return ID;
     }
 
@@ -91,6 +134,5 @@ public class LivroDaBiblioteca {
     public void setPais(String pais) {
         this.pais = pais;
     }
-    
     
 }
