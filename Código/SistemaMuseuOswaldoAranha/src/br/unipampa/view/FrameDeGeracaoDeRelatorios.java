@@ -152,6 +152,7 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
                 boolean resposta = gerarRelatorioEmPdf.gerarRelatorio(dados, txtCaminhoParaSalvar.getText(), titulo , this.tipoDeRelatorio);
                 if (resposta) {
                     GeradorDeMensagem.exibirMensagemDeInformacao("O relatorio foi gerado com sucesso!", "Alerta ao Usuario");
+                    dispose();
                 } else {
                     GeradorDeMensagem.exibirMensagemDeInformacao("O relatorio nao foi gerado, realize a operaçao mais tarde!", "Alerta ao Usuario");
                 }
