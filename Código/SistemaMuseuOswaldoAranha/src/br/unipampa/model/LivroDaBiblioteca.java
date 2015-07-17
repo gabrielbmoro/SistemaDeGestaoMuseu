@@ -5,8 +5,7 @@
  */
 package br.unipampa.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -24,7 +23,7 @@ public class LivroDaBiblioteca {
     private String nomeLivro;
     private String nomeAutor;
     private String grafica;
-    private String anoLacamento;
+    private Date anoLacamento;
     private String regiao;
     private String pais;
     
@@ -69,11 +68,11 @@ public class LivroDaBiblioteca {
         this.grafica = grafica;
     }
 
-    public String getAnoLacamento() {
+    public Date getAnoLacamento() {
         return anoLacamento;
     }
 
-    public void setAnoLacamento(String anoLacamento) {
+    public void setAnoLacamento(Date anoLacamento) {
         this.anoLacamento = anoLacamento;
     }
 
