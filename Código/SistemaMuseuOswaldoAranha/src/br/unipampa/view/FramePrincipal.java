@@ -57,7 +57,23 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         panelLivroBiblioteca = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem17 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem18 = new javax.swing.JMenuItem();
+        jMenuItem19 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -241,10 +257,65 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
         jTabbedPaneAcervo.addTab("Biblioteca", panelLivroBiblioteca);
 
-        jMenu1.setText("File");
+        jMenu1.setText("Sistema");
+
+        jMenu3.setText("Acervo");
+
+        jMenu4.setText("Livro Consignado");
+
+        jMenuItem1.setText("Novo Item");
+        jMenu4.add(jMenuItem1);
+
+        jMenuItem3.setText("Listar Itens");
+        jMenu4.add(jMenuItem3);
+
+        jMenu3.add(jMenu4);
+
+        jMenu5.setText("Livro Tombo");
+
+        jMenuItem4.setText("Novo Item");
+        jMenu5.add(jMenuItem4);
+
+        jMenuItem6.setText("Listar Itens");
+        jMenu5.add(jMenuItem6);
+
+        jMenu3.add(jMenu5);
+
+        jMenu6.setText("Biblioteca");
+
+        jMenuItem7.setText("Novo Item");
+        jMenu6.add(jMenuItem7);
+
+        jMenuItem9.setText("Listar Itens");
+        jMenu6.add(jMenuItem9);
+
+        jMenu3.add(jMenu6);
+
+        jMenu1.add(jMenu3);
+
+        jMenu7.setText("Usuarios");
+
+        jMenuItem10.setText("Adicionar Novo Usuario");
+        jMenu7.add(jMenuItem10);
+
+        jMenuItem12.setText("Listar Usuarios");
+        jMenu7.add(jMenuItem12);
+
+        jMenu1.add(jMenu7);
+
+        jMenuItem17.setText("Sair");
+        jMenu1.add(jMenuItem17);
+
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Ajuda");
+
+        jMenuItem18.setText("Manual");
+        jMenu2.add(jMenuItem18);
+
+        jMenuItem19.setText("Suporte");
+        jMenu2.add(jMenuItem19);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -384,7 +455,23 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     private javax.swing.JButton btnSobreLivroConsignado;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem18;
+    private javax.swing.JMenuItem jMenuItem19;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPaneAcervo;
     private javax.swing.JTable jTableLivroConsignado;
