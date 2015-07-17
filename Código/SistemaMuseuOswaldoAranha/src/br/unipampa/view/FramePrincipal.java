@@ -67,9 +67,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         panelInternoLivroTombo = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableLivroTombo = new javax.swing.JTable();
-        btnEditarLivroConsignado1 = new javax.swing.JButton();
-        btnDeletarLivroConsignado1 = new javax.swing.JButton();
-        btnSobreLivroConsignado1 = new javax.swing.JButton();
+        btnEditarLivroTombo = new javax.swing.JButton();
+        btnDeletarLivroTombo = new javax.swing.JButton();
+        btnSobreLivroTombo = new javax.swing.JButton();
         panelLivroBiblioteca = new javax.swing.JPanel();
         panelButtonsBiblioteca = new javax.swing.JPanel();
         btnNovoLivroBiblioteca = new javax.swing.JButton();
@@ -78,9 +78,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         panelInternoBiblioteca = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTableBiblioteca = new javax.swing.JTable();
-        btnEditarLivroConsignado2 = new javax.swing.JButton();
-        btnDeletarLivroConsignado2 = new javax.swing.JButton();
-        btnSobreLivroConsignado2 = new javax.swing.JButton();
+        btnEditarLivroBilioteca = new javax.swing.JButton();
+        btnDeletarLivroBilioteca = new javax.swing.JButton();
+        btnSobreLivroBilioteca = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -333,27 +333,27 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         });
         jScrollPane2.setViewportView(jTableLivroTombo);
 
-        btnEditarLivroConsignado1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/editar.png"))); // NOI18N
-        btnEditarLivroConsignado1.setToolTipText("Editar Item");
-        btnEditarLivroConsignado1.addActionListener(new java.awt.event.ActionListener() {
+        btnEditarLivroTombo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/editar.png"))); // NOI18N
+        btnEditarLivroTombo.setToolTipText("Editar Item");
+        btnEditarLivroTombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarLivroConsignado1ActionPerformed(evt);
+                btnEditarLivroTomboActionPerformed(evt);
             }
         });
 
-        btnDeletarLivroConsignado1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/lixeira.png"))); // NOI18N
-        btnDeletarLivroConsignado1.setToolTipText("Remover Item");
-        btnDeletarLivroConsignado1.addActionListener(new java.awt.event.ActionListener() {
+        btnDeletarLivroTombo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/lixeira.png"))); // NOI18N
+        btnDeletarLivroTombo.setToolTipText("Remover Item");
+        btnDeletarLivroTombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeletarLivroConsignado1ActionPerformed(evt);
+                btnDeletarLivroTomboActionPerformed(evt);
             }
         });
 
-        btnSobreLivroConsignado1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/escolhas.png"))); // NOI18N
-        btnSobreLivroConsignado1.setToolTipText("Sobre o elemento");
-        btnSobreLivroConsignado1.addActionListener(new java.awt.event.ActionListener() {
+        btnSobreLivroTombo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/escolhas.png"))); // NOI18N
+        btnSobreLivroTombo.setToolTipText("Sobre o elemento");
+        btnSobreLivroTombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSobreLivroConsignado1ActionPerformed(evt);
+                btnSobreLivroTomboActionPerformed(evt);
             }
         });
 
@@ -366,20 +366,20 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addGroup(panelInternoLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnDeletarLivroConsignado1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSobreLivroConsignado1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnEditarLivroConsignado1))
+                    .addComponent(btnDeletarLivroTombo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSobreLivroTombo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEditarLivroTombo))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelInternoLivroTomboLayout.setVerticalGroup(
             panelInternoLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInternoLivroTomboLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(btnSobreLivroConsignado1)
+                .addComponent(btnSobreLivroTombo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEditarLivroConsignado1)
+                .addComponent(btnEditarLivroTombo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDeletarLivroConsignado1)
+                .addComponent(btnDeletarLivroTombo)
                 .addContainerGap(350, Short.MAX_VALUE))
             .addGroup(panelInternoLivroTomboLayout.createSequentialGroup()
                 .addComponent(jScrollPane2)
@@ -487,27 +487,27 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         });
         jScrollPane3.setViewportView(jTableBiblioteca);
 
-        btnEditarLivroConsignado2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/editar.png"))); // NOI18N
-        btnEditarLivroConsignado2.setToolTipText("Editar Item");
-        btnEditarLivroConsignado2.addActionListener(new java.awt.event.ActionListener() {
+        btnEditarLivroBilioteca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/editar.png"))); // NOI18N
+        btnEditarLivroBilioteca.setToolTipText("Editar Item");
+        btnEditarLivroBilioteca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarLivroConsignado2ActionPerformed(evt);
+                btnEditarLivroBiliotecaActionPerformed(evt);
             }
         });
 
-        btnDeletarLivroConsignado2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/lixeira.png"))); // NOI18N
-        btnDeletarLivroConsignado2.setToolTipText("Remover Item");
-        btnDeletarLivroConsignado2.addActionListener(new java.awt.event.ActionListener() {
+        btnDeletarLivroBilioteca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/lixeira.png"))); // NOI18N
+        btnDeletarLivroBilioteca.setToolTipText("Remover Item");
+        btnDeletarLivroBilioteca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeletarLivroConsignado2ActionPerformed(evt);
+                btnDeletarLivroBiliotecaActionPerformed(evt);
             }
         });
 
-        btnSobreLivroConsignado2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/escolhas.png"))); // NOI18N
-        btnSobreLivroConsignado2.setToolTipText("Sobre o elemento");
-        btnSobreLivroConsignado2.addActionListener(new java.awt.event.ActionListener() {
+        btnSobreLivroBilioteca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/escolhas.png"))); // NOI18N
+        btnSobreLivroBilioteca.setToolTipText("Sobre o elemento");
+        btnSobreLivroBilioteca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSobreLivroConsignado2ActionPerformed(evt);
+                btnSobreLivroBiliotecaActionPerformed(evt);
             }
         });
 
@@ -520,20 +520,20 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addGroup(panelInternoBibliotecaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnDeletarLivroConsignado2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSobreLivroConsignado2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnEditarLivroConsignado2))
+                    .addComponent(btnDeletarLivroBilioteca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSobreLivroBilioteca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEditarLivroBilioteca))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelInternoBibliotecaLayout.setVerticalGroup(
             panelInternoBibliotecaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInternoBibliotecaLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(btnSobreLivroConsignado2)
+                .addComponent(btnSobreLivroBilioteca)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEditarLivroConsignado2)
+                .addComponent(btnEditarLivroBilioteca)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDeletarLivroConsignado2)
+                .addComponent(btnDeletarLivroBilioteca)
                 .addContainerGap(350, Short.MAX_VALUE))
             .addGroup(panelInternoBibliotecaLayout.createSequentialGroup()
                 .addComponent(jScrollPane3)
@@ -803,17 +803,42 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGerarRelatorioTomboActionPerformed
 
-    private void btnEditarLivroConsignado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarLivroConsignado1ActionPerformed
+    private void btnEditarLivroTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarLivroTomboActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEditarLivroConsignado1ActionPerformed
+    }//GEN-LAST:event_btnEditarLivroTomboActionPerformed
 
-    private void btnDeletarLivroConsignado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarLivroConsignado1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnDeletarLivroConsignado1ActionPerformed
+    private void btnDeletarLivroTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarLivroTomboActionPerformed
+        try {
+            int linhaSelecionada = jTableLivroTombo.getSelectedRow();
+            Object idDeElemento = modeloTabelaLivroTombo.getValueAt(linhaSelecionada, 0);
+            if (idDeElemento != null) {
+                Long idLong = Long.parseLong(idDeElemento.toString());
+                if (idLong != 0) {
+                    ItemTombo itemTombo = new ItemTombo();
+                    Object objetoASerExcluido = itemTombo.recuperarPeloID(idLong);
+                    if (objetoASerExcluido != null) {
+                        boolean resultado = itemTombo.deletar(objetoASerExcluido);
+                        if (resultado) {
+                            GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluido com sucesso!", "Alerta ao Usuario");
+                            listarTabelaLivroConsignado();
+                        } else {
+                            GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
+                        }
+                    } else {
+                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
+                    }
+                }
+            }
 
-    private void btnSobreLivroConsignado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreLivroConsignado1ActionPerformed
+        } catch (Exception erro) {
+            erro.printStackTrace();
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+        }
+    }//GEN-LAST:event_btnDeletarLivroTomboActionPerformed
+
+    private void btnSobreLivroTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreLivroTomboActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSobreLivroConsignado1ActionPerformed
+    }//GEN-LAST:event_btnSobreLivroTomboActionPerformed
 
     private void btnNovoLivroBibliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoLivroBibliotecaActionPerformed
         // TODO add your handling code here:
@@ -827,26 +852,26 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGerarRelatorioBibliotecaActionPerformed
 
-    private void btnEditarLivroConsignado2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarLivroConsignado2ActionPerformed
+    private void btnEditarLivroBiliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarLivroBiliotecaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEditarLivroConsignado2ActionPerformed
+    }//GEN-LAST:event_btnEditarLivroBiliotecaActionPerformed
 
-    private void btnDeletarLivroConsignado2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarLivroConsignado2ActionPerformed
+    private void btnDeletarLivroBiliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarLivroBiliotecaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnDeletarLivroConsignado2ActionPerformed
+    }//GEN-LAST:event_btnDeletarLivroBiliotecaActionPerformed
 
-    private void btnSobreLivroConsignado2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreLivroConsignado2ActionPerformed
+    private void btnSobreLivroBiliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreLivroBiliotecaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSobreLivroConsignado2ActionPerformed
+    }//GEN-LAST:event_btnSobreLivroBiliotecaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDeletarLivroBilioteca;
     private javax.swing.JButton btnDeletarLivroConsignado;
-    private javax.swing.JButton btnDeletarLivroConsignado1;
-    private javax.swing.JButton btnDeletarLivroConsignado2;
+    private javax.swing.JButton btnDeletarLivroTombo;
+    private javax.swing.JButton btnEditarLivroBilioteca;
     private javax.swing.JButton btnEditarLivroConsignado;
-    private javax.swing.JButton btnEditarLivroConsignado1;
-    private javax.swing.JButton btnEditarLivroConsignado2;
+    private javax.swing.JButton btnEditarLivroTombo;
     private javax.swing.JButton btnGerarRelatorioBiblioteca;
     private javax.swing.JButton btnGerarRelatorioConsignado;
     private javax.swing.JButton btnGerarRelatorioTombo;
@@ -856,9 +881,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     private javax.swing.JButton btnNovoLivroBiblioteca;
     private javax.swing.JButton btnNovoLivroConsignado;
     private javax.swing.JButton btnNovoLivroTombo;
+    private javax.swing.JButton btnSobreLivroBilioteca;
     private javax.swing.JButton btnSobreLivroConsignado;
-    private javax.swing.JButton btnSobreLivroConsignado1;
-    private javax.swing.JButton btnSobreLivroConsignado2;
+    private javax.swing.JButton btnSobreLivroTombo;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

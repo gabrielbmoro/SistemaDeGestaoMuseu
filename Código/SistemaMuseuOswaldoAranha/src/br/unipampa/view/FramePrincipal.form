@@ -507,9 +507,9 @@
                           <Component id="jScrollPane2" min="-2" pref="535" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btnDeletarLivroConsignado1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnSobreLivroConsignado1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnEditarLivroConsignado1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnDeletarLivroTombo" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnSobreLivroTombo" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnEditarLivroTombo" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -519,11 +519,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                          <Component id="btnSobreLivroConsignado1" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSobreLivroTombo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnEditarLivroConsignado1" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEditarLivroTombo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnDeletarLivroConsignado1" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnDeletarLivroTombo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="350" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -583,7 +583,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JButton" name="btnEditarLivroConsignado1">
+                <Component class="javax.swing.JButton" name="btnEditarLivroTombo">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/br/unipampa/view/icons/editar.png"/>
@@ -591,10 +591,10 @@
                     <Property name="toolTipText" type="java.lang.String" value="Editar Item"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarLivroConsignado1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarLivroTomboActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnDeletarLivroConsignado1">
+                <Component class="javax.swing.JButton" name="btnDeletarLivroTombo">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/br/unipampa/view/icons/lixeira.png"/>
@@ -602,10 +602,10 @@
                     <Property name="toolTipText" type="java.lang.String" value="Remover Item"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeletarLivroConsignado1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeletarLivroTomboActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnSobreLivroConsignado1">
+                <Component class="javax.swing.JButton" name="btnSobreLivroTombo">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/br/unipampa/view/icons/escolhas.png"/>
@@ -613,7 +613,7 @@
                     <Property name="toolTipText" type="java.lang.String" value="Sobre o elemento"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSobreLivroConsignado1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSobreLivroTomboActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -739,9 +739,9 @@
                           <Component id="jScrollPane3" min="-2" pref="535" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btnDeletarLivroConsignado2" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnSobreLivroConsignado2" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnEditarLivroConsignado2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnDeletarLivroBilioteca" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnSobreLivroBilioteca" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnEditarLivroBilioteca" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -751,11 +751,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                          <Component id="btnSobreLivroConsignado2" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSobreLivroBilioteca" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnEditarLivroConsignado2" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEditarLivroBilioteca" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnDeletarLivroConsignado2" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnDeletarLivroBilioteca" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="350" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -815,7 +815,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JButton" name="btnEditarLivroConsignado2">
+                <Component class="javax.swing.JButton" name="btnEditarLivroBilioteca">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/br/unipampa/view/icons/editar.png"/>
@@ -823,10 +823,10 @@
                     <Property name="toolTipText" type="java.lang.String" value="Editar Item"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarLivroConsignado2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarLivroBiliotecaActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnDeletarLivroConsignado2">
+                <Component class="javax.swing.JButton" name="btnDeletarLivroBilioteca">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/br/unipampa/view/icons/lixeira.png"/>
@@ -834,10 +834,10 @@
                     <Property name="toolTipText" type="java.lang.String" value="Remover Item"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeletarLivroConsignado2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeletarLivroBiliotecaActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnSobreLivroConsignado2">
+                <Component class="javax.swing.JButton" name="btnSobreLivroBilioteca">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/br/unipampa/view/icons/escolhas.png"/>
@@ -845,7 +845,7 @@
                     <Property name="toolTipText" type="java.lang.String" value="Sobre o elemento"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSobreLivroConsignado2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSobreLivroBiliotecaActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

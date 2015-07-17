@@ -10,6 +10,8 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -59,11 +61,53 @@ public class ItemTombo implements Serializable, OperacoesBasicas {
 
     @Override
     public Long recuperarID(Object objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (objeto instanceof ItemConsignado) {
+            ItemTombo item = (ItemTombo) objeto;
+            Query query = null;
+            query = HibernateUtil.openSession().createQuery("from ItemTombo i where "
+                    + "i.outroCodigo=" + item.getOutroCodigo() + " and i.materiaPrima=\'" + item.getMateriaPrima() + "\'"
+                   + " and i.DTYPE=\'ItemTombo\' and "
+                    + "i.tipoObjeto=\'" + item.getTipoObjeto() + "\'");
+            List<Object> resultado = query.list();
+            if (!resultado.isEmpty()) {
+                ItemTombo itemRecuperado = (ItemTombo) resultado.get(0);
+                return itemRecuperado.getID();
+            } else {
+                return null;
+            }
+        }
+        return null;
     }
 
     @Override
     public boolean deletar(Object valor) {
+         try{
+             Session sessao = HibernateUtil.openSession();
+                sessao.delete(valor);
+                Transaction transacao = sessao.beginTransaction();
+                transacao.commit();
+                sessao.clear();
+             return true;
+         }catch(Exception erro){
+             return false;
+         }
+    }
+
+    @Override
+    public Object recuperarPeloID(Long id) {
+         Query query = null;
+            query = HibernateUtil.openSession().createQuery("from ItemTombo i where "
+                    + "i.ID=" + id);
+            List<Object> resultado = query.list();
+            if (!resultado.isEmpty()) {
+                return (ItemTombo) resultado.get(0);
+            } else {
+                return null;
+            }
+    }
+
+    @Override
+    public boolean alterar(Object objetoNovo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -194,16 +238,6 @@ public class ItemTombo implements Serializable, OperacoesBasicas {
 
     public void setImage(boolean imagemEnviada) {
         this.imagemEnviada = imagemEnviada;
-    }
-
-    @Override
-    public Object recuperarPeloID(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean alterar(Object objetoNovo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
