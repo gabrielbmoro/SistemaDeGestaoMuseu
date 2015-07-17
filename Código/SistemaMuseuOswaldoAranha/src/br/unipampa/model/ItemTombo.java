@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
+import org.hibernate.Query;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -46,7 +47,14 @@ public class ItemTombo implements Serializable, OperacoesBasicas {
 
     @Override
     public List recuperarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Query query = null;
+            query = HibernateUtil.openSession().createQuery("from ItemTombo where DTYPE=\'ItemTombo\'");
+            List<Object> resultado = query.list();
+            if (!resultado.isEmpty()) {
+                return resultado;
+            } else {
+                return null;
+            }
     }
 
     @Override

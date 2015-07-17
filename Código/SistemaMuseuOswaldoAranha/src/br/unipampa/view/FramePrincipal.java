@@ -6,6 +6,7 @@
 package br.unipampa.view;
 
 import br.unipampa.model.ItemConsignado;
+import br.unipampa.model.ItemTombo;
 import br.unipampa.service.GerarRelatorioEmPdf;
 import br.unipampa.service.TipoDeRelatorio;
 import java.awt.event.WindowEvent;
@@ -21,6 +22,7 @@ import javax.swing.table.DefaultTableModel;
 public class FramePrincipal extends javax.swing.JFrame implements WindowListener{
 
     private DefaultTableModel modeloTabelaLivroCOnsignado;
+    private DefaultTableModel modeloTabelaLivroTombo;
 
     /**
      * Creates new form FramePrincipal
@@ -29,6 +31,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         initComponents();
         ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 1000, 600);
         modeloTabelaLivroCOnsignado = (DefaultTableModel) jTableLivroConsignado.getModel();
+        modeloTabelaLivroTombo = (DefaultTableModel) jTableLivroTombo.getModel();
         addWindowListener(this);
     }
 
@@ -46,7 +49,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         panelButtonsLivroConsignado = new javax.swing.JPanel();
         btnNovoLivroConsignado = new javax.swing.JButton();
         btnListarLivroConsignado = new javax.swing.JButton();
-        btnGerarRelatorio = new javax.swing.JButton();
+        btnGerarRelatorioConsignado = new javax.swing.JButton();
         panelInternoLivroConsignado = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableLivroConsignado = new javax.swing.JTable();
@@ -54,6 +57,16 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         btnDeletarLivroConsignado = new javax.swing.JButton();
         btnSobreLivroConsignado = new javax.swing.JButton();
         panelLivroTombo = new javax.swing.JPanel();
+        panelButtonsLivroTombo = new javax.swing.JPanel();
+        btnNovoLivroTombo = new javax.swing.JButton();
+        btnListarLivroTombo = new javax.swing.JButton();
+        btnGerarRelatorioTombo = new javax.swing.JButton();
+        panelInternoLivroConsignado1 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableLivroTombo = new javax.swing.JTable();
+        btnEditarLivroConsignado1 = new javax.swing.JButton();
+        btnDeletarLivroConsignado1 = new javax.swing.JButton();
+        btnSobreLivroConsignado1 = new javax.swing.JButton();
         panelLivroBiblioteca = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -93,11 +106,11 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
             }
         });
 
-        btnGerarRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/exportar.png"))); // NOI18N
-        btnGerarRelatorio.setToolTipText("Gerar Relatorio de Itens Cadastrados");
-        btnGerarRelatorio.addActionListener(new java.awt.event.ActionListener() {
+        btnGerarRelatorioConsignado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/exportar.png"))); // NOI18N
+        btnGerarRelatorioConsignado.setToolTipText("Gerar Relatorio de Itens Cadastrados");
+        btnGerarRelatorioConsignado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGerarRelatorioActionPerformed(evt);
+                btnGerarRelatorioConsignadoActionPerformed(evt);
             }
         });
 
@@ -113,7 +126,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnNovoLivroConsignado))
                     .addGroup(panelButtonsLivroConsignadoLayout.createSequentialGroup()
-                        .addComponent(btnGerarRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnGerarRelatorioConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -124,7 +137,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnListarLivroConsignado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnGerarRelatorio)
+                .addComponent(btnGerarRelatorioConsignado)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -231,15 +244,156 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
         jTabbedPaneAcervo.addTab("Livro Consignado", panelLivroConsignado);
 
+        btnNovoLivroTombo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/add.png"))); // NOI18N
+        btnNovoLivroTombo.setToolTipText("Novo Item");
+        btnNovoLivroTombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovoLivroTomboActionPerformed(evt);
+            }
+        });
+
+        btnListarLivroTombo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/listar.png"))); // NOI18N
+        btnListarLivroTombo.setToolTipText("LIstar Itens");
+        btnListarLivroTombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarLivroTomboActionPerformed(evt);
+            }
+        });
+
+        btnGerarRelatorioTombo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/exportar.png"))); // NOI18N
+        btnGerarRelatorioTombo.setToolTipText("Gerar Relatorio de Itens Cadastrados");
+        btnGerarRelatorioTombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGerarRelatorioTomboActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelButtonsLivroTomboLayout = new javax.swing.GroupLayout(panelButtonsLivroTombo);
+        panelButtonsLivroTombo.setLayout(panelButtonsLivroTomboLayout);
+        panelButtonsLivroTomboLayout.setHorizontalGroup(
+            panelButtonsLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelButtonsLivroTomboLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelButtonsLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnListarLivroTombo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelButtonsLivroTomboLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnNovoLivroTombo))
+                    .addGroup(panelButtonsLivroTomboLayout.createSequentialGroup()
+                        .addComponent(btnGerarRelatorioTombo, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        panelButtonsLivroTomboLayout.setVerticalGroup(
+            panelButtonsLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelButtonsLivroTomboLayout.createSequentialGroup()
+                .addComponent(btnNovoLivroTombo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnListarLivroTombo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnGerarRelatorioTombo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTableLivroTombo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Outro Codigo", "Tipo de Item", "Funçao", "Regiao"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Long.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTableLivroTombo);
+
+        btnEditarLivroConsignado1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/editar.png"))); // NOI18N
+        btnEditarLivroConsignado1.setToolTipText("Editar Item");
+        btnEditarLivroConsignado1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarLivroConsignado1ActionPerformed(evt);
+            }
+        });
+
+        btnDeletarLivroConsignado1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/lixeira.png"))); // NOI18N
+        btnDeletarLivroConsignado1.setToolTipText("Remover Item");
+        btnDeletarLivroConsignado1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeletarLivroConsignado1ActionPerformed(evt);
+            }
+        });
+
+        btnSobreLivroConsignado1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/escolhas.png"))); // NOI18N
+        btnSobreLivroConsignado1.setToolTipText("Sobre o elemento");
+        btnSobreLivroConsignado1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSobreLivroConsignado1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelInternoLivroConsignado1Layout = new javax.swing.GroupLayout(panelInternoLivroConsignado1);
+        panelInternoLivroConsignado1.setLayout(panelInternoLivroConsignado1Layout);
+        panelInternoLivroConsignado1Layout.setHorizontalGroup(
+            panelInternoLivroConsignado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInternoLivroConsignado1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(panelInternoLivroConsignado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnDeletarLivroConsignado1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSobreLivroConsignado1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEditarLivroConsignado1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelInternoLivroConsignado1Layout.setVerticalGroup(
+            panelInternoLivroConsignado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInternoLivroConsignado1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(btnSobreLivroConsignado1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEditarLivroConsignado1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnDeletarLivroConsignado1)
+                .addContainerGap(350, Short.MAX_VALUE))
+            .addGroup(panelInternoLivroConsignado1Layout.createSequentialGroup()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout panelLivroTomboLayout = new javax.swing.GroupLayout(panelLivroTombo);
         panelLivroTombo.setLayout(panelLivroTomboLayout);
         panelLivroTomboLayout.setHorizontalGroup(
             panelLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 923, Short.MAX_VALUE)
+            .addGroup(panelLivroTomboLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelButtonsLivroTombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(panelInternoLivroConsignado1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(197, Short.MAX_VALUE))
         );
         panelLivroTomboLayout.setVerticalGroup(
             panelLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 533, Short.MAX_VALUE)
+            .addGroup(panelLivroTomboLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelInternoLivroConsignado1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(panelLivroTomboLayout.createSequentialGroup()
+                        .addComponent(panelButtonsLivroTombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         jTabbedPaneAcervo.addTab("Livro Tombo", panelLivroTombo);
@@ -362,6 +516,25 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
             }
         }
     }
+    
+    private void listarTabelaLivroTombo() {
+        /*Limpar Tabela*/
+        modeloTabelaLivroTombo.setNumRows(0);
+        ItemTombo itemTombo = new ItemTombo();
+        List listaDeREgistros = itemTombo.recuperarTodos();
+        if (listaDeREgistros != null && !listaDeREgistros.isEmpty()) {
+            for (Object objetoTemp : listaDeREgistros) {
+                ItemTombo itemTomboTemp = (ItemTombo) objetoTemp;
+                modeloTabelaLivroTombo.addRow(new Object[]{
+                    itemTomboTemp.getID(),
+                    itemTomboTemp.getOutroCodigo(),
+                    itemTomboTemp.getTipoObjeto(),
+                    itemTomboTemp.getFuncaoEspecifica(),
+                    itemTomboTemp.getRegiao()
+                });
+            }
+        }
+    }
     private void btnDeletarLivroConsignadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarLivroConsignadoActionPerformed
         try {
             int linhaSelecionada = jTableLivroConsignado.getSelectedRow();
@@ -441,18 +614,48 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         new FrameNovoLivroConsignado();
     }//GEN-LAST:event_btnNovoLivroConsignadoActionPerformed
 
-    private void btnGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarRelatorioActionPerformed
+    private void btnGerarRelatorioConsignadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarRelatorioConsignadoActionPerformed
      new FrameDeGeracaoDeRelatorios(TipoDeRelatorio.ITEM_CONSIGNADO);
-    }//GEN-LAST:event_btnGerarRelatorioActionPerformed
+    }//GEN-LAST:event_btnGerarRelatorioConsignadoActionPerformed
+
+    private void btnNovoLivroTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoLivroTomboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNovoLivroTomboActionPerformed
+
+    private void btnListarLivroTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarLivroTomboActionPerformed
+      listarTabelaLivroTombo();
+    }//GEN-LAST:event_btnListarLivroTomboActionPerformed
+
+    private void btnGerarRelatorioTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarRelatorioTomboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGerarRelatorioTomboActionPerformed
+
+    private void btnEditarLivroConsignado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarLivroConsignado1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarLivroConsignado1ActionPerformed
+
+    private void btnDeletarLivroConsignado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarLivroConsignado1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeletarLivroConsignado1ActionPerformed
+
+    private void btnSobreLivroConsignado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreLivroConsignado1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSobreLivroConsignado1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDeletarLivroConsignado;
+    private javax.swing.JButton btnDeletarLivroConsignado1;
     private javax.swing.JButton btnEditarLivroConsignado;
-    private javax.swing.JButton btnGerarRelatorio;
+    private javax.swing.JButton btnEditarLivroConsignado1;
+    private javax.swing.JButton btnGerarRelatorioConsignado;
+    private javax.swing.JButton btnGerarRelatorioTombo;
     private javax.swing.JButton btnListarLivroConsignado;
+    private javax.swing.JButton btnListarLivroTombo;
     private javax.swing.JButton btnNovoLivroConsignado;
+    private javax.swing.JButton btnNovoLivroTombo;
     private javax.swing.JButton btnSobreLivroConsignado;
+    private javax.swing.JButton btnSobreLivroConsignado1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -473,10 +676,14 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPaneAcervo;
     private javax.swing.JTable jTableLivroConsignado;
+    private javax.swing.JTable jTableLivroTombo;
     private javax.swing.JPanel panelButtonsLivroConsignado;
+    private javax.swing.JPanel panelButtonsLivroTombo;
     private javax.swing.JPanel panelInternoLivroConsignado;
+    private javax.swing.JPanel panelInternoLivroConsignado1;
     private javax.swing.JPanel panelLivroBiblioteca;
     private javax.swing.JPanel panelLivroConsignado;
     private javax.swing.JPanel panelLivroTombo;
