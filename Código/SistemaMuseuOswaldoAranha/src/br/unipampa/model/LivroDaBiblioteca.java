@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 /**
  *
@@ -64,12 +66,29 @@ public class LivroDaBiblioteca implements OperacoesBasicas{
 
     @Override
     public Object recuperarPeloID(Long id) {
-        return null;
+         Query query = null;
+            query = HibernateUtil.openSession().createQuery("from LivroDaBiblioteca i where "
+                    + "i.ID=" + id);
+            List<Object> resultado = query.list();
+            if (!resultado.isEmpty()) {
+                return (LivroDaBiblioteca) resultado.get(0);
+            } else {
+                return null;
+            }
     }
 
     @Override
     public boolean deletar(Object objeto) {
-        return false;
+         try{
+             Session sessao = HibernateUtil.openSession();
+                sessao.delete(objeto);
+                Transaction transacao = sessao.beginTransaction();
+                transacao.commit();
+                sessao.clear();
+             return true;
+         }catch(Exception erro){
+             return false;
+         }
     }
      public Long getID() {
         return ID;

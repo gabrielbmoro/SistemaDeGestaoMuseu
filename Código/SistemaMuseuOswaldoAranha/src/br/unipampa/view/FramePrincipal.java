@@ -883,7 +883,31 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     }//GEN-LAST:event_btnEditarLivroBiliotecaActionPerformed
 
     private void btnDeletarLivroBiliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarLivroBiliotecaActionPerformed
-        // TODO add your handling code here:
+                try {
+            int linhaSelecionada = jTableBiblioteca.getSelectedRow();
+            Object idDeElemento = modeloTabelaBiblioteca.getValueAt(linhaSelecionada, 0);
+            if (idDeElemento != null) {
+                Long idLong = Long.parseLong(idDeElemento.toString());
+                if (idLong != 0) {
+                    LivroDaBiblioteca livroDaBiblioteca = new LivroDaBiblioteca();
+                    Object objetoASerExcluido = livroDaBiblioteca.recuperarPeloID(idLong);
+                    if (objetoASerExcluido != null) {
+                        boolean resultado = livroDaBiblioteca.deletar(objetoASerExcluido);
+                        if (resultado) {
+                            GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluido com sucesso!", "Alerta ao Usuario");
+                            listarTabelaLivroConsignado();
+                        } else {
+                            GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
+                        }
+                    } else {
+                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
+                    }
+                }
+            }
+
+        } catch (Exception erro) {
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+        }
     }//GEN-LAST:event_btnDeletarLivroBiliotecaActionPerformed
 
     private void btnSobreLivroBiliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreLivroBiliotecaActionPerformed
