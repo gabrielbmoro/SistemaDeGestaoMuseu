@@ -668,6 +668,8 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                     itemConsignadoTemporario.getRegiao()
                 });
             }
+        }else{
+           GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum registro encontrado!", "Alerta ao Usuario");
         }
     }
     
@@ -687,6 +689,8 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                     itemTomboTemp.getRegiao()
                 });
             }
+        }else{
+           GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum registro encontrado!", "Alerta ao Usuario");
         }
     }
     
@@ -706,6 +710,8 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                     livroDaBibliotecaTemp.getAnoLacamento()
                 });
             }
+        }else{
+           GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum registro encontrado!", "Alerta ao Usuario");
         }
     }
     private void btnDeletarLivroConsignadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarLivroConsignadoActionPerformed
