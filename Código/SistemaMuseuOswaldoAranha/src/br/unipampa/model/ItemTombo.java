@@ -108,7 +108,21 @@ public class ItemTombo implements Serializable, OperacoesBasicas {
 
     @Override
     public boolean alterar(Object objetoNovo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (objetoNovo instanceof ItemTombo) {
+            ItemTombo item = (ItemTombo) objetoNovo;
+            try {
+                Session sessao = HibernateUtil.openSession();
+                sessao.saveOrUpdate(item);
+                Transaction transacao = sessao.beginTransaction();
+                transacao.commit();
+                sessao.clear();
+                return true;
+            } catch (Exception erro) {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 
     

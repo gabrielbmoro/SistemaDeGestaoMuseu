@@ -804,7 +804,27 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     }//GEN-LAST:event_btnGerarRelatorioTomboActionPerformed
 
     private void btnEditarLivroTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarLivroTomboActionPerformed
-        // TODO add your handling code here:
+        try {
+            int linhaSelecionada = jTableLivroTombo.getSelectedRow();
+            Object idDeElemento = modeloTabelaLivroTombo.getValueAt(linhaSelecionada, 0);
+            if (idDeElemento != null) {
+
+                Long idLong = Long.parseLong(idDeElemento.toString());
+                if (idLong != 0) {
+                    ItemTombo itemTombo = new ItemTombo();
+                    ItemTombo itemTomboTemporario = (ItemTombo) itemTombo.recuperarPeloID(idLong);
+                    if (itemTomboTemporario != null) {
+                         new FrameInfoEditLivroCombo(itemTomboTemporario,
+                                false);
+                    }
+                }
+
+            } else {
+                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+            }
+        } catch (Exception erro) {
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+        }
     }//GEN-LAST:event_btnEditarLivroTomboActionPerformed
 
     private void btnDeletarLivroTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarLivroTomboActionPerformed
