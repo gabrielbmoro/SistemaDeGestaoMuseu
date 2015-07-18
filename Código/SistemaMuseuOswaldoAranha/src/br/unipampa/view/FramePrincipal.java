@@ -846,7 +846,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                         boolean resultado = itemTombo.deletar(objetoASerExcluido);
                         if (resultado) {
                             GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluido com sucesso!", "Alerta ao Usuario");
-                            listarTabelaLivroConsignado();
+                            listarTabelaLivroTombo();
                         } else {
                             GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
                         }
@@ -895,7 +895,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                         boolean resultado = livroDaBiblioteca.deletar(objetoASerExcluido);
                         if (resultado) {
                             GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluido com sucesso!", "Alerta ao Usuario");
-                            listarTabelaLivroConsignado();
+                            listarTabelaBiblioteca();
                         } else {
                             GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
                         }
