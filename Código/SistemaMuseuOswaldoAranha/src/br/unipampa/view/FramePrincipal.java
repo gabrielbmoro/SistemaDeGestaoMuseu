@@ -806,7 +806,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     }//GEN-LAST:event_btnListarLivroTomboActionPerformed
 
     private void btnGerarRelatorioTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarRelatorioTomboActionPerformed
-        // TODO add your handling code here:
+       new FrameDeGeracaoDeRelatorios(TipoDeRelatorio.ITEM_TOMBO);
     }//GEN-LAST:event_btnGerarRelatorioTomboActionPerformed
 
     private void btnEditarLivroTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarLivroTomboActionPerformed

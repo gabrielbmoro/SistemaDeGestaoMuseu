@@ -6,6 +6,7 @@
 package br.unipampa.service;
 
 import br.unipampa.model.ItemConsignado;
+import br.unipampa.model.ItemTombo;
 import br.unipampa.view.GeradorDeMensagem;
 import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.BaseColor;
@@ -73,6 +74,9 @@ public class GerarRelatorioEmPdf {
                     case ITEM_CONSIGNADO:
                         escreverTabelaConsignados(dadosDeRelatorio, doc);
                         break;
+                    case ITEM_TOMBO:
+                        escreverTabelaTombos(dadosDeRelatorio, doc);
+                        break;
                 }
                 doc.add(recuperaRodape());
                 doc.close();
@@ -120,6 +124,254 @@ public class GerarRelatorioEmPdf {
         return null;
     }
 
+        private void escreverTabelaTombos(List<Object> resultados, Document doc) throws DocumentException {
+        if (!resultados.isEmpty()) {
+            doc.newPage();
+            PdfPTable tabela = new PdfPTable(new float[]{0.3f, 0.3f, 0.3f, 0.3f, 0.3f, 0.3f, 0.3f, 0.3f, 0.3f, 0.3f, 0.3f, 0.3f, 0.3f, 0.3f});
+                
+                doc.newPage();
+
+                Paragraph paragrafoID = new Paragraph("ID", fontePadraoNegrito);
+                paragrafoID.setAlignment(Paragraph.ALIGN_CENTER);
+                PdfPCell celulaMaeTabela = new PdfPCell(paragrafoID);
+                celulaMaeTabela.setRowspan(2);
+                celulaMaeTabela.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
+                tabela.addCell(celulaMaeTabela);
+
+                Paragraph codigoAux = new Paragraph("Codigo Aux.", fontePadraoNegrito);
+                codigoAux.setAlignment(Paragraph.ALIGN_CENTER);
+                PdfPCell celulaMaeTabela1 = new PdfPCell(codigoAux);
+                celulaMaeTabela1.setRowspan(2);
+                celulaMaeTabela1.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
+                tabela.addCell(celulaMaeTabela1);
+
+                Paragraph dataDeUtilizacaoInicial = new Paragraph("Data de Ut. Inicial", fontePadraoNegrito);
+                dataDeUtilizacaoInicial.setAlignment(Paragraph.ALIGN_CENTER);
+                PdfPCell celulaMaeTabela2 = new PdfPCell(dataDeUtilizacaoInicial);
+                celulaMaeTabela2.setRowspan(2);
+                celulaMaeTabela2.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
+                tabela.addCell(celulaMaeTabela2);
+
+                Paragraph dataDeUtilizacaoFinal = new Paragraph("Data de Ut. Final", fontePadraoNegrito);
+                dataDeUtilizacaoFinal.setAlignment(Paragraph.ALIGN_CENTER);
+                PdfPCell celulaMaeTabela3 = new PdfPCell(dataDeUtilizacaoFinal);
+                celulaMaeTabela3.setRowspan(2);
+                celulaMaeTabela3.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
+                tabela.addCell(celulaMaeTabela3);
+
+                Paragraph estilo = new Paragraph("Estilo", fontePadraoNegrito);
+                estilo.setAlignment(Paragraph.ALIGN_CENTER);
+                PdfPCell celulaMaeTabela4 = new PdfPCell(estilo);
+                celulaMaeTabela4.setRowspan(2);
+                celulaMaeTabela4.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
+                tabela.addCell(celulaMaeTabela4);
+
+                Paragraph funcaoEspecifica = new Paragraph("Funçao Especifica", fontePadraoNegrito);
+                funcaoEspecifica.setAlignment(Paragraph.ALIGN_CENTER);
+                PdfPCell celulaMaeTabela5 = new PdfPCell(funcaoEspecifica);
+                celulaMaeTabela5.setRowspan(2);
+                celulaMaeTabela5.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
+                tabela.addCell(celulaMaeTabela5);
+
+                Paragraph grupoLinguistico = new Paragraph("Grupo Ling.", fontePadraoNegrito);
+                grupoLinguistico.setAlignment(Paragraph.ALIGN_CENTER);
+                PdfPCell celulaMaeTabela6 = new PdfPCell(grupoLinguistico);
+                celulaMaeTabela6.setRowspan(2);
+                celulaMaeTabela6.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
+                tabela.addCell(celulaMaeTabela6);
+
+                Paragraph materiaPrima = new Paragraph("Materia Prima", fontePadraoNegrito);
+                materiaPrima.setAlignment(Paragraph.ALIGN_CENTER);
+                PdfPCell celulaMaeTabela7 = new PdfPCell(materiaPrima);
+                celulaMaeTabela7.setRowspan(2);
+                celulaMaeTabela7.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
+                tabela.addCell(celulaMaeTabela7);
+
+                Paragraph pais = new Paragraph("Pais", fontePadraoNegrito);
+                pais.setAlignment(Paragraph.ALIGN_CENTER);
+                PdfPCell celulaMaeTabela8 = new PdfPCell(pais);
+                celulaMaeTabela8.setRowspan(2);
+                celulaMaeTabela8.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
+                tabela.addCell(celulaMaeTabela8);
+
+                Paragraph procedencia = new Paragraph("Procedencia", fontePadraoNegrito);
+                procedencia.setAlignment(Paragraph.ALIGN_CENTER);
+                PdfPCell celulaMaeTabela9 = new PdfPCell(procedencia);
+                celulaMaeTabela9.setRowspan(2);
+                celulaMaeTabela9.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
+                tabela.addCell(celulaMaeTabela9);
+
+                Paragraph regiao = new Paragraph("Regiao", fontePadraoNegrito);
+                regiao.setAlignment(Paragraph.ALIGN_CENTER);
+                PdfPCell celulaMaeTabela10 = new PdfPCell(regiao);
+                celulaMaeTabela10.setRowspan(2);
+                celulaMaeTabela10.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
+                tabela.addCell(celulaMaeTabela10);
+
+                Paragraph sitio = new Paragraph("Sitio", fontePadraoNegrito);
+                sitio.setAlignment(Paragraph.ALIGN_CENTER);
+                PdfPCell celulaMaeTabela11 = new PdfPCell(sitio);
+                celulaMaeTabela11.setRowspan(2);
+                celulaMaeTabela11.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
+                tabela.addCell(celulaMaeTabela11);
+
+                Paragraph tecManufatura = new Paragraph("Tec. de Manufatura", fontePadraoNegrito);
+                tecManufatura.setAlignment(Paragraph.ALIGN_CENTER);
+                PdfPCell celulaMaeTabela12 = new PdfPCell(tecManufatura);
+                celulaMaeTabela12.setRowspan(2);
+                celulaMaeTabela12.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
+                tabela.addCell(celulaMaeTabela12);
+
+                Paragraph tipoDeObjeto = new Paragraph("Tipo de Objeto", fontePadraoNegrito);
+                tipoDeObjeto.setAlignment(Paragraph.ALIGN_CENTER);
+                PdfPCell celulaMaeTabela13 = new PdfPCell(tipoDeObjeto);
+                celulaMaeTabela13.setRowspan(2);
+                celulaMaeTabela13.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
+                tabela.addCell(celulaMaeTabela13);
+
+                
+
+                for(Object objetoTemp: resultados){
+                        ItemTombo itemTombo = (ItemTombo) objetoTemp;
+
+                        PdfPCell celulaTempDireta = new PdfPCell(new Paragraph(
+                                itemTombo.getID().toString(), fontePadrao));
+                        celulaTempDireta.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                        tabela.addCell(celulaTempDireta);
+
+                        PdfPCell celulaTempDireta1 = new PdfPCell(new Paragraph(
+                                String.valueOf(itemTombo.getOutroCodigo()), fontePadrao));
+                        celulaTempDireta1.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                        tabela.addCell(celulaTempDireta1);
+
+                        if (itemTombo.getDataUtilizacaoInicial() != null) {
+                            PdfPCell celulaTempDireta2 = new PdfPCell(new Paragraph(
+                                    itemTombo.getDataUtilizacaoInicial().toString(), fontePadrao));
+                            celulaTempDireta2.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta2);
+                        } else {
+                            PdfPCell celulaTempDireta2 = new PdfPCell(new Paragraph("-", fontePadrao));
+                            celulaTempDireta2.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta2);
+                        }
+                        if (itemTombo.getDataUtilizacaoFinal() != null) {
+                            PdfPCell celulaTempDireta3 = new PdfPCell(new Paragraph(
+                                    itemTombo.getDataUtilizacaoFinal().toString(), fontePadrao));
+                            celulaTempDireta3.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta3);
+                        } else {
+                            PdfPCell celulaTempDireta3 = new PdfPCell(new Paragraph("-", fontePadrao));
+                            celulaTempDireta3.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta3);
+                        }
+                        if (itemTombo.getEstilo() != null) {
+                            PdfPCell celulaTempDireta4 = new PdfPCell(new Paragraph(
+                                    itemTombo.getEstilo(), fontePadrao));
+                            celulaTempDireta4.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta4);
+                        } else {
+                            PdfPCell celulaTempDireta4 = new PdfPCell(new Paragraph("-", fontePadrao));
+                            celulaTempDireta4.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta4);
+                        }
+                        if (itemTombo.getFuncaoEspecifica() != null) {
+                            PdfPCell celulaTempDireta5 = new PdfPCell(new Paragraph(
+                                    itemTombo.getFuncaoEspecifica(), fontePadrao));
+                            celulaTempDireta5.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta5);
+                        } else {
+                            PdfPCell celulaTempDireta5 = new PdfPCell(new Paragraph("-", fontePadrao));
+                            celulaTempDireta5.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta5);
+                        }
+                        if (itemTombo.getGrupoLinguistico() != null) {
+                            PdfPCell celulaTempDireta6 = new PdfPCell(new Paragraph(
+                                    itemTombo.getGrupoLinguistico(), fontePadrao));
+                            celulaTempDireta6.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta6);
+                        } else {
+                            PdfPCell celulaTempDireta6 = new PdfPCell(new Paragraph("-", fontePadrao));
+                            celulaTempDireta6.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta6);
+                        }
+                        if (itemTombo.getMateriaPrima() != null) {
+                            PdfPCell celulaTempDireta7 = new PdfPCell(new Paragraph(
+                                    itemTombo.getMateriaPrima(), fontePadrao));
+                            celulaTempDireta7.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta7);
+                        } else {
+                            PdfPCell celulaTempDireta7 = new PdfPCell(new Paragraph("-", fontePadrao));
+                            celulaTempDireta7.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta7);
+                        }
+                        if (itemTombo.getPais() != null) {
+                            PdfPCell celulaTempDireta8 = new PdfPCell(new Paragraph(
+                                    itemTombo.getPais(), fontePadrao));
+                            celulaTempDireta8.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta8);
+                        } else {
+                            PdfPCell celulaTempDireta8 = new PdfPCell(new Paragraph("-", fontePadrao));
+                            celulaTempDireta8.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta8);
+                        }
+                        if (itemTombo.getProcedencia() != null) {
+                            PdfPCell celulaTempDireta9 = new PdfPCell(new Paragraph(
+                                    itemTombo.getProcedencia(), fontePadrao));
+                            celulaTempDireta9.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta9);
+                        } else {
+                            PdfPCell celulaTempDireta9 = new PdfPCell(new Paragraph("-", fontePadrao));
+                            celulaTempDireta9.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta9);
+                        }
+                        if (itemTombo.getRegiao() != null) {
+                            PdfPCell celulaTempDireta10 = new PdfPCell(new Paragraph(
+                                    itemTombo.getRegiao(), fontePadrao));
+                            celulaTempDireta10.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta10);
+                        } else {
+                            PdfPCell celulaTempDireta10 = new PdfPCell(new Paragraph("-", fontePadrao));
+                            celulaTempDireta10.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta10);
+                        }
+                        if (itemTombo.getSitio() != null) {
+                            PdfPCell celulaTempDireta11 = new PdfPCell(new Paragraph(
+                                    itemTombo.getSitio(), fontePadrao));
+                            celulaTempDireta11.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta11);
+                        } else {
+                            PdfPCell celulaTempDireta11 = new PdfPCell(new Paragraph("-", fontePadrao));
+                            celulaTempDireta11.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta11);
+                        }
+                        if (itemTombo.getTecnicaManufatura() != null) {
+                            PdfPCell celulaTempDireta12 = new PdfPCell(new Paragraph(
+                                    itemTombo.getTecnicaManufatura(), fontePadrao));
+                            celulaTempDireta12.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta12);
+                        } else {
+                            PdfPCell celulaTempDireta12 = new PdfPCell(new Paragraph("-", fontePadrao));
+                            celulaTempDireta12.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta12);
+                        }
+                        if (itemTombo.getTipoObjeto() != null) {
+                            PdfPCell celulaTempDireta13 = new PdfPCell(new Paragraph(
+                                    itemTombo.getTipoObjeto(), fontePadrao));
+                            celulaTempDireta13.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta13);
+                        } else {
+                            PdfPCell celulaTempDireta13 = new PdfPCell(new Paragraph("-", fontePadrao));
+                            celulaTempDireta13.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            tabela.addCell(celulaTempDireta13);
+                        }
+                        
+                    }
+                
+            doc.add(tabela);
+
+        }
+    }
+    
     private void escreverTabelaConsignados(List<Object> resultados, Document doc) throws DocumentException {
         if (!resultados.isEmpty()) {
             doc.newPage();
@@ -414,20 +666,6 @@ public class GerarRelatorioEmPdf {
                 
             doc.add(tabela);
 
-//                if (resultados.size() < 19) {
-//                    return;
-//                } else {
-//                    
-//                    List<Object> resultadosRestantes = 
-//                            resultados.subList(count - 1, resultados.size());
-////                    ArrayList<Object> resultadosPreliminares = new ArrayList<>();
-////                    for (Object resultadoTemp : resultadosRestantes) {
-////                        resultadosPreliminares.add(resultadoTemp);
-////                    }
-//                    resultados = null;
-//                    tabela=null;
-//                    escreverTabelaConsignados(resultadosRestantes, doc);
-//                }
         }
     }
 

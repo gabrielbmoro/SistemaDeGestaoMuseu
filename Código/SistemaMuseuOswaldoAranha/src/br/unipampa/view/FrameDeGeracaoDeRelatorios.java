@@ -6,6 +6,7 @@
 package br.unipampa.view;
 
 import br.unipampa.model.ItemConsignado;
+import br.unipampa.model.ItemTombo;
 import br.unipampa.service.GerarRelatorioEmPdf;
 import br.unipampa.service.TipoDeRelatorio;
 import java.awt.Desktop;
@@ -143,8 +144,15 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
         }
         
         if (new File(txtCaminhoParaSalvar.getText()).exists()) {
+            
+            List<Object> dados = null;
+            if(tipoDeRelatorio==TipoDeRelatorio.ITEM_CONSIGNADO){
             ItemConsignado itemConsignado = new ItemConsignado();
-            List<Object> dados = itemConsignado.recuperarTodos();
+            dados = itemConsignado.recuperarTodos();
+            }else if(tipoDeRelatorio==TipoDeRelatorio.ITEM_TOMBO){
+                ItemTombo itemTombo = new ItemTombo();
+                dados = itemTombo.recuperarTodos();
+            }
             if (dados.isEmpty() || dados == null) {
                 GeradorDeMensagem.exibirMensagemDeInformacao("O relatorio nao foi gerado, pois nenhum registro foi encontrado!", "Alerta ao Usuario");
             } else {
