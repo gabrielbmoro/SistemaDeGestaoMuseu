@@ -53,5 +53,13 @@ public class UtilitariaDeUploadDeImagem {
             return false;
         }
     }
+    
+    public static boolean criarDiretorio(){
+        File pasta = new File(PATH);
+            if (!pasta.exists()) {
+                pasta.mkdir();
+            }
+            return pasta.exists();
+    }
 
 }
