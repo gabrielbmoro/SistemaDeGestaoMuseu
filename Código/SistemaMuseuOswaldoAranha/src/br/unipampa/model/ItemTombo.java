@@ -39,24 +39,52 @@ public class ItemTombo implements Serializable, OperacoesBasicas {
 
     @Override
     public boolean salvar(Object objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (objeto instanceof ItemTombo) {
+            ItemTombo item = (ItemTombo) objeto;
+            try {
+                Session sessao = HibernateUtil.openSession();
+                sessao.saveOrUpdate(item);
+                Transaction transacao = sessao.beginTransaction();
+                transacao.commit();
+                sessao.clear();
+                return true;
+            } catch (Exception erro) {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 
     @Override
     public boolean alterar(Long ID, Object objetoNovo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (objetoNovo instanceof ItemConsignado) {
+            ItemConsignado item = (ItemConsignado) objetoNovo;
+            try {
+                Session sessao = HibernateUtil.openSession();
+                sessao.saveOrUpdate(item);
+                Transaction transacao = sessao.beginTransaction();
+                transacao.commit();
+                sessao.clear();
+                return true;
+            } catch (Exception erro) {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 
     @Override
     public List recuperarTodos() {
         Query query = null;
-            query = HibernateUtil.openSession().createQuery("from ItemTombo where DTYPE=\'ItemTombo\'");
-            List<Object> resultado = query.list();
-            if (!resultado.isEmpty()) {
-                return resultado;
-            } else {
-                return null;
-            }
+        query = HibernateUtil.openSession().createQuery("from ItemTombo where DTYPE=\'ItemTombo\'");
+        List<Object> resultado = query.list();
+        if (!resultado.isEmpty()) {
+            return resultado;
+        } else {
+            return null;
+        }
     }
 
     @Override
@@ -66,7 +94,7 @@ public class ItemTombo implements Serializable, OperacoesBasicas {
             Query query = null;
             query = HibernateUtil.openSession().createQuery("from ItemTombo i where "
                     + "i.outroCodigo=" + item.getOutroCodigo() + " and i.materiaPrima=\'" + item.getMateriaPrima() + "\'"
-                   + " and i.DTYPE=\'ItemTombo\' and "
+                    + " and i.DTYPE=\'ItemTombo\' and "
                     + "i.tipoObjeto=\'" + item.getTipoObjeto() + "\'");
             List<Object> resultado = query.list();
             if (!resultado.isEmpty()) {
@@ -81,29 +109,29 @@ public class ItemTombo implements Serializable, OperacoesBasicas {
 
     @Override
     public boolean deletar(Object valor) {
-         try{
-             Session sessao = HibernateUtil.openSession();
-                sessao.delete(valor);
-                Transaction transacao = sessao.beginTransaction();
-                transacao.commit();
-                sessao.clear();
-             return true;
-         }catch(Exception erro){
-             return false;
-         }
+        try {
+            Session sessao = HibernateUtil.openSession();
+            sessao.delete(valor);
+            Transaction transacao = sessao.beginTransaction();
+            transacao.commit();
+            sessao.clear();
+            return true;
+        } catch (Exception erro) {
+            return false;
+        }
     }
 
     @Override
     public Object recuperarPeloID(Long id) {
-         Query query = null;
-            query = HibernateUtil.openSession().createQuery("from ItemTombo i where "
-                    + "i.ID=" + id);
-            List<Object> resultado = query.list();
-            if (!resultado.isEmpty()) {
-                return (ItemTombo) resultado.get(0);
-            } else {
-                return null;
-            }
+        Query query = null;
+        query = HibernateUtil.openSession().createQuery("from ItemTombo i where "
+                + "i.ID=" + id);
+        List<Object> resultado = query.list();
+        if (!resultado.isEmpty()) {
+            return (ItemTombo) resultado.get(0);
+        } else {
+            return null;
+        }
     }
 
     @Override
@@ -125,7 +153,6 @@ public class ItemTombo implements Serializable, OperacoesBasicas {
         }
     }
 
-    
     public Long getID() {
         return ID;
     }
