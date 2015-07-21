@@ -20,7 +20,7 @@ public class Funcionario extends Usuario implements Serializable {
             Funcionario func = (Funcionario) objeto;
             try {
                 Session sessao = HibernateUtil.openSession();
-                sessao.saveOrUpdate(func);
+                sessao.save(func);
                 Transaction transacao = sessao.beginTransaction();
                 transacao.commit();
                 sessao.clear();
