@@ -11,6 +11,5 @@
     <mapping class="br.unipampa.model.Usuario"/>
     <mapping class="br.unipampa.model.ItemConsignado"/>
     <mapping class="br.unipampa.model.LivroDaBiblioteca"/>
-    <mapping class="br.unipampa.model.Funcionario"/>
   </session-factory>
 </hibernate-configuration>
