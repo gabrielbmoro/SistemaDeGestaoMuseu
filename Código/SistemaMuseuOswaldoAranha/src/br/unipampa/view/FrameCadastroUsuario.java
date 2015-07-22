@@ -211,6 +211,7 @@ public class FrameCadastroUsuario extends javax.swing.JFrame implements WindowLi
             String senha = new String(array);
             this.funcionario.setSenha(CriptografiaMD5.codificar(senha));
             this.funcionario.setTelefone(this.txtTelefone.getText());
+            this.funcionario.setStatus(true);
             
             if(jRadioAdmSim.isSelected()){
                 this.funcionario.setSouUsuarioAdministrador(true);

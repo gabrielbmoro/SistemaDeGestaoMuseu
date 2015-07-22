@@ -5,7 +5,6 @@
  */
 package br.unipampa.model;
 
-import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

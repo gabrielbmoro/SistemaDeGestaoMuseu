@@ -5,7 +5,6 @@
  */
 package br.unipampa.view;
 
-import br.unipampa.model.ItemTombo;
 import br.unipampa.model.LivroDaBiblioteca;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;

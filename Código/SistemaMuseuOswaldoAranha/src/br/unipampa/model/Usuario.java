@@ -48,7 +48,21 @@ public class Usuario implements OperacoesBasicas {
 
     @Override
     public boolean alterar(Object objetoNovo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (objetoNovo instanceof Usuario) {
+            Usuario usuario = (Usuario) objetoNovo;
+            try {
+                Session sessao = HibernateUtil.openSession();
+                sessao.saveOrUpdate(usuario);
+                Transaction transacao = sessao.beginTransaction();
+                transacao.commit();
+                sessao.clear();
+                return true;
+            } catch (Exception erro) {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 
     @Override
@@ -70,7 +84,15 @@ public class Usuario implements OperacoesBasicas {
 
     @Override
     public Object recuperarPeloID(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         Query query = null;
+            query = HibernateUtil.openSession().createQuery("from Usuario i where "
+                    + "i.cpf=" + id);
+            List<Object> resultado = query.list();
+            if (!resultado.isEmpty()) {
+                return (Usuario) resultado.get(0);
+            } else {
+                return null;
+            }
     }
 
     @Override

@@ -80,6 +80,11 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
 
         btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/editar.png"))); // NOI18N
         btnEditar.setToolTipText("Editar Dados de Usuario");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         btnListar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/listar.png"))); // NOI18N
         btnListar.setToolTipText("Listar Usuarios Cadastrados");
@@ -127,40 +132,28 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
       listarRegistrosDeUsuarios();
     }//GEN-LAST:event_btnListarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrameListarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrameListarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrameListarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrameListarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+               try {
+            int linhaSelecionada = jTableUsuarios.getSelectedRow();
+            Object idDeElemento = modeloDeTabelaUsuarios.getValueAt(linhaSelecionada, 1);
+            if (idDeElemento != null) {
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrameListarUsuario().setVisible(true);
+                Long idLong = Long.parseLong(idDeElemento.toString());
+                if (idLong != 0) {
+                    Usuario usuario = new Usuario();
+                    Usuario usuarioTemporario = (Usuario) usuario.recuperarPeloID(idLong);
+                    if (usuarioTemporario != null) {
+                         new FrameInfoEditUsuario(usuarioTemporario);
+                    }
+                }
+
+            } else {
+                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
             }
-        });
-    }
+        } catch (Exception erro) {
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+        }
+    }//GEN-LAST:event_btnEditarActionPerformed
 
     private void listarRegistrosDeUsuarios(){
         this.modeloDeTabelaUsuarios.setNumRows(0);
