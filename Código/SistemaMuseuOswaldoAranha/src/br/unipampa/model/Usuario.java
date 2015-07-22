@@ -97,7 +97,16 @@ public class Usuario implements OperacoesBasicas {
 
     @Override
     public boolean deletar(Object objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         try{
+             Session sessao = HibernateUtil.openSession();
+                sessao.delete(objeto);
+                Transaction transacao = sessao.beginTransaction();
+                transacao.commit();
+                sessao.clear();
+             return true;
+         }catch(Exception erro){
+             return false;
+         }
     }
 
     public Long getCpf() {

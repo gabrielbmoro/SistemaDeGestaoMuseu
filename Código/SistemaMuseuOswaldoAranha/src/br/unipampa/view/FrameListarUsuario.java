@@ -6,6 +6,7 @@
 package br.unipampa.view;
 
 import br.unipampa.model.Diretor;
+import br.unipampa.model.ItemConsignado;
 import br.unipampa.model.Usuario;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
@@ -45,6 +46,7 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
         jLabel1 = new javax.swing.JLabel();
         btnEditar = new javax.swing.JButton();
         btnListar = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
 
         setTitle("Registros de Usuarios");
 
@@ -94,6 +96,14 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
             }
         });
 
+        btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/lixeira.png"))); // NOI18N
+        btnExcluir.setToolTipText("Excluir Usuario");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,25 +114,30 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
                     .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnEditar)
-                            .addComponent(btnListar))))
-                .addContainerGap(34, Short.MAX_VALUE))
+                            .addComponent(btnListar)
+                            .addComponent(btnExcluir, javax.swing.GroupLayout.Alignment.LEADING))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1)
+                        .addGap(29, 29, 29)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(btnListar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEditar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnListar)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                        .addComponent(btnExcluir)))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
@@ -155,6 +170,40 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
         }
     }//GEN-LAST:event_btnEditarActionPerformed
 
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+                try {
+            int linhaSelecionada = jTableUsuarios.getSelectedRow();
+            Object isAdm = modeloDeTabelaUsuarios.getValueAt(linhaSelecionada, 5);
+            if (isAdm != null) {
+                String isAdmTexto = isAdm.toString();
+                if(isAdmTexto.equalsIgnoreCase("Sim")){
+                    GeradorDeMensagem.exibirMensagemDeInformacao("A Operaçao nao pode ser realizada, voce nao tem privilegios!", "Alerta de Usuario");
+                }else{
+                  Object idDeElemento = modeloDeTabelaUsuarios.getValueAt(linhaSelecionada, 1);
+                Long idLong = Long.parseLong(idDeElemento.toString());
+                if (idLong != 0) {
+                    Usuario usuariot = new Usuario();
+                    Object objetoASerExcluido = usuariot.recuperarPeloID(idLong);
+                    if (objetoASerExcluido != null) {
+                        boolean resultado = usuariot.deletar(objetoASerExcluido);
+                        if (resultado) {
+                            GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluido com sucesso!", "Alerta ao Usuario");
+                            listarRegistrosDeUsuarios();
+                        } else {
+                            GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
+                        }
+                    } else {
+                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
+                   
+                    }}
+                }
+            }
+
+        } catch (Exception erro) {
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+        }
+    }//GEN-LAST:event_btnExcluirActionPerformed
+
     private void listarRegistrosDeUsuarios(){
         this.modeloDeTabelaUsuarios.setNumRows(0);
         this.usuario = new Usuario();
@@ -162,15 +211,28 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
         for(Object objetoUsuario: listaDeUsuarios){
             if(objetoUsuario instanceof Usuario){
                 Usuario usuarioTemp = (Usuario) objetoUsuario;
+                String respostaAdm = "";
+                String respostaAtivo= "";
+                if(usuarioTemp.isSouUsuarioAdministrador()){
+                    respostaAdm= "Sim";
+                }else{
+                    respostaAdm= "-";
+                }
+                if(usuarioTemp.isStatus()){
+                    respostaAtivo= "Sim";
+                }else{
+                    respostaAtivo= "-";
+                }
                 this.modeloDeTabelaUsuarios.addRow(new Object[]{usuarioTemp.getNome(),
                 usuarioTemp.getCpf(), usuarioTemp.getEndereco(), usuarioTemp.getTelefone(), 
-                usuarioTemp.isStatus(), usuarioTemp.isSouUsuarioAdministrador()});
+                respostaAtivo, respostaAdm});
             }
         }
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnListar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
