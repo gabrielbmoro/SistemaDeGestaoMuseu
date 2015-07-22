@@ -28,7 +28,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     /**
      * Creates new form FramePrincipal
      */
-    public FramePrincipal() {
+    public FramePrincipal(boolean isAdm) {
         initComponents();
         ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 1000, 600);
         modeloTabelaLivroCOnsignado = (DefaultTableModel) jTableLivroConsignado.getModel();
@@ -36,6 +36,13 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         modeloTabelaBiblioteca = (DefaultTableModel) jTableBiblioteca.getModel();
         
         addWindowListener(this);
+        
+        if(isAdm){
+            jMenuUsuario.setEnabled(true);
+        }else{
+            jMenuUsuario.setEnabled(false);
+        }
+        revalidate();
     }
 
     /**

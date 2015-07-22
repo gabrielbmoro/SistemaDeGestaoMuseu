@@ -5,10 +5,10 @@
  */
 package br.unipampa.view;
 
+import br.unipampa.model.Usuario;
+import br.unipampa.service.RefatoraString;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
 
 /**
  *
@@ -16,14 +16,12 @@ import javax.swing.UIManager;
  */
 public class FrameLogin extends javax.swing.JFrame implements WindowListener{
 
-        private static final String SET_LOOK = "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel";
-
+    private Usuario usuario;
     /**
      * Creates new form FrameLogin
      */
     public FrameLogin() {
         initComponents();
-        lookAndfeel();
         addWindowListener(this);
         ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 365, 353);
     }
@@ -110,19 +108,10 @@ public class FrameLogin extends javax.swing.JFrame implements WindowListener{
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAcessarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcessarSistemaActionPerformed
-        new FramePrincipal();
-        dispose();
+        this.usuario = new Usuario();
+        this.usuario.fazerLogin(this, RefatoraString.retornaCpf(this.txtCpf.getText()), this.txtSenha.getText());
     }//GEN-LAST:event_btnAcessarSistemaActionPerformed
 
-
-     public void lookAndfeel() {
-        try {
-            UIManager.setLookAndFeel(SET_LOOK);
-            SwingUtilities.updateComponentTreeUI(this);
-        } catch (Exception erro) {
-            System.err.println("Erro");
-        }
-    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAcessarSistema;

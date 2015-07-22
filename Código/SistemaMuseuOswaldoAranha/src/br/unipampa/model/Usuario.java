@@ -1,5 +1,9 @@
 package br.unipampa.model;
 
+import br.unipampa.service.CriptografiaMD5;
+import br.unipampa.view.FrameLogin;
+import br.unipampa.view.FramePrincipal;
+import br.unipampa.view.GeradorDeMensagem;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
@@ -20,7 +24,27 @@ public class Usuario implements OperacoesBasicas {
     private String telefone;
     private boolean souUsuarioAdministrador;
     private boolean status;
-    
+
+    public void fazerLogin(FrameLogin frameLogin, Long cpf, String senha) {
+        if (cpf != null) {
+            Usuario usuarioTemp = (Usuario) recuperarPeloID(cpf);
+            if (usuarioTemp != null) {
+                String senhaCriptografada = CriptografiaMD5.codificar(senha);
+                boolean teste = usuarioTemp.getSenha().equalsIgnoreCase(senhaCriptografada);
+                if (teste) {
+                    GeradorDeMensagem.exibirMensagemDeInformacao("Acesso permitido!", "Alerta de Usuario");
+                    new FramePrincipal(usuarioTemp.isSouUsuarioAdministrador());
+                    frameLogin.dispose();
+                } else {
+                    GeradorDeMensagem.exibirMensagemDeInformacao("Nao foi possivel acessar o sistema, por favor verifique as suas credenciais!", "Alerta de Usuario");
+                }
+            } else {
+                GeradorDeMensagem.exibirMensagemDeInformacao("Nao foi possivel acessar o sistema, por favor verifique as suas credenciais!", "Alerta de Usuario");
+            }
+        } else {
+            GeradorDeMensagem.exibirMensagemDeInformacao("Nao foi possivel acessar o sistema, por favor verifique as suas credenciais!", "Alerta de Usuario");
+        }
+    }
 
     @Override
     public boolean salvar(Object objeto) {
@@ -84,29 +108,29 @@ public class Usuario implements OperacoesBasicas {
 
     @Override
     public Object recuperarPeloID(Long id) {
-         Query query = null;
-            query = HibernateUtil.openSession().createQuery("from Usuario i where "
-                    + "i.cpf=" + id);
-            List<Object> resultado = query.list();
-            if (!resultado.isEmpty()) {
-                return (Usuario) resultado.get(0);
-            } else {
-                return null;
-            }
+        Query query = null;
+        query = HibernateUtil.openSession().createQuery("from Usuario i where "
+                + "i.cpf=" + id);
+        List<Object> resultado = query.list();
+        if (!resultado.isEmpty()) {
+            return (Usuario) resultado.get(0);
+        } else {
+            return null;
+        }
     }
 
     @Override
     public boolean deletar(Object objeto) {
-         try{
-             Session sessao = HibernateUtil.openSession();
-                sessao.delete(objeto);
-                Transaction transacao = sessao.beginTransaction();
-                transacao.commit();
-                sessao.clear();
-             return true;
-         }catch(Exception erro){
-             return false;
-         }
+        try {
+            Session sessao = HibernateUtil.openSession();
+            sessao.delete(objeto);
+            Transaction transacao = sessao.beginTransaction();
+            transacao.commit();
+            sessao.clear();
+            return true;
+        } catch (Exception erro) {
+            return false;
+        }
     }
 
     public Long getCpf() {
@@ -172,5 +196,5 @@ public class Usuario implements OperacoesBasicas {
     public void setStatus(boolean status) {
         this.status = status;
     }
-    
+
 }

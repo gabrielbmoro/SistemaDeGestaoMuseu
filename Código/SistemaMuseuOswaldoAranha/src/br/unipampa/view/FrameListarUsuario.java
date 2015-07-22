@@ -5,7 +5,6 @@
  */
 package br.unipampa.view;
 
-import br.unipampa.model.Diretor;
 import br.unipampa.model.ItemConsignado;
 import br.unipampa.model.Usuario;
 import java.awt.event.WindowEvent;
