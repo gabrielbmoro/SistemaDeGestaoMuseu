@@ -798,7 +798,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     }//GEN-LAST:event_btnGerarRelatorioConsignadoActionPerformed
 
     private void btnNovoLivroTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoLivroTomboActionPerformed
-        // TODO add your handling code here:
+       new FrameNovoItemTombo();
     }//GEN-LAST:event_btnNovoLivroTomboActionPerformed
 
     private void btnListarLivroTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarLivroTomboActionPerformed
@@ -867,7 +867,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     }//GEN-LAST:event_btnSobreLivroTomboActionPerformed
 
     private void btnNovoLivroBibliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoLivroBibliotecaActionPerformed
-        // TODO add your handling code here:
+        new FrameNovoLivroBiblioteca();
     }//GEN-LAST:event_btnNovoLivroBibliotecaActionPerformed
 
     private void btnListarLivroBibliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarLivroBibliotecaActionPerformed

@@ -85,7 +85,6 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
         jLabel18 = new javax.swing.JLabel();
         btnRegistrarImagem = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Novo LivroConsignado");
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 

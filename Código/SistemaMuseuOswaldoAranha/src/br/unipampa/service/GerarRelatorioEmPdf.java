@@ -204,9 +204,9 @@ public class GerarRelatorioEmPdf {
                 celulaTempDireta1.setBackgroundColor(BaseColor.LIGHT_GRAY);
                 tabela.addCell(celulaTempDireta1);
 
-                if (livroDaBiblioteca.getAnoLacamento() != null) {
+                if (livroDaBiblioteca.getAnoLacamento() != 0) {
                     PdfPCell celulaTempDireta2 = new PdfPCell(new Paragraph(
-                            livroDaBiblioteca.getAnoLacamento().toString(), fontePadrao));
+                            String.valueOf(livroDaBiblioteca.getAnoLacamento()), fontePadrao));
                     celulaTempDireta2.setBackgroundColor(BaseColor.LIGHT_GRAY);
                     tabela.addCell(celulaTempDireta2);
                 } else {

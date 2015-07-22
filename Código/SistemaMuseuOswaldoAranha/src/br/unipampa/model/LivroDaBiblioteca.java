@@ -28,13 +28,27 @@ public class LivroDaBiblioteca implements OperacoesBasicas{
     private String nomeLivro;
     private String nomeAutor;
     private String grafica;
-    private Date anoLacamento;
+    private int anoLacamento;
     private String regiao;
     private String pais;
 
     @Override
     public boolean salvar(Object objeto) {
-        return false;
+        if (objeto instanceof LivroDaBiblioteca) {
+            LivroDaBiblioteca item = (LivroDaBiblioteca) objeto;
+            try {
+                Session sessao = HibernateUtil.openSession();
+                sessao.saveOrUpdate(item);
+                Transaction transacao = sessao.beginTransaction();
+                transacao.commit();
+                sessao.clear();
+                return true;
+            } catch (Exception erro) {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 
     @Override
@@ -44,7 +58,21 @@ public class LivroDaBiblioteca implements OperacoesBasicas{
 
     @Override
     public boolean alterar(Object objetoNovo) {
-        return false;
+          if (objetoNovo instanceof LivroDaBiblioteca) {
+            LivroDaBiblioteca item = (LivroDaBiblioteca) objetoNovo;
+            try {
+                Session sessao = HibernateUtil.openSession();
+                sessao.saveOrUpdate(item);
+                Transaction transacao = sessao.beginTransaction();
+                transacao.commit();
+                sessao.clear();
+                return true;
+            } catch (Exception erro) {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 
     @Override
@@ -130,11 +158,11 @@ public class LivroDaBiblioteca implements OperacoesBasicas{
         this.grafica = grafica;
     }
 
-    public Date getAnoLacamento() {
+    public int getAnoLacamento() {
         return anoLacamento;
     }
 
-    public void setAnoLacamento(Date anoLacamento) {
+    public void setAnoLacamento(int anoLacamento) {
         this.anoLacamento = anoLacamento;
     }
 
