@@ -33,7 +33,7 @@ public class Usuario implements OperacoesBasicas {
                 boolean teste = usuarioTemp.getSenha().equalsIgnoreCase(senhaCriptografada);
                 if (teste) {
                     GeradorDeMensagem.exibirMensagemDeInformacao("Acesso permitido!", "Alerta de Usuario");
-                    new FramePrincipal(usuarioTemp.isSouUsuarioAdministrador());
+                    new FramePrincipal(usuarioTemp);
                     frameLogin.dispose();
                 } else {
                     GeradorDeMensagem.exibirMensagemDeInformacao("Nao foi possivel acessar o sistema, por favor verifique as suas credenciais!", "Alerta de Usuario");

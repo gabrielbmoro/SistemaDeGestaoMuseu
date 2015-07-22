@@ -8,6 +8,7 @@ package br.unipampa.view;
 import br.unipampa.model.ItemConsignado;
 import br.unipampa.model.ItemTombo;
 import br.unipampa.model.LivroDaBiblioteca;
+import br.unipampa.model.Usuario;
 import br.unipampa.service.TipoDeRelatorio;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
@@ -23,12 +24,12 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     private DefaultTableModel modeloTabelaLivroCOnsignado;
     private DefaultTableModel modeloTabelaLivroTombo;
     private DefaultTableModel modeloTabelaBiblioteca;
-
+    private Usuario usuario;
 
     /**
      * Creates new form FramePrincipal
      */
-    public FramePrincipal(boolean isAdm) {
+    public FramePrincipal(Usuario usuarioPorParametro) {
         initComponents();
         ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 1000, 600);
         modeloTabelaLivroCOnsignado = (DefaultTableModel) jTableLivroConsignado.getModel();
@@ -36,8 +37,8 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         modeloTabelaBiblioteca = (DefaultTableModel) jTableBiblioteca.getModel();
         
         addWindowListener(this);
-        
-        if(isAdm){
+        this.usuario= usuarioPorParametro;
+        if(this.usuario.isSouUsuarioAdministrador()){
             jMenuUsuario.setEnabled(true);
         }else{
             jMenuUsuario.setEnabled(false);
@@ -586,6 +587,11 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         jMenu1.add(jMenuUsuario);
 
         jMenuItemAlterarSenhaDeAcesso.setText("Alterar Senha de Acesso");
+        jMenuItemAlterarSenhaDeAcesso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAlterarSenhaDeAcessoActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItemAlterarSenhaDeAcesso);
 
         jMenuItemSair.setText("Sair");
@@ -967,6 +973,13 @@ try {
     private void jMenuItemListarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemListarUsuarioActionPerformed
         new FrameListarUsuario();
     }//GEN-LAST:event_jMenuItemListarUsuarioActionPerformed
+
+    private void jMenuItemAlterarSenhaDeAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAlterarSenhaDeAcessoActionPerformed
+        if(this.usuario!=null)
+        {
+            
+        }
+    }//GEN-LAST:event_jMenuItemAlterarSenhaDeAcessoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
