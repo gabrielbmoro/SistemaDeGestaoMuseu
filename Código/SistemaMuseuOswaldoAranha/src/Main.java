@@ -2,7 +2,6 @@
 import br.unipampa.service.VerificacaoDeInicializacao;
 import br.unipampa.view.FrameInicial;
 import br.unipampa.view.FrameLogin;
-import br.unipampa.view.FramePrincipal;
 
 /**
  *
@@ -21,5 +20,6 @@ public class Main {
             frameInicial.dispose();
             new FrameLogin();
         }
+        
     }
 }
