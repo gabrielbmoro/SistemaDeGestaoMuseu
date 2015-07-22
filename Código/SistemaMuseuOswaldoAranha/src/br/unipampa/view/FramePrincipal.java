@@ -863,7 +863,26 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     }//GEN-LAST:event_btnDeletarLivroTomboActionPerformed
 
     private void btnSobreLivroTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreLivroTomboActionPerformed
-        // TODO add your handling code here:
+         try {
+            int linhaSelecionada = jTableLivroTombo.getSelectedRow();
+            Object idDeElemento = modeloTabelaLivroTombo.getValueAt(linhaSelecionada, 0);
+            if (idDeElemento != null) {
+
+                Long idLong = Long.parseLong(idDeElemento.toString());
+                if (idLong != 0) {
+                    ItemTombo itemTombo = new ItemTombo();
+                    ItemTombo itemTomboTemporario = (ItemTombo) itemTombo.recuperarPeloID(idLong);
+                    if (itemTomboTemporario != null) {
+                        new FrameInfoEditLivroCombo(itemTomboTemporario, true);
+                    }
+                }
+
+            } else {
+                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+            }
+        } catch (Exception erro) {
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+        }
     }//GEN-LAST:event_btnSobreLivroTomboActionPerformed
 
     private void btnNovoLivroBibliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoLivroBibliotecaActionPerformed
@@ -879,7 +898,27 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     }//GEN-LAST:event_btnGerarRelatorioBibliotecaActionPerformed
 
     private void btnEditarLivroBiliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarLivroBiliotecaActionPerformed
-        // TODO add your handling code here:
+try {
+            int linhaSelecionada = jTableBiblioteca.getSelectedRow();
+            Object idDeElemento = modeloTabelaBiblioteca.getValueAt(linhaSelecionada, 0);
+            if (idDeElemento != null) {
+
+                Long idLong = Long.parseLong(idDeElemento.toString());
+                if (idLong != 0) {
+                    LivroDaBiblioteca livroDaBiblioteca = new LivroDaBiblioteca();
+                    LivroDaBiblioteca livroDaBibliotecaTemporario = (LivroDaBiblioteca) livroDaBiblioteca.recuperarPeloID(idLong);
+                    if (livroDaBibliotecaTemporario != null) {
+                         new FrameInfoEditLivroBiblioteca(livroDaBibliotecaTemporario,
+                                false);
+                    }
+                }
+
+            } else {
+                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+            }
+        } catch (Exception erro) {
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+        }        
     }//GEN-LAST:event_btnEditarLivroBiliotecaActionPerformed
 
     private void btnDeletarLivroBiliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarLivroBiliotecaActionPerformed
@@ -911,7 +950,26 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     }//GEN-LAST:event_btnDeletarLivroBiliotecaActionPerformed
 
     private void btnSobreLivroBiliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreLivroBiliotecaActionPerformed
-        // TODO add your handling code here:
+        try {
+            int linhaSelecionada = jTableBiblioteca.getSelectedRow();
+            Object idDeElemento = modeloTabelaBiblioteca.getValueAt(linhaSelecionada, 0);
+            if (idDeElemento != null) {
+
+                Long idLong = Long.parseLong(idDeElemento.toString());
+                if (idLong != 0) {
+                    LivroDaBiblioteca livroDaBiblioteca = new LivroDaBiblioteca();
+                    LivroDaBiblioteca livroDaBibliotecaTemporario = (LivroDaBiblioteca) livroDaBiblioteca.recuperarPeloID(idLong);
+                    if (livroDaBibliotecaTemporario != null) {
+                        new FrameInfoEditLivroBiblioteca(livroDaBibliotecaTemporario, true);
+                    }
+                }
+
+            } else {
+                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+            }
+        } catch (Exception erro) {
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+        }
     }//GEN-LAST:event_btnSobreLivroBiliotecaActionPerformed
 
 
