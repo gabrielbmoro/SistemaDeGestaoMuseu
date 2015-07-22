@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -18,6 +19,7 @@ public class Usuario implements OperacoesBasicas {
     private String endereco;
     private String telefone;
     private boolean souUsuarioAdministrador;
+    private boolean status;
     
 
     @Override
@@ -51,7 +53,14 @@ public class Usuario implements OperacoesBasicas {
 
     @Override
     public List recuperarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Query query = null;
+        query = HibernateUtil.openSession().createQuery("from Usuario");
+        List<Object> resultado = query.list();
+        if (!resultado.isEmpty()) {
+            return resultado;
+        } else {
+            return null;
+        }
     }
 
     @Override
@@ -124,4 +133,13 @@ public class Usuario implements OperacoesBasicas {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+    
 }

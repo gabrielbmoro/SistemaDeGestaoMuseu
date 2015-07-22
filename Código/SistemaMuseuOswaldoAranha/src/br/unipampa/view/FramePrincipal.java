@@ -86,7 +86,8 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         jMenuUsuario = new javax.swing.JMenu();
         jMenuItemNovoUsuario = new javax.swing.JMenuItem();
         jMenuItemListarUsuario = new javax.swing.JMenuItem();
-        jMenuItem17 = new javax.swing.JMenuItem();
+        jMenuItemAlterarSenhaDeAcesso = new javax.swing.JMenuItem();
+        jMenuItemSair = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem18 = new javax.swing.JMenuItem();
         jMenuItem19 = new javax.swing.JMenuItem();
@@ -568,12 +569,25 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         jMenuUsuario.add(jMenuItemNovoUsuario);
 
         jMenuItemListarUsuario.setText("Listar Usuarios");
+        jMenuItemListarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemListarUsuarioActionPerformed(evt);
+            }
+        });
         jMenuUsuario.add(jMenuItemListarUsuario);
 
         jMenu1.add(jMenuUsuario);
 
-        jMenuItem17.setText("Sair");
-        jMenu1.add(jMenuItem17);
+        jMenuItemAlterarSenhaDeAcesso.setText("Alterar Senha de Acesso");
+        jMenu1.add(jMenuItemAlterarSenhaDeAcesso);
+
+        jMenuItemSair.setText("Sair");
+        jMenuItemSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemSairActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItemSair);
 
         jMenuBar1.add(jMenu1);
 
@@ -937,6 +951,16 @@ try {
        new FrameCadastroUsuario();
     }//GEN-LAST:event_jMenuItemNovoUsuarioActionPerformed
 
+    private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
+       if(GeradorDeMensagem.exibirMensagemDeConfirmacao("Voce deseja realmente sair da aplicaçao?", "Alerta de Usuario")){
+           System.exit(0);
+       }
+    }//GEN-LAST:event_jMenuItemSairActionPerformed
+
+    private void jMenuItemListarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemListarUsuarioActionPerformed
+        new FrameListarUsuario();
+    }//GEN-LAST:event_jMenuItemListarUsuarioActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDeletarLivroBilioteca;
@@ -960,11 +984,12 @@ try {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem19;
+    private javax.swing.JMenuItem jMenuItemAlterarSenhaDeAcesso;
     private javax.swing.JMenuItem jMenuItemListarUsuario;
     private javax.swing.JMenuItem jMenuItemNovoUsuario;
+    private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenu jMenuUsuario;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
