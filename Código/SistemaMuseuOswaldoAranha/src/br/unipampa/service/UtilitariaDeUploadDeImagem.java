@@ -44,7 +44,7 @@ public class UtilitariaDeUploadDeImagem {
                 ImageIO.write(imagem, "jpg", fileDestino);
                 return true;
             } else {
-                GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, a imagem deve ter menos de 957 de largura e menos de 601 de altura.", "Alerta ao Usuario");
+                GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, a imagem deve ter menos de 957 de largura e menos de 601 de altura.", "Alerta ao Usuário");
                 return false;
             }
         } catch (FileNotFoundException erro) {

@@ -94,7 +94,7 @@ public class GerarRelatorioEmPdf {
     }
 
     private Paragraph recuperarCabecalho(TipoDeRelatorio tipoDeRelatorio) {
-        String tituloDeRelatorio = "Relatorio Geral do Museu Oswaldo Aranha: ";
+        String tituloDeRelatorio = "Relatório Geral do Museu Oswaldo Aranha: ";
         switch (tipoDeRelatorio) {
             case ITEM_CONSIGNADO:
                 tituloDeRelatorio = tituloDeRelatorio + "Itens de Acervo em Consignado";
@@ -142,7 +142,7 @@ public class GerarRelatorioEmPdf {
             celulaMaeTabela.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela);
 
-            Paragraph outroCodigo = new Paragraph("Outro Codigo", fontePadraoNegrito);
+            Paragraph outroCodigo = new Paragraph("Outro Código", fontePadraoNegrito);
             outroCodigo.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela5 = new PdfPCell(outroCodigo);
             celulaMaeTabela5.setRowspan(2);
@@ -156,7 +156,7 @@ public class GerarRelatorioEmPdf {
             celulaMaeTabela1.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela1);
 
-            Paragraph grafica = new Paragraph("Grafica", fontePadraoNegrito);
+            Paragraph grafica = new Paragraph("Gráfica", fontePadraoNegrito);
             grafica.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela2 = new PdfPCell(grafica);
             celulaMaeTabela2.setRowspan(2);
@@ -177,14 +177,14 @@ public class GerarRelatorioEmPdf {
             celulaMaeTabela4.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela4);
 
-            Paragraph pais = new Paragraph("Pais", fontePadraoNegrito);
+            Paragraph pais = new Paragraph("País", fontePadraoNegrito);
             pais.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela6 = new PdfPCell(pais);
             celulaMaeTabela6.setRowspan(2);
             celulaMaeTabela6.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela6);
 
-            Paragraph regiao = new Paragraph("Regiao", fontePadraoNegrito);
+            Paragraph regiao = new Paragraph("Região", fontePadraoNegrito);
             regiao.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela7 = new PdfPCell(regiao);
             celulaMaeTabela7.setRowspan(2);
@@ -285,7 +285,7 @@ public class GerarRelatorioEmPdf {
             celulaMaeTabela.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela);
 
-            Paragraph codigoAux = new Paragraph("Codigo Aux.", fontePadraoNegrito);
+            Paragraph codigoAux = new Paragraph("Código Aux.", fontePadraoNegrito);
             codigoAux.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela1 = new PdfPCell(codigoAux);
             celulaMaeTabela1.setRowspan(2);
@@ -313,7 +313,7 @@ public class GerarRelatorioEmPdf {
             celulaMaeTabela4.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela4);
 
-            Paragraph funcaoEspecifica = new Paragraph("Funçao Especifica", fontePadraoNegrito);
+            Paragraph funcaoEspecifica = new Paragraph("Função Específica", fontePadraoNegrito);
             funcaoEspecifica.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela5 = new PdfPCell(funcaoEspecifica);
             celulaMaeTabela5.setRowspan(2);
@@ -327,42 +327,42 @@ public class GerarRelatorioEmPdf {
             celulaMaeTabela6.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela6);
 
-            Paragraph materiaPrima = new Paragraph("Materia Prima", fontePadraoNegrito);
+            Paragraph materiaPrima = new Paragraph("Matéria Prima", fontePadraoNegrito);
             materiaPrima.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela7 = new PdfPCell(materiaPrima);
             celulaMaeTabela7.setRowspan(2);
             celulaMaeTabela7.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela7);
 
-            Paragraph pais = new Paragraph("Pais", fontePadraoNegrito);
+            Paragraph pais = new Paragraph("País", fontePadraoNegrito);
             pais.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela8 = new PdfPCell(pais);
             celulaMaeTabela8.setRowspan(2);
             celulaMaeTabela8.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela8);
 
-            Paragraph procedencia = new Paragraph("Procedencia", fontePadraoNegrito);
+            Paragraph procedencia = new Paragraph("Procedência", fontePadraoNegrito);
             procedencia.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela9 = new PdfPCell(procedencia);
             celulaMaeTabela9.setRowspan(2);
             celulaMaeTabela9.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela9);
 
-            Paragraph regiao = new Paragraph("Regiao", fontePadraoNegrito);
+            Paragraph regiao = new Paragraph("Região", fontePadraoNegrito);
             regiao.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela10 = new PdfPCell(regiao);
             celulaMaeTabela10.setRowspan(2);
             celulaMaeTabela10.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela10);
 
-            Paragraph sitio = new Paragraph("Sitio", fontePadraoNegrito);
+            Paragraph sitio = new Paragraph("Sítio", fontePadraoNegrito);
             sitio.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela11 = new PdfPCell(sitio);
             celulaMaeTabela11.setRowspan(2);
             celulaMaeTabela11.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela11);
 
-            Paragraph tecManufatura = new Paragraph("Tec. de Manufatura", fontePadraoNegrito);
+            Paragraph tecManufatura = new Paragraph("Téc. de Manufatura", fontePadraoNegrito);
             tecManufatura.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela12 = new PdfPCell(tecManufatura);
             celulaMaeTabela12.setRowspan(2);
@@ -531,7 +531,7 @@ public class GerarRelatorioEmPdf {
             celulaMaeTabela.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela);
 
-            Paragraph codigoAux = new Paragraph("Codigo Aux.", fontePadraoNegrito);
+            Paragraph codigoAux = new Paragraph("Código Aux.", fontePadraoNegrito);
             codigoAux.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela1 = new PdfPCell(codigoAux);
             celulaMaeTabela1.setRowspan(2);
@@ -559,7 +559,7 @@ public class GerarRelatorioEmPdf {
             celulaMaeTabela4.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela4);
 
-            Paragraph funcaoEspecifica = new Paragraph("Funçao Especifica", fontePadraoNegrito);
+            Paragraph funcaoEspecifica = new Paragraph("Função Específica", fontePadraoNegrito);
             funcaoEspecifica.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela5 = new PdfPCell(funcaoEspecifica);
             celulaMaeTabela5.setRowspan(2);
@@ -573,42 +573,42 @@ public class GerarRelatorioEmPdf {
             celulaMaeTabela6.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela6);
 
-            Paragraph materiaPrima = new Paragraph("Materia Prima", fontePadraoNegrito);
+            Paragraph materiaPrima = new Paragraph("Matéria Prima", fontePadraoNegrito);
             materiaPrima.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela7 = new PdfPCell(materiaPrima);
             celulaMaeTabela7.setRowspan(2);
             celulaMaeTabela7.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela7);
 
-            Paragraph pais = new Paragraph("Pais", fontePadraoNegrito);
+            Paragraph pais = new Paragraph("País", fontePadraoNegrito);
             pais.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela8 = new PdfPCell(pais);
             celulaMaeTabela8.setRowspan(2);
             celulaMaeTabela8.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela8);
 
-            Paragraph procedencia = new Paragraph("Procedencia", fontePadraoNegrito);
+            Paragraph procedencia = new Paragraph("Procedência", fontePadraoNegrito);
             procedencia.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela9 = new PdfPCell(procedencia);
             celulaMaeTabela9.setRowspan(2);
             celulaMaeTabela9.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela9);
 
-            Paragraph regiao = new Paragraph("Regiao", fontePadraoNegrito);
+            Paragraph regiao = new Paragraph("Região", fontePadraoNegrito);
             regiao.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela10 = new PdfPCell(regiao);
             celulaMaeTabela10.setRowspan(2);
             celulaMaeTabela10.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela10);
 
-            Paragraph sitio = new Paragraph("Sitio", fontePadraoNegrito);
+            Paragraph sitio = new Paragraph("Sítio", fontePadraoNegrito);
             sitio.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela11 = new PdfPCell(sitio);
             celulaMaeTabela11.setRowspan(2);
             celulaMaeTabela11.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela11);
 
-            Paragraph tecManufatura = new Paragraph("Tec. de Manufatura", fontePadraoNegrito);
+            Paragraph tecManufatura = new Paragraph("Téc. de Manufatura", fontePadraoNegrito);
             tecManufatura.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela12 = new PdfPCell(tecManufatura);
             celulaMaeTabela12.setRowspan(2);
@@ -622,21 +622,21 @@ public class GerarRelatorioEmPdf {
             celulaMaeTabela13.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela13);
 
-            Paragraph dataDeEmprestimo = new Paragraph("Data de Emprestimo", fontePadraoNegrito);
+            Paragraph dataDeEmprestimo = new Paragraph("Data de Empréstimo", fontePadraoNegrito);
             dataDeEmprestimo.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela14 = new PdfPCell(dataDeEmprestimo);
             celulaMaeTabela14.setRowspan(2);
             celulaMaeTabela14.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela14);
 
-            Paragraph dataDeDevolucao = new Paragraph("Data de Devoluçao", fontePadraoNegrito);
+            Paragraph dataDeDevolucao = new Paragraph("Data de Devolução", fontePadraoNegrito);
             dataDeDevolucao.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela15 = new PdfPCell(dataDeDevolucao);
             celulaMaeTabela15.setRowspan(2);
             celulaMaeTabela15.setBackgroundColor(new BaseColor(COR_TABELA_CABECALHO_RED, COR_TABELA_CABECALHO_GREEN, COR_TABELA_CABECALHO_BLUE));
             tabela.addCell(celulaMaeTabela15);
 
-            Paragraph responsavelDaFamilia = new Paragraph("Responsavel da Familia", fontePadraoNegrito);
+            Paragraph responsavelDaFamilia = new Paragraph("Responsável da Família", fontePadraoNegrito);
             responsavelDaFamilia.setAlignment(Paragraph.ALIGN_CENTER);
             PdfPCell celulaMaeTabela16 = new PdfPCell(responsavelDaFamilia);
             celulaMaeTabela16.setRowspan(2);

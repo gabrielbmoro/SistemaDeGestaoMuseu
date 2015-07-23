@@ -91,7 +91,7 @@
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Usuarios do Sistema:"/>
+        <Property name="text" type="java.lang.String" value="Usu&#xe1;rios do Sistema:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnEditar">

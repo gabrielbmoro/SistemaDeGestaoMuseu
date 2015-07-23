@@ -37,7 +37,7 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
         if (this.tipoDeRelatorio != null) {
             ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 495, 212);
         } else {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum tipo de relatorio informado, realize a operaçao novamente!", "Alerta de Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum tipo de relatório informado, realize a operação novamente!", "Alerta ao Usuário");
             dispose();
         }
     }
@@ -61,7 +61,7 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Gerar Relatorios");
 
-        jLabel1.setText("Caminho para salvar o relatorio:");
+        jLabel1.setText("Caminho para salvar o relatório:");
 
         txtCaminhoParaSalvar.setText("caminhoDoArquivo");
         txtCaminhoParaSalvar.setEnabled(false);
@@ -75,7 +75,7 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
         });
 
         btnGerarRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/exportar.png"))); // NOI18N
-        btnGerarRelatorio.setText("Gerar Relatorio");
+        btnGerarRelatorio.setText("Gerar Relatório");
         btnGerarRelatorio.setToolTipText("Gerar Relatorio com Itens Cadastrados");
         btnGerarRelatorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,10 +130,10 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
         int resposta = jFileChooser.showOpenDialog(null);
         if (resposta == JFileChooser.APPROVE_OPTION) {
             File diretorioEscolhido = jFileChooser.getSelectedFile();
-            GeradorDeMensagem.exibirMensagemDeInformacao("Você escolheu o diretório: " + diretorioEscolhido.getName().toString(), "Alerta à Usuário");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Você escolheu o diretório: " + diretorioEscolhido.getName().toString(), "Alerta ao Usuário");
             txtCaminhoParaSalvar.setText(diretorioEscolhido.getPath().toString());
         } else {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Você não selecionou nenhum diretório", "Alerta à Usuário");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Você não selecionou nenhum diretório", "Alerta ao Usuário");
         }
     }//GEN-LAST:event_txtBuscarDiretorioActionPerformed
 
@@ -158,19 +158,19 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
                 dados = livroDaBiblioteca.recuperarTodos();
             }
             if (dados.isEmpty() || dados == null) {
-                GeradorDeMensagem.exibirMensagemDeInformacao("O relatorio nao foi gerado, pois nenhum registro foi encontrado!", "Alerta ao Usuario");
+                GeradorDeMensagem.exibirMensagemDeInformacao("O relatório não foi gerado, pois nenhum registro foi encontrado!", "Alerta ao Usuário");
             } else {
                 GerarRelatorioEmPdf gerarRelatorioEmPdf = new GerarRelatorioEmPdf();
                 boolean resposta = gerarRelatorioEmPdf.gerarRelatorio(dados, txtCaminhoParaSalvar.getText(), titulo , this.tipoDeRelatorio);
                 if (resposta) {
-                    GeradorDeMensagem.exibirMensagemDeInformacao("O relatorio foi gerado com sucesso!", "Alerta ao Usuario");
+                    GeradorDeMensagem.exibirMensagemDeInformacao("O relatório foi gerado com sucesso!", "Alerta ao Usuário");
                     dispose();
                 } else {
-                    GeradorDeMensagem.exibirMensagemDeInformacao("O relatorio nao foi gerado, realize a operaçao mais tarde!", "Alerta ao Usuario");
+                    GeradorDeMensagem.exibirMensagemDeInformacao("O relatório não foi gerado, realize a operação mais tarde!", "Alerta ao Usuário");
                 }
             }
         } else {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Caminho de diretorio invalido, escolha outro diretorio!", "Alerta ao Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Caminho de diretório inválido, escolha outro diretório!", "Alerta ao Usuário");
         }
 
     }//GEN-LAST:event_btnGerarRelatorioActionPerformed

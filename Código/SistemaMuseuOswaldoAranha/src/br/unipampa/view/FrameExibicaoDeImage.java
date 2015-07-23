@@ -43,7 +43,7 @@ public class FrameExibicaoDeImage extends javax.swing.JFrame implements WindowLi
         addWindowListener(this);
         setVisible(true);
         }else{
-            GeradorDeMensagem.exibirMensagemDeInformacao("Nenhuma imagem encontrada!", "Alerta ao Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Nenhuma imagem encontrada!", "Alerta ao Usuário");
             dispose();
         }
     }

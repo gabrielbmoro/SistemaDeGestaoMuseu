@@ -80,17 +80,17 @@ public class FrameNovoItemTombo extends javax.swing.JFrame {
         setTitle("Cadastro de Novo Item");
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
-        jLabel1.setText("*Codigo Auxiliar:");
+        jLabel1.setText("*Código Auxiliar:");
 
-        jLabel2.setText("*Materia Prima:");
+        jLabel2.setText("*Matéria Prima:");
 
-        jLabel3.setText("*Data de Uitilização Inicial:");
+        jLabel3.setText("*Data de Utilização Inicial:");
 
-        jLabel4.setText("*Data de Uitilização Final:");
+        jLabel4.setText("*Data de Utilização Final:");
 
         jLabel8.setText("*Tipo de Objeto:");
 
-        jLabel9.setText("Funçao Especifica:");
+        jLabel9.setText("Função Específica:");
 
         txtCulturaItemTombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,15 +108,15 @@ public class FrameNovoItemTombo extends javax.swing.JFrame {
             }
         });
 
-        jLabel12.setText("Grupo Linguistico:");
+        jLabel12.setText("Grupo Linguístico:");
 
-        jLabel13.setText("Tecnica de Manufatura:");
+        jLabel13.setText("Técnica de Manufatura:");
 
-        jLabel14.setText("Procedencia:");
+        jLabel14.setText("Procedência:");
 
-        jLabel16.setText("Sitio:");
+        jLabel16.setText("Sítio:");
 
-        jLabel15.setText("Regiao:");
+        jLabel15.setText("Região:");
 
         jComboPaisItemTombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-------------------", "África do Sul", "Albânia", "Alemanha", "Andorra", "Angola", "Anguilla", "Antigua", "Arábia Saudita", "Argentina", "Armênia", "Aruba", "Austrália", "Áustria", "Azerbaijão", "Bahamas", "Bahrein", "Bangladesh", "Barbados", "Bélgica", "Benin", "Bermudas", "Botsuana", "Brasil", "Brunei", "Bulgária", "Burkina Fasso", "Botão", "Cabo Verde", "Camarões", "Camboja", "Canadá", "Cazaquistão", "Chade", "Chile", "China", "Cidade do Vaticano", "Colômbia", "Congo", "Coréia do Sul", "Costa do Marfim", "Costa Rica", "Croácia", "Dinamarca", "Djibuti", "Dominica", "EUA", "Egito", "El Salvador", "Emirados Árabe", "Equador", "Eritréia", "Escócia", "Eslováquia", "Eslovênia", "Espanha", "Estônia", "Etiópia", "Fiji", "Filipinas", "Finlândia", "França", "Gabão", "Gâmbia", "Gana", "Geórgia", "Gibraltar", "Granada", "Grécia", "Guadalupe", "Guam", "Guatemala", "Guiana", "Guiana Francesa", "Guiné-bissau", "Haiti", "Holanda", "Honduras", "Hong Kong", "Hungria", "Iêmen", "Ilhas Cayman", "Ilhas Cook", "Ilhas Curaçao", "Ilhas Marshall", "Ilhas Turks & Caicos", "Ilhas Virgens (brit.)", "lhas Virgens(amer.)", "Ilhas Wallis e Futuna", "Índia", "Indonésia", "Inglaterra", "Irlanda", "Islândia", "Israel", "Itália", "Jamaica", "Japão", "Jordânia", "Kuwait", "Latvia", "Líbano", "Liechtenstein", "Lituânia", "Luxemburgo", "Macau", "Macedônia", "Madagascar", "Malásia", "Malaui", "Mali", "Malta", "Marrocos", "Martinica", "Mauritânia", "Mauritius", "México", "Moldova", "Mônaco", "Montserrat", "Nepal", "Nicarágua", "Niger", "Nigéria", "Noruega", "Nova Caledônia", "Nova Zelândia", "Omã", "Palau", "Panamá", "Papua-nova Guiné", "Paquistão", "Peru", "Polinésia Francesa", "Polônia", "Porto Rico", "Portugal", "Qatar", "Quênia", "Rep. Dominicana", "Rep. Tcheca", "Reunion", "Romênia", "Ruanda", "Rússia", "Saipan", "Samoa Americana", "Senegal", "Serra Leone", "Seychelles", "Singapura", "Síria", "Sri Lanka", "St. Kitts & Nevis", "St. Lúcia", "St. Vincent", "Sudão", "Suécia", "Suiça", "Suriname", "Tailândia", "Taiwan", "Tanzânia", "Togo", "Trinidad & Tobago", "Tunísia", "Turquia", "Ucrânia", "Uganda", "Uruguai", "Venezuela", "Vietnã", "Zaire", "Zâmbia", "Zimbábue" }));
         jComboPaisItemTombo.addActionListener(new java.awt.event.ActionListener() {
@@ -125,7 +125,7 @@ public class FrameNovoItemTombo extends javax.swing.JFrame {
             }
         });
 
-        jLabel17.setText("Pais:");
+        jLabel17.setText("País:");
 
         btnRegistrarDadosItemTombo.setText("Salvar");
         btnRegistrarDadosItemTombo.addActionListener(new java.awt.event.ActionListener() {
@@ -340,7 +340,7 @@ public class FrameNovoItemTombo extends javax.swing.JFrame {
                 || this.txtMateriaPrimaItemTombo.getText().isEmpty()
                 || this.jDateDeUtilizacaoFinalItemTombo.getDateFormatString().isEmpty()
                 || this.txtTipoDeObjetoItemTombo.getText().isEmpty()) || (this.jDateDeUtilizacaoInicialItemTombo.getDate().after(this.jDateDeUtilizacaoFinalItemTombo.getDate()))) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, preencha os campos marcados com '*', pois sao obrigatorios. \n Tambem verifique a validade das datas!", "Alerta de Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, preencha os campos marcados com '*', pois são obrigatórios. \n Também verifique a validade das datas!", "Alerta ao Usuário");
             return;
         } else {
             try {
@@ -349,7 +349,7 @@ public class FrameNovoItemTombo extends javax.swing.JFrame {
                 this.itemTombo.setOutroCodigo(Integer.parseInt(this.txtCodigoAuxiliarItemTombo.getText()));
                 System.out.println("passou" + txtCodigoAuxiliarItemTombo.getText());
             } catch (NumberFormatException erroDeConversao) {
-                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao novamente!");
+                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação novamente!");
                 return;
             }
 
@@ -370,19 +370,19 @@ public class FrameNovoItemTombo extends javax.swing.JFrame {
             this.itemTombo.setImage(false);
             try {
                 if (this.itemTombo.salvar(this.itemTombo)) {
-                    GeradorDeMensagem.exibirMensagemDeInformacao("Os dados foram cadastrados com sucesso!", "Alerta ao Usuario");
-                    GeradorDeMensagem.exibirMensagemDeInformacao("Envie agora uma foto do item de acervo!", "Alerta ao Usuario");
+                    GeradorDeMensagem.exibirMensagemDeInformacao("Os dados foram cadastrados com sucesso!", "Alerta ao Usuário");
+                    GeradorDeMensagem.exibirMensagemDeInformacao("Envie agora uma foto do item de acervo!", "Alerta ao Usuário");
                     jPanelDadosTombo.setVisible(false);
                     jPanelUploadDeImagem.setVisible(true);
                     revalidate();
                     repaint();
                 } else {
-                    GeradorDeMensagem.exibirMensagemDeErro("Ocorreu alguns problemas, por favor realize a operaçao mais tarde!");
+                    GeradorDeMensagem.exibirMensagemDeErro("Ocorreram alguns problemas, por favor realize a operação mais tarde!");
                 }
 
             } catch (Exception erro1) {
                 System.out.println(erro1);
-                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu alguns problemas, por favor realize a operaçao mais tarde!2");
+                GeradorDeMensagem.exibirMensagemDeErro("Ocorreram alguns problemas, por favor realize a operação mais tarde!");
             }
 
         }
@@ -394,10 +394,10 @@ public class FrameNovoItemTombo extends javax.swing.JFrame {
         int resposta = jFileChooser.showOpenDialog(null);
         if (resposta == JFileChooser.APPROVE_OPTION) {
             File diretorioEscolhido = jFileChooser.getSelectedFile();
-            GeradorDeMensagem.exibirMensagemDeInformacao("Você escolheu o diretório: " + diretorioEscolhido.getName().toString(), "Alerta à Usuário");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Você escolheu o diretório: " + diretorioEscolhido.getName().toString(), "Alerta ao Usuário");
             txtCaminhoImagem.setText(diretorioEscolhido.getPath().toString());
         } else {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Você não selecionou nenhum diretório", "Alerta à Usuário");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Você não selecionou nenhum diretório", "Alerta ao Usuário");
         }
     }//GEN-LAST:event_txtBuscarImagemActionPerformed
 
@@ -413,8 +413,8 @@ public class FrameNovoItemTombo extends javax.swing.JFrame {
                         itemTombo.setImage(true);
                         itemTombo.setID(resultado);
                         itemTombo.alterar(itemTombo);
-                        GeradorDeMensagem.exibirMensagemDeInformacao("Arquivo enviado com sucesso!", "Alerta ao Usuario");
-                        boolean resposta2 = GeradorDeMensagem.exibirMensagemDeConfirmacao("Voce deseja registrar um novo item?", "Alerta de Usuario");
+                        GeradorDeMensagem.exibirMensagemDeInformacao("Arquivo enviado com sucesso!", "Alerta ao Usuário");
+                        boolean resposta2 = GeradorDeMensagem.exibirMensagemDeConfirmacao("Você deseja registrar um novo item?", "Alerta ao Usuário");
                         if (resposta2) {
                             dispose();
                             new FrameNovoItemTombo();
@@ -422,7 +422,7 @@ public class FrameNovoItemTombo extends javax.swing.JFrame {
                             dispose();
                         }
                     } else {
-                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao novamente!");
+                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação novamente!");
 
                     }
                 }

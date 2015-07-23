@@ -73,7 +73,7 @@ public class FrameInicial extends javax.swing.JFrame implements WindowListener {
         jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jLabel2.setText("Seja bem-vindo ao Sistema de Acervo do Museu Oswaldo Aranha!");
 
-        jLabel3.setText("Aguarde a inicializaçao do sistema...");
+        jLabel3.setText("Aguarde a inicialização do sistema...");
 
         btnMostrarDetalhes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/add.png"))); // NOI18N
         btnMostrarDetalhes.setToolTipText("Mais Detalhes");
@@ -190,7 +190,7 @@ public class FrameInicial extends javax.swing.JFrame implements WindowListener {
 
     @Override
     public void windowClosing(WindowEvent e) {
-        if (GeradorDeMensagem.exibirMensagemDeConfirmacao("Voce deseja realmente sair da aplicaçao?", "Alerta de Usuario")) {
+        if (GeradorDeMensagem.exibirMensagemDeConfirmacao("Você deseja realmente sair da aplicação?", "Alerta ao Usuário")) {
             System.exit(0);
         }
     }

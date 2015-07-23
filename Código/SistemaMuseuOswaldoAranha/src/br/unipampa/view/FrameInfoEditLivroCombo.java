@@ -132,29 +132,29 @@ public class FrameInfoEditLivroCombo extends javax.swing.JFrame implements Windo
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Informaçoes Item Livro Consignado");
 
-        jLabel1.setText("*Codigo Auxiliar:");
+        jLabel1.setText("*Código Auxiliar:");
 
         txtCodigoAuxiliarLivroConsignado.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
 
-        jLabel2.setText("*Materia Prima:");
+        jLabel2.setText("*Matéria Prima:");
 
-        jLabel6.setText("Data de Utilizaçao Inicial:");
+        jLabel6.setText("Data de Utilização Inicial:");
 
         jLabel8.setText("*Tipo de Objeto:");
 
-        jLabel7.setText("Data de Utilizaçao Final:");
+        jLabel7.setText("Data de Utilização Final:");
 
-        jLabel9.setText("Funçao Especifica:");
+        jLabel9.setText("Função Específica:");
 
         jLabel11.setText("Estilo:");
 
-        jLabel13.setText("Tecnica de Manufatura:");
+        jLabel13.setText("Técnica de Manufatura:");
 
-        jLabel15.setText("Regiao:");
+        jLabel15.setText("Região:");
 
         jLabel10.setText("Cultura:");
 
-        jLabel12.setText("Grupo Linguistico:");
+        jLabel12.setText("Grupo Linguístico:");
 
         txtGrupoLingLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,11 +168,11 @@ public class FrameInfoEditLivroCombo extends javax.swing.JFrame implements Windo
             }
         });
 
-        jLabel14.setText("Procedencia:");
+        jLabel14.setText("Procedência:");
 
-        jLabel16.setText("Sitio:");
+        jLabel16.setText("Sítio:");
 
-        jLabel17.setText("Pais:");
+        jLabel17.setText("País:");
 
         jComboPaisLivroConsignado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-------------------", "África do Sul", "Albânia", "Alemanha", " Andorra", "Angola", "Anguilla", "Antigua", "Arábia Saudita", "Argentina", "Armênia", "Aruba", "Austrália", "Áustria", "Azerbaijão", "Bahamas", "Bahrein", "Bangladesh", "Barbados", "Bélgica", "Benin", "Bermudas", "Botsuana", "Brasil", "Brunei", "Bulgária", "Burkina Fasso", "Botão", "Cabo Verde", "Camarões", "Camboja", "Canadá", "Cazaquistão", "Chade", "Chile", "China", "Cidade do Vaticano", "Colômbia", "Congo", "Coréia do Sul", "Costa do Marfim", "Costa Rica", "Croácia", "Dinamarca", "Djibuti", "Dominica", "EUA", "Egito", "El Salvador", "Emirados Árabe", "Equador", "Eritréia", "Escócia", "Eslováquia", "Eslovênia", "Espanha", "Estônia", "Etiópia", "Fiji", "Filipinas", "Finlândia", "França", "Gabão", "Gâmbia", "Gana", "Geórgia", "Gibraltar", "Granada", "Grécia", "Guadalupe", "Guam", "Guatemala", "Guiana", "Guiana Francesa", "Guiné-bissau", "Haiti", "Holanda", "Honduras", "Hong Kong", "Hungria", "Iêmen", "Ilhas Cayman", "Ilhas Cook", "Ilhas Curaçao", "Ilhas Marshall", "Ilhas Turks & Caicos", "Ilhas Virgens (brit.)", "lhas Virgens(amer.)", "Ilhas Wallis e Futuna", "Índia", "Indonésia", "Inglaterra", "Irlanda", "Islândia", "Israel", "Itália", "Jamaica", "Japão", "Jordânia", "Kuwait", "Latvia", "Líbano", "Liechtenstein", "Lituânia", "Luxemburgo", "Macau", "Macedônia", "Madagascar", "Malásia", "Malaui", "Mali", "Malta", "Marrocos", "Martinica", "Mauritânia", "Mauritius", "México", "Moldova", "Mônaco", "Montserrat", "Nepal", "Nicarágua", "Niger", "Nigéria", "Noruega", "Nova Caledônia", "Nova Zelândia", "Omã", "Palau", "Panamá", "Papua-nova Guiné", "Paquistão", "Peru", "Polinésia Francesa", "Polônia", "Porto Rico", "Portugal", "Qatar", "Quênia", "Rep. Dominicana", "Rep. Tcheca", "Reunion", "Romênia", "Ruanda", "Rússia", "Saipan", "Samoa Americana", "Senegal", "Serra Leone", "Seychelles", "Singapura", "Síria", "Sri Lanka", "St. Kitts & Nevis", "St. Lúcia", "St. Vincent", "Sudão", "Suécia", "Suiça", "Suriname", "Tailândia", "Taiwan", "Tanzânia", "Togo", "Trinidad & Tobago", "Tunísia", "Turquia", "Ucrânia", "Uganda", "Uruguai", "Venezuela", "Vietnã", "Zaire", "Zâmbia", "Zimbábue" }));
         jComboPaisLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
@@ -232,6 +232,15 @@ public class FrameInfoEditLivroCombo extends javax.swing.JFrame implements Windo
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtTipoDeObjetoLivroConsignado))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnEditarLivroConsignado)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnAtualizarDados)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel9)
@@ -279,22 +288,12 @@ public class FrameInfoEditLivroCombo extends javax.swing.JFrame implements Windo
                                                 .addComponent(txtSitioLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(12, 12, 12)
-                                                .addComponent(jComboPaisLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addGap(33, 33, 33))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtTipoDeObjetoLivroConsignado))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnEditarLivroConsignado)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnAtualizarDados)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnImagem)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnAlterarImagem)
-                                .addGap(520, 520, 520)))
+                                                .addComponent(jComboPaisLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnImagem)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnAlterarImagem)))
+                                .addGap(33, 33, 33)))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -379,14 +378,14 @@ public class FrameInfoEditLivroCombo extends javax.swing.JFrame implements Windo
                 || this.txtMateriaPrimaLivroConsignado.getText().isEmpty()
                 || this.txtTipoDeObjetoLivroConsignado.getText().isEmpty())
                 && (this.jDateDeUtilizacaoInicialLivroConsignado.getDate().after(this.jDateDeUtilizacaoFinalLivroConsignado.getDate()))) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, preencha os campos marcados com '*', pois sao obrigatorios. \n Tambem verifique a validade das datas!", "Alerta de Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, preencha os campos marcados com '*', pois são obrigatórios. \n Também verifique a validade das datas!", "Alerta ao Usuário");
             return;
         } else {
             
             try {
                 this.itemTombo.setOutroCodigo(Integer.parseInt(this.txtCodigoAuxiliarLivroConsignado.getText()));
             } catch (NumberFormatException erroDeConversao) {
-                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao novamente!");
+                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação novamente!");
                 return;
             }
             
@@ -407,14 +406,14 @@ public class FrameInfoEditLivroCombo extends javax.swing.JFrame implements Windo
             this.itemTombo.setImage(false);
             try {
                 if (this.itemTombo.alterar(this.itemTombo)) {
-                    GeradorDeMensagem.exibirMensagemDeInformacao("Os dados foram cadastrados com sucesso!", "Alerta ao Usuario");
+                    GeradorDeMensagem.exibirMensagemDeInformacao("Os dados foram cadastrados com sucesso!", "Alerta ao Usuário");
                     dispose();
                 } else {
-                    GeradorDeMensagem.exibirMensagemDeErro("Ocorreu alguns problemas, por favor realize a operaçao mais tarde!");
+                    GeradorDeMensagem.exibirMensagemDeErro("Ocorreram alguns problemas, por favor realize a operação mais tarde!");
                 }
                 
             } catch (Exception erro1) {
-                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu alguns problemas, por favor realize a operaçao mais tarde!");
+                GeradorDeMensagem.exibirMensagemDeErro("Ocorreram alguns problemas, por favor realize a operação mais tarde!");
             }
             
         }        

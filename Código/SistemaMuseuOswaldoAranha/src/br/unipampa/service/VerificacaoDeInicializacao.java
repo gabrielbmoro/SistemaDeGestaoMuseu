@@ -25,25 +25,25 @@ public class VerificacaoDeInicializacao {
        try{
         Session session = HibernateUtil.openSession();
         if (session != null) {
-            modeloDaLista.addElement("Conexao com base de dados realizada com sucesso!");
+            modeloDaLista.addElement("Conexão com base de dados realizada com sucesso!");
         } else {
-            modeloDaLista.addElement("Nao foi possivel realizar a conexao com a base de dados!");
+            modeloDaLista.addElement("Não foi possível realizar a conexão com a base de dados!");
             return false;
         }
        }catch(java.lang.ExceptionInInitializerError erro){
-           modeloDaLista.addElement("Nao foi possivel realizar a conexao com a base de dados!");
+           modeloDaLista.addElement("Não foi possível realizar a conexão com a base de dados!");
             return false;
        }
         /*Verificando se o diretorio de imagens do acervo existe ou nao*/
         if (new File(UtilitariaDeUploadDeImagem.PATH).exists()) {
-            modeloDaLista.addElement("Diretorio de imagens do acervo encontrado!");
+            modeloDaLista.addElement("Diretório de imagens do acervo encontrado!");
         } else {
-            modeloDaLista.addElement("Diretorio de imagens do acervo nao encontrado!");
+            modeloDaLista.addElement("Diretório de imagens do acervo não encontrado!");
             boolean criacaoDeDiretorio = UtilitariaDeUploadDeImagem.criarDiretorio();
             if(criacaoDeDiretorio){
-                modeloDaLista.addElement("Diretorio criado com sucesso!");
+                modeloDaLista.addElement("Diretório criado com sucesso!");
             }else{
-                modeloDaLista.addElement("Nao foi possivel criar o diretorio.");
+                modeloDaLista.addElement("Não foi possível criar o diretório.");
                 return false;
             }
         }

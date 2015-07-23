@@ -77,7 +77,7 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
         });
         jScrollPane1.setViewportView(jTableUsuarios);
 
-        jLabel1.setText("Usuarios do Sistema:");
+        jLabel1.setText("Usuários do Sistema:");
 
         btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/editar.png"))); // NOI18N
         btnEditar.setToolTipText("Editar Dados de Usuario");
@@ -162,10 +162,10 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
                 }
 
             } else {
-                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
             }
         } catch (Exception erro) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
         }
     }//GEN-LAST:event_btnEditarActionPerformed
 
@@ -176,7 +176,7 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
             if (isAdm != null) {
                 String isAdmTexto = isAdm.toString();
                 if(isAdmTexto.equalsIgnoreCase("Sim")){
-                    GeradorDeMensagem.exibirMensagemDeInformacao("A Operaçao nao pode ser realizada, voce nao tem privilegios!", "Alerta de Usuario");
+                    GeradorDeMensagem.exibirMensagemDeInformacao("A Operação não pode ser realizada, você não tem privilégios!", "Alerta ao Usuário");
                 }else{
                   Object idDeElemento = modeloDeTabelaUsuarios.getValueAt(linhaSelecionada, 1);
                 Long idLong = Long.parseLong(idDeElemento.toString());
@@ -186,20 +186,20 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
                     if (objetoASerExcluido != null) {
                         boolean resultado = usuariot.deletar(objetoASerExcluido);
                         if (resultado) {
-                            GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluido com sucesso!", "Alerta ao Usuario");
+                            GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluído com sucesso!", "Alerta ao Usuário");
                             listarRegistrosDeUsuarios();
                         } else {
-                            GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
+                            GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
                         }
                     } else {
-                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
+                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
                    
                     }}
                 }
             }
 
         } catch (Exception erro) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 

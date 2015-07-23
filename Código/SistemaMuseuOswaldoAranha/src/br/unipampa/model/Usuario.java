@@ -32,17 +32,17 @@ public class Usuario implements OperacoesBasicas {
                 String senhaCriptografada = CriptografiaMD5.codificar(senha);
                 boolean teste = usuarioTemp.getSenha().equalsIgnoreCase(senhaCriptografada);
                 if (teste) {
-                    GeradorDeMensagem.exibirMensagemDeInformacao("Acesso permitido!", "Alerta de Usuario");
+                    GeradorDeMensagem.exibirMensagemDeInformacao("Acesso permitido!", "Alerta ao Usuário");
                     new FramePrincipal(usuarioTemp);
                     frameLogin.dispose();
                 } else {
-                    GeradorDeMensagem.exibirMensagemDeInformacao("Nao foi possivel acessar o sistema, por favor verifique as suas credenciais!", "Alerta de Usuario");
+                    GeradorDeMensagem.exibirMensagemDeInformacao("Não foi possível acessar o sistema, por favor verifique as suas credenciais!", "Alerta ao Usuário");
                 }
             } else {
-                GeradorDeMensagem.exibirMensagemDeInformacao("Nao foi possivel acessar o sistema, por favor verifique as suas credenciais!", "Alerta de Usuario");
+                GeradorDeMensagem.exibirMensagemDeInformacao("Não foi possível acessar o sistema, por favor verifique as suas credenciais!", "Alerta ao Usuário");
             }
         } else {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Nao foi possivel acessar o sistema, por favor verifique as suas credenciais!", "Alerta de Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Não foi possível acessar o sistema, por favor verifique as suas credenciais!", "Alerta ao Usuário");
         }
     }
 

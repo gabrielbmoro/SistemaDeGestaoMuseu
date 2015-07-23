@@ -194,7 +194,7 @@ public class FrameCadastroUsuario extends javax.swing.JFrame implements WindowLi
         if (this.campoNome.getText().isEmpty()
                 || this.txtCpf.getText().isEmpty()
                 || this.txtSenha.getText().isEmpty()) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, preencha os campos marcados com '*', pois sao obrigatorios. \n Tambem verifique a validade das datas!", "Alerta de Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, preencha os campos marcados com '*', pois são obrigatórios. \n Também verifique a validade das datas!", "Alerta ao Usuário");
             return;
         } else {
             try {
@@ -220,22 +220,22 @@ public class FrameCadastroUsuario extends javax.swing.JFrame implements WindowLi
             }
             
               } catch (NumberFormatException erro) {
-                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao novamente!");
+                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação novamente!");
                 return;
             }
             try {
                 if (this.funcionario.salvar(this.funcionario)) {
-                    GeradorDeMensagem.exibirMensagemDeInformacao("Os dados foram cadastrados com sucesso!", "Alerta ao Usuario");
+                    GeradorDeMensagem.exibirMensagemDeInformacao("Os dados foram cadastrados com sucesso!", "Alerta ao Usuário");
                     this.dispose();
                     revalidate();
                     repaint();
                 } else {
-                    GeradorDeMensagem.exibirMensagemDeErro("Ocorreu alguns problemas, por favor realize a operaçao mais tarde!");
+                    GeradorDeMensagem.exibirMensagemDeErro("Ocorreram alguns problemas, por favor realize a operação mais tarde!");
 
                 }
             } catch (Exception erro) {
 
-                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu alguns problemas, por favor realize a operaçao mais tarde!");
+                GeradorDeMensagem.exibirMensagemDeErro("Ocorreram alguns problemas, por favor realize a operação mais tarde!");
 
             }
         }

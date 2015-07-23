@@ -110,24 +110,24 @@ public class FrameAlterarImagem extends javax.swing.JFrame implements WindowList
                     File fileArquivo = new File(txtCaminhoImagem.getText());
                     boolean resposta = UtilitariaDeUploadDeImagem.enviarArquivo(fileArquivo, idObjeto);
                     if (resposta) {
-                        GeradorDeMensagem.exibirMensagemDeInformacao("Arquivo enviado com sucesso!", "Alerta ao Usuario");
-                        boolean resposta2 = GeradorDeMensagem.exibirMensagemDeConfirmacao("Voce deseja registrar um novo item?", "Alerta de Usuario");
+                        GeradorDeMensagem.exibirMensagemDeInformacao("Arquivo enviado com sucesso!", "Alerta ao Usuário");
+                        boolean resposta2 = GeradorDeMensagem.exibirMensagemDeConfirmacao("Você deseja registrar um novo item?", "Alerta ao Usuário");
                         if (resposta2) {
                             dispose();
                         } else {
                             dispose();
                         }
                     } else {
-                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao novamente!");
+                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação novamente!");
 
                     
                     }}else {
-                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao novamente!");
+                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação novamente!");
 
                     }
         }
      else {
-                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao novamente!");
+                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação novamente!");
 
                     }
     }//GEN-LAST:event_btnRegistrarImagemActionPerformed
@@ -138,10 +138,10 @@ public class FrameAlterarImagem extends javax.swing.JFrame implements WindowList
         int resposta = jFileChooser.showOpenDialog(null);
         if (resposta == JFileChooser.APPROVE_OPTION) {
             File diretorioEscolhido = jFileChooser.getSelectedFile();
-            GeradorDeMensagem.exibirMensagemDeInformacao("Você escolheu o diretório: " + diretorioEscolhido.getName().toString(), "Alerta à Usuário");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Você escolheu o diretório: " + diretorioEscolhido.getName().toString(), "Alerta ao Usuário");
             txtCaminhoImagem.setText(diretorioEscolhido.getPath().toString());
         } else {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Você não selecionou nenhum diretório", "Alerta à Usuário");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Você não selecionou nenhum diretório", "Alerta ao Usuário");
         }
     }//GEN-LAST:event_txtBuscarImagemActionPerformed
 

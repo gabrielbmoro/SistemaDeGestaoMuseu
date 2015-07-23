@@ -233,14 +233,14 @@ private void preencherCampos(){
     private void btnAtualizarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarDadosActionPerformed
         if ((this.txtCpf.getText().isEmpty()
             || this.campoNome.getText().isEmpty())) {
-        GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, preencha os campos marcados com '*', pois sao obrigatorios. \n Tambem verifique a validade das datas!", "Alerta de Usuario");
+        GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, preencha os campos marcados com '*', pois são obrigatórios. \n Também verifique a validade das datas!", "Alerta ao Usuário");
         return;
         } else {
 
             try {
                 this.usuario.setCpf(RefatoraString.retornaCpf(this.txtCpf.getText()));
             } catch (NumberFormatException erroDeConversao) {
-                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao novamente!");
+                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação novamente!");
                 return;
             }
             this.usuario.setNome(this.campoNome.getText());
@@ -259,14 +259,14 @@ private void preencherCampos(){
             this.usuario.setStatus(adm);
             try {
                 if (this.usuario.alterar(this.usuario)) {
-                    GeradorDeMensagem.exibirMensagemDeInformacao("Os dados foram cadastrados com sucesso!", "Alerta ao Usuario");
+                    GeradorDeMensagem.exibirMensagemDeInformacao("Os dados foram cadastrados com sucesso!", "Alerta ao Usuário");
                     dispose();
                 } else {
-                    GeradorDeMensagem.exibirMensagemDeErro("Ocorreu alguns problemas, por favor realize a operaçao mais tarde!");
+                    GeradorDeMensagem.exibirMensagemDeErro("Ocorreram alguns problemas, por favor realize a operação mais tarde!");
                 }
 
             } catch (Exception erro1) {
-                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu alguns problemas, por favor realize a operaçao mais tarde!");
+                GeradorDeMensagem.exibirMensagemDeErro("Ocorreram alguns problemas, por favor realize a operação mais tarde!");
             }
 
         }

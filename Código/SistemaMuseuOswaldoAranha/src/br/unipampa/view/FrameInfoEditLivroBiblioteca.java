@@ -112,11 +112,11 @@ public class FrameInfoEditLivroBiblioteca extends javax.swing.JFrame implements 
             }
         });
 
-        jLabel1.setText("*Codigo Auxiliar:");
+        jLabel1.setText("*Código Auxiliar:");
 
         txtCodigoAuxiliar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
 
-        jLabel2.setText("*Titulo da Obra:");
+        jLabel2.setText("*Título da Obra:");
 
         jLabel3.setText("*Autor (es):");
 
@@ -124,15 +124,15 @@ public class FrameInfoEditLivroBiblioteca extends javax.swing.JFrame implements 
         txtAreaAutores.setRows(5);
         jScrollPane1.setViewportView(txtAreaAutores);
 
-        jLabel4.setText("Grafica");
+        jLabel4.setText("Gráfica");
 
         txtAnoDeLancamento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####"))));
 
         jLabel5.setText("*Ano de Lançamento:");
 
-        jLabel6.setText("Regiao:");
+        jLabel6.setText("Região:");
 
-        jLabel7.setText("Pais:");
+        jLabel7.setText("País:");
 
         jComboPaisLivroBiblioteca.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-------------------", "África do Sul", "Albânia", "Alemanha", "Andorra", "Angola", "Anguilla", "Antigua", "Arábia Saudita", "Argentina", "Armênia", "Aruba", "Austrália", "Áustria", "Azerbaijão", "Bahamas", "Bahrein", "Bangladesh", "Barbados", "Bélgica", "Benin", "Bermudas", "Botsuana", "Brasil", "Brunei", "Bulgária", "Burkina Fasso", "Botão", "Cabo Verde", "Camarões", "Camboja", "Canadá", "Cazaquistão", "Chade", "Chile", "China", "Cidade do Vaticano", "Colômbia", "Congo", "Coréia do Sul", "Costa do Marfim", "Costa Rica", "Croácia", "Dinamarca", "Djibuti", "Dominica", "EUA", "Egito", "El Salvador", "Emirados Árabe", "Equador", "Eritréia", "Escócia", "Eslováquia", "Eslovênia", "Espanha", "Estônia", "Etiópia", "Fiji", "Filipinas", "Finlândia", "França", "Gabão", "Gâmbia", "Gana", "Geórgia", "Gibraltar", "Granada", "Grécia", "Guadalupe", "Guam", "Guatemala", "Guiana", "Guiana Francesa", "Guiné-bissau", "Haiti", "Holanda", "Honduras", "Hong Kong", "Hungria", "Iêmen", "Ilhas Cayman", "Ilhas Cook", "Ilhas Curaçao", "Ilhas Marshall", "Ilhas Turks & Caicos", "Ilhas Virgens (brit.)", "lhas Virgens(amer.)", "Ilhas Wallis e Futuna", "Índia", "Indonésia", "Inglaterra", "Irlanda", "Islândia", "Israel", "Itália", "Jamaica", "Japão", "Jordânia", "Kuwait", "Latvia", "Líbano", "Liechtenstein", "Lituânia", "Luxemburgo", "Macau", "Macedônia", "Madagascar", "Malásia", "Malaui", "Mali", "Malta", "Marrocos", "Martinica", "Mauritânia", "Mauritius", "México", "Moldova", "Mônaco", "Montserrat", "Nepal", "Nicarágua", "Niger", "Nigéria", "Noruega", "Nova Caledônia", "Nova Zelândia", "Omã", "Palau", "Panamá", "Papua-nova Guiné", "Paquistão", "Peru", "Polinésia Francesa", "Polônia", "Porto Rico", "Portugal", "Qatar", "Quênia", "Rep. Dominicana", "Rep. Tcheca", "Reunion", "Romênia", "Ruanda", "Rússia", "Saipan", "Samoa Americana", "Senegal", "Serra Leone", "Seychelles", "Singapura", "Síria", "Sri Lanka", "St. Kitts & Nevis", "St. Lúcia", "St. Vincent", "Sudão", "Suécia", "Suiça", "Suriname", "Tailândia", "Taiwan", "Tanzânia", "Togo", "Trinidad & Tobago", "Tunísia", "Turquia", "Ucrânia", "Uganda", "Uruguai", "Venezuela", "Vietnã", "Zaire", "Zâmbia", "Zimbábue" }));
         jComboPaisLivroBiblioteca.addActionListener(new java.awt.event.ActionListener() {
@@ -238,7 +238,7 @@ public class FrameInfoEditLivroBiblioteca extends javax.swing.JFrame implements 
                 || this.txtTituloDaObra.getText().isEmpty()
                 || this.txtAreaAutores.getText().isEmpty())
                 && (this.txtAnoDeLancamento.getText().isEmpty())) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, preencha os campos marcados com '*', pois sao obrigatorios. \n Tambem verifique a validade das datas!", "Alerta de Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, preencha os campos marcados com '*', pois são obrigatórios. \n Também verifique a validade das datas!", "Alerta ao Usuário");
             return;
         } else {
             
@@ -246,7 +246,7 @@ public class FrameInfoEditLivroBiblioteca extends javax.swing.JFrame implements 
                 this.livroBiblioteca.setOutroCodigo(Integer.parseInt(this.txtCodigoAuxiliar.getText()));
                 this.livroBiblioteca.setAnoLacamento(Integer.parseInt(this.txtAnoDeLancamento.getText()));
             } catch (NumberFormatException erroDeConversao) {
-                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao novamente!");
+                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação novamente!");
                 return;
             }
             this.livroBiblioteca.setNomeLivro(this.txtTituloDaObra.getText());
@@ -258,14 +258,14 @@ public class FrameInfoEditLivroBiblioteca extends javax.swing.JFrame implements 
             
             try {
                 if (this.livroBiblioteca.alterar(this.livroBiblioteca)) {
-                    GeradorDeMensagem.exibirMensagemDeInformacao("Os dados foram cadastrados com sucesso!", "Alerta ao Usuario");
+                    GeradorDeMensagem.exibirMensagemDeInformacao("Os dados foram cadastrados com sucesso!", "Alerta ao Usuário");
                     dispose();
                 } else {
-                    GeradorDeMensagem.exibirMensagemDeErro("Ocorreu alguns problemas, por favor realize a operaçao mais tarde!");
+                    GeradorDeMensagem.exibirMensagemDeErro("Ocorreram alguns problemas, por favor realize a operação mais tarde!");
                 }
                 
             } catch (Exception erro1) {
-                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu alguns problemas, por favor realize a operaçao mais tarde!");
+                GeradorDeMensagem.exibirMensagemDeErro("Ocorreram alguns problemas, por favor realize a operação mais tarde!");
             }
             
         }        

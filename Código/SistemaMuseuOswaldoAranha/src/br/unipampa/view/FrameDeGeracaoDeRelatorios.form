@@ -67,7 +67,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Caminho para salvar o relatorio:"/>
+        <Property name="text" type="java.lang.String" value="Caminho para salvar o relat&#xf3;rio:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCaminhoParaSalvar">
@@ -92,7 +92,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/br/unipampa/view/icons/exportar.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Gerar Relatorio"/>
+        <Property name="text" type="java.lang.String" value="Gerar Relat&#xf3;rio"/>
         <Property name="toolTipText" type="java.lang.String" value="Gerar Relatorio com Itens Cadastrados"/>
       </Properties>
       <Events>

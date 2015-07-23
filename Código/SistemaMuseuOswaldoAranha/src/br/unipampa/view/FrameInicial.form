@@ -102,7 +102,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Aguarde a inicializa&#xe7;ao do sistema..."/>
+        <Property name="text" type="java.lang.String" value="Aguarde a inicializa&#xe7;&#xe3;o do sistema..."/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnMostrarDetalhes">

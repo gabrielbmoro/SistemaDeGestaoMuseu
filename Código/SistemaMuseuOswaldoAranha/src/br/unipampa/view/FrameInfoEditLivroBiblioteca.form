@@ -153,7 +153,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="*Codigo Auxiliar:"/>
+        <Property name="text" type="java.lang.String" value="*C&#xf3;digo Auxiliar:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="txtCodigoAuxiliar">
@@ -165,7 +165,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="*Titulo da Obra:"/>
+        <Property name="text" type="java.lang.String" value="*T&#xed;tulo da Obra:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtTituloDaObra">
@@ -192,7 +192,7 @@
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Grafica"/>
+        <Property name="text" type="java.lang.String" value="Gr&#xe1;fica"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtGrafica">
@@ -211,14 +211,14 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Regiao:"/>
+        <Property name="text" type="java.lang.String" value="Regi&#xe3;o:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtRegiao">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Pais:"/>
+        <Property name="text" type="java.lang.String" value="Pa&#xed;s:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboPaisLivroBiblioteca">

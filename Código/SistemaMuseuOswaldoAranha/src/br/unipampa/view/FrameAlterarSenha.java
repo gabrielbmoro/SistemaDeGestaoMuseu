@@ -94,12 +94,12 @@ public class FrameAlterarSenha extends javax.swing.JFrame {
         if (senhaAntiga.equalsIgnoreCase(this.usuario.getSenha())) {
             this.usuario.setSenha(CriptografiaMD5.codificar(senhaNova));
             if (this.usuario.alterar(this.usuario)) {
-                GeradorDeMensagem.exibirMensagemDeInformacao("Senha alterada com sucesso!", "Alerta de Usuario");
+                GeradorDeMensagem.exibirMensagemDeInformacao("Senha alterada com sucesso!", "Alerta ao Usuário");
             } else {
-                GeradorDeMensagem.exibirMensagemDeInformacao("Ocorreu um problema, realize a operaçao novamente!", "Alerta de Usuario");
+                GeradorDeMensagem.exibirMensagemDeInformacao("Ocorreu um problema, realize a operação novamente!", "Alerta ao Usuário");
             }
         } else {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Digite sua senha novamente, a mesma nao confere!", "Alerta de Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Digite sua senha novamente, a mesma não confere!", "Alerta ao Usuário");
         }
     }//GEN-LAST:event_btnAlterarSenhaActionPerformed
 

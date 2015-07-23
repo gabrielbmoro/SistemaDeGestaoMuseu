@@ -128,7 +128,7 @@ public class FrameLogin extends javax.swing.JFrame implements WindowListener{
 
     @Override
     public void windowClosing(WindowEvent e) {
-       if(GeradorDeMensagem.exibirMensagemDeConfirmacao("Voce deseja realmente sair da aplicaçao?", "Alerta de Usuario")){
+       if(GeradorDeMensagem.exibirMensagemDeConfirmacao("Você deseja realmente sair da aplicação?", "Alerta ao Usuário")){
            System.exit(0);
        }
     }

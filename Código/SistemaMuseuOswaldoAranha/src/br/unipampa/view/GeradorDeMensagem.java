@@ -68,7 +68,7 @@ public class GeradorDeMensagem {
     public static String exibirMensagemDeInputString(String message, String title) {
         String resposta = JOptionPane.showInputDialog(null, message, title, JOptionPane.INFORMATION_MESSAGE);
         if (resposta == null || resposta.isEmpty()) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Digite dados válidos...", "Alerta à Usuário");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Digite dados válidos...", "Alerta ao Usuário");
             GeradorDeMensagem.exibirMensagemDeInputString(message, title);
         } else {
             return resposta;
@@ -89,7 +89,7 @@ public class GeradorDeMensagem {
             double respostaDouble = Double.parseDouble(resposta);
             return respostaDouble;
         } catch (NumberFormatException erroNum) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Digite apenas digitos numéricos", "Alerta à Usuário");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Digite apenas dígitos numéricos", "Alerta ao Usuário");
             GeradorDeMensagem.exibirMensagemDeInputDouble(message, title);
         }
         return 0.0;

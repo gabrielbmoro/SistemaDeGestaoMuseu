@@ -162,7 +162,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
             },
             new String [] {
-                "ID", "Outro Codigo", "Tipo de Item", "Funçao", "Regiao"
+                "ID", "Outro Código", "Tipo de Item", "Função", "Região"
             }
         ) {
             Class[] types = new Class [] {
@@ -318,7 +318,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
             },
             new String [] {
-                "ID", "Outro Codigo", "Tipo de Item", "Funçao", "Regiao"
+                "ID", "Outro Código", "Tipo de Item", "Função", "Região"
             }
         ) {
             Class[] types = new Class [] {
@@ -474,7 +474,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
             },
             new String [] {
-                "ID", "Outro Codigo", "Descriçao", "Autor", "Ano"
+                "ID", "Outro Código", "Descrição", "Autor", "Ano"
             }
         ) {
             Class[] types = new Class [] {
@@ -576,11 +576,11 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         jMenu1.setText("Sistema");
 
         jMenuUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/usuarioPequeno.png"))); // NOI18N
-        jMenuUsuario.setText("Usuarios");
+        jMenuUsuario.setText("Usuários");
 
         jMenuItemNovoUsuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItemNovoUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/addPequeno.png"))); // NOI18N
-        jMenuItemNovoUsuario.setText("Adicionar Novo Usuario");
+        jMenuItemNovoUsuario.setText("Adicionar Novo Usuário");
         jMenuItemNovoUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemNovoUsuarioActionPerformed(evt);
@@ -590,7 +590,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
         jMenuItemListarUsuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItemListarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/listarPequeno.png"))); // NOI18N
-        jMenuItemListarUsuario.setText("Listar Usuarios");
+        jMenuItemListarUsuario.setText("Listar Usuários");
         jMenuItemListarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemListarUsuarioActionPerformed(evt);
@@ -678,7 +678,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                 });
             }
         }else{
-           GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum registro encontrado!", "Alerta ao Usuario");
+           GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum registro encontrado!", "Alerta ao Usuário");
         }
     }
     
@@ -699,7 +699,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                 });
             }
         }else{
-           GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum registro encontrado!", "Alerta ao Usuario");
+           GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum registro encontrado!", "Alerta ao Usuário");
         }
     }
     
@@ -720,7 +720,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                 });
             }
         }else{
-           GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum registro encontrado!", "Alerta ao Usuario");
+           GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum registro encontrado!", "Alerta ao Usuário");
         }
     }
     private void btnDeletarLivroConsignadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarLivroConsignadoActionPerformed
@@ -735,19 +735,19 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                     if (objetoASerExcluido != null) {
                         boolean resultado = itemConsignado.deletar(objetoASerExcluido);
                         if (resultado) {
-                            GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluido com sucesso!", "Alerta ao Usuario");
+                            GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluído com sucesso!", "Alerta ao Usuário");
                             listarTabelaLivroConsignado();
                         } else {
-                            GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
+                            GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
                         }
                     } else {
-                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
+                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
                     }
                 }
             }
 
         } catch (Exception erro) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
         }
     }//GEN-LAST:event_btnDeletarLivroConsignadoActionPerformed
 
@@ -767,10 +767,10 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                 }
 
             } else {
-                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
             }
         } catch (Exception erro) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
         }
     }//GEN-LAST:event_btnSobreLivroConsignadoActionPerformed
 
@@ -791,10 +791,10 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                 }
 
             } else {
-                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
             }
         } catch (Exception erro) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
         }
     }//GEN-LAST:event_btnEditarLivroConsignadoActionPerformed
 
@@ -835,10 +835,10 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                 }
 
             } else {
-                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
             }
         } catch (Exception erro) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
         }
     }//GEN-LAST:event_btnEditarLivroTomboActionPerformed
 
@@ -854,20 +854,20 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                     if (objetoASerExcluido != null) {
                         boolean resultado = itemTombo.deletar(objetoASerExcluido);
                         if (resultado) {
-                            GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluido com sucesso!", "Alerta ao Usuario");
+                            GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluído com sucesso!", "Alerta ao Usuário");
                             listarTabelaLivroTombo();
                         } else {
-                            GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
+                            GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
                         }
                     } else {
-                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
+                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
                     }
                 }
             }
 
         } catch (Exception erro) {
             erro.printStackTrace();
-            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
         }
     }//GEN-LAST:event_btnDeletarLivroTomboActionPerformed
 
@@ -887,10 +887,10 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                 }
 
             } else {
-                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
             }
         } catch (Exception erro) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
         }
     }//GEN-LAST:event_btnSobreLivroTomboActionPerformed
 
@@ -923,10 +923,10 @@ try {
                 }
 
             } else {
-                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
             }
         } catch (Exception erro) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
         }        
     }//GEN-LAST:event_btnEditarLivroBiliotecaActionPerformed
 
@@ -942,19 +942,19 @@ try {
                     if (objetoASerExcluido != null) {
                         boolean resultado = livroDaBiblioteca.deletar(objetoASerExcluido);
                         if (resultado) {
-                            GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluido com sucesso!", "Alerta ao Usuario");
+                            GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluído com sucesso!", "Alerta ao Usuário");
                             listarTabelaBiblioteca();
                         } else {
-                            GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
+                            GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
                         }
                     } else {
-                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operaçao mais tarde!");
+                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
                     }
                 }
             }
 
         } catch (Exception erro) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
         }
     }//GEN-LAST:event_btnDeletarLivroBiliotecaActionPerformed
 
@@ -974,10 +974,10 @@ try {
                 }
 
             } else {
-                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+                GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
             }
         } catch (Exception erro) {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operaçao!", "Alerta de Usuario");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
         }
     }//GEN-LAST:event_btnSobreLivroBiliotecaActionPerformed
 
@@ -986,7 +986,7 @@ try {
     }//GEN-LAST:event_jMenuItemNovoUsuarioActionPerformed
 
     private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
-       if(GeradorDeMensagem.exibirMensagemDeConfirmacao("Voce deseja realmente sair da aplicaçao?", "Alerta de Usuario")){
+       if(GeradorDeMensagem.exibirMensagemDeConfirmacao("Você deseja realmente sair da aplicação?", "Alerta ao Usuário")){
            System.exit(0);
        }
     }//GEN-LAST:event_jMenuItemSairActionPerformed
@@ -1056,7 +1056,7 @@ try {
 
     @Override
     public void windowClosing(WindowEvent e) {
- if(GeradorDeMensagem.exibirMensagemDeConfirmacao("Voce deseja realmente sair da aplicaçao?", "Alerta de Usuario")){
+ if(GeradorDeMensagem.exibirMensagemDeConfirmacao("Você deseja realmente sair da aplicação?", "Alerta ao Usuário")){
            System.exit(0);
        }
     }
