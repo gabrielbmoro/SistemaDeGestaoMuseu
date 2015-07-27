@@ -132,9 +132,10 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Component id="jTabbedPaneAcervo" pref="910" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -197,17 +198,11 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
+                          <EmptySpace pref="19" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="btnGerarRelatorioConsignado" max="32767" attributes="0"/>
+                              <Component id="btnNovoLivroConsignado" alignment="0" max="32767" attributes="0"/>
                               <Component id="btnListarLivroConsignado" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="btnNovoLivroConsignado" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="btnGerarRelatorioConsignado" min="-2" pref="48" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -218,10 +213,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="btnNovoLivroConsignado" min="-2" pref="44" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnListarLivroConsignado" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btnGerarRelatorioConsignado" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="btnListarLivroConsignado" min="-2" pref="44" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnGerarRelatorioConsignado" pref="42" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -230,7 +224,7 @@
                 <Component class="javax.swing.JButton" name="btnNovoLivroConsignado">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/unipampa/view/icons/add.png"/>
+                      <Image iconType="3" name="/br/unipampa/view/icons/AddItem.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value="Novo Item"/>
                   </Properties>
@@ -241,7 +235,7 @@
                 <Component class="javax.swing.JButton" name="btnListarLivroConsignado">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/unipampa/view/icons/listar.png"/>
+                      <Image iconType="3" name="/br/unipampa/view/icons/List.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value="LIstar Itens"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -255,7 +249,7 @@
                 <Component class="javax.swing.JButton" name="btnGerarRelatorioConsignado">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/unipampa/view/icons/exportar.png"/>
+                      <Image iconType="3" name="/br/unipampa/view/icons/PDF.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value="Gerar Relatorio de Itens Cadastrados"/>
                   </Properties>
@@ -275,9 +269,9 @@
                           <Component id="jScrollPane1" min="-2" pref="691" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btnDeletarLivroConsignado" max="32767" attributes="0"/>
                               <Component id="btnSobreLivroConsignado" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnEditarLivroConsignado" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnEditarLivroConsignado" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnDeletarLivroConsignado" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -285,18 +279,19 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jScrollPane1" pref="497" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPane1" pref="497" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="btnSobreLivroConsignado" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnEditarLivroConsignado" min="-2" pref="44" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnDeletarLivroConsignado" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                          <Component id="btnSobreLivroConsignado" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnEditarLivroConsignado" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnDeletarLivroConsignado" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -359,7 +354,7 @@
                 <Component class="javax.swing.JButton" name="btnSobreLivroConsignado">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/unipampa/view/icons/escolhas.png"/>
+                      <Image iconType="3" name="/br/unipampa/view/icons/View.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value="Sobre o elemento"/>
                   </Properties>
@@ -439,18 +434,12 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnListarLivroTombo" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="btnNovoLivroTombo" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="btnGerarRelatorioTombo" min="-2" pref="48" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace pref="10" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="btnListarLivroTombo" alignment="1" max="32767" attributes="0"/>
+                              <Component id="btnNovoLivroTombo" alignment="1" max="32767" attributes="0"/>
+                              <Component id="btnGerarRelatorioTombo" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -461,10 +450,10 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="btnNovoLivroTombo" min="-2" pref="44" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnListarLivroTombo" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btnGerarRelatorioTombo" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="btnListarLivroTombo" min="-2" pref="44" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnGerarRelatorioTombo" pref="42" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -473,7 +462,7 @@
                 <Component class="javax.swing.JButton" name="btnNovoLivroTombo">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/unipampa/view/icons/add.png"/>
+                      <Image iconType="3" name="/br/unipampa/view/icons/AddItem.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value="Novo Item"/>
                   </Properties>
@@ -484,7 +473,7 @@
                 <Component class="javax.swing.JButton" name="btnListarLivroTombo">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/unipampa/view/icons/listar.png"/>
+                      <Image iconType="3" name="/br/unipampa/view/icons/List.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value="LIstar Itens"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -498,7 +487,7 @@
                 <Component class="javax.swing.JButton" name="btnGerarRelatorioTombo">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/unipampa/view/icons/exportar.png"/>
+                      <Image iconType="3" name="/br/unipampa/view/icons/PDF.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value="Gerar Relatorio de Itens Cadastrados"/>
                   </Properties>
@@ -516,11 +505,13 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="655" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btnDeletarLivroTombo" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnSobreLivroTombo" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnEditarLivroTombo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="12" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="btnSobreLivroTombo" alignment="0" pref="56" max="32767" attributes="0"/>
+                                  <Component id="btnEditarLivroTombo" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="btnDeletarLivroTombo" min="-2" pref="56" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -528,18 +519,19 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jScrollPane2" pref="497" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPane2" pref="497" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="btnSobreLivroTombo" min="-2" pref="42" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnEditarLivroTombo" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnDeletarLivroTombo" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="btnSobreLivroTombo" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnEditarLivroTombo" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnDeletarLivroTombo" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -627,7 +619,7 @@
                 <Component class="javax.swing.JButton" name="btnSobreLivroTombo">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/unipampa/view/icons/escolhas.png"/>
+                      <Image iconType="3" name="/br/unipampa/view/icons/View.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value="Sobre o elemento"/>
                   </Properties>
@@ -682,18 +674,14 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace pref="10" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnListarLivroBiblioteca" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="btnNovoLivroBiblioteca" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="btnListarLivroBiblioteca" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="btnNovoLivroBiblioteca" alignment="1" pref="52" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="btnGerarRelatorioBiblioteca" min="-2" pref="48" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="btnGerarRelatorioBiblioteca" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -705,9 +693,9 @@
                           <Component id="btnNovoLivroBiblioteca" min="-2" pref="44" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnListarLivroBiblioteca" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btnGerarRelatorioBiblioteca" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnGerarRelatorioBiblioteca" pref="42" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -716,7 +704,7 @@
                 <Component class="javax.swing.JButton" name="btnNovoLivroBiblioteca">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/unipampa/view/icons/add.png"/>
+                      <Image iconType="3" name="/br/unipampa/view/icons/AddItem.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value="Novo Item"/>
                   </Properties>
@@ -727,7 +715,7 @@
                 <Component class="javax.swing.JButton" name="btnListarLivroBiblioteca">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/unipampa/view/icons/listar.png"/>
+                      <Image iconType="3" name="/br/unipampa/view/icons/List.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value="LIstar Itens"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -741,7 +729,7 @@
                 <Component class="javax.swing.JButton" name="btnGerarRelatorioBiblioteca">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/unipampa/view/icons/exportar.png"/>
+                      <Image iconType="3" name="/br/unipampa/view/icons/PDF.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value="Gerar Relatorio de Itens Cadastrados"/>
                   </Properties>
@@ -760,29 +748,30 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane3" min="-2" pref="690" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btnDeletarLivroBilioteca" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="btnEditarLivroBilioteca" alignment="0" pref="0" max="32767" attributes="0"/>
                               <Component id="btnSobreLivroBilioteca" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnEditarLivroBilioteca" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnDeletarLivroBilioteca" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jScrollPane3" pref="497" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPane3" pref="497" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="btnSobreLivroBilioteca" min="-2" pref="42" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnEditarLivroBilioteca" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnDeletarLivroBilioteca" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnSobreLivroBilioteca" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnEditarLivroBilioteca" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnDeletarLivroBilioteca" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -870,7 +859,7 @@
                 <Component class="javax.swing.JButton" name="btnSobreLivroBilioteca">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/unipampa/view/icons/escolhas.png"/>
+                      <Image iconType="3" name="/br/unipampa/view/icons/View.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value="Sobre o elemento"/>
                   </Properties>
