@@ -14,49 +14,57 @@ import java.awt.event.WindowListener;
  *
  * @author gabrielbmoro
  */
-public class FrameInfoEditUsuario extends javax.swing.JFrame implements WindowListener{
+public class FrameInfoEditUsuario extends javax.swing.JFrame implements WindowListener {
 
     private Usuario usuario;
+
     /**
      * Creates new form FrameInfoEditUsuario
      */
     public FrameInfoEditUsuario(Usuario usuarioParametro) {
-       initComponents();
-       buttonGroupAtivo.add(jRadioButtonSimAtivo);
-       buttonGroupAtivo.add(jRadioButtonNaoAtivo);
-       buttonGroupAdm.add(jRadioButtonSimAdm);
-       buttonGroupAdm.add(jRadioButtonNaoAdm);
+        initComponents();
+        buttonGroupAtivo.add(jRadioButtonSimAtivo);
+        buttonGroupAtivo.add(jRadioButtonNaoAtivo);
+        buttonGroupAdm.add(jRadioButtonSimAdm);
+        buttonGroupAdm.add(jRadioButtonNaoAdm);
         this.usuario = usuarioParametro;
-        
-       
+
         preencherCampos();
-       
+
         ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 490, 378);
         addWindowListener(this);
-      
-        
+
     }
-private void preencherCampos(){
-    this.txtCpf.setText(this.usuario.getCpf().toString());
-    this.txtTelefone.setText(this.usuario.getTelefone());
-    this.campoEndereco.setText(this.usuario.getEndereco());
-    this.campoNome.setText(this.usuario.getNome());
-    this.jDateChooser1.setDate(this.usuario.getDataNAsc());
-    if(this.usuario.isStatus()){
-        this.jRadioButtonSimAtivo.setSelected(true);
-        this.jRadioButtonNaoAtivo.setSelected(false);
-    }else{
-        this.jRadioButtonSimAtivo.setSelected(false);
-        this.jRadioButtonNaoAtivo.setSelected(true);
+
+    private void preencherCampos() {
+        String CPFadaptado = "";
+        int zeros = 11 - this.usuario.getCpf().toString().length();
+        while (zeros > 0) {
+            CPFadaptado = CPFadaptado + "0";
+            zeros--;
+        }
+        CPFadaptado = CPFadaptado + this.usuario.getCpf();
+        this.txtCpf.setText(CPFadaptado);
+        this.txtTelefone.setText(this.usuario.getTelefone());
+        this.campoEndereco.setText(this.usuario.getEndereco());
+        this.campoNome.setText(this.usuario.getNome());
+        this.jDateChooser1.setDate(this.usuario.getDataNAsc());
+        if (this.usuario.isStatus()) {
+            this.jRadioButtonSimAtivo.setSelected(true);
+            this.jRadioButtonNaoAtivo.setSelected(false);
+        } else {
+            this.jRadioButtonSimAtivo.setSelected(false);
+            this.jRadioButtonNaoAtivo.setSelected(true);
+        }
+        if (this.usuario.isSouUsuarioAdministrador()) {
+            this.jRadioButtonSimAdm.setSelected(true);
+            this.jRadioButtonNaoAdm.setSelected(false);
+        } else {
+            this.jRadioButtonSimAdm.setSelected(false);
+            this.jRadioButtonNaoAdm.setSelected(true);
+        }
     }
-    if(this.usuario.isSouUsuarioAdministrador()){
-        this.jRadioButtonSimAdm.setSelected(true);
-        this.jRadioButtonNaoAdm.setSelected(false);
-    }else{
-          this.jRadioButtonSimAdm.setSelected(false);
-        this.jRadioButtonNaoAdm.setSelected(true);
-    }
-}
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -232,9 +240,9 @@ private void preencherCampos(){
 
     private void btnAtualizarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarDadosActionPerformed
         if ((this.txtCpf.getText().isEmpty()
-            || this.campoNome.getText().isEmpty())) {
-        GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, preencha os campos marcados com '*', pois são obrigatórios. \n Também verifique a validade das datas!", "Alerta ao Usuário");
-        return;
+                || this.campoNome.getText().isEmpty())) {
+            GeradorDeMensagem.exibirMensagemDeInformacao("Por favor, preencha os campos marcados com '*', pois são obrigatórios. \n Também verifique a validade das datas!", "Alerta ao Usuário");
+            return;
         } else {
 
             try {
@@ -248,13 +256,13 @@ private void preencherCampos(){
             this.usuario.setEndereco(this.campoEndereco.getText());
             this.usuario.setTelefone(this.txtTelefone.getText());
             boolean status = false;
-            if(this.jRadioButtonSimAtivo.isSelected()){
-                status=true;
+            if (this.jRadioButtonSimAtivo.isSelected()) {
+                status = true;
             }
             this.usuario.setStatus(status);
             boolean adm = false;
-            if(this.jRadioButtonSimAdm.isSelected()){
-                adm=true;
+            if (this.jRadioButtonSimAdm.isSelected()) {
+                adm = true;
             }
             this.usuario.setStatus(adm);
             try {
@@ -284,7 +292,6 @@ private void preencherCampos(){
         // TODO add your handling code here:
     }//GEN-LAST:event_campoNomeActionPerformed
 
- 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtualizarDados;

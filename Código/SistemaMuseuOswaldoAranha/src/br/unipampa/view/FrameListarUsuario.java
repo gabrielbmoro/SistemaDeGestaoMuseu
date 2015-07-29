@@ -223,6 +223,7 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
                 Usuario usuarioTemp = (Usuario) objetoUsuario;
                 String respostaAdm = "";
                 String respostaAtivo = "";
+                String CPFadaptado = "";
                 if (usuarioTemp.isSouUsuarioAdministrador()) {
                     respostaAdm = "Sim";
                 } else {
@@ -233,8 +234,15 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
                 } else {
                     respostaAtivo = "Não";
                 }
+                
+                int zeros = 11 - usuarioTemp.getCpf().toString().length();
+                while(zeros > 0){
+                 CPFadaptado = CPFadaptado + "0";
+                 zeros--;
+                }
+                CPFadaptado = CPFadaptado + usuarioTemp.getCpf();
                 this.modeloDeTabelaUsuarios.addRow(new Object[]{usuarioTemp.getNome(),
-                    usuarioTemp.getCpf(), usuarioTemp.getEndereco(), usuarioTemp.getTelefone(),
+                    CPFadaptado, usuarioTemp.getEndereco(), usuarioTemp.getTelefone(),
                     respostaAtivo, respostaAdm});
             }
         }
