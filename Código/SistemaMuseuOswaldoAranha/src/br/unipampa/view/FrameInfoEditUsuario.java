@@ -264,7 +264,7 @@ public class FrameInfoEditUsuario extends javax.swing.JFrame implements WindowLi
             if (this.jRadioButtonSimAdm.isSelected()) {
                 adm = true;
             }
-            this.usuario.setStatus(adm);
+            this.usuario.setSouUsuarioAdministrador(adm);
             try {
                 if (this.usuario.alterar(this.usuario)) {
                     GeradorDeMensagem.exibirMensagemDeInformacao("Os dados foram cadastrados com sucesso!", "Alerta ao Usuário");
