@@ -215,12 +215,12 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
                 if(usuarioTemp.isSouUsuarioAdministrador()){
                     respostaAdm= "Sim";
                 }else{
-                    respostaAdm= "-";
+                    respostaAdm= "Não";
                 }
                 if(usuarioTemp.isStatus()){
                     respostaAtivo= "Sim";
                 }else{
-                    respostaAtivo= "-";
+                    respostaAtivo= "Não";
                 }
                 this.modeloDeTabelaUsuarios.addRow(new Object[]{usuarioTemp.getNome(),
                 usuarioTemp.getCpf(), usuarioTemp.getEndereco(), usuarioTemp.getTelefone(), 
