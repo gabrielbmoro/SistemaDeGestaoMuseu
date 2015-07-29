@@ -23,7 +23,7 @@ public class FrameNovoLivroBiblioteca extends javax.swing.JFrame implements Wind
     public FrameNovoLivroBiblioteca() {
         initComponents();
         addWindowListener(this);
-        ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 588, 426);
+        ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 588, 480);
     }
 
     /**

@@ -224,7 +224,7 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
                                     .addGroup(jPanelDadosLayout.createSequentialGroup()
                                         .addGap(12, 12, 12)
                                         .addComponent(jComboPaisLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(188, 233, Short.MAX_VALUE))
+                        .addGap(188, 312, Short.MAX_VALUE))
                     .addGroup(jPanelDadosLayout.createSequentialGroup()
                         .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelDadosLayout.createSequentialGroup()
@@ -236,8 +236,8 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtTipoDeObjetoLivroConsignado))
                             .addGroup(jPanelDadosLayout.createSequentialGroup()
-                                .addComponent(btnRegistrarDadosLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 989, Short.MAX_VALUE)))
+                                .addComponent(btnRegistrarDadosLivroConsignado)
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())))
         );
         jPanelDadosLayout.setVerticalGroup(
@@ -340,7 +340,7 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtBuscarImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnRegistrarImagem))
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         jPanelUploadDeImagemLayout.setVerticalGroup(
             jPanelUploadDeImagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -52,6 +52,16 @@ public class FrameLogin extends javax.swing.JFrame implements WindowListener{
         jLabel3.setText("Senha:");
 
         txtSenha.setToolTipText("Digite sua senha");
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenhaActionPerformed(evt);
+            }
+        });
+        txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSenhaKeyPressed(evt);
+            }
+        });
 
         btnAcessarSistema.setText("Acessar");
         btnAcessarSistema.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +121,14 @@ public class FrameLogin extends javax.swing.JFrame implements WindowListener{
         this.usuario = new Usuario();
         this.usuario.fazerLogin(this, RefatoraString.retornaCpf(this.txtCpf.getText()), this.txtSenha.getText());
     }//GEN-LAST:event_btnAcessarSistemaActionPerformed
+
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenhaActionPerformed
+
+    private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenhaKeyPressed
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
