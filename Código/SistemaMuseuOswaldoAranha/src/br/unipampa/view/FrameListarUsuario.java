@@ -16,10 +16,11 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author gabrielbmoro
  */
-public class FrameListarUsuario extends javax.swing.JFrame implements WindowListener{
+public class FrameListarUsuario extends javax.swing.JFrame implements WindowListener {
 
     private Usuario usuario;
     private DefaultTableModel modeloDeTabelaUsuarios;
+
     /**
      * Creates new form FrameListarUsuario
      */
@@ -27,7 +28,7 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
         initComponents();
         modeloDeTabelaUsuarios = (DefaultTableModel) jTableUsuarios.getModel();
         ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 687, 200);
-        
+
         addWindowListener(this);
     }
 
@@ -48,6 +49,11 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
         btnExcluir = new javax.swing.JButton();
 
         setTitle("Registros de Usuarios");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jTableUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -143,11 +149,11 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-      listarRegistrosDeUsuarios();
+        listarRegistrosDeUsuarios();
     }//GEN-LAST:event_btnListarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-               try {
+        try {
             int linhaSelecionada = jTableUsuarios.getSelectedRow();
             Object idDeElemento = modeloDeTabelaUsuarios.getValueAt(linhaSelecionada, 1);
             if (idDeElemento != null) {
@@ -157,7 +163,7 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
                     Usuario usuario = new Usuario();
                     Usuario usuarioTemporario = (Usuario) usuario.recuperarPeloID(idLong);
                     if (usuarioTemporario != null) {
-                         new FrameInfoEditUsuario(usuarioTemporario);
+                        new FrameInfoEditUsuario(usuarioTemporario);
                     }
                 }
 
@@ -170,31 +176,32 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-                try {
+        try {
             int linhaSelecionada = jTableUsuarios.getSelectedRow();
             Object isAdm = modeloDeTabelaUsuarios.getValueAt(linhaSelecionada, 5);
             if (isAdm != null) {
                 String isAdmTexto = isAdm.toString();
-                if(isAdmTexto.equalsIgnoreCase("Sim")){
+                if (isAdmTexto.equalsIgnoreCase("Sim")) {
                     GeradorDeMensagem.exibirMensagemDeInformacao("A Operação não pode ser realizada, você não tem privilégios!", "Alerta ao Usuário");
-                }else{
-                  Object idDeElemento = modeloDeTabelaUsuarios.getValueAt(linhaSelecionada, 1);
-                Long idLong = Long.parseLong(idDeElemento.toString());
-                if (idLong != 0) {
-                    Usuario usuariot = new Usuario();
-                    Object objetoASerExcluido = usuariot.recuperarPeloID(idLong);
-                    if (objetoASerExcluido != null) {
-                        boolean resultado = usuariot.deletar(objetoASerExcluido);
-                        if (resultado) {
-                            GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluído com sucesso!", "Alerta ao Usuário");
-                            listarRegistrosDeUsuarios();
+                } else {
+                    Object idDeElemento = modeloDeTabelaUsuarios.getValueAt(linhaSelecionada, 1);
+                    Long idLong = Long.parseLong(idDeElemento.toString());
+                    if (idLong != 0) {
+                        Usuario usuariot = new Usuario();
+                        Object objetoASerExcluido = usuariot.recuperarPeloID(idLong);
+                        if (objetoASerExcluido != null) {
+                            boolean resultado = usuariot.deletar(objetoASerExcluido);
+                            if (resultado) {
+                                GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluído com sucesso!", "Alerta ao Usuário");
+                                listarRegistrosDeUsuarios();
+                            } else {
+                                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
+                            }
                         } else {
                             GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
+
                         }
-                    } else {
-                        GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
-                   
-                    }}
+                    }
                 }
             }
 
@@ -203,32 +210,36 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
-    private void listarRegistrosDeUsuarios(){
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        listarRegistrosDeUsuarios();
+    }//GEN-LAST:event_formWindowActivated
+
+    private void listarRegistrosDeUsuarios() {
         this.modeloDeTabelaUsuarios.setNumRows(0);
         this.usuario = new Usuario();
         List listaDeUsuarios = this.usuario.recuperarTodos();
-        for(Object objetoUsuario: listaDeUsuarios){
-            if(objetoUsuario instanceof Usuario){
+        for (Object objetoUsuario : listaDeUsuarios) {
+            if (objetoUsuario instanceof Usuario) {
                 Usuario usuarioTemp = (Usuario) objetoUsuario;
                 String respostaAdm = "";
-                String respostaAtivo= "";
-                if(usuarioTemp.isSouUsuarioAdministrador()){
-                    respostaAdm= "Sim";
-                }else{
-                    respostaAdm= "Não";
+                String respostaAtivo = "";
+                if (usuarioTemp.isSouUsuarioAdministrador()) {
+                    respostaAdm = "Sim";
+                } else {
+                    respostaAdm = "Não";
                 }
-                if(usuarioTemp.isStatus()){
-                    respostaAtivo= "Sim";
-                }else{
-                    respostaAtivo= "Não";
+                if (usuarioTemp.isStatus()) {
+                    respostaAtivo = "Sim";
+                } else {
+                    respostaAtivo = "Não";
                 }
                 this.modeloDeTabelaUsuarios.addRow(new Object[]{usuarioTemp.getNome(),
-                usuarioTemp.getCpf(), usuarioTemp.getEndereco(), usuarioTemp.getTelefone(), 
-                respostaAtivo, respostaAdm});
+                    usuarioTemp.getCpf(), usuarioTemp.getEndereco(), usuarioTemp.getTelefone(),
+                    respostaAtivo, respostaAdm});
             }
         }
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExcluir;
@@ -243,7 +254,7 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
 
     @Override
     public void windowClosing(WindowEvent e) {
-       dispose();
+        dispose();
     }
 
     @Override
