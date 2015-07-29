@@ -190,12 +190,14 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
                         Usuario usuariot = new Usuario();
                         Object objetoASerExcluido = usuariot.recuperarPeloID(idLong);
                         if (objetoASerExcluido != null) {
-                            boolean resultado = usuariot.deletar(objetoASerExcluido);
-                            if (resultado) {
-                                GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluído com sucesso!", "Alerta ao Usuário");
-                                listarRegistrosDeUsuarios();
-                            } else {
-                                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
+                            if (GeradorDeMensagem.exibirMensagemDeConfirmacao("Deseja remover o registro?", "Alerta ao Usuário") == true) {
+                                boolean resultado = usuariot.deletar(objetoASerExcluido);
+                                if (resultado) {
+                                    GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluído com sucesso!", "Alerta ao Usuário");
+                                    listarRegistrosDeUsuarios();
+                                } else {
+                                    GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
+                                }
                             }
                         } else {
                             GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
@@ -234,11 +236,11 @@ public class FrameListarUsuario extends javax.swing.JFrame implements WindowList
                 } else {
                     respostaAtivo = "Não";
                 }
-                
+
                 int zeros = 11 - usuarioTemp.getCpf().toString().length();
-                while(zeros > 0){
-                 CPFadaptado = CPFadaptado + "0";
-                 zeros--;
+                while (zeros > 0) {
+                    CPFadaptado = CPFadaptado + "0";
+                    zeros--;
                 }
                 CPFadaptado = CPFadaptado + usuarioTemp.getCpf();
                 this.modeloDeTabelaUsuarios.addRow(new Object[]{usuarioTemp.getNome(),

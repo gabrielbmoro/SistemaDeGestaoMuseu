@@ -670,7 +670,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                         itemConsignadoTemporario.getRegiao()
                     });
                 }
-            } else if(mensagem == true) {
+            } else if (mensagem == true) {
                 GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum registro encontrado!", "Alerta ao Usuário");
             }
         }
@@ -693,7 +693,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                         itemTomboTemp.getRegiao()
                     });
                 }
-            } else if(mensagem == true){
+            } else if (mensagem == true) {
                 GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum registro encontrado!", "Alerta ao Usuário");
             }
         }
@@ -716,7 +716,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                         livroDaBibliotecaTemp.getAnoLacamento()
                     });
                 }
-            } else if(mensagem == true) {
+            } else if (mensagem == true) {
                 GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum registro encontrado!", "Alerta ao Usuário");
             }
         }
@@ -731,12 +731,14 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                     ItemConsignado itemConsignado = new ItemConsignado();
                     Object objetoASerExcluido = itemConsignado.recuperarPeloID(idLong);
                     if (objetoASerExcluido != null) {
-                        boolean resultado = itemConsignado.deletar(objetoASerExcluido);
-                        if (resultado) {
-                            GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluído com sucesso!", "Alerta ao Usuário");
-                            listarTabelaLivroConsignado(false);
-                        } else {
-                            GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
+                        if (GeradorDeMensagem.exibirMensagemDeConfirmacao("Deseja remover o registro?", "Alerta ao Usuário") == true) {
+                            boolean resultado = itemConsignado.deletar(objetoASerExcluido);
+                            if (resultado) {
+                                GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluído com sucesso!", "Alerta ao Usuário");
+                                listarTabelaLivroConsignado(false);
+                            } else {
+                                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
+                            }
                         }
                     } else {
                         GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
@@ -850,12 +852,14 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                     ItemTombo itemTombo = new ItemTombo();
                     Object objetoASerExcluido = itemTombo.recuperarPeloID(idLong);
                     if (objetoASerExcluido != null) {
-                        boolean resultado = itemTombo.deletar(objetoASerExcluido);
-                        if (resultado) {
-                            GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluído com sucesso!", "Alerta ao Usuário");
-                            listarTabelaLivroTombo(false);
-                        } else {
-                            GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
+                        if (GeradorDeMensagem.exibirMensagemDeConfirmacao("Deseja remover o registro?", "Alerta ao Usuário") == true) {
+                            boolean resultado = itemTombo.deletar(objetoASerExcluido);
+                            if (resultado) {
+                                GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluído com sucesso!", "Alerta ao Usuário");
+                                listarTabelaLivroTombo(false);
+                            } else {
+                                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
+                            }
                         }
                     } else {
                         GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
@@ -938,12 +942,14 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                     LivroDaBiblioteca livroDaBiblioteca = new LivroDaBiblioteca();
                     Object objetoASerExcluido = livroDaBiblioteca.recuperarPeloID(idLong);
                     if (objetoASerExcluido != null) {
-                        boolean resultado = livroDaBiblioteca.deletar(objetoASerExcluido);
-                        if (resultado) {
-                            GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluído com sucesso!", "Alerta ao Usuário");
-                            listarTabelaBiblioteca(false);
-                        } else {
-                            GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
+                        if (GeradorDeMensagem.exibirMensagemDeConfirmacao("Deseja remover o registro?", "Alerta ao Usuário") == true) {
+                            boolean resultado = livroDaBiblioteca.deletar(objetoASerExcluido);
+                            if (resultado) {
+                                GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluído com sucesso!", "Alerta ao Usuário");
+                                listarTabelaBiblioteca(false);
+                            } else {
+                                GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
+                            }
                         }
                     } else {
                         GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
