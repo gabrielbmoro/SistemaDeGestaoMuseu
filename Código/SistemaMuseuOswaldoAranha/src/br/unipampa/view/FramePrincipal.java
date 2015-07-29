@@ -100,12 +100,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         jMenuItem18 = new javax.swing.JMenuItem();
         jMenuItem19 = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        addWindowStateListener(new java.awt.event.WindowStateListener() {
-            public void windowStateChanged(java.awt.event.WindowEvent evt) {
-                formWindowStateChanged(evt);
-            }
-        });
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         btnNovoLivroConsignado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/AddItem.png"))); // NOI18N
         btnNovoLivroConsignado.setToolTipText("Novo Item");
@@ -990,7 +985,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     }//GEN-LAST:event_jMenuItemNovoUsuarioActionPerformed
 
     private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
-        if (GeradorDeMensagem.exibirMensagemDeConfirmacao("Você deseja realmente sair da aplicação?", "Alerta ao Usuário")) {
+        if (GeradorDeMensagem.exibirMensagemDeConfirmacao("Você deseja realmente sair da aplicação?", "Alerta ao Usuário") == true) {
             System.exit(0);
         }
     }//GEN-LAST:event_jMenuItemSairActionPerformed
@@ -1063,7 +1058,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
     @Override
     public void windowClosing(WindowEvent e) {
-        if (GeradorDeMensagem.exibirMensagemDeConfirmacao("Você deseja realmente sair da aplicação?", "Alerta ao Usuário")) {
+        if (GeradorDeMensagem.exibirMensagemDeConfirmacao("Você deseja realmente sair da aplicação?", "Alerta ao Usuário") == true) {
             System.exit(0);
         }
     }
