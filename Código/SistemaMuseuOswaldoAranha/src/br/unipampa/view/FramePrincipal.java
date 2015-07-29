@@ -13,16 +13,13 @@ import br.unipampa.service.TipoDeRelatorio;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.util.List;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
-import javax.swing.table.TableColumnModel;
 
 /**
  *
  * @author gabrielbmoro
  */
-public class FramePrincipal extends javax.swing.JFrame implements WindowListener{
+public class FramePrincipal extends javax.swing.JFrame implements WindowListener {
 
     private DefaultTableModel modeloTabelaLivroCOnsignado;
     private DefaultTableModel modeloTabelaLivroTombo;
@@ -38,12 +35,12 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         modeloTabelaLivroCOnsignado = (DefaultTableModel) jTableLivroConsignado.getModel();
         modeloTabelaLivroTombo = (DefaultTableModel) jTableLivroTombo.getModel();
         modeloTabelaBiblioteca = (DefaultTableModel) jTableBiblioteca.getModel();
-        
+
         addWindowListener(this);
-        this.usuario= usuarioPorParametro;
-        if(this.usuario.isSouUsuarioAdministrador()){
+        this.usuario = usuarioPorParametro;
+        if (this.usuario.isSouUsuarioAdministrador()) {
             jMenuUsuario.setEnabled(true);
-        }else{
+        } else {
             jMenuUsuario.setEnabled(false);
         }
         revalidate();
@@ -104,6 +101,11 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         jMenuItem19 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowStateListener(new java.awt.event.WindowStateListener() {
+            public void windowStateChanged(java.awt.event.WindowEvent evt) {
+                formWindowStateChanged(evt);
+            }
+        });
 
         btnNovoLivroConsignado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/AddItem.png"))); // NOI18N
         btnNovoLivroConsignado.setToolTipText("Novo Item");
@@ -286,7 +288,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         panelButtonsLivroTomboLayout.setHorizontalGroup(
             panelButtonsLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelButtonsLivroTomboLayout.createSequentialGroup()
-                .addContainerGap(10, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelButtonsLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnListarLivroTombo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnNovoLivroTombo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -364,7 +366,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(panelInternoLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelInternoLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnSobreLivroTombo, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                        .addComponent(btnSobreLivroTombo, javax.swing.GroupLayout.PREFERRED_SIZE, 56, Short.MAX_VALUE)
                         .addComponent(btnEditarLivroTombo, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addComponent(btnDeletarLivroTombo, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
@@ -439,11 +441,11 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         panelButtonsBibliotecaLayout.setHorizontalGroup(
             panelButtonsBibliotecaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelButtonsBibliotecaLayout.createSequentialGroup()
-                .addContainerGap(10, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelButtonsBibliotecaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelButtonsBibliotecaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(btnListarLivroBiblioteca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnNovoLivroBiblioteca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE))
+                        .addComponent(btnNovoLivroBiblioteca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE))
                     .addComponent(btnGerarRelatorioBiblioteca, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
@@ -518,7 +520,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelInternoBibliotecaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btnEditarLivroBilioteca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(btnSobreLivroBilioteca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSobreLivroBilioteca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
                     .addComponent(btnDeletarLivroBilioteca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(14, 14, 14))
         );
@@ -648,69 +650,75 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnListarLivroConsignadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarLivroConsignadoActionPerformed
-        listarTabelaLivroConsignado();
+        listarTabelaLivroConsignado(true);
     }//GEN-LAST:event_btnListarLivroConsignadoActionPerformed
 
-    private void listarTabelaLivroConsignado() {
+    private void listarTabelaLivroConsignado(boolean mensagem) {
         /*Limpar Tabela*/
-        modeloTabelaLivroCOnsignado.setNumRows(0);
-        ItemConsignado itemConsignado = new ItemConsignado();
-        List listaDeREgistros = itemConsignado.recuperarTodos();
-        if (listaDeREgistros != null && !listaDeREgistros.isEmpty()) {
-            for (Object objetoTemp : listaDeREgistros) {
-                ItemConsignado itemConsignadoTemporario = (ItemConsignado) objetoTemp;
-                modeloTabelaLivroCOnsignado.addRow(new Object[]{
-                    itemConsignadoTemporario.getID(),
-                    itemConsignadoTemporario.getOutroCodigo(),
-                    itemConsignadoTemporario.getTipoObjeto(),
-                    itemConsignadoTemporario.getFuncaoEspecifica(),
-                    itemConsignadoTemporario.getRegiao()
-                });
+        if (modeloTabelaLivroCOnsignado != null) {
+            modeloTabelaLivroCOnsignado.setNumRows(0);
+            ItemConsignado itemConsignado = new ItemConsignado();
+            List listaDeREgistros = itemConsignado.recuperarTodos();
+            if (listaDeREgistros != null && !listaDeREgistros.isEmpty()) {
+                for (Object objetoTemp : listaDeREgistros) {
+                    ItemConsignado itemConsignadoTemporario = (ItemConsignado) objetoTemp;
+                    modeloTabelaLivroCOnsignado.addRow(new Object[]{
+                        itemConsignadoTemporario.getID(),
+                        itemConsignadoTemporario.getOutroCodigo(),
+                        itemConsignadoTemporario.getTipoObjeto(),
+                        itemConsignadoTemporario.getFuncaoEspecifica(),
+                        itemConsignadoTemporario.getRegiao()
+                    });
+                }
+            } else if(mensagem == true) {
+                GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum registro encontrado!", "Alerta ao Usuário");
             }
-        }else{
-           GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum registro encontrado!", "Alerta ao Usuário");
         }
     }
-    
-    private void listarTabelaLivroTombo() {
+
+    private void listarTabelaLivroTombo(boolean mensagem) {
         /*Limpar Tabela*/
-        modeloTabelaLivroTombo.setNumRows(0);
-        ItemTombo itemTombo = new ItemTombo();
-        List listaDeREgistros = itemTombo.recuperarTodos();
-        if (listaDeREgistros != null && !listaDeREgistros.isEmpty()) {
-            for (Object objetoTemp : listaDeREgistros) {
-                ItemTombo itemTomboTemp = (ItemTombo) objetoTemp;
-                modeloTabelaLivroTombo.addRow(new Object[]{
-                    itemTomboTemp.getID(),
-                    itemTomboTemp.getOutroCodigo(),
-                    itemTomboTemp.getTipoObjeto(),
-                    itemTomboTemp.getFuncaoEspecifica(),
-                    itemTomboTemp.getRegiao()
-                });
+        if (modeloTabelaLivroTombo != null) {
+            modeloTabelaLivroTombo.setNumRows(0);
+            ItemTombo itemTombo = new ItemTombo();
+            List listaDeREgistros = itemTombo.recuperarTodos();
+            if (listaDeREgistros != null && !listaDeREgistros.isEmpty()) {
+                for (Object objetoTemp : listaDeREgistros) {
+                    ItemTombo itemTomboTemp = (ItemTombo) objetoTemp;
+                    modeloTabelaLivroTombo.addRow(new Object[]{
+                        itemTomboTemp.getID(),
+                        itemTomboTemp.getOutroCodigo(),
+                        itemTomboTemp.getTipoObjeto(),
+                        itemTomboTemp.getFuncaoEspecifica(),
+                        itemTomboTemp.getRegiao()
+                    });
+                }
+            } else if(mensagem == true){
+                GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum registro encontrado!", "Alerta ao Usuário");
             }
-        }else{
-           GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum registro encontrado!", "Alerta ao Usuário");
         }
     }
-    
-    private void listarTabelaBiblioteca() {
+
+    private void listarTabelaBiblioteca(boolean mensagem) {
         /*Limpar Tabela*/
-        modeloTabelaBiblioteca.setNumRows(0);
-        LivroDaBiblioteca livroDaBiblioteca = new LivroDaBiblioteca();
-        List listaDeREgistros = livroDaBiblioteca.recuperarTodos();
-        if (listaDeREgistros != null && !listaDeREgistros.isEmpty()) {
-            for (Object objetoTemp : listaDeREgistros) {
-                LivroDaBiblioteca livroDaBibliotecaTemp = (LivroDaBiblioteca) objetoTemp;
-                modeloTabelaBiblioteca.addRow(new Object[]{
-                    livroDaBibliotecaTemp.getID(),
-                    livroDaBibliotecaTemp.getOutroCodigo(),
-                    livroDaBibliotecaTemp.getNomeLivro(),
-                    livroDaBibliotecaTemp.getNomeAutor(),
-                    livroDaBibliotecaTemp.getAnoLacamento()
-                });
+        if (modeloTabelaBiblioteca != null) {
+            modeloTabelaBiblioteca.setNumRows(0);
+            LivroDaBiblioteca livroDaBiblioteca = new LivroDaBiblioteca();
+            List listaDeREgistros = livroDaBiblioteca.recuperarTodos();
+            if (listaDeREgistros != null && !listaDeREgistros.isEmpty()) {
+                for (Object objetoTemp : listaDeREgistros) {
+                    LivroDaBiblioteca livroDaBibliotecaTemp = (LivroDaBiblioteca) objetoTemp;
+                    modeloTabelaBiblioteca.addRow(new Object[]{
+                        livroDaBibliotecaTemp.getID(),
+                        livroDaBibliotecaTemp.getOutroCodigo(),
+                        livroDaBibliotecaTemp.getNomeLivro(),
+                        livroDaBibliotecaTemp.getNomeAutor(),
+                        livroDaBibliotecaTemp.getAnoLacamento()
+                    });
+                }
+            } else if(mensagem == true) {
+                GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum registro encontrado!", "Alerta ao Usuário");
             }
-        }else{
-           GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum registro encontrado!", "Alerta ao Usuário");
         }
     }
     private void btnDeletarLivroConsignadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarLivroConsignadoActionPerformed
@@ -726,7 +734,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                         boolean resultado = itemConsignado.deletar(objetoASerExcluido);
                         if (resultado) {
                             GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluído com sucesso!", "Alerta ao Usuário");
-                            listarTabelaLivroConsignado();
+                            listarTabelaLivroConsignado(false);
                         } else {
                             GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
                         }
@@ -775,7 +783,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                     ItemConsignado itemConsignado = new ItemConsignado();
                     ItemConsignado itemConsignadoTemporario = (ItemConsignado) itemConsignado.recuperarPeloID(idLong);
                     if (itemConsignadoTemporario != null) {
-                         new FrameInfoEditLivroConsignado(itemConsignadoTemporario,
+                        new FrameInfoEditLivroConsignado(itemConsignadoTemporario,
                                 false);
                     }
                 }
@@ -793,19 +801,19 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     }//GEN-LAST:event_btnNovoLivroConsignadoActionPerformed
 
     private void btnGerarRelatorioConsignadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarRelatorioConsignadoActionPerformed
-     new FrameDeGeracaoDeRelatorios(TipoDeRelatorio.ITEM_CONSIGNADO);
+        new FrameDeGeracaoDeRelatorios(TipoDeRelatorio.ITEM_CONSIGNADO);
     }//GEN-LAST:event_btnGerarRelatorioConsignadoActionPerformed
 
     private void btnNovoLivroTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoLivroTomboActionPerformed
-       new FrameNovoItemTombo();
+        new FrameNovoItemTombo();
     }//GEN-LAST:event_btnNovoLivroTomboActionPerformed
 
     private void btnListarLivroTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarLivroTomboActionPerformed
-      listarTabelaLivroTombo();
+        listarTabelaLivroTombo(true);
     }//GEN-LAST:event_btnListarLivroTomboActionPerformed
 
     private void btnGerarRelatorioTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarRelatorioTomboActionPerformed
-       new FrameDeGeracaoDeRelatorios(TipoDeRelatorio.ITEM_TOMBO);
+        new FrameDeGeracaoDeRelatorios(TipoDeRelatorio.ITEM_TOMBO);
     }//GEN-LAST:event_btnGerarRelatorioTomboActionPerformed
 
     private void btnEditarLivroTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarLivroTomboActionPerformed
@@ -819,7 +827,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                     ItemTombo itemTombo = new ItemTombo();
                     ItemTombo itemTomboTemporario = (ItemTombo) itemTombo.recuperarPeloID(idLong);
                     if (itemTomboTemporario != null) {
-                         new FrameInfoEditLivroCombo(itemTomboTemporario,
+                        new FrameInfoEditLivroCombo(itemTomboTemporario,
                                 false);
                     }
                 }
@@ -845,7 +853,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                         boolean resultado = itemTombo.deletar(objetoASerExcluido);
                         if (resultado) {
                             GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluído com sucesso!", "Alerta ao Usuário");
-                            listarTabelaLivroTombo();
+                            listarTabelaLivroTombo(false);
                         } else {
                             GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
                         }
@@ -862,7 +870,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     }//GEN-LAST:event_btnDeletarLivroTomboActionPerformed
 
     private void btnSobreLivroTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreLivroTomboActionPerformed
-         try {
+        try {
             int linhaSelecionada = jTableLivroTombo.getSelectedRow();
             Object idDeElemento = modeloTabelaLivroTombo.getValueAt(linhaSelecionada, 0);
             if (idDeElemento != null) {
@@ -889,7 +897,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     }//GEN-LAST:event_btnNovoLivroBibliotecaActionPerformed
 
     private void btnListarLivroBibliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarLivroBibliotecaActionPerformed
-        listarTabelaBiblioteca();
+        listarTabelaBiblioteca(true);
     }//GEN-LAST:event_btnListarLivroBibliotecaActionPerformed
 
     private void btnGerarRelatorioBibliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarRelatorioBibliotecaActionPerformed
@@ -897,7 +905,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
     }//GEN-LAST:event_btnGerarRelatorioBibliotecaActionPerformed
 
     private void btnEditarLivroBiliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarLivroBiliotecaActionPerformed
-try {
+        try {
             int linhaSelecionada = jTableBiblioteca.getSelectedRow();
             Object idDeElemento = modeloTabelaBiblioteca.getValueAt(linhaSelecionada, 0);
             if (idDeElemento != null) {
@@ -907,7 +915,7 @@ try {
                     LivroDaBiblioteca livroDaBiblioteca = new LivroDaBiblioteca();
                     LivroDaBiblioteca livroDaBibliotecaTemporario = (LivroDaBiblioteca) livroDaBiblioteca.recuperarPeloID(idLong);
                     if (livroDaBibliotecaTemporario != null) {
-                         new FrameInfoEditLivroBiblioteca(livroDaBibliotecaTemporario,
+                        new FrameInfoEditLivroBiblioteca(livroDaBibliotecaTemporario,
                                 false);
                     }
                 }
@@ -917,11 +925,11 @@ try {
             }
         } catch (Exception erro) {
             GeradorDeMensagem.exibirMensagemDeInformacao("Selecione uma linha para realizar a operação!", "Alerta ao Usuário");
-        }        
+        }
     }//GEN-LAST:event_btnEditarLivroBiliotecaActionPerformed
 
     private void btnDeletarLivroBiliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarLivroBiliotecaActionPerformed
-                try {
+        try {
             int linhaSelecionada = jTableBiblioteca.getSelectedRow();
             Object idDeElemento = modeloTabelaBiblioteca.getValueAt(linhaSelecionada, 0);
             if (idDeElemento != null) {
@@ -933,7 +941,7 @@ try {
                         boolean resultado = livroDaBiblioteca.deletar(objetoASerExcluido);
                         if (resultado) {
                             GeradorDeMensagem.exibirMensagemDeInformacao("Registro Excluído com sucesso!", "Alerta ao Usuário");
-                            listarTabelaBiblioteca();
+                            listarTabelaBiblioteca(false);
                         } else {
                             GeradorDeMensagem.exibirMensagemDeErro("Ocorreu um problema, realize a operação mais tarde!");
                         }
@@ -972,13 +980,13 @@ try {
     }//GEN-LAST:event_btnSobreLivroBiliotecaActionPerformed
 
     private void jMenuItemNovoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNovoUsuarioActionPerformed
-       new FrameCadastroUsuario();
+        new FrameCadastroUsuario();
     }//GEN-LAST:event_jMenuItemNovoUsuarioActionPerformed
 
     private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
-       if(GeradorDeMensagem.exibirMensagemDeConfirmacao("Você deseja realmente sair da aplicação?", "Alerta ao Usuário")){
-           System.exit(0);
-       }
+        if (GeradorDeMensagem.exibirMensagemDeConfirmacao("Você deseja realmente sair da aplicação?", "Alerta ao Usuário")) {
+            System.exit(0);
+        }
     }//GEN-LAST:event_jMenuItemSairActionPerformed
 
     private void jMenuItemListarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemListarUsuarioActionPerformed
@@ -986,11 +994,14 @@ try {
     }//GEN-LAST:event_jMenuItemListarUsuarioActionPerformed
 
     private void jMenuItemAlterarSenhaDeAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAlterarSenhaDeAcessoActionPerformed
-        if(this.usuario!=null)
-        {
-            
+        if (this.usuario != null) {
+
         }
     }//GEN-LAST:event_jMenuItemAlterarSenhaDeAcessoActionPerformed
+
+    private void formWindowStateChanged(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1046,9 +1057,9 @@ try {
 
     @Override
     public void windowClosing(WindowEvent e) {
- if(GeradorDeMensagem.exibirMensagemDeConfirmacao("Você deseja realmente sair da aplicação?", "Alerta ao Usuário")){
-           System.exit(0);
-       }
+        if (GeradorDeMensagem.exibirMensagemDeConfirmacao("Você deseja realmente sair da aplicação?", "Alerta ao Usuário")) {
+            System.exit(0);
+        }
     }
 
     @Override
@@ -1065,6 +1076,9 @@ try {
 
     @Override
     public void windowActivated(WindowEvent e) {
+        listarTabelaLivroConsignado(false);
+        listarTabelaLivroTombo(false);
+        listarTabelaBiblioteca(false);
     }
 
     @Override
