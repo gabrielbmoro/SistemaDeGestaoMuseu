@@ -139,29 +139,38 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
 
     private void btnGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarRelatorioActionPerformed
         String titulo = txtNomeDoRelatorio.getText();
-        
-        if(titulo.isEmpty()||titulo==null){
+        boolean execute = true;
+
+        if (titulo.isEmpty() || titulo == null) {
             titulo = "RelatorioSisMOA";
         }
-        
-        if (new File(txtCaminhoParaSalvar.getText()).exists()) {
-            
+
+        if (!new File(txtCaminhoParaSalvar.getText()).exists()) {
+            boolean success = (new File(txtCaminhoParaSalvar.getText())).mkdirs();
+            if (!success) {
+                GeradorDeMensagem.exibirMensagemDeInformacao("Impossível criar o diretório, tente novamente!", "Alerta ao Usuário");
+                execute = false;
+            }
+        }
+
+        if (new File(txtCaminhoParaSalvar.getText()).exists() && execute == true) {
+
             List<Object> dados = null;
-            if(tipoDeRelatorio==TipoDeRelatorio.ITEM_CONSIGNADO){
-            ItemConsignado itemConsignado = new ItemConsignado();
-            dados = itemConsignado.recuperarTodos();
-            }else if(tipoDeRelatorio==TipoDeRelatorio.ITEM_TOMBO){
+            if (tipoDeRelatorio == TipoDeRelatorio.ITEM_CONSIGNADO) {
+                ItemConsignado itemConsignado = new ItemConsignado();
+                dados = itemConsignado.recuperarTodos();
+            } else if (tipoDeRelatorio == TipoDeRelatorio.ITEM_TOMBO) {
                 ItemTombo itemTombo = new ItemTombo();
                 dados = itemTombo.recuperarTodos();
-            }else if(tipoDeRelatorio==TipoDeRelatorio.ITEM_BIBLIOTECA){
+            } else if (tipoDeRelatorio == TipoDeRelatorio.ITEM_BIBLIOTECA) {
                 LivroDaBiblioteca livroDaBiblioteca = new LivroDaBiblioteca();
                 dados = livroDaBiblioteca.recuperarTodos();
             }
-            if (dados.isEmpty() || dados == null) {
+            if (dados == null || dados.isEmpty()) {
                 GeradorDeMensagem.exibirMensagemDeInformacao("O relatório não foi gerado, pois nenhum registro foi encontrado!", "Alerta ao Usuário");
             } else {
                 GerarRelatorioEmPdf gerarRelatorioEmPdf = new GerarRelatorioEmPdf();
-                boolean resposta = gerarRelatorioEmPdf.gerarRelatorio(dados, txtCaminhoParaSalvar.getText(), titulo , this.tipoDeRelatorio);
+                boolean resposta = gerarRelatorioEmPdf.gerarRelatorio(dados, txtCaminhoParaSalvar.getText(), titulo, this.tipoDeRelatorio);
                 if (resposta) {
                     GeradorDeMensagem.exibirMensagemDeInformacao("O relatório foi gerado com sucesso!", "Alerta ao Usuário");
                     dispose();
@@ -169,10 +178,7 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
                     GeradorDeMensagem.exibirMensagemDeInformacao("O relatório não foi gerado, realize a operação mais tarde!", "Alerta ao Usuário");
                 }
             }
-        } else {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Caminho de diretório inválido, escolha outro diretório!", "Alerta ao Usuário");
         }
-
     }//GEN-LAST:event_btnGerarRelatorioActionPerformed
 
 
