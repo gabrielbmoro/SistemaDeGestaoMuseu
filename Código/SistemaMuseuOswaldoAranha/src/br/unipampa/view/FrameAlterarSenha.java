@@ -41,6 +41,7 @@ public class FrameAlterarSenha extends javax.swing.JFrame {
         txtSenhaAntiga = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Alterar Senha");
 
         jLabel1.setText("Nova Senha:");
 
@@ -66,7 +67,7 @@ public class FrameAlterarSenha extends javax.swing.JFrame {
                     .addComponent(btnAlterarSenha)
                     .addComponent(jLabel2)
                     .addComponent(txtSenhaAntiga, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

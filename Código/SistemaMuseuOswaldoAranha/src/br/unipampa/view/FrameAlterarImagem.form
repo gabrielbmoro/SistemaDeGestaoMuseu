@@ -75,7 +75,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtCaminhoImagem">
       <Properties>
-        <Property name="text" type="java.lang.String" value="caminhoDoArquivo"/>
+        <Property name="text" type="java.lang.String" value="Caminho do arquivo"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>

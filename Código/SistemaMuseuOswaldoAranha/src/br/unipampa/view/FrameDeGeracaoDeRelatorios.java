@@ -59,12 +59,12 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
         txtNomeDoRelatorio = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Gerar Relatorios");
+        setTitle("Gerar Relatórios");
         setAlwaysOnTop(true);
 
         jLabel1.setText("Caminho para salvar o relatório:");
 
-        txtCaminhoParaSalvar.setText("caminhoDoArquivo");
+        txtCaminhoParaSalvar.setText("Caminho do Arquivo");
         txtCaminhoParaSalvar.setEnabled(false);
 
         txtBuscarDiretorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/pesquisar.png"))); // NOI18N

@@ -95,9 +95,8 @@ public class FrameInicial extends javax.swing.JFrame implements WindowListener {
         jPanelFeedbackParaUsuarioLayout.setHorizontalGroup(
             jPanelFeedbackParaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelFeedbackParaUsuarioLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 28, Short.MAX_VALUE))
         );
         jPanelFeedbackParaUsuarioLayout.setVerticalGroup(
             jPanelFeedbackParaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

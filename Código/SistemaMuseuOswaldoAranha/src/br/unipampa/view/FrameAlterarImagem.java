@@ -55,7 +55,7 @@ public class FrameAlterarImagem extends javax.swing.JFrame implements WindowList
             }
         });
 
-        txtCaminhoImagem.setText("caminhoDoArquivo");
+        txtCaminhoImagem.setText("Caminho do arquivo");
         txtCaminhoImagem.setEnabled(false);
 
         jLabel18.setText("Foto do Item:");

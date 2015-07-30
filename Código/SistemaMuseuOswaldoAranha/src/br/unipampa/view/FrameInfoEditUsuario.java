@@ -94,7 +94,7 @@ public class FrameInfoEditUsuario extends javax.swing.JFrame implements WindowLi
         txtTelefone = new javax.swing.JFormattedTextField();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
-        setTitle("Ediçao de Cadastro de Usuario");
+        setTitle("Edição de Cadastro de Usuário");
 
         btnAtualizarDados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/cadastrar.png"))); // NOI18N
         btnAtualizarDados.setText("Atualizar Dados");
@@ -167,10 +167,6 @@ public class FrameInfoEditUsuario extends javax.swing.JFrame implements WindowLi
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAtualizarDados)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(26, 26, 26)
-                                .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -189,12 +185,18 @@ public class FrameInfoEditUsuario extends javax.swing.JFrame implements WindowLi
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jRadioButtonSimAdm)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButtonNaoAdm))
+                                .addComponent(jRadioButtonNaoAdm)))
+                        .addGap(0, 80, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 62, Short.MAX_VALUE)))
+                                .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(campoNome))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -225,12 +227,12 @@ public class FrameInfoEditUsuario extends javax.swing.JFrame implements WindowLi
                     .addComponent(jLabel6)
                     .addComponent(jRadioButtonSimAtivo)
                     .addComponent(jRadioButtonNaoAtivo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jRadioButtonSimAdm)
                     .addComponent(jRadioButtonNaoAdm))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(btnAtualizarDados)
                 .addContainerGap())
         );
