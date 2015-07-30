@@ -7,12 +7,14 @@ package br.unipampa.view;
 
 import br.unipampa.model.Usuario;
 import br.unipampa.service.CriptografiaMD5;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 /**
  *
  * @author gabrielbmoro
  */
-public class FrameAlterarSenha extends javax.swing.JFrame {
+public class FrameAlterarSenha extends javax.swing.JFrame implements WindowListener {
 
     private Usuario usuario;
 
@@ -22,7 +24,8 @@ public class FrameAlterarSenha extends javax.swing.JFrame {
     public FrameAlterarSenha(Usuario usuarioParametro) {
         initComponents();
         this.usuario = usuarioParametro;
-        ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 392, 182);
+        ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 392, 235);
+        addWindowListener(this);
     }
 
     /**
@@ -40,7 +43,6 @@ public class FrameAlterarSenha extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtSenhaAntiga = new javax.swing.JPasswordField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Alterar Senha");
 
         jLabel1.setText("Nova Senha:");
@@ -96,11 +98,16 @@ public class FrameAlterarSenha extends javax.swing.JFrame {
             this.usuario.setSenha(CriptografiaMD5.codificar(senhaNova));
             if (this.usuario.alterar(this.usuario)) {
                 GeradorDeMensagem.exibirMensagemDeInformacao("Senha alterada com sucesso!", "Alerta ao Usuário");
+                this.dispose();
+                revalidate();
+                repaint();
             } else {
                 GeradorDeMensagem.exibirMensagemDeInformacao("Ocorreu um problema, realize a operação novamente!", "Alerta ao Usuário");
+                return;
             }
         } else {
             GeradorDeMensagem.exibirMensagemDeInformacao("Digite sua senha novamente, a mesma não confere!", "Alerta ao Usuário");
+            return;
         }
     }//GEN-LAST:event_btnAlterarSenhaActionPerformed
 
@@ -112,4 +119,32 @@ public class FrameAlterarSenha extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtNovaSenha;
     private javax.swing.JPasswordField txtSenhaAntiga;
     // End of variables declaration//GEN-END:variables
+     @Override
+    public void windowOpened(WindowEvent e) {
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        dispose();
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+    }
 }

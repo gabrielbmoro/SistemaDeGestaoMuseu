@@ -65,8 +65,8 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableLivroConsignado = new javax.swing.JTable();
         btnSobreLivroConsignado = new javax.swing.JButton();
-        btnEditarLivroConsignado = new javax.swing.JButton();
         btnDeletarLivroConsignado = new javax.swing.JButton();
+        btnEditarLivroConsignado = new javax.swing.JButton();
         panelLivroTombo = new javax.swing.JPanel();
         panelButtonsLivroTombo = new javax.swing.JPanel();
         btnNovoLivroTombo = new javax.swing.JButton();
@@ -75,9 +75,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         panelInternoLivroTombo = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableLivroTombo = new javax.swing.JTable();
-        btnDeletarLivroTombo = new javax.swing.JButton();
-        btnEditarLivroTombo = new javax.swing.JButton();
         btnSobreLivroTombo = new javax.swing.JButton();
+        btnEditarLivroTombo = new javax.swing.JButton();
+        btnDeletarLivroTombo = new javax.swing.JButton();
         panelLivroBiblioteca = new javax.swing.JPanel();
         panelButtonsBiblioteca = new javax.swing.JPanel();
         btnNovoLivroBiblioteca = new javax.swing.JButton();
@@ -104,6 +104,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
         btnNovoLivroConsignado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/AddItem.png"))); // NOI18N
         btnNovoLivroConsignado.setToolTipText("Novo Item");
+        btnNovoLivroConsignado.setMaximumSize(null);
+        btnNovoLivroConsignado.setMinimumSize(null);
+        btnNovoLivroConsignado.setPreferredSize(new java.awt.Dimension(44, 44));
         btnNovoLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNovoLivroConsignadoActionPerformed(evt);
@@ -112,6 +115,8 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
         btnListarLivroConsignado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/List.png"))); // NOI18N
         btnListarLivroConsignado.setToolTipText("LIstar Itens");
+        btnListarLivroConsignado.setMaximumSize(null);
+        btnListarLivroConsignado.setMinimumSize(null);
         btnListarLivroConsignado.setPreferredSize(new java.awt.Dimension(44, 44));
         btnListarLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,6 +126,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
         btnGerarRelatorioConsignado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/PDF.png"))); // NOI18N
         btnGerarRelatorioConsignado.setToolTipText("Gerar Relatorio de Itens Cadastrados");
+        btnGerarRelatorioConsignado.setMaximumSize(null);
+        btnGerarRelatorioConsignado.setMinimumSize(null);
+        btnGerarRelatorioConsignado.setPreferredSize(new java.awt.Dimension(44, 44));
         btnGerarRelatorioConsignado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGerarRelatorioConsignadoActionPerformed(evt);
@@ -132,21 +140,20 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         panelButtonsLivroConsignadoLayout.setHorizontalGroup(
             panelButtonsLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelButtonsLivroConsignadoLayout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
                 .addGroup(panelButtonsLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnGerarRelatorioConsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnNovoLivroConsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnListarLivroConsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGap(0, 31, Short.MAX_VALUE))
         );
         panelButtonsLivroConsignadoLayout.setVerticalGroup(
             panelButtonsLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelButtonsLivroConsignadoLayout.createSequentialGroup()
-                .addComponent(btnNovoLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnNovoLivroConsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnListarLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnListarLivroConsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGerarRelatorioConsignado, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
+                .addComponent(btnGerarRelatorioConsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTableLivroConsignado.setModel(new javax.swing.table.DefaultTableModel(
@@ -176,26 +183,34 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
         btnSobreLivroConsignado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/View.png"))); // NOI18N
         btnSobreLivroConsignado.setToolTipText("Sobre o elemento");
+        btnSobreLivroConsignado.setMaximumSize(null);
+        btnSobreLivroConsignado.setMinimumSize(null);
+        btnSobreLivroConsignado.setPreferredSize(new java.awt.Dimension(44, 44));
         btnSobreLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSobreLivroConsignadoActionPerformed(evt);
             }
         });
 
-        btnEditarLivroConsignado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/editar.png"))); // NOI18N
-        btnEditarLivroConsignado.setToolTipText("Editar Item");
-        btnEditarLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarLivroConsignadoActionPerformed(evt);
-            }
-        });
-
         btnDeletarLivroConsignado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/lixeira.png"))); // NOI18N
         btnDeletarLivroConsignado.setToolTipText("Remover Item");
+        btnDeletarLivroConsignado.setMaximumSize(null);
+        btnDeletarLivroConsignado.setMinimumSize(null);
         btnDeletarLivroConsignado.setPreferredSize(new java.awt.Dimension(44, 44));
         btnDeletarLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeletarLivroConsignadoActionPerformed(evt);
+            }
+        });
+
+        btnEditarLivroConsignado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/editar.png"))); // NOI18N
+        btnEditarLivroConsignado.setToolTipText("Editar Item");
+        btnEditarLivroConsignado.setMaximumSize(null);
+        btnEditarLivroConsignado.setMinimumSize(null);
+        btnEditarLivroConsignado.setPreferredSize(new java.awt.Dimension(44, 44));
+        btnEditarLivroConsignado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarLivroConsignadoActionPerformed(evt);
             }
         });
 
@@ -204,14 +219,13 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         panelInternoLivroConsignadoLayout.setHorizontalGroup(
             panelInternoLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInternoLivroConsignadoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 691, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(panelInternoLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnSobreLivroConsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnEditarLivroConsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnDeletarLivroConsignado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSobreLivroConsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDeletarLivroConsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         panelInternoLivroConsignadoLayout.setVerticalGroup(
             panelInternoLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,9 +233,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                 .addGroup(panelInternoLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
                     .addGroup(panelInternoLivroConsignadoLayout.createSequentialGroup()
-                        .addComponent(btnSobreLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSobreLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEditarLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnEditarLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnDeletarLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -237,7 +251,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                 .addComponent(panelButtonsLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(panelInternoLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         panelLivroConsignadoLayout.setVerticalGroup(
             panelLivroConsignadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,6 +269,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
         btnNovoLivroTombo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/AddItem.png"))); // NOI18N
         btnNovoLivroTombo.setToolTipText("Novo Item");
+        btnNovoLivroTombo.setMaximumSize(null);
+        btnNovoLivroTombo.setMinimumSize(null);
+        btnNovoLivroTombo.setPreferredSize(new java.awt.Dimension(44, 44));
         btnNovoLivroTombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNovoLivroTomboActionPerformed(evt);
@@ -263,6 +280,8 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
         btnListarLivroTombo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/List.png"))); // NOI18N
         btnListarLivroTombo.setToolTipText("LIstar Itens");
+        btnListarLivroTombo.setMaximumSize(null);
+        btnListarLivroTombo.setMinimumSize(null);
         btnListarLivroTombo.setPreferredSize(new java.awt.Dimension(44, 44));
         btnListarLivroTombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -272,6 +291,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
         btnGerarRelatorioTombo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/PDF.png"))); // NOI18N
         btnGerarRelatorioTombo.setToolTipText("Gerar Relatorio de Itens Cadastrados");
+        btnGerarRelatorioTombo.setMaximumSize(null);
+        btnGerarRelatorioTombo.setMinimumSize(null);
+        btnGerarRelatorioTombo.setPreferredSize(new java.awt.Dimension(44, 44));
         btnGerarRelatorioTombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGerarRelatorioTomboActionPerformed(evt);
@@ -283,21 +305,20 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         panelButtonsLivroTomboLayout.setHorizontalGroup(
             panelButtonsLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelButtonsLivroTomboLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelButtonsLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnListarLivroTombo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnNovoLivroTombo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnGerarRelatorioTombo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(btnGerarRelatorioTombo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnNovoLivroTombo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 24, Short.MAX_VALUE))
         );
         panelButtonsLivroTomboLayout.setVerticalGroup(
             panelButtonsLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelButtonsLivroTomboLayout.createSequentialGroup()
-                .addComponent(btnNovoLivroTombo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnNovoLivroTombo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnListarLivroTombo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnListarLivroTombo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGerarRelatorioTombo, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addComponent(btnGerarRelatorioTombo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -326,28 +347,36 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         });
         jScrollPane2.setViewportView(jTableLivroTombo);
 
-        btnDeletarLivroTombo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/lixeira.png"))); // NOI18N
-        btnDeletarLivroTombo.setToolTipText("Remover Item");
-        btnDeletarLivroTombo.setPreferredSize(new java.awt.Dimension(44, 44));
-        btnDeletarLivroTombo.addActionListener(new java.awt.event.ActionListener() {
+        btnSobreLivroTombo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/View.png"))); // NOI18N
+        btnSobreLivroTombo.setToolTipText("Sobre o elemento");
+        btnSobreLivroTombo.setMaximumSize(null);
+        btnSobreLivroTombo.setMinimumSize(null);
+        btnSobreLivroTombo.setPreferredSize(new java.awt.Dimension(44, 44));
+        btnSobreLivroTombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeletarLivroTomboActionPerformed(evt);
+                btnSobreLivroTomboActionPerformed(evt);
             }
         });
 
         btnEditarLivroTombo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/editar.png"))); // NOI18N
         btnEditarLivroTombo.setToolTipText("Editar Item");
+        btnEditarLivroTombo.setMaximumSize(null);
+        btnEditarLivroTombo.setMinimumSize(null);
+        btnEditarLivroTombo.setPreferredSize(new java.awt.Dimension(44, 44));
         btnEditarLivroTombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarLivroTomboActionPerformed(evt);
             }
         });
 
-        btnSobreLivroTombo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/View.png"))); // NOI18N
-        btnSobreLivroTombo.setToolTipText("Sobre o elemento");
-        btnSobreLivroTombo.addActionListener(new java.awt.event.ActionListener() {
+        btnDeletarLivroTombo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/lixeira.png"))); // NOI18N
+        btnDeletarLivroTombo.setToolTipText("Remover Item");
+        btnDeletarLivroTombo.setMaximumSize(null);
+        btnDeletarLivroTombo.setMinimumSize(null);
+        btnDeletarLivroTombo.setPreferredSize(new java.awt.Dimension(44, 44));
+        btnDeletarLivroTombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSobreLivroTomboActionPerformed(evt);
+                btnDeletarLivroTomboActionPerformed(evt);
             }
         });
 
@@ -357,14 +386,13 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
             panelInternoLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInternoLivroTomboLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 655, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addGroup(panelInternoLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelInternoLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnSobreLivroTombo, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-                        .addComponent(btnEditarLivroTombo, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(btnDeletarLivroTombo, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(panelInternoLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnEditarLivroTombo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDeletarLivroTombo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSobreLivroTombo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelInternoLivroTomboLayout.setVerticalGroup(
             panelInternoLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -372,9 +400,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                 .addGroup(panelInternoLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
                     .addGroup(panelInternoLivroTomboLayout.createSequentialGroup()
-                        .addComponent(btnSobreLivroTombo, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSobreLivroTombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEditarLivroTombo)
+                        .addComponent(btnEditarLivroTombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnDeletarLivroTombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -390,7 +418,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                 .addComponent(panelButtonsLivroTombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(panelInternoLivroTombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(240, 240, 240))
+                .addGap(278, 278, 278))
         );
         panelLivroTomboLayout.setVerticalGroup(
             panelLivroTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -408,6 +436,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
         btnNovoLivroBiblioteca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/AddItem.png"))); // NOI18N
         btnNovoLivroBiblioteca.setToolTipText("Novo Item");
+        btnNovoLivroBiblioteca.setMaximumSize(null);
+        btnNovoLivroBiblioteca.setMinimumSize(null);
+        btnNovoLivroBiblioteca.setPreferredSize(new java.awt.Dimension(44, 44));
         btnNovoLivroBiblioteca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNovoLivroBibliotecaActionPerformed(evt);
@@ -416,6 +447,8 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
         btnListarLivroBiblioteca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/List.png"))); // NOI18N
         btnListarLivroBiblioteca.setToolTipText("LIstar Itens");
+        btnListarLivroBiblioteca.setMaximumSize(null);
+        btnListarLivroBiblioteca.setMinimumSize(null);
         btnListarLivroBiblioteca.setPreferredSize(new java.awt.Dimension(44, 44));
         btnListarLivroBiblioteca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -425,6 +458,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
         btnGerarRelatorioBiblioteca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/PDF.png"))); // NOI18N
         btnGerarRelatorioBiblioteca.setToolTipText("Gerar Relatorio de Itens Cadastrados");
+        btnGerarRelatorioBiblioteca.setMaximumSize(null);
+        btnGerarRelatorioBiblioteca.setMinimumSize(null);
+        btnGerarRelatorioBiblioteca.setPreferredSize(new java.awt.Dimension(44, 44));
         btnGerarRelatorioBiblioteca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGerarRelatorioBibliotecaActionPerformed(evt);
@@ -436,21 +472,20 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         panelButtonsBibliotecaLayout.setHorizontalGroup(
             panelButtonsBibliotecaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelButtonsBibliotecaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelButtonsBibliotecaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnListarLivroBiblioteca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnNovoLivroBiblioteca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+                .addGroup(panelButtonsBibliotecaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnListarLivroBiblioteca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnNovoLivroBiblioteca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnGerarRelatorioBiblioteca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGap(0, 37, Short.MAX_VALUE))
         );
         panelButtonsBibliotecaLayout.setVerticalGroup(
             panelButtonsBibliotecaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelButtonsBibliotecaLayout.createSequentialGroup()
-                .addComponent(btnNovoLivroBiblioteca, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnNovoLivroBiblioteca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnListarLivroBiblioteca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnListarLivroBiblioteca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGerarRelatorioBiblioteca, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addComponent(btnGerarRelatorioBiblioteca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -481,6 +516,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
         btnEditarLivroBilioteca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/editar.png"))); // NOI18N
         btnEditarLivroBilioteca.setToolTipText("Editar Item");
+        btnEditarLivroBilioteca.setMaximumSize(null);
+        btnEditarLivroBilioteca.setMinimumSize(null);
+        btnEditarLivroBilioteca.setPreferredSize(new java.awt.Dimension(44, 44));
         btnEditarLivroBilioteca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarLivroBiliotecaActionPerformed(evt);
@@ -489,6 +527,8 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
         btnDeletarLivroBilioteca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/lixeira.png"))); // NOI18N
         btnDeletarLivroBilioteca.setToolTipText("Remover Item");
+        btnDeletarLivroBilioteca.setMaximumSize(null);
+        btnDeletarLivroBilioteca.setMinimumSize(null);
         btnDeletarLivroBilioteca.setPreferredSize(new java.awt.Dimension(44, 44));
         btnDeletarLivroBilioteca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -498,6 +538,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
         btnSobreLivroBilioteca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unipampa/view/icons/View.png"))); // NOI18N
         btnSobreLivroBilioteca.setToolTipText("Sobre o elemento");
+        btnSobreLivroBilioteca.setMaximumSize(null);
+        btnSobreLivroBilioteca.setMinimumSize(null);
+        btnSobreLivroBilioteca.setPreferredSize(new java.awt.Dimension(44, 44));
         btnSobreLivroBilioteca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSobreLivroBiliotecaActionPerformed(evt);
@@ -509,14 +552,13 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         panelInternoBibliotecaLayout.setHorizontalGroup(
             panelInternoBibliotecaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInternoBibliotecaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(panelInternoBibliotecaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnEditarLivroBilioteca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(btnSobreLivroBilioteca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
-                    .addComponent(btnDeletarLivroBilioteca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(14, 14, 14))
+                    .addComponent(btnSobreLivroBilioteca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEditarLivroBilioteca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDeletarLivroBilioteca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         panelInternoBibliotecaLayout.setVerticalGroup(
             panelInternoBibliotecaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -524,9 +566,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                 .addGroup(panelInternoBibliotecaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
                     .addGroup(panelInternoBibliotecaLayout.createSequentialGroup()
-                        .addComponent(btnSobreLivroBilioteca, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSobreLivroBilioteca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEditarLivroBilioteca)
+                        .addComponent(btnEditarLivroBilioteca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnDeletarLivroBilioteca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -995,7 +1037,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
 
     private void jMenuItemAlterarSenhaDeAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAlterarSenhaDeAcessoActionPerformed
         if (this.usuario != null) {
-
+            new FrameAlterarSenha(this.usuario);
         }
     }//GEN-LAST:event_jMenuItemAlterarSenhaDeAcessoActionPerformed
 
