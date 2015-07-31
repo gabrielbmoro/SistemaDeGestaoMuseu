@@ -82,27 +82,33 @@
             <Property name="text" type="java.lang.String" value="Ajuda"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem18">
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuManual">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="F12"/>
+                  <KeyStroke key="F11"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/br/unipampa/view/icons/manual.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Manual"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuManualActionPerformed"/>
+              </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem19">
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuSuporte">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="F10"/>
+                  <KeyStroke key="F12"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/br/unipampa/view/icons/suporte.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Suporte"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuSuporteActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -171,7 +177,7 @@
                       <Component id="panelButtonsLivroConsignado" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Component id="panelInternoLivroConsignado" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="34" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -199,7 +205,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btnGerarRelatorioConsignado" max="32767" attributes="0"/>
+                              <Component id="btnGerarRelatorioConsignado" pref="57" max="32767" attributes="0"/>
                               <Component id="btnNovoLivroConsignado" alignment="0" max="32767" attributes="0"/>
                               <Component id="btnListarLivroConsignado" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -291,7 +297,7 @@
                           <Component id="jScrollPane1" min="-2" pref="680" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btnEditarLivroConsignado" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnEditarLivroConsignado" alignment="0" pref="65" max="32767" attributes="0"/>
                               <Component id="btnSobreLivroConsignado" alignment="0" max="32767" attributes="0"/>
                               <Component id="btnDeletarLivroConsignado" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -482,7 +488,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btnListarLivroTombo" alignment="1" max="32767" attributes="0"/>
+                              <Component id="btnListarLivroTombo" alignment="1" pref="57" max="32767" attributes="0"/>
                               <Component id="btnGerarRelatorioTombo" max="32767" attributes="0"/>
                               <Component id="btnNovoLivroTombo" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -576,7 +582,7 @@
                           <Component id="jScrollPane2" min="-2" pref="680" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="btnEditarLivroTombo" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnEditarLivroTombo" alignment="0" pref="65" max="32767" attributes="0"/>
                               <Component id="btnDeletarLivroTombo" max="32767" attributes="0"/>
                               <Component id="btnSobreLivroTombo" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -767,7 +773,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="btnListarLivroBiblioteca" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnListarLivroBiblioteca" alignment="0" pref="57" max="32767" attributes="0"/>
                               <Component id="btnNovoLivroBiblioteca" alignment="0" max="32767" attributes="0"/>
                               <Component id="btnGerarRelatorioBiblioteca" max="32767" attributes="0"/>
                           </Group>
@@ -860,7 +866,7 @@
                           <Component id="jScrollPane3" min="-2" pref="680" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="btnSobreLivroBilioteca" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnSobreLivroBilioteca" alignment="0" pref="65" max="32767" attributes="0"/>
                               <Component id="btnEditarLivroBilioteca" alignment="0" max="32767" attributes="0"/>
                               <Component id="btnDeletarLivroBilioteca" alignment="0" max="32767" attributes="0"/>
                           </Group>
