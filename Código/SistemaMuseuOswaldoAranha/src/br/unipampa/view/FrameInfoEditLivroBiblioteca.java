@@ -8,6 +8,8 @@ package br.unipampa.view;
 import br.unipampa.model.LivroDaBiblioteca;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import javax.swing.JRootPane;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -34,6 +36,8 @@ public class FrameInfoEditLivroBiblioteca extends javax.swing.JFrame implements 
         }
         ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 1108, 500);
         addWindowListener(this);
+        JRootPane rootPane = SwingUtilities.getRootPane(btnAtualizarDadosLivroDeBiblioteca); 
+        rootPane.setDefaultButton(btnAtualizarDadosLivroDeBiblioteca);
     }
     
     private void desabilitarComponentes() {

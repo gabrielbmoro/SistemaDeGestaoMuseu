@@ -9,6 +9,8 @@ import br.unipampa.model.Usuario;
 import br.unipampa.service.RefatoraString;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import javax.swing.JRootPane;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -33,6 +35,8 @@ public class FrameInfoEditUsuario extends javax.swing.JFrame implements WindowLi
 
         ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 490, 378);
         addWindowListener(this);
+        JRootPane rootPane = SwingUtilities.getRootPane(btnAtualizarDados); 
+        rootPane.setDefaultButton(btnAtualizarDados);
 
     }
 

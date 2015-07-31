@@ -11,6 +11,8 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.io.File;
 import javax.swing.JFileChooser;
+import javax.swing.JRootPane;
+import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
@@ -33,6 +35,9 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
         revalidate();
         repaint();
         addWindowListener(this);
+        
+        JRootPane rootPane = SwingUtilities.getRootPane(btnRegistrarDadosLivroConsignado); 
+        rootPane.setDefaultButton(btnRegistrarDadosLivroConsignado);
     }
 
     /**

@@ -9,6 +9,8 @@ import br.unipampa.model.ItemTombo;
 import br.unipampa.service.UtilitariaDeUploadDeImagem;
 import java.io.File;
 import javax.swing.JFileChooser;
+import javax.swing.JRootPane;
+import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
@@ -31,6 +33,8 @@ public class FrameNovoItemTombo extends javax.swing.JFrame {
         revalidate();
         repaint();
 //        addWindowListener(this);
+        JRootPane rootPane = SwingUtilities.getRootPane(btnRegistrarDadosItemTombo); 
+        rootPane.setDefaultButton(btnRegistrarDadosItemTombo);
     }
 
     /**

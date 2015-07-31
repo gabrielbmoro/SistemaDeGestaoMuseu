@@ -8,6 +8,8 @@ package br.unipampa.view;
 import br.unipampa.model.ItemTombo;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import javax.swing.JRootPane;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -34,6 +36,8 @@ public class FrameInfoEditLivroCombo extends javax.swing.JFrame implements Windo
         }
         ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 1108, 500);
         addWindowListener(this);
+        JRootPane rootPane = SwingUtilities.getRootPane(btnAtualizarDados); 
+        rootPane.setDefaultButton(btnAtualizarDados);
     }
     
     private void desabilitarComponentes() {

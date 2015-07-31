@@ -10,6 +10,8 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.io.File;
 import javax.swing.JFileChooser;
+import javax.swing.JRootPane;
+import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
@@ -29,6 +31,8 @@ public class FrameAlterarImagem extends javax.swing.JFrame implements WindowList
         this.idObjeto = idObjeto;
         addWindowListener(this);
         setVisible(true);
+        JRootPane rootPane = SwingUtilities.getRootPane(btnRegistrarImagem); 
+        rootPane.setDefaultButton(btnRegistrarImagem);
     }
 
     /**

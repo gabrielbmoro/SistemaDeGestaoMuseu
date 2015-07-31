@@ -10,6 +10,8 @@ import br.unipampa.service.CriptografiaMD5;
 import br.unipampa.service.RefatoraString;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import javax.swing.JRootPane;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -28,6 +30,8 @@ public class FrameCadastroUsuario extends javax.swing.JFrame implements WindowLi
         this.buttonGroupAdm.add(jRadioAdmNao);
         ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 549, 320);
         addWindowListener(this);
+        JRootPane rootPane = SwingUtilities.getRootPane(botaoSalvar); 
+        rootPane.setDefaultButton(botaoSalvar);
     }
 
     /**

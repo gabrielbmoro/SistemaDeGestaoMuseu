@@ -9,6 +9,8 @@ import br.unipampa.model.Usuario;
 import br.unipampa.service.CriptografiaMD5;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import javax.swing.JRootPane;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -26,6 +28,8 @@ public class FrameAlterarSenha extends javax.swing.JFrame implements WindowListe
         this.usuario = usuarioParametro;
         ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 392, 235);
         addWindowListener(this);
+        JRootPane rootPane = SwingUtilities.getRootPane(btnAlterarSenha); 
+        rootPane.setDefaultButton(btnAlterarSenha);
     }
 
     /**

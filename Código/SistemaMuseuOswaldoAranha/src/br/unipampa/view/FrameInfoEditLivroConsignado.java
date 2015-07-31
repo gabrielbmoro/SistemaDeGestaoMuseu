@@ -9,6 +9,8 @@ import br.unipampa.model.ItemConsignado;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.util.Date;
+import javax.swing.JRootPane;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -35,6 +37,9 @@ public class FrameInfoEditLivroConsignado extends javax.swing.JFrame implements 
         }
         ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 1108, 500);
         addWindowListener(this);
+        
+        JRootPane rootPane = SwingUtilities.getRootPane(btnAtualizarDados); 
+        rootPane.setDefaultButton(btnAtualizarDados);
     }
     
     private void desabilitarComponentes() {

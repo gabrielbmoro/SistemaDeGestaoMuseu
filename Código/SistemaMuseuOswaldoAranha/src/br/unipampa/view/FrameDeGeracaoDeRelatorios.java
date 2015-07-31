@@ -18,6 +18,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFileChooser;
+import javax.swing.JRootPane;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -40,6 +42,8 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
             GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum tipo de relatório informado, realize a operação novamente!", "Alerta ao Usuário");
             dispose();
         }
+        JRootPane rootPane = SwingUtilities.getRootPane(btnGerarRelatorio); 
+        rootPane.setDefaultButton(btnGerarRelatorio);
     }
 
     /**
