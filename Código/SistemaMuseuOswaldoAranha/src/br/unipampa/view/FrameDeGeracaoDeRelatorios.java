@@ -126,7 +126,7 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
 
     private void txtBuscarDiretorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarDiretorioActionPerformed
         jFileChooser = new JFileChooser();
-        jFileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int resposta = jFileChooser.showOpenDialog(null);
         if (resposta == JFileChooser.APPROVE_OPTION) {
             File diretorioEscolhido = jFileChooser.getSelectedFile();

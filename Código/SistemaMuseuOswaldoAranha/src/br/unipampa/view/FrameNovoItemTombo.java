@@ -9,6 +9,7 @@ import br.unipampa.model.ItemTombo;
 import br.unipampa.service.UtilitariaDeUploadDeImagem;
 import java.io.File;
 import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -380,13 +381,17 @@ public class FrameNovoItemTombo extends javax.swing.JFrame {
     private void txtBuscarImagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarImagemActionPerformed
         jFileChooser = new JFileChooser();
         jFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        
+        jFileChooser.setAcceptAllFileFilterUsed(false);
+        jFileChooser.addChoosableFileFilter(new FileNameExtensionFilter("Imagens", "jpg"));
+        
         int resposta = jFileChooser.showOpenDialog(null);
         if (resposta == JFileChooser.APPROVE_OPTION) {
             File diretorioEscolhido = jFileChooser.getSelectedFile();
-            GeradorDeMensagem.exibirMensagemDeInformacao("Você escolheu o diretório: " + diretorioEscolhido.getName().toString(), "Alerta ao Usuário");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Você escolheu a imagem: " + diretorioEscolhido.getName().toString(), "Alerta ao Usuário");
             txtCaminhoImagem.setText(diretorioEscolhido.getPath().toString());
         } else {
-            GeradorDeMensagem.exibirMensagemDeInformacao("Você não selecionou nenhum diretório", "Alerta ao Usuário");
+            GeradorDeMensagem.exibirMensagemDeInformacao("Você não selecionou nenhuma imagem!", "Alerta ao Usuário");
         }
     }//GEN-LAST:event_txtBuscarImagemActionPerformed
 
