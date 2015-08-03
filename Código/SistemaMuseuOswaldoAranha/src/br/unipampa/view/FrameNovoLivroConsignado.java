@@ -29,7 +29,7 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
      */
     public FrameNovoLivroConsignado() {
         initComponents();
-        ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 1100, 500);
+        ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 1100, 570);
         jPanelDados.setVisible(true);
         jPanelUploadDeImagem.setVisible(false);
         revalidate();
@@ -249,7 +249,6 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
                     .addGroup(jPanelDadosLayout.createSequentialGroup()
                         .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel17)
-                            .addComponent(btnRegistrarDadosLivroConsignado)
                             .addGroup(jPanelDadosLayout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -271,8 +270,12 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
                                 .addComponent(txtCaminhoImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtBuscarImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnRegistrarImagem))
-                        .addGap(0, 188, Short.MAX_VALUE)))
+                            .addGroup(jPanelDadosLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnRegistrarImagem)
+                                    .addComponent(btnRegistrarDadosLivroConsignado))))
+                        .addGap(0, 256, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanelDadosLayout.setVerticalGroup(
@@ -339,11 +342,11 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCaminhoImagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtBuscarImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addComponent(btnRegistrarDadosLivroConsignado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRegistrarImagem)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(btnRegistrarDadosLivroConsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelDados);
@@ -352,7 +355,7 @@ public class FrameNovoLivroConsignado extends javax.swing.JFrame implements Wind
         jPanelUploadDeImagem.setLayout(jPanelUploadDeImagemLayout);
         jPanelUploadDeImagemLayout.setHorizontalGroup(
             jPanelUploadDeImagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 13, Short.MAX_VALUE)
+            .addGap(0, 36, Short.MAX_VALUE)
         );
         jPanelUploadDeImagemLayout.setVerticalGroup(
             jPanelUploadDeImagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

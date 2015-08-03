@@ -35,7 +35,7 @@ public class FrameInfoEditLivroConsignado extends javax.swing.JFrame implements 
         } else {
             btnEditarLivroConsignado.setEnabled(false);
         }
-        ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 1108, 500);
+        ConfiguracaoFrame.configFrameComTamanhoPersonalizado(this, 1108, 570);
         addWindowListener(this);
         
         JRootPane rootPane = SwingUtilities.getRootPane(btnAtualizarDados); 
