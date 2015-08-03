@@ -15,14 +15,14 @@ import javax.swing.SwingUtilities;
  *
  * @author gabrielbmoro
  */
-public class FrameInfoEditLivroCombo extends javax.swing.JFrame implements WindowListener {
+public class FrameInfoEditLivroTombo extends javax.swing.JFrame implements WindowListener {
     
     private ItemTombo itemTombo;
 
     /**
      * Creates new form FrameInformacoesEditarLivroConsignado
      */
-    public FrameInfoEditLivroCombo(ItemTombo itemTombo, boolean informacoes) {
+    public FrameInfoEditLivroTombo(ItemTombo itemTombo, boolean informacoes) {
         initComponents();
         this.itemTombo = itemTombo;
         
@@ -138,7 +138,11 @@ public class FrameInfoEditLivroCombo extends javax.swing.JFrame implements Windo
 
         jLabel1.setText("*Código Auxiliar:");
 
-        txtCodigoAuxiliarLivroConsignado.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        try {
+            txtCodigoAuxiliarLivroConsignado.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#########")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         jLabel2.setText("*Matéria Prima:");
 

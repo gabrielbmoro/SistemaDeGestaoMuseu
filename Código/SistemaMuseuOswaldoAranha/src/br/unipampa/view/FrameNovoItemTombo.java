@@ -49,7 +49,6 @@ public class FrameNovoItemTombo extends javax.swing.JFrame {
         jPanelDadosTombo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtCodigoAuxiliarItemTombo = new javax.swing.JTextField();
         txtMateriaPrimaItemTombo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -80,6 +79,7 @@ public class FrameNovoItemTombo extends javax.swing.JFrame {
         txtCaminhoImagem = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         txtBuscarImagem = new javax.swing.JButton();
+        txtCodigoAuxiliarItemTombo = new javax.swing.JFormattedTextField();
         jPanelUploadDeImagem = new javax.swing.JPanel();
 
         setTitle("Cadastro de Novo Item");
@@ -158,6 +158,12 @@ public class FrameNovoItemTombo extends javax.swing.JFrame {
             }
         });
 
+        try {
+            txtCodigoAuxiliarItemTombo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#########")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout jPanelDadosTomboLayout = new javax.swing.GroupLayout(jPanelDadosTombo);
         jPanelDadosTombo.setLayout(jPanelDadosTomboLayout);
         jPanelDadosTomboLayout.setHorizontalGroup(
@@ -227,12 +233,12 @@ public class FrameNovoItemTombo extends javax.swing.JFrame {
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jDateDeUtilizacaoFinalItemTombo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 94, Short.MAX_VALUE))
+                        .addGap(0, 174, Short.MAX_VALUE))
                     .addGroup(jPanelDadosTomboLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCodigoAuxiliarItemTombo, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
+                        .addComponent(txtCodigoAuxiliarItemTombo, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtMateriaPrimaItemTombo)))
@@ -245,8 +251,8 @@ public class FrameNovoItemTombo extends javax.swing.JFrame {
                 .addGroup(jPanelDadosTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCodigoAuxiliarItemTombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtMateriaPrimaItemTombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtMateriaPrimaItemTombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCodigoAuxiliarItemTombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelDadosTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelDadosTomboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -296,7 +302,7 @@ public class FrameNovoItemTombo extends javax.swing.JFrame {
                 .addComponent(btnRegistrarImagem)
                 .addGap(10, 10, 10)
                 .addComponent(btnRegistrarDadosItemTombo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelDadosTombo);
@@ -491,7 +497,7 @@ public class FrameNovoItemTombo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelUploadDeImagem;
     private javax.swing.JButton txtBuscarImagem;
     private javax.swing.JTextField txtCaminhoImagem;
-    private javax.swing.JTextField txtCodigoAuxiliarItemTombo;
+    private javax.swing.JFormattedTextField txtCodigoAuxiliarItemTombo;
     private javax.swing.JTextField txtCulturaItemTombo;
     private javax.swing.JTextField txtEstiloItemTombo;
     private javax.swing.JTextField txtFuncaoEspecificaItemTombo;

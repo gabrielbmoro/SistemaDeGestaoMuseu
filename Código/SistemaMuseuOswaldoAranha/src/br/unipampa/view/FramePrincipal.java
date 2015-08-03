@@ -875,7 +875,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                     ItemTombo itemTombo = new ItemTombo();
                     ItemTombo itemTomboTemporario = (ItemTombo) itemTombo.recuperarPeloID(idLong);
                     if (itemTomboTemporario != null) {
-                        new FrameInfoEditLivroCombo(itemTomboTemporario,
+                        new FrameInfoEditLivroTombo(itemTomboTemporario,
                                 false);
                     }
                 }
@@ -930,7 +930,7 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
                     ItemTombo itemTombo = new ItemTombo();
                     ItemTombo itemTomboTemporario = (ItemTombo) itemTombo.recuperarPeloID(idLong);
                     if (itemTomboTemporario != null) {
-                        new FrameInfoEditLivroCombo(itemTomboTemporario, true);
+                        new FrameInfoEditLivroTombo(itemTomboTemporario, true);
                     }
                 }
 

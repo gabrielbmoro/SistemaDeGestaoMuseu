@@ -118,7 +118,11 @@ public class FrameInfoEditLivroBiblioteca extends javax.swing.JFrame implements 
 
         jLabel1.setText("*Código Auxiliar:");
 
-        txtCodigoAuxiliar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        try {
+            txtCodigoAuxiliar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#########")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         jLabel2.setText("*Título da Obra:");
 
