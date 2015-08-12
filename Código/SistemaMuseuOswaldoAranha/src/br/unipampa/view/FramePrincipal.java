@@ -43,6 +43,9 @@ public class FramePrincipal extends javax.swing.JFrame implements WindowListener
         } else {
             jMenuUsuario.setEnabled(false);
         }
+        listarTabelaLivroTombo(false);
+        listarTabelaLivroConsignado(false);
+        listarTabelaBiblioteca(false);
         revalidate();
     }
 
