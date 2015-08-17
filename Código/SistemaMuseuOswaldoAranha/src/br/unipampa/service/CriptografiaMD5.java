@@ -10,8 +10,11 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
+ *<b>Responsabilidade: Codificar usando Criptografia MD5</b>
+ *Instruções de uso: Após chamar o método <b>codificar</b> e passar uma string como parametro, 
+ * o mesmo retornara a estring codificada
  *
- * @author gabrielbmoro
+ *@author gabrielbmoro
  */
 public class CriptografiaMD5 {
 

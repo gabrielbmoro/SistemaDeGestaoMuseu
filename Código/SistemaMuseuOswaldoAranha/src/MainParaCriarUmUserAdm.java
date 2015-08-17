@@ -1,16 +1,13 @@
 
 import br.unipampa.view.FrameCadastroUsuario;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author gabrielbmoro
- */
+* <b>Responsabilidade: Criar usuário administrador </b>
+* Instruções de uso: Usada para criar um novo usuário quando ainda não existe nenhum
+* @author gabrielbmoro
+* 
+*/
+
 public class MainParaCriarUmUserAdm {
     
     public static void main(String[] args){

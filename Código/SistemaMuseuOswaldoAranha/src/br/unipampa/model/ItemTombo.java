@@ -13,6 +13,14 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+/**
+*<b>Responsabilidade: Define Atributos e Métodos de Item Tombo </b>
+*Instruções de uso: Usada para estanciar novos objetos do tipo ItemTombo
+*@author Augusto César Görgen
+*@since 06/08/2015
+*
+*/
+
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Table(name = "ItemDeAcervo")

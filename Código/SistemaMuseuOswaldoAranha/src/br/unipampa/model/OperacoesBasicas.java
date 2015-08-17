@@ -8,9 +8,13 @@ package br.unipampa.model;
 import java.util.List;
 
 /**
- *
- * @author gabrielbmoro
- */
+*<b>Responsabilidade: Interface que define métodos que devem ser implementados nas classes estendidas por ela</b>
+*Instruções de uso: Usada para garantir que as classes que estendem implementem todos os métodos 
+*@author Gabriel B Moro
+*@since 06/08/2015
+*
+*/
+
 public interface OperacoesBasicas {
 
     public boolean salvar(Object objeto);

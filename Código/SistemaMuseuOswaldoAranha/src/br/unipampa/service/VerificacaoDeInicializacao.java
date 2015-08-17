@@ -12,7 +12,7 @@ import javax.swing.JList;
 import org.hibernate.Session;
 
 /**
- *
+ * <b>Responsabilidade: Verificar se a conexão com o banco de dados foi estabelecida assim como com o diretorio de imagens </b>
  * @author gabrielbmoro
  */
 public class VerificacaoDeInicializacao {

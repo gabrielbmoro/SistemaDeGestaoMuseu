@@ -30,7 +30,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * <b>Responsabilidade: Gerar relatorios </b>
+ * 
  * @author gabrielbmoro
  */
 public class GerarRelatorioEmPdf {

@@ -13,7 +13,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 /**
- *
+ * <b>Responsabilidade: Usado para criar diretorio de imagens se o mesmo não existir, e fazer o ulpload das mesmas </b>
  * @author gabrielbmoro
  */
 public class UtilitariaDeUploadDeImagem {

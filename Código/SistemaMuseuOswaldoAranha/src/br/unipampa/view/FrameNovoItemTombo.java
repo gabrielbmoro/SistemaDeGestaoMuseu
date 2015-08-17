@@ -14,9 +14,13 @@ import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
- *
- * @author AugustoCesar
- */
+*<b>Responsabilidade: </b>
+*Interface para cadastro de novo item tombo
+*@author Augusto César Görgen
+*@since 06/08/2015
+*
+*/
+
 public class FrameNovoItemTombo extends javax.swing.JFrame {
 
     private ItemTombo itemTombo;

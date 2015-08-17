@@ -10,9 +10,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
- *
- * @author Gabriel B Moro
- */
+*<b>Responsabilidade: Define Atributos e Métodos de Responsavel da Familia </b>
+*Instruções de uso: Usada para estanciar novos objetos do tipo ResponsavelDaFamilia
+*@author Gabriel B Moro
+*@since 06/08/2015
+*
+*/
+
 @Entity
 public class ResponsavelDaFamilia {
     @Id

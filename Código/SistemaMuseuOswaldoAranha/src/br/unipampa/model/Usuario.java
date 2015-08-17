@@ -12,6 +12,12 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+/**
+*<b>Responsabilidade: Define Atributos e Métodos de um usuário genérico</b>
+*Instruções de uso: Usada para estanciar novos objetos do tipo usuário
+*
+*/
+
 @Entity
 public class Usuario implements OperacoesBasicas {
 

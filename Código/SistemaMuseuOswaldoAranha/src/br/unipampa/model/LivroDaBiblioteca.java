@@ -14,9 +14,13 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 /**
- *
- * @author Gabriel B Moro
- */
+*<b>Responsabilidade: Define Atributos e Métodos de Livro Biblioteca</b>
+*Instruções de uso: Usada para estanciar novos objetos do tipo LivroDaBiblioteca
+*@author Gabriel B Moro
+*@since 06/08/2015
+*
+*/
+
 @Entity
 public class LivroDaBiblioteca implements OperacoesBasicas{
     
