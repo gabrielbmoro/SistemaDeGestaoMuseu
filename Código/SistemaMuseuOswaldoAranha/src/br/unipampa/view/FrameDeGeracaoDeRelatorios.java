@@ -23,7 +23,7 @@ import javax.swing.SwingUtilities;
  * @author gabrielbmoro
  */
 public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements WindowListener {
-
+    
     private JFileChooser jFileChooser;
     private TipoDeRelatorio tipoDeRelatorio;
 
@@ -39,7 +39,7 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
             GeradorDeMensagem.exibirMensagemDeInformacao("Nenhum tipo de relatório informado, realize a operação novamente!", "Alerta ao Usuário");
             dispose();
         }
-        JRootPane rootPane = SwingUtilities.getRootPane(btnGerarRelatorio); 
+        JRootPane rootPane = SwingUtilities.getRootPane(btnGerarRelatorio);
         rootPane.setDefaultButton(btnGerarRelatorio);
     }
 
@@ -126,6 +126,7 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtBuscarDiretorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarDiretorioActionPerformed
+        dispose();
         jFileChooser = new JFileChooser();
         jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int resposta = jFileChooser.showOpenDialog(null);
@@ -136,26 +137,33 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
         } else {
             GeradorDeMensagem.exibirMensagemDeInformacao("Você não selecionou nenhum diretório", "Alerta ao Usuário");
         }
+        this.setVisible(true);
     }//GEN-LAST:event_txtBuscarDiretorioActionPerformed
 
     private void btnGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarRelatorioActionPerformed
+        dispose();
         String titulo = txtNomeDoRelatorio.getText();
         boolean execute = true;
-
+        
         if (titulo.isEmpty() || titulo == null) {
             titulo = "RelatorioSisMOA";
         }
-
-        if (!new File(txtCaminhoParaSalvar.getText()).exists()) {
+        
+        if (txtCaminhoParaSalvar.getText().equals("Caminho do Arquivo")) {
+            GeradorDeMensagem.exibirMensagemDeInformacao("Por favor selecione um diretório, tente novamente!", "Alerta ao Usuário");
+            execute = false;
+            this.setVisible(true);
+        } else if (!new File(txtCaminhoParaSalvar.getText()).exists()) {
             boolean success = (new File(txtCaminhoParaSalvar.getText())).mkdirs();
             if (!success) {
                 GeradorDeMensagem.exibirMensagemDeInformacao("Impossível criar o diretório, tente novamente!", "Alerta ao Usuário");
                 execute = false;
+                this.setVisible(true);
             }
         }
-
+        
         if (new File(txtCaminhoParaSalvar.getText()).exists() && execute == true) {
-
+            
             List<Object> dados = null;
             if (tipoDeRelatorio == TipoDeRelatorio.ITEM_CONSIGNADO) {
                 ItemConsignado itemConsignado = new ItemConsignado();
@@ -169,14 +177,15 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
             }
             if (dados == null || dados.isEmpty()) {
                 GeradorDeMensagem.exibirMensagemDeInformacao("O relatório não foi gerado, pois nenhum registro foi encontrado!", "Alerta ao Usuário");
+                this.setVisible(true);
             } else {
                 GerarRelatorioEmPdf gerarRelatorioEmPdf = new GerarRelatorioEmPdf();
                 boolean resposta = gerarRelatorioEmPdf.gerarRelatorio(dados, txtCaminhoParaSalvar.getText(), titulo, this.tipoDeRelatorio);
                 if (resposta) {
                     GeradorDeMensagem.exibirMensagemDeInformacao("O relatório foi gerado com sucesso!", "Alerta ao Usuário");
-                    dispose();
                 } else {
                     GeradorDeMensagem.exibirMensagemDeInformacao("O relatório não foi gerado, realize a operação mais tarde!", "Alerta ao Usuário");
+                    this.setVisible(true);
                 }
             }
         }
@@ -195,28 +204,28 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
     @Override
     public void windowOpened(WindowEvent e) {
     }
-
+    
     @Override
     public void windowClosing(WindowEvent e) {
         dispose();
     }
-
+    
     @Override
     public void windowClosed(WindowEvent e) {
     }
-
+    
     @Override
     public void windowIconified(WindowEvent e) {
     }
-
+    
     @Override
     public void windowDeiconified(WindowEvent e) {
     }
-
+    
     @Override
     public void windowActivated(WindowEvent e) {
     }
-
+    
     @Override
     public void windowDeactivated(WindowEvent e) {
     }
