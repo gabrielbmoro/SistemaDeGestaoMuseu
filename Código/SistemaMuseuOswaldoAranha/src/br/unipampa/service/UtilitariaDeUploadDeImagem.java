@@ -38,7 +38,7 @@ public class UtilitariaDeUploadDeImagem {
             File fileDestino = new File(PATH + ID.toString() + EXTENSAO);
 
             BufferedImage imagem = ImageIO.read(fileOrigem);
-            if (imagem.getWidth() <= 956 && imagem.getHeight() <= 600) {
+            if (imagem!=null) {
 // fazer algo com a imagem...
                
                 ImageIO.write(imagem, "jpg", fileDestino);
