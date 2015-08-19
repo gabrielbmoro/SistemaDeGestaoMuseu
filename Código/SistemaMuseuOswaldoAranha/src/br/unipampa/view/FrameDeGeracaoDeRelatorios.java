@@ -23,7 +23,7 @@ import javax.swing.SwingUtilities;
  * @author gabrielbmoro
  */
 public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements WindowListener {
-    
+
     private JFileChooser jFileChooser;
     private TipoDeRelatorio tipoDeRelatorio;
 
@@ -144,11 +144,13 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
         dispose();
         String titulo = txtNomeDoRelatorio.getText();
         boolean execute = true;
-        
+
         if (titulo.isEmpty() || titulo == null) {
             titulo = "RelatorioSisMOA";
         }
-        
+
+        titulo += ".pdf";
+
         if (txtCaminhoParaSalvar.getText().equals("Caminho do Arquivo")) {
             GeradorDeMensagem.exibirMensagemDeInformacao("Por favor selecione um diretório, tente novamente!", "Alerta ao Usuário");
             execute = false;
@@ -161,9 +163,9 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
                 this.setVisible(true);
             }
         }
-        
+
         if (new File(txtCaminhoParaSalvar.getText()).exists() && execute == true) {
-            
+
             List<Object> dados = null;
             if (tipoDeRelatorio == TipoDeRelatorio.ITEM_CONSIGNADO) {
                 ItemConsignado itemConsignado = new ItemConsignado();
@@ -204,28 +206,28 @@ public class FrameDeGeracaoDeRelatorios extends javax.swing.JFrame implements Wi
     @Override
     public void windowOpened(WindowEvent e) {
     }
-    
+
     @Override
     public void windowClosing(WindowEvent e) {
         dispose();
     }
-    
+
     @Override
     public void windowClosed(WindowEvent e) {
     }
-    
+
     @Override
     public void windowIconified(WindowEvent e) {
     }
-    
+
     @Override
     public void windowDeiconified(WindowEvent e) {
     }
-    
+
     @Override
     public void windowActivated(WindowEvent e) {
     }
-    
+
     @Override
     public void windowDeactivated(WindowEvent e) {
     }
